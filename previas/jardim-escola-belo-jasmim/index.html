@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Jardim Escola Belo Jasmim: creche e escola com horário integral, salas climatizadas e câmeras. R. São Renato, 173.">
+<title>Jardim Escola Belo Jasmim | Creche e escola em horário integral</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --leaf:#2f7d5b;
+  --leaf-dark:#1f5a41;
+  --leaf-soft:#dff1e6;
+  --cream:#fffcf3;
+  --cream2:#fbf3dc;
+  --sun:#f7b928;
+  --sun-soft:#fff1c7;
+  --peach:#ff8f70;
+  --peach-soft:#ffe5dc;
+  --sky:#7cc4e8;
+  --sky-soft:#e1f3fb;
+  --lav:#b49ae8;
+  --lav-soft:#efe8ff;
+  --ink:#24372e;
+  --text:#4b5a52;
+  --display:'Baloo 2','Nunito',system-ui,sans-serif;
+  --body:'Nunito',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);color:var(--ink);line-height:1.08;margin:0;font-weight:800;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1140px;margin:0 auto;padding-inline:20px}
+section[id]{scroll-margin-top:80px}
+:focus-visible{outline:3px solid var(--peach);outline-offset:3px;border-radius:10px}
+
+/* Botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--display);font-weight:700;font-size:1.08rem;padding:13px 26px;border-radius:999px;text-decoration:none;border:2px solid transparent;transition:transform .2s ease,box-shadow .2s ease;line-height:1.2;text-align:center}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(36,55,46,.18)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-leaf{background:var(--leaf);color:#fff}
+.btn-sun{background:var(--sun);color:var(--ink)}
+.btn-ghost{background:#fff;color:var(--ink);border-color:rgba(36,55,46,.18)}
+
+/* Cabeçalho */
+.header{position:sticky;top:0;z-index:30;background:rgba(255,252,243,.93);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,55,46,.07)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.logo svg{width:44px;height:44px;flex:none}
+.logo b{display:block;font-family:var(--display);font-size:1.32rem;color:var(--leaf-dark);line-height:1;font-weight:800;white-space:nowrap}
+.logo small{display:block;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--peach);margin-top:4px}
+.nav{display:flex;align-items:center;gap:24px}
+.nav a{text-decoration:none;font-weight:800;color:var(--ink);font-size:.95rem}
+.nav a:not(.btn):hover{color:var(--leaf)}
+.nav .btn{padding:10px 20px;font-size:1rem}
+.menu-btn{display:none;background:none;border:0;padding:8px;color:var(--ink);cursor:pointer}
+.menu-btn svg{width:28px;height:28px}
+
+/* Topo */
+.hero{position:relative;padding:56px 0 90px;background:
+  radial-gradient(circle at 12% 18%,var(--sun-soft) 0 120px,transparent 121px),
+  radial-gradient(circle at 92% 82%,var(--leaf-soft) 0 180px,transparent 181px),
+  var(--cream);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.tagline{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(36,55,46,.1);padding:7px 14px;border-radius:999px;font-weight:800;font-size:.88rem;color:var(--leaf-dark)}
+.tagline svg{width:18px;height:18px}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4rem);margin:18px 0 18px;isolation:isolate}
+.hero h1 em{font-style:normal;color:var(--leaf);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:-2px;right:-2px;bottom:.06em;height:.22em;background:var(--sun);border-radius:8px;z-index:-1;opacity:.75}
+.lead{font-size:1.14rem;max-width:34em}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 28px;padding:0;list-style:none}
+.chips li{display:flex;align-items:center;gap:8px;font-weight:800;font-size:.93rem;color:var(--ink);background:#fff;border-radius:14px;padding:8px 14px;box-shadow:0 2px 0 rgba(36,55,46,.06)}
+.chips i{width:10px;height:10px;border-radius:50%;flex:none}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto}
+.sway{animation:sway 6s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+.float{animation:float 5s ease-in-out infinite;transform-box:fill-box}
+@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero-badge{position:absolute;left:0;top:4%;background:#fff;border-radius:20px;padding:12px 16px;box-shadow:0 14px 30px rgba(36,55,46,.14);display:flex;align-items:center;gap:12px}
+.hero-badge .num{font-family:var(--display);font-size:1.9rem;font-weight:800;color:var(--leaf-dark);line-height:1}
+.hero-badge small{display:block;font-weight:700;font-size:.82rem;line-height:1.3}
+.stars{color:var(--sun);letter-spacing:1px;font-size:.95rem}
+.hero .wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:60px}
+
+/* Faixa */
+.band{background:var(--leaf);color:#eaf6ef}
+.band .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-block:30px}
+.band div div{display:flex;gap:14px;align-items:flex-start}
+.band svg{width:40px;height:40px;flex:none;color:var(--sun)}
+.band b{display:block;font-family:var(--display);font-size:1.2rem;color:#fff;line-height:1.2}
+.band p{font-size:.95rem}
+
+/* Seções */
+.sec{padding:88px 0}
+.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head.center{text-align:center;margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--peach);margin-bottom:10px}
+.eyebrow svg{width:16px;height:16px}
+.sec h2{font-size:clamp(2rem,4vw,2.9rem);margin-bottom:14px}
+.sec-head p{font-size:1.08rem}
+
+/* Diferenciais */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border-radius:26px;padding:28px 24px;position:relative;overflow:hidden;border:1px solid rgba(36,55,46,.06);transition:transform .25s ease}
+.card:hover{transform:translateY(-4px)}
+.card .ico{width:62px;height:62px;border-radius:20px;display:grid;place-items:center;margin-bottom:18px}
+.card .ico svg{width:32px;height:32px}
+.card h3{font-size:1.32rem;margin-bottom:8px}
+.card p{font-size:.98rem}
+.card::after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;opacity:.5}
+.c1 .ico,.c1::after{background:var(--sun-soft);color:#b07a00}
+.c2 .ico,.c2::after{background:var(--sky-soft);color:#2c7fa8}
+.c3 .ico,.c3::after{background:var(--peach-soft);color:#d4553a}
+.c4 .ico,.c4::after{background:var(--leaf-soft);color:var(--leaf)}
+
+/* Turmas */
+.turmas{background:var(--cream2);position:relative}
+.turma-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.turma{background:#fff;border-radius:30px;padding:30px 26px 28px;text-align:center;box-shadow:0 6px 0 rgba(36,55,46,.05)}
+.turma svg{width:96px;height:96px;margin:0 auto 16px}
+.turma h3{font-size:1.5rem;margin-bottom:8px}
+.turma p{font-size:.98rem}
+.turma .stem{display:inline-block;margin-top:14px;font-weight:800;font-size:.84rem;padding:5px 12px;border-radius:999px}
+.t1 .stem{background:var(--lav-soft);color:#6b4fbf}
+.t2 .stem{background:var(--sky-soft);color:#2c7fa8}
+.t3 .stem{background:var(--peach-soft);color:#c64b31}
+.note{text-align:center;margin-top:28px;font-size:.95rem;color:var(--text)}
+
+/* Estrutura */
+.gallery{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;gap:18px}
+.tile{border-radius:26px;overflow:hidden;position:relative;background:var(--sky-soft);min-height:220px}
+.tile svg{width:100%;height:100%;object-fit:cover}
+.tile.big{grid-row:span 2}
+.tile figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.94);border-radius:14px;padding:8px 14px;font-weight:800;font-size:.92rem;color:var(--ink)}
+.gallery-note{margin-top:16px;font-size:.88rem;color:var(--text);text-align:center}
+
+/* Pais */
+.pais{background:var(--leaf-dark);color:#dcefe4;position:relative;overflow:hidden}
+.pais h2{color:#fff}
+.pais .eyebrow{color:var(--sun)}
+.pais .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.score{background:#fff;color:var(--ink);border-radius:30px;padding:34px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.18)}
+.score .big{font-family:var(--display);font-weight:800;font-size:5rem;line-height:1;color:var(--leaf-dark)}
+.score .stars{font-size:1.7rem;margin:6px 0 10px;letter-spacing:4px}
+.score .stars span{position:relative;display:inline-block}
+.score p{font-weight:700}
+.score a{display:inline-block;margin-top:14px;font-weight:800;color:var(--leaf)}
+.praise{display:grid;gap:14px;margin-top:26px}
+.praise div{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px 18px}
+.praise svg{width:34px;height:34px;flex:none;color:var(--sun)}
+.praise b{color:#fff;font-family:var(--display);font-size:1.12rem}
+.petal-bg{position:absolute;right:-60px;top:-60px;width:260px;opacity:.08}
+
+/* Onde */
+.onde .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.mapcard{border-radius:30px;overflow:hidden;background:var(--leaf-soft);position:relative;aspect-ratio:4/3}
+.mapcard svg{width:100%;height:100%}
+.addr{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:22px;padding:20px 22px;margin:22px 0;border:1px solid rgba(36,55,46,.07)}
+.addr svg{width:30px;height:30px;flex:none;color:var(--peach)}
+.addr b{display:block;font-family:var(--display);font-size:1.3rem;color:var(--ink);line-height:1.2}
+
+/* Contato */
+.contato{padding:0 0 88px}
+.cta-box{background:linear-gradient(135deg,var(--sun) 0%,#ffd15c 100%);border-radius:36px;padding:52px 40px;display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;position:relative;overflow:hidden}
+.cta-box h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-bottom:12px}
+.cta-box p{color:#4a3e18;font-size:1.06rem;font-weight:600}
+.cta-side{display:grid;gap:12px;justify-items:start;position:relative;z-index:1}
+.phone{font-family:var(--display);font-weight:800;font-size:2rem;color:var(--ink);text-decoration:none;line-height:1}
+.cta-flower{position:absolute;right:-40px;bottom:-50px;width:220px;opacity:.25}
+
+/* Rodapé */
+.footer{background:var(--ink);color:#c5d3cb;padding:46px 0 0;font-size:.95rem}
+.footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
+.footer .logo b{color:#fff}
+.footer h4{font-family:var(--display);color:#fff;font-size:1.1rem;margin:0 0 8px}
+.footer a{color:#fff}
+.footer p+p{margin-top:4px}
+.credit{margin-top:40px;border-top:1px solid rgba(255,255,255,.1);padding:16px 20px;text-align:center;font-size:.8rem;color:#8fa298}
+.credit a{color:#c5d3cb;text-decoration:none;border-bottom:1px dotted rgba(197,211,203,.5)}
+
+/* Botão fixo no celular */
+.fab{display:none}
+
+@media (max-width:980px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .band .wrap{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  .nav{position:absolute;top:70px;left:0;right:0;background:var(--cream);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px;border-bottom:1px solid rgba(36,55,46,.08);display:none}
+  .nav.open{display:flex}
+  .nav a:not(.btn){padding:12px 0;border-bottom:1px solid rgba(36,55,46,.06)}
+  .nav .btn{margin-top:14px}
+  .hero{padding:34px 0 80px}
+  .hero .wrap,.pais .wrap,.onde .wrap,.cta-box{grid-template-columns:1fr}
+  .hero-art{max-width:460px;margin:0 auto;width:100%}
+  .turma-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .tile.big{grid-column:span 2;grid-row:auto}
+  .footer .wrap{grid-template-columns:1fr}
+  .sec{padding:68px 0}
+  .fab{display:flex;position:fixed;right:16px;bottom:16px;z-index:40;width:58px;height:58px;border-radius:50%;background:var(--leaf);color:#fff;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(31,90,65,.4)}
+  .fab svg{width:26px;height:26px}
+  .footer{padding-bottom:70px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .cards{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  .tile.big{grid-column:auto}
+  .tile{min-height:0}
+  .tile svg{height:auto}
+  .cta-box{padding:38px 24px;border-radius:28px}
+  .ctas .btn{flex:1 1 100%}
+  .logo b{font-size:1.15rem}
+  .score{padding:28px 20px}
+  .score .big{font-size:4.2rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="jasmim" viewBox="0 0 100 100">
+      <g fill="#fff" stroke="#e9dfc3" stroke-width="1.5">
+        <path d="M50 50C40 32 42 12 50 6c8 6 10 26 0 44z"/>
+        <path d="M50 50C40 32 42 12 50 6c8 6 10 26 0 44z" transform="rotate(72 50 50)"/>
+        <path d="M50 50C40 32 42 12 50 6c8 6 10 26 0 44z" transform="rotate(144 50 50)"/>
+        <path d="M50 50C40 32 42 12 50 6c8 6 10 26 0 44z" transform="rotate(216 50 50)"/>
+        <path d="M50 50C40 32 42 12 50 6c8 6 10 26 0 44z" transform="rotate(288 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="8" fill="#f7b928"/>
+    </symbol>
+    <symbol id="jasmim2" viewBox="0 0 100 100">
+      <g fill="#ff8f70">
+        <path d="M50 50C38 32 40 10 50 4c10 6 12 28 0 46z"/>
+        <path d="M50 50C38 32 40 10 50 4c10 6 12 28 0 46z" transform="rotate(72 50 50)"/>
+        <path d="M50 50C38 32 40 10 50 4c10 6 12 28 0 46z" transform="rotate(144 50 50)"/>
+        <path d="M50 50C38 32 40 10 50 4c10 6 12 28 0 46z" transform="rotate(216 50 50)"/>
+        <path d="M50 50C38 32 40 10 50 4c10 6 12 28 0 46z" transform="rotate(288 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="9" fill="#f7b928"/>
+    </symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+  </defs>
+</svg>
+
+<header class="header">
+  <div class="wrap">
+    <a class="logo" href="#topo" aria-label="Jardim Escola Belo Jasmim, início">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#2f7d5b"/><path d="M10 38c6-2 10-8 14-14M38 38c-6-2-10-8-14-14" stroke="#7fc79f" stroke-width="2.4" fill="none" stroke-linecap="round"/><use href="#jasmim" x="6" y="4" width="36" height="36"/></svg>
+      <span><b>Belo Jasmim</b><small>Jardim Escola</small></span>
+    </a>
+    <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="menu" aria-label="Menu principal">
+      <a href="#sobre">A escola</a>
+      <a href="#turmas">Turmas</a>
+      <a href="#estrutura">Estrutura</a>
+      <a href="#familias">Famílias</a>
+      <a href="#onde">Onde estamos</a>
+      <a class="btn btn-leaf" href="tel:+552134665396"><svg aria-hidden="true"><use href="#phone"/></svg>Ligar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tagline"><svg aria-hidden="true"><use href="#jasmim2"/></svg> Creche e escola · Horário integral</span>
+      <h1>Um jardim para os pequenos <em>florescerem</em></h1>
+      <p class="lead">No Jardim Escola Belo Jasmim, seu filho passa o dia inteiro em salas fresquinhas, num ambiente seguro e acompanhado de perto. Mais tranquilidade para a família, mais alegria para quem está crescendo.</p>
+      <ul class="chips">
+        <li><i style="background:var(--sun)"></i>Horário integral</li>
+        <li><i style="background:var(--sky)"></i>Salas climatizadas</li>
+        <li><i style="background:var(--peach)"></i>Câmeras</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-leaf" href="tel:+552134665396"><svg aria-hidden="true"><use href="#phone"/></svg>Agende uma visita</a>
+        <a class="btn btn-ghost" href="#sobre">Conheça a escola</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 520 480" role="img" aria-label="Ilustração de uma escolinha cercada de flores de jasmim, com crianças brincando no jardim">
+        <circle cx="430" cy="78" r="40" fill="#f7b928"/>
+        <g stroke="#f7b928" stroke-width="6" stroke-linecap="round" opacity=".7"><path d="M430 20v-10M430 146v-10M372 78h-10M498 78h-10M389 37l-7-7M478 126l-7-7M471 37l7-7M382 126l7-7"/></g>
+        <g class="float"><path d="M70 92c0-14 22-14 22 0 10-2 14 14 2 16H66c-12-2-8-18 4-16z" fill="#fff"/></g>
+        <!-- chão -->
+        <ellipse cx="260" cy="430" rx="250" ry="44" fill="#bfe3c9"/>
+        <!-- escola -->
+        <g>
+          <rect x="140" y="190" width="240" height="210" rx="18" fill="#fff"/>
+          <path d="M122 200L260 96l138 104z" fill="#ff8f70"/>
+          <path d="M122 200L260 96l138 104" fill="none" stroke="#e7704f" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="260" cy="160" r="24" fill="#fff"/>
+          <use href="#jasmim" x="238" y="138" width="44" height="44"/>
+          <rect x="164" y="226" width="62" height="56" rx="12" fill="#e1f3fb"/>
+          <rect x="294" y="226" width="62" height="56" rx="12" fill="#e1f3fb"/>
+          <path d="M195 226v56M164 254h62M325 226v56M294 254h62" stroke="#fff" stroke-width="5"/>
+          <!-- ar-condicionado -->
+          <rect x="300" y="300" width="50" height="20" rx="5" fill="#eef3f0" stroke="#cfd9d3" stroke-width="2"/>
+          <path d="M306 314h38" stroke="#cfd9d3" stroke-width="2"/>
+          <path d="M310 328q4 6 0 12M325 328q4 6 0 12M340 328q4 6 0 12" stroke="#7cc4e8" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- câmera -->
+          <g transform="translate(150 206)"><rect width="22" height="12" rx="3" fill="#24372e"/><circle cx="18" cy="6" r="3" fill="#7cc4e8"/><path d="M4 12v6" stroke="#24372e" stroke-width="3"/></g>
+          <rect x="234" y="318" width="52" height="82" rx="26" fill="#b49ae8"/>
+          <circle cx="276" cy="362" r="4" fill="#fff"/>
+        </g>
+        <!-- arbusto de jasmim esquerda -->
+        <g class="sway">
+          <path d="M40 420c-4-60 30-110 70-120 10 40-10 100-70 120z" fill="#2f7d5b"/>
+          <path d="M60 420c10-50 40-80 80-80-4 40-30 70-80 80z" fill="#4c9d72"/>
+          <use href="#jasmim" x="70" y="300" width="34" height="34"/>
+          <use href="#jasmim" x="100" y="350" width="28" height="28"/>
+          <use href="#jasmim" x="50" y="360" width="26" height="26"/>
+        </g>
+        <!-- arbusto direita -->
+        <g class="sway" style="animation-delay:-2s">
+          <path d="M480 420c4-60-30-110-70-120-10 40 10 100 70 120z" fill="#2f7d5b"/>
+          <path d="M460 420c-10-50-40-80-80-80 4 40 30 70 80 80z" fill="#4c9d72"/>
+          <use href="#jasmim" x="416" y="300" width="34" height="34"/>
+          <use href="#jasmim" x="392" y="352" width="28" height="28"/>
+          <use href="#jasmim" x="446" y="362" width="26" height="26"/>
+        </g>
+        <!-- crianças -->
+        <g transform="translate(150 360)">
+          <circle cx="26" cy="18" r="16" fill="#c98a5e"/><path d="M10 14c2-12 30-13 32 0-7-4-24-4-32 0z" fill="#2b1a10"/>
+          <circle cx="21" cy="19" r="2" fill="#24372e"/><circle cx="31" cy="19" r="2" fill="#24372e"/><path d="M21 25q5 4 10 0" stroke="#24372e" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <rect x="10" y="35" width="32" height="34" rx="14" fill="#f7b928"/>
+          <path d="M42 44l14-10" stroke="#c98a5e" stroke-width="7" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(318 362)">
+          <circle cx="26" cy="18" r="16" fill="#f2c9a2"/><path d="M8 20c-2-20 38-22 36 0 3 7 1 13-3 15 1-12-3-18-15-18S8 23 12 35c-5-2-7-8-4-15z" fill="#8a4a20"/>
+          <circle cx="21" cy="19" r="2" fill="#24372e"/><circle cx="31" cy="19" r="2" fill="#24372e"/><path d="M21 25q5 4 10 0" stroke="#24372e" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M8 69l7-34h22l7 34z" fill="#7cc4e8"/>
+          <path d="M12 44l-12 8" stroke="#f2c9a2" stroke-width="7" stroke-linecap="round"/>
+        </g>
+        <!-- borboleta -->
+        <g class="float" style="animation-delay:-1.5s"><g transform="translate(64 176)"><ellipse cx="-8" cy="0" rx="10" ry="7" fill="#b49ae8"/><ellipse cx="8" cy="0" rx="10" ry="7" fill="#ff8f70"/><rect x="-1.5" y="-7" width="3" height="14" rx="1.5" fill="#24372e"/></g></g>
+      </svg>
+      <div class="hero-badge">
+        <span class="num">4,3</span>
+        <span><span class="stars" aria-hidden="true">★★★★☆</span><small>Nota 4,3 no Google<br>6 avaliações</small></span>
+      </div>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34c240 36 480 36 720 8s480-36 720 0v18H0z" fill="#2f7d5b"/></svg>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <div><div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <span><b>Horário integral</b><p>Um dia inteiro de cuidado para a família que trabalha.</p></span>
+    </div></div>
+    <div><div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/><path d="M9.5 4.5 12 7l2.5-2.5M9.5 19.5 12 17l2.5 2.5"/></svg>
+      <span><b>Salas climatizadas</b><p>Conforto para brincar e aprender, mesmo no calor do Rio.</p></span>
+    </div></div>
+    <div><div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h12l4 3v4l-4 3H3z"/><circle cx="9" cy="12" r="2.5"/></svg>
+      <span><b>Ambiente com câmeras</b><p>Mais segurança e tranquilidade para os pais.</p></span>
+    </div></div>
+  </div>
+</div>
+
+<section class="sec" id="sobre">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow"><svg aria-hidden="true"><use href="#jasmim2"/></svg>A escola</span>
+      <h2>Cuidado de perto, do jeito que as famílias procuram</h2>
+      <p>O Belo Jasmim é creche e escola em horário integral. Câmeras, salas refrigeradas e um custo-benefício que cabe no orçamento são justamente o que as famílias mais elogiam.</p>
+    </div>
+    <div class="cards">
+      <article class="card c1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>O dia todo</h3>
+        <p>Horário integral para quem precisa deixar os pequenos cedo e buscar no fim do dia, sem correria.</p>
+      </article>
+      <article class="card c2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/></svg></div>
+        <h3>Salas fresquinhas</h3>
+        <p>Salas refrigeradas para as crianças brincarem, comerem e descansarem com conforto.</p>
+      </article>
+      <article class="card c3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h12l4 3v4l-4 3H3z"/><circle cx="9" cy="12" r="2.5"/></svg></div>
+        <h3>Câmeras</h3>
+        <p>Ambientes monitorados por câmeras, um cuidado a mais com a segurança de cada criança.</p>
+      </article>
+      <article class="card c4">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></div>
+        <h3>Custo-benefício</h3>
+        <p>Qualidade que cabe no orçamento da família, um ponto que os pais destacam nas avaliações.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec turmas" id="turmas">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow"><svg aria-hidden="true"><use href="#jasmim2"/></svg>Turmas</span>
+      <h2>Cada fase com o cuidado certo</h2>
+      <p>Da creche à escola, os pequenos crescem num ambiente que acompanha o ritmo de cada idade.</p>
+    </div>
+    <div class="turma-grid">
+      <article class="turma t1">
+        <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="48" fill="#efe8ff"/><path d="M48 76c-4-14-4-30 0-40" stroke="#2f7d5b" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M48 58c-10-2-16-10-16-18 10 0 16 8 16 18z" fill="#4c9d72"/><path d="M48 30c-6-8-6-16 0-20 6 4 6 12 0 20z" fill="#fff" stroke="#b49ae8" stroke-width="2"/></svg>
+        <h3>Berçário</h3>
+        <p>Colo, rotina tranquila e atenção constante para os bebês nos primeiros tempos longe de casa.</p>
+        <span class="stem">Primeiros passos</span>
+      </article>
+      <article class="turma t2">
+        <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="48" fill="#e1f3fb"/><path d="M48 80V40" stroke="#2f7d5b" stroke-width="4" stroke-linecap="round"/><path d="M48 62c-12-2-18-12-18-20 12 0 18 10 18 20zM48 54c12-2 18-12 18-20-12 0-18 10-18 20z" fill="#4c9d72"/><use href="#jasmim" x="32" y="12" width="32" height="32"/></svg>
+        <h3>Maternal</h3>
+        <p>Brincadeiras, música e convivência para ganhar autonomia, fazer amigos e se expressar.</p>
+        <span class="stem">Descobertas</span>
+      </article>
+      <article class="turma t3">
+        <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="48" fill="#ffe5dc"/><path d="M48 82V44" stroke="#2f7d5b" stroke-width="4" stroke-linecap="round"/><path d="M48 66c-12-2-18-12-18-20 12 0 18 10 18 20zM48 58c12-2 18-12 18-20-12 0-18 10-18 20z" fill="#4c9d72"/><use href="#jasmim" x="18" y="8" width="30" height="30"/><use href="#jasmim" x="48" y="10" width="28" height="28"/><use href="#jasmim" x="34" y="26" width="26" height="26"/></svg>
+        <h3>Pré-escola</h3>
+        <p>Primeiras letras, números e projetos que preparam a criança para o ensino fundamental.</p>
+        <span class="stem">Florescendo</span>
+      </article>
+    </div>
+    <p class="note">Consulte a escola sobre as turmas e vagas disponíveis.</p>
+  </div>
+</section>
+
+<section class="sec" id="estrutura">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow"><svg aria-hidden="true"><use href="#jasmim2"/></svg>Estrutura</span>
+      <h2>Espaços pensados para o dia inteiro</h2>
+      <p>Lugar de aprender, brincar, comer e descansar, com conforto e segurança em cada momento.</p>
+    </div>
+    <div class="gallery">
+      <figure class="tile big" style="margin:0">
+        <svg viewBox="0 0 400 460" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de uma sala de aula climatizada com mesinhas e brinquedos">
+          <rect width="400" height="460" fill="#e1f3fb"/>
+          <rect y="330" width="400" height="130" fill="#fbe6b3"/>
+          <rect x="50" y="60" width="130" height="46" rx="10" fill="#fff" stroke="#cfe0e8" stroke-width="3"/><path d="M62 92h106" stroke="#cfe0e8" stroke-width="3"/>
+          <path d="M80 118q6 10 0 20M115 118q6 10 0 20M150 118q6 10 0 20" stroke="#7cc4e8" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <rect x="230" y="60" width="120" height="150" rx="14" fill="#fff"/><path d="M290 60v150M230 135h120" stroke="#e1f3fb" stroke-width="6"/>
+          <g font-family="Baloo 2, sans-serif" font-weight="800" font-size="34"><rect x="40" y="200" width="44" height="44" rx="8" fill="#ff8f70"/><text x="62" y="234" fill="#fff" text-anchor="middle">A</text><rect x="92" y="200" width="44" height="44" rx="8" fill="#f7b928"/><text x="114" y="234" fill="#fff" text-anchor="middle">B</text><rect x="144" y="200" width="44" height="44" rx="8" fill="#b49ae8"/><text x="166" y="234" fill="#fff" text-anchor="middle">C</text></g>
+          <rect x="60" y="300" width="220" height="22" rx="8" fill="#2f7d5b"/><rect x="80" y="322" width="12" height="60" fill="#1f5a41"/><rect x="248" y="322" width="12" height="60" fill="#1f5a41"/>
+          <circle cx="110" cy="290" r="12" fill="#ff8f70"/><rect x="160" y="276" width="30" height="24" rx="5" fill="#7cc4e8"/><path d="M220 300l14-26 14 26z" fill="#f7b928"/>
+          <circle cx="330" cy="380" r="30" fill="#ff8f70"/><path d="M300 380h60M330 350v60" stroke="#fff" stroke-width="4"/>
+        </svg>
+        <figcaption>Salas climatizadas</figcaption>
+      </figure>
+      <figure class="tile" style="margin:0;background:#fff1c7">
+        <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de brinquedos e blocos de montar">
+          <rect width="300" height="220" fill="#fff1c7"/>
+          <rect x="40" y="120" width="50" height="50" rx="8" fill="#ff8f70"/><rect x="94" y="120" width="50" height="50" rx="8" fill="#7cc4e8"/><rect x="67" y="66" width="50" height="50" rx="8" fill="#b49ae8"/>
+          <circle cx="210" cy="140" r="32" fill="#2f7d5b"/><path d="M178 140h64M210 108v64" stroke="#7fc79f" stroke-width="4"/>
+          <path d="M190 70l12-30 12 30z" fill="#ff8f70"/><rect x="186" y="70" width="32" height="14" rx="4" fill="#f7b928"/>
+        </svg>
+        <figcaption>Hora de brincar</figcaption>
+      </figure>
+      <figure class="tile" style="margin:0;background:#dff1e6">
+        <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de livros infantis empilhados">
+          <rect width="300" height="220" fill="#dff1e6"/>
+          <rect x="70" y="150" width="160" height="26" rx="6" fill="#ff8f70"/><rect x="82" y="124" width="140" height="26" rx="6" fill="#f7b928"/><rect x="62" y="98" width="150" height="26" rx="6" fill="#7cc4e8"/>
+          <path d="M150 90c-20-14-50-14-60-4v-34c10-10 40-10 60 4 20-14 50-14 60-4v34c-10-10-40-10-60 4z" fill="#fff" stroke="#2f7d5b" stroke-width="3"/><path d="M150 56v34" stroke="#2f7d5b" stroke-width="3"/>
+          <use href="#jasmim" x="226" y="30" width="44" height="44"/>
+        </svg>
+        <figcaption>Leitura e histórias</figcaption>
+      </figure>
+      <figure class="tile" style="margin:0;background:#ffe5dc">
+        <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de lanche com frutas">
+          <rect width="300" height="220" fill="#ffe5dc"/>
+          <ellipse cx="150" cy="150" rx="100" ry="26" fill="#fff"/>
+          <circle cx="110" cy="128" r="24" fill="#ff8f70"/><path d="M110 104q4-12 14-12" stroke="#2f7d5b" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M150 140c0-30 20-48 44-48-2 30-20 48-44 48z" fill="#f7b928"/>
+          <circle cx="200" cy="136" r="14" fill="#b49ae8"/><circle cx="218" cy="128" r="12" fill="#b49ae8"/>
+        </svg>
+        <figcaption>Hora do lanche</figcaption>
+      </figure>
+      <figure class="tile" style="margin:0;background:#efe8ff">
+        <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de câmera de segurança na parede">
+          <rect width="300" height="220" fill="#efe8ff"/>
+          <rect x="60" y="40" width="10" height="70" rx="4" fill="#24372e"/><path d="M70 60h40" stroke="#24372e" stroke-width="8" stroke-linecap="round"/>
+          <rect x="100" y="44" width="90" height="40" rx="10" fill="#fff" stroke="#24372e" stroke-width="4"/><circle cx="174" cy="64" r="10" fill="#7cc4e8" stroke="#24372e" stroke-width="3"/>
+          <path d="M190 64l60 50v40l-80-60z" fill="#b49ae8" opacity=".35"/>
+          <path d="M120 150c0-22 60-22 60 0v20h-60z" fill="#2f7d5b"/><path d="M138 150v-10a12 12 0 0 1 24 0v10" stroke="#2f7d5b" stroke-width="6" fill="none"/>
+          <path d="M140 160l8 8 14-14" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <figcaption>Segurança com câmeras</figcaption>
+      </figure>
+    </div>
+    <p class="gallery-note">Ilustrações de exemplo: aqui entram as fotos da escola.</p>
+  </div>
+</section>
+
+<section class="sec pais" id="familias">
+  <svg class="petal-bg" aria-hidden="true"><use href="#jasmim"/></svg>
+  <div class="wrap">
+    <div class="score">
+      <div class="big">4,3</div>
+      <div class="stars" aria-hidden="true">★★★★☆</div>
+      <p>Nota 4,3 no Google, 6 avaliações</p>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Jardim%20Escola%20Belo%20Jasmim%20R.%20S%C3%A3o%20Renato%2C%20173" target="_blank" rel="noopener">Ver no Google →</a>
+    </div>
+    <div>
+      <span class="eyebrow"><svg aria-hidden="true"><use href="#jasmim2"/></svg>O que os pais dizem</span>
+      <h2>O que as famílias mais elogiam</h2>
+      <p>Nas avaliações do Google, as famílias destacam três pontos:</p>
+      <div class="praise">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h12l4 3v4l-4 3H3z"/><circle cx="9" cy="12" r="2.5"/></svg><span><b>As câmeras</b><br>Segurança que traz tranquilidade para quem precisa trabalhar.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v18M4.2 7.5l15.6 9M4.2 16.5l15.6-9"/></svg><span><b>As salas refrigeradas</b><br>Crianças confortáveis o dia inteiro.</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span><b>O custo-benefício</b><br>Horário integral com qualidade e preço justo.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec onde" id="onde">
+  <div class="wrap">
+    <div class="mapcard">
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Mapa ilustrativo com a localização da escola">
+        <rect width="400" height="300" fill="#dff1e6"/>
+        <path d="M-10 90L410 140M-10 220L410 190M120 -10L160 310M290 -10L250 310" stroke="#fff" stroke-width="22"/>
+        <path d="M-10 90L410 140M-10 220L410 190M120 -10L160 310M290 -10L250 310" stroke="#cfe7d8" stroke-width="2" stroke-dasharray="8 10"/>
+        <rect x="20" y="20" width="80" height="50" rx="10" fill="#bfe3c9"/><rect x="310" y="210" width="80" height="70" rx="10" fill="#bfe3c9"/>
+        <circle cx="340" cy="60" r="22" fill="#bfe3c9"/><circle cx="60" cy="260" r="26" fill="#bfe3c9"/>
+        <g class="float"><path d="M205 70c-26 0-44 20-44 42 0 32 44 72 44 72s44-40 44-72c0-22-18-42-44-42z" fill="#ff8f70"/><circle cx="205" cy="112" r="20" fill="#fff"/><use href="#jasmim" x="189" y="96" width="32" height="32"/></g>
+        <ellipse cx="205" cy="196" rx="20" ry="6" fill="#24372e" opacity=".15"/>
+      </svg>
+    </div>
+    <div>
+      <span class="eyebrow"><svg aria-hidden="true"><use href="#jasmim2"/></svg>Onde estamos</span>
+      <h2>Venha conhecer o nosso jardim</h2>
+      <p>Agende uma visita para conhecer as salas, a rotina e tirar todas as suas dúvidas pessoalmente.</p>
+      <div class="addr">
+        <svg aria-hidden="true"><use href="#pin"/></svg>
+        <span><b>R. São Renato, 173</b>Jardim Escola Belo Jasmim</span>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-leaf" href="https://www.google.com/maps/search/?api=1&amp;query=Jardim%20Escola%20Belo%20Jasmim%20R.%20S%C3%A3o%20Renato%2C%20173" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pin"/></svg>Abrir no Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="wrap">
+    <div class="cta-box">
+      <svg class="cta-flower" aria-hidden="true"><use href="#jasmim"/></svg>
+      <div>
+        <h2>Vamos marcar uma visita?</h2>
+        <p>Ligue para a escola e venha conhecer o Belo Jasmim. Vai ser um prazer receber você e o seu pequeno.</p>
+      </div>
+      <div class="cta-side">
+        <a class="phone" href="tel:+552134665396">(21) 3466-5396</a>
+        <a class="btn btn-leaf" href="tel:+552134665396"><svg aria-hidden="true"><use href="#phone"/></svg>Ligar para a escola</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#topo" aria-label="Jardim Escola Belo Jasmim, início">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#2f7d5b"/><use href="#jasmim" x="6" y="4" width="36" height="36"/></svg>
+        <span><b>Belo Jasmim</b><small>Jardim Escola</small></span>
+      </a>
+      <p style="margin-top:14px">Creche e escola em horário integral.</p>
+    </div>
+    <div>
+      <h4>Endereço</h4>
+      <p>R. São Renato, 173</p>
+      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Jardim%20Escola%20Belo%20Jasmim%20R.%20S%C3%A3o%20Renato%2C%20173" target="_blank" rel="noopener">Ver no mapa</a></p>
+    </div>
+    <div>
+      <h4>Telefone</h4>
+      <p><a href="tel:+552134665396">(21) 3466-5396</a></p>
+    </div>
+  </div>
+  <div class="credit">Ilustrações feitas para esta prévia. · <a href="https://levytikus.github.io/B2B-novo/" target="_blank" rel="noopener">Prévia criada pela Business 2 Brothers</a></div>
+</footer>
+
+<a class="fab" href="tel:+552134665396" aria-label="Ligar para a escola"><svg aria-hidden="true"><use href="#phone"/></svg></a>
+
+<script>
+  const btn=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
+  btn.addEventListener('click',()=>{const o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');btn.setAttribute('aria-expanded','false')}));
+</script>
+</body>
+</html>
