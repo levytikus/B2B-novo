@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creche Escola Rei Leão</title>
+<meta name="description" content="Creche Escola Rei Leão: do Berçário ao 5º ano, integral e parcial. Unidades na Rua Cairo, 376 e na Rua Rio da Prata, 331.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Paleta: azul, vermelho, amarelo e branco, com tons claros e escuros de cada um */
+:root {
+  --blue: #1d63d6; --blue-dark: #0f3d91; --blue-ink: #13235b; --blue-mid: #4d8bf0; --blue-soft: #e6f0ff; --blue-tint: #cfe0ff;
+  --red: #e3262f; --red-dark: #b5121b; --red-coral: #ff5a5f; --red-soft: #ffe4e5;
+  --yellow: #ffc20e; --yellow-dark: #e0a200; --yellow-soft: #fff3c9; --yellow-cream: #fffaeb;
+  --white: #ffffff; --paper: #fdfbf6;
+  --text: #4a5275; --line: #ece6d8;
+  --display: 'Fredoka', 'Nunito', system-ui, sans-serif;
+  --body: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --shadow: 0 10px 30px rgba(19,35,91,.08);
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.55; overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { font-family: var(--display); color: var(--blue-ink); margin: 0; line-height: 1.12; font-weight: 600; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+svg { display: block; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 24px; }
+section[id] { scroll-margin-top: 90px; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 10px; }
+[hidden] { display: none !important; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* Botões */
+.btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: 1.02rem; padding: 13px 26px; border-radius: 14px; border: 2px solid transparent; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease, background .18s ease; white-space: nowrap; }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn:hover { transform: translateY(-2px); }
+.btn-blue { background: var(--blue); color: #fff; box-shadow: 0 8px 18px rgba(29,99,214,.28); }
+.btn-blue:hover { background: var(--blue-dark); }
+.btn-red { background: var(--red); color: #fff; border-radius: 999px; padding: 11px 24px; box-shadow: 0 8px 18px rgba(227,38,47,.25); }
+.btn-red:hover { background: var(--red-dark); }
+.btn-ghost { background: #fff; color: var(--blue); border-color: var(--blue); }
+.btn-ghost:hover { background: var(--blue-soft); }
+.btn-yellow { background: var(--yellow); color: var(--blue-ink); box-shadow: 0 8px 18px rgba(224,162,0,.3); }
+.more { display: inline-flex; align-items: center; gap: 6px; font-weight: 800; color: var(--blue); font-size: .92rem; }
+.more svg { width: 15px; height: 15px; transition: transform .18s ease; }
+.more:hover svg { transform: translateX(3px); }
+
+/* Faixa de aviso */
+.notice { background: var(--blue-soft); font-size: .86rem; font-weight: 700; color: var(--blue-ink); }
+.notice .wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 9px; }
+.notice span { display: inline-flex; align-items: center; gap: 8px; }
+.notice svg { width: 15px; height: 15px; color: var(--red); }
+.notice a { color: var(--blue); display: inline-flex; align-items: center; gap: 6px; }
+.notice a svg { color: var(--blue); }
+
+/* Cabeçalho */
+.head { background: #fff; position: sticky; top: 0; z-index: 30; box-shadow: 0 1px 0 var(--line); }
+.head .wrap { display: flex; align-items: center; gap: 24px; padding-block: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; flex: none; }
+.brand img { width: 64px; height: 64px; border-radius: 50%; box-shadow: 0 0 0 3px var(--yellow), 0 4px 10px rgba(19,35,91,.15); }
+.brand b { display: block; font-family: var(--display); font-weight: 700; font-size: 1.6rem; line-height: 1; letter-spacing: .01em; }
+.brand b .r { color: var(--red); } .brand b .y { color: var(--yellow-dark); } .brand b .bl { color: var(--blue); }
+.brand small { display: block; font-family: var(--display); font-weight: 600; font-size: .7rem; letter-spacing: .32em; color: var(--blue-ink); margin-top: 4px; }
+.menu { display: flex; gap: 4px; margin-inline: auto; }
+.menu a { font-weight: 700; font-size: .93rem; color: var(--blue-ink); white-space: nowrap; padding: 8px 10px; border-radius: 10px; position: relative; }
+.menu a:hover { color: var(--blue); }
+.menu a.on { color: var(--blue); }
+.menu a.on::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 2px; height: 3px; border-radius: 3px; background: var(--blue); }
+.head-cta { display: flex; align-items: center; gap: 18px; flex: none; }
+.phone { display: flex; align-items: center; gap: 8px; font-weight: 800; color: var(--blue-ink); font-size: .95rem; }
+.phone svg { width: 18px; height: 18px; color: var(--blue); }
+.burger { display: none; width: 46px; height: 46px; border-radius: 12px; border: 2px solid var(--blue-tint); background: #fff; color: var(--blue-ink); cursor: pointer; place-items: center; }
+.burger svg { width: 22px; height: 22px; }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; background: linear-gradient(180deg, #fff 0%, var(--paper) 100%); }
+.hero .wrap { display: grid; grid-template-columns: 1.02fr 1fr; gap: 30px; align-items: center; padding-block: 44px 56px; position: relative; }
+.hero h1 { font-size: clamp(2.5rem, 4.8vw, 3.9rem); font-weight: 700; letter-spacing: -.01em; line-height: 1.06; position: relative; }
+.hero h1 .bl { color: var(--blue); } .hero h1 .r { color: var(--red); }
+.hero h1 .doodle-heart { display: inline-block; width: .7em; height: .7em; vertical-align: .05em; color: var(--yellow-dark); margin-left: .12em; }
+.hero .lead { font-size: 1.1rem; margin-top: 20px; max-width: 470px; color: var(--blue-ink); font-weight: 600; }
+.hero .lead b { font-weight: 800; } .hero .lead .c1 { color: var(--blue); } .hero .lead .c2 { color: var(--red); } .hero .lead .c3 { color: var(--yellow-dark); }
+.hero .ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+.feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; max-width: 540px; }
+.feat { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; }
+.feat svg { width: 30px; height: 30px; }
+.feat strong { display: block; font-family: var(--display); font-weight: 600; color: var(--blue-ink); font-size: .95rem; line-height: 1.2; }
+.feat span { display: block; font-size: .8rem; line-height: 1.35; margin-top: 3px; }
+.plane { position: absolute; width: 170px; left: 39%; top: 26px; color: var(--blue); pointer-events: none; }
+.cloud-s { position: absolute; width: 74px; left: 42%; top: 46%; color: var(--blue-tint); pointer-events: none; }
+
+.art { position: relative; justify-self: end; width: min(100%, 540px); aspect-ratio: 1 / 1; }
+.art .blob-y { position: absolute; right: -16%; bottom: -14%; width: 88%; color: var(--yellow); z-index: 0; }
+.art .blob-b { position: absolute; left: -9%; top: -6%; width: 34%; color: var(--blue-soft); z-index: 0; }
+.art .photo { position: absolute; inset: 2% 4% 4% 4%; z-index: 1; border-radius: 47% 53% 44% 56% / 52% 46% 54% 48%; overflow: hidden; box-shadow: 0 20px 40px rgba(19,35,91,.18); border: 8px solid #fff; }
+.art .photo img { width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%; }
+.badge { position: absolute; right: -2%; bottom: 10%; z-index: 3; width: 168px; height: 168px; border-radius: 50%; background: #fff; box-shadow: 0 14px 30px rgba(19,35,91,.18); display: grid; place-items: center; text-align: center; font-family: var(--display); font-weight: 600; color: var(--blue-ink); font-size: 1rem; line-height: 1.25; padding: 20px; }
+.badge .bl { color: var(--blue); } .badge .r { color: var(--red); }
+.badge svg { width: 46px; margin: 8px auto 0; }
+.dots-y { position: absolute; right: 20%; top: -2%; width: 54px; color: var(--yellow-dark); z-index: 2; }
+.leaf { position: absolute; right: -6%; top: 36%; width: 56px; color: var(--blue); z-index: 2; }
+.star-r { position: absolute; left: -4%; bottom: 14%; width: 34px; color: var(--red); z-index: 2; }
+
+/* Cabeçalho de seção */
+.sec { padding-block: 76px; }
+.kicker { display: inline-block; font-weight: 800; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+.sec-head { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: end; margin-bottom: 34px; }
+.sec-head h2 { font-size: clamp(1.8rem, 3vw, 2.35rem); margin-top: 8px; }
+.sec-head h2 .bl { color: var(--blue); } .sec-head h2 .r { color: var(--red); } .sec-head h2 .y { color: var(--yellow-dark); }
+.sec-head .side p { max-width: 430px; }
+.sec-head .side .more { margin-top: 12px; }
+
+/* Turmas */
+.turmas { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.turma { background: #fff; border-radius: 22px; padding: 12px 12px 22px; box-shadow: var(--shadow); border: 1px solid #f1ede4; display: flex; flex-direction: column; transition: transform .2s ease, box-shadow .2s ease; }
+.turma:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(19,35,91,.13); }
+.turma .ph { position: relative; border-radius: 16px; overflow: visible; }
+.turma .ph img { width: 100%; aspect-ratio: 4 / 3.1; object-fit: cover; border-radius: 16px; }
+.turma .ic { position: absolute; left: 12px; bottom: -22px; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; border: 4px solid #fff; }
+.turma .ic svg { width: 22px; height: 22px; color: #fff; }
+.turma .bd { padding: 32px 8px 0; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.turma h3 { font-size: 1.25rem; }
+.turma .age { font-weight: 800; font-size: .86rem; }
+.turma p { font-size: .9rem; }
+.turma .more { margin-top: auto; padding-top: 12px; }
+.t1 .ic { background: var(--blue); } .t1 .age { color: var(--blue); }
+.t2 .ic { background: var(--red); } .t2 .age { color: var(--red); }
+.t3 .ic { background: var(--yellow); } .t3 .ic svg { color: var(--blue-ink); } .t3 .age { color: var(--yellow-dark); }
+.t4 .ic { background: var(--blue-dark); } .t4 .age { color: var(--blue-dark); }
+.shift { font-size: .8rem; font-weight: 700; color: var(--blue-ink); background: var(--blue-soft); border-radius: 999px; padding: 3px 10px; align-self: flex-start; }
+
+/* Faixa de números */
+.stats { background: linear-gradient(120deg, var(--blue) 0%, var(--blue-dark) 100%); border-radius: 28px; color: #fff; display: grid; grid-template-columns: repeat(4, 1fr); position: relative; overflow: hidden; margin-top: 56px; }
+.stat { text-align: center; padding: 34px 16px; position: relative; display: grid; justify-items: center; gap: 6px; }
+.stat + .stat::before { content: ""; position: absolute; left: 0; top: 26%; bottom: 26%; width: 1px; background: rgba(255,255,255,.25); }
+.stat svg { width: 40px; height: 40px; color: var(--yellow); }
+.stat b { font-family: var(--display); font-weight: 600; font-size: 2.3rem; line-height: 1; }
+.stat span { font-weight: 700; font-size: .9rem; opacity: .92; }
+.stats .deco1 { position: absolute; left: 18px; top: 18px; width: 30px; color: var(--yellow); }
+.stats .deco2 { position: absolute; left: 22px; bottom: 16px; width: 36px; color: var(--red-coral); }
+.stats .deco3 { position: absolute; right: 60px; top: 18px; width: 18px; color: rgba(255,255,255,.5); }
+
+/* Programas */
+.progs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.prog { background: #fff; border-radius: 22px; padding: 24px; display: grid; grid-template-columns: 66px 1fr; gap: 18px; box-shadow: var(--shadow); border: 1px solid #f1ede4; }
+.prog .ic { width: 66px; height: 66px; border-radius: 20px; display: grid; place-items: center; }
+.prog .ic svg { width: 32px; height: 32px; }
+.prog h3 { font-size: 1.22rem; }
+.prog p { margin-top: 6px; font-size: .95rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.tags li { font-size: .78rem; font-weight: 800; padding: 4px 11px; border-radius: 999px; }
+.p1 .ic { background: var(--blue-soft); color: var(--blue); } .p1 .tags li { background: var(--blue-soft); color: var(--blue-dark); }
+.p2 .ic { background: var(--red-soft); color: var(--red); } .p2 .tags li { background: var(--red-soft); color: var(--red-dark); }
+.p3 .ic { background: var(--yellow-soft); color: var(--yellow-dark); } .p3 .tags li { background: var(--yellow-soft); color: #8a6100; }
+.p4 .ic { background: var(--blue-tint); color: var(--blue-dark); } .p4 .tags li { background: var(--blue-tint); color: var(--blue-dark); }
+
+/* Rotina */
+.day { margin-top: 26px; background: var(--yellow-cream); border: 2px dashed #f3dc8f; border-radius: 24px; padding: 26px 26px 22px; }
+.day h3 { font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+.day h3 svg { width: 26px; height: 26px; color: var(--yellow-dark); }
+.timeline { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; margin-top: 20px; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 6%; right: 6%; top: 17px; border-top: 3px dotted var(--yellow-dark); opacity: .55; }
+.timeline li { display: grid; justify-items: center; gap: 8px; text-align: center; position: relative; font-weight: 700; color: var(--blue-ink); font-size: .85rem; line-height: 1.25; }
+.timeline b { font-family: var(--display); font-weight: 600; font-size: .85rem; color: #fff; min-width: 58px; padding: 6px 10px; border-radius: 999px; border: 3px solid var(--yellow-cream); }
+.timeline li:nth-child(4n+1) b { background: var(--blue); } .timeline li:nth-child(4n+2) b { background: var(--red); }
+.timeline li:nth-child(4n+3) b { background: var(--yellow); color: var(--blue-ink); } .timeline li:nth-child(4n+4) b { background: var(--blue-dark); }
+
+/* Boas-vindas + fotos (como o bloco de depoimento da referência) */
+.welcome { display: grid; grid-template-columns: 0.95fr 2fr; gap: 22px; align-items: stretch; }
+.quote { background: #fff; border-radius: 22px; padding: 26px; box-shadow: var(--shadow); border: 1px solid #f1ede4; display: flex; flex-direction: column; gap: 14px; }
+.quote .qm { width: 38px; color: var(--blue); }
+.quote h3 { font-size: 1.25rem; }
+.quote p { font-size: .95rem; }
+.quote .who { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+.quote .who img { width: 46px; height: 46px; border-radius: 50%; box-shadow: 0 0 0 2px var(--yellow); }
+.quote .who b { display: block; font-family: var(--display); font-weight: 600; color: var(--blue-ink); }
+.quote .who small { font-size: .8rem; font-weight: 700; }
+.quote .stars { display: flex; gap: 4px; color: var(--yellow); }
+.quote .stars svg { width: 18px; height: 18px; }
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.trio button { padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 18px; overflow: hidden; position: relative; box-shadow: var(--shadow); }
+.trio img { width: 100%; height: 100%; aspect-ratio: 4 / 4.4; object-fit: cover; transition: transform .35s ease; }
+.trio button:hover img { transform: scale(1.05); }
+
+/* Galeria */
+.gal { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gal button { padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow); }
+.gal img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .35s ease; }
+.gal button:hover img { transform: scale(1.05); }
+.gal span { position: absolute; left: 12px; bottom: 12px; background: #fff; color: var(--blue-ink); font-family: var(--display); font-weight: 600; font-size: .9rem; padding: 5px 14px; border-radius: 999px; box-shadow: 0 4px 10px rgba(19,35,91,.15); }
+.gal button:nth-child(3n+1) span { border-left: 5px solid var(--blue); } .gal button:nth-child(3n+2) span { border-left: 5px solid var(--red); } .gal button:nth-child(3n+3) span { border-left: 5px solid var(--yellow); }
+
+/* Novidades */
+.news { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.new { background: #fff; border-radius: 22px; padding: 14px; display: grid; grid-template-columns: 170px 1fr; gap: 18px; align-items: center; box-shadow: var(--shadow); border: 1px solid #f1ede4; }
+.new img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 14px; }
+.new .tag { display: inline-block; font-size: .74rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; }
+.new:nth-child(1) .tag { background: var(--yellow-soft); color: #8a6100; } .new:nth-child(2) .tag { background: var(--red-soft); color: var(--red-dark); }
+.new h3 { font-size: 1.15rem; margin-top: 8px; }
+.new p { font-size: .92rem; margin-top: 4px; }
+.new .more { margin-top: 8px; }
+
+/* Pais: perguntas e matrícula */
+.parents { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; align-items: start; }
+.faq { display: grid; gap: 12px; }
+.faq details { background: #fff; border-radius: 18px; border: 1px solid #f1ede4; box-shadow: 0 4px 14px rgba(19,35,91,.05); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 14px; align-items: center; padding: 18px 20px; font-family: var(--display); font-weight: 600; color: var(--blue-ink); font-size: 1.04rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; font-size: 1.3rem; line-height: 1; transition: background .2s ease; }
+.faq details[open] summary::after { content: "–"; background: var(--red); color: #fff; }
+.faq details p { padding: 0 20px 18px; font-size: .95rem; }
+.steps { background: linear-gradient(150deg, var(--red) 0%, var(--red-dark) 100%); color: #fff; border-radius: 26px; padding: 28px; position: relative; overflow: hidden; }
+.steps h3 { color: #fff; font-size: 1.45rem; }
+.steps ol { counter-reset: s; display: grid; gap: 16px; margin: 20px 0 24px; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: 12px; font-size: .92rem; }
+.steps li::before { content: counter(s); width: 40px; height: 40px; border-radius: 50%; background: var(--yellow); color: var(--blue-ink); font-family: var(--display); font-weight: 700; font-size: 1.1rem; display: grid; place-items: center; }
+.steps li strong { display: block; font-family: var(--display); font-weight: 600; font-size: 1.04rem; }
+.steps .sun { position: absolute; right: -24px; top: -24px; width: 110px; color: rgba(255,255,255,.12); }
+
+/* Contato */
+.contact { display: grid; grid-template-columns: 1.35fr 1fr; gap: 24px; align-items: start; }
+.form { background: #fff; border-radius: 26px; padding: 28px; display: grid; gap: 14px; box-shadow: var(--shadow); border: 1px solid #f1ede4; }
+.form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form label { display: grid; gap: 6px; font-weight: 800; color: var(--blue-ink); font-size: .9rem; }
+.form input, .form select, .form textarea { font: 600 1rem var(--body); color: var(--blue-ink); background: var(--paper); border: 2px solid var(--line); border-radius: 14px; padding: 12px 14px; width: 100%; min-width: 0; transition: border-color .2s ease, background .2s ease; }
+.form input:focus, .form select:focus, .form textarea:focus { outline: none; border-color: var(--blue); background: #fff; }
+.form textarea { min-height: 110px; resize: vertical; }
+.form .err { color: var(--red-dark); font-weight: 800; font-size: .9rem; min-height: 1.2em; }
+.ready { background: var(--blue-soft); border-radius: 16px; padding: 16px; display: grid; gap: 10px; }
+.ready pre { white-space: pre-wrap; font: 600 .95rem/1.5 var(--body); color: var(--blue-ink); margin: 0; }
+.ready small { font-size: .82rem; }
+.info { background: var(--blue-ink); color: #fff; border-radius: 26px; padding: 28px; display: grid; gap: 18px; position: relative; overflow: hidden; }
+.info h3 { color: #fff; font-size: 1.45rem; }
+.unit { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 16px; display: grid; grid-template-columns: 42px 1fr; gap: 12px; }
+.unit i { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; }
+.unit:nth-of-type(1) i { background: var(--red); } .unit:nth-of-type(2) i { background: var(--yellow); color: var(--blue-ink); }
+.unit i svg { width: 20px; height: 20px; }
+.unit b { display: block; font-family: var(--display); font-weight: 600; font-size: 1.08rem; }
+.unit small { display: block; font-size: .86rem; opacity: .9; }
+.unit a { text-decoration: underline; white-space: nowrap; }
+.info .row2 { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: .92rem; }
+.info .row2 svg { width: 22px; height: 22px; color: var(--yellow); flex: none; }
+.info .cl { position: absolute; right: -20px; bottom: -14px; width: 130px; color: rgba(255,255,255,.06); }
+
+/* Chamada final */
+.cta { background: var(--yellow-cream); border: 1px solid #f6e4ad; border-radius: 26px; display: grid; grid-template-columns: auto 1fr auto auto; gap: 24px; align-items: center; padding: 24px 34px; position: relative; overflow: hidden; }
+.cta .sunny { width: 70px; color: var(--yellow); }
+.cta h2 { font-size: 1.6rem; }
+.cta p { font-size: .95rem; margin-top: 4px; }
+.cta .hearts { width: 64px; color: var(--red-coral); }
+
+/* Rodapé */
+.foot { background: #fff; border-top: 1px solid var(--line); margin-top: 70px; position: relative; overflow: hidden; }
+.foot .cols { display: grid; grid-template-columns: 1.4fr .8fr .9fr 1.25fr .9fr; gap: 30px; padding-block: 44px 30px; }
+.foot .cols > div + div { border-left: 1px solid var(--line); padding-left: 26px; }
+.foot p { font-size: .9rem; margin-top: 14px; max-width: 260px; }
+.foot h4 { font-size: 1rem; margin-bottom: 12px; }
+.foot li { font-size: .9rem; margin-bottom: 7px; }
+.foot li a:hover { color: var(--blue); }
+.foot .ci li { display: grid; grid-template-columns: 20px 1fr; gap: 8px; }
+.foot .ci svg { width: 16px; height: 16px; color: var(--blue); margin-top: 3px; }
+.soc { display: flex; gap: 10px; margin-top: 16px; }
+.soc a { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--blue-tint); color: var(--blue-ink); transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.soc a:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+.soc svg { width: 18px; height: 18px; }
+.foot .copy { max-width: none; margin: 0; padding-inline: 16px; text-align: center; font-size: .82rem; padding: 16px 0 22px; border-top: 1px solid var(--line); }
+.copy svg { display: inline-block; width: 14px; height: 14px; vertical-align: -2px; color: var(--red); }
+.flowers { position: absolute; right: 22px; bottom: 26px; width: 120px; }
+
+/* Ampliação */
+.lb { position: fixed; inset: 0; background: rgba(19,35,91,.86); z-index: 60; display: grid; place-items: center; padding: 20px; }
+.lb[hidden] { display: none; }
+.lb figure { margin: 0; background: #fff; border-radius: 22px; padding: 12px; max-width: min(820px, 100%); width: 100%; position: relative; }
+.lb img { width: 100%; border-radius: 14px; max-height: 72vh; object-fit: contain; }
+.lb figcaption { text-align: center; font-family: var(--display); font-weight: 600; color: var(--blue-ink); padding-top: 10px; }
+.lb .ctl { position: absolute; top: 50%; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--red); color: #fff; font-size: 1.5rem; cursor: pointer; transform: translateY(-50%); display: grid; place-items: center; }
+.lb .prev { left: -14px; } .lb .next { right: -14px; }
+.lb .x { position: absolute; top: -14px; right: -14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--yellow); color: var(--blue-ink); font-size: 1.1rem; font-weight: 800; cursor: pointer; }
+
+/* Aparecer ao rolar */
+.rv { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+/* Telas menores */
+@media (max-width: 1100px) {
+  .phone { display: none; }
+  .menu a { padding: 8px 8px; font-size: .88rem; }
+  .foot .cols { grid-template-columns: 1fr 1fr 1fr; }
+  .foot .cols > div:nth-child(4) { border-left: 0; padding-left: 0; }
+}
+@media (max-width: 960px) {
+  .menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; padding: 10px 24px 18px; box-shadow: 0 12px 24px rgba(19,35,91,.12); }
+  .menu.open { display: flex; }
+  .menu a.on::after { display: none; }
+  .head-cta { margin-left: auto; }
+  .burger { display: grid; }
+  .hero .wrap { grid-template-columns: 1fr; padding-block: 30px 60px; }
+  .art { justify-self: center; width: min(100%, 460px); margin-top: 10px; }
+  .plane { left: auto; right: 4%; top: 10px; width: 120px; }
+  .cloud-s { display: none; }
+  .sec-head { grid-template-columns: 1fr; gap: 12px; }
+  .turmas { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(3)::before { display: none; }
+  .progs, .news { grid-template-columns: 1fr; }
+  .timeline { grid-template-columns: repeat(4, 1fr); row-gap: 18px; }
+  .timeline::before { display: none; }
+  .welcome { grid-template-columns: 1fr; }
+  .parents, .contact { grid-template-columns: 1fr; }
+  .cta { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 14px; }
+  .cta .hearts { display: none; }
+}
+@media (max-width: 640px) {
+  .wrap { padding-inline: 16px; }
+  .notice .wrap { justify-content: center; }
+  .notice a { display: none; }
+  .brand img { width: 52px; height: 52px; }
+  .brand b { font-size: 1.3rem; }
+  .brand small { font-size: .6rem; letter-spacing: .26em; }
+  .head .btn-red { display: none; }
+  .feats { grid-template-columns: 1fr; gap: 12px; }
+  .badge { width: 132px; height: 132px; font-size: .84rem; padding: 14px; right: -2%; bottom: 2%; }
+  .badge svg { width: 36px; }
+  .sec { padding-block: 56px; }
+  .turmas { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr 1fr; border-radius: 22px; }
+  .stat { padding: 26px 10px; }
+  .stat b { font-size: 1.8rem; }
+  .stats .deco2, .stats .deco3 { display: none; }
+  .notice { font-size: .8rem; }
+  .prog { grid-template-columns: 1fr; }
+  .timeline { grid-template-columns: repeat(2, 1fr); }
+  .trio { grid-template-columns: 1fr 1fr; }
+  .trio button:last-child { grid-column: span 2; }
+  .gal { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .gal span { font-size: .78rem; padding: 4px 10px; left: 8px; bottom: 8px; }
+  .new { grid-template-columns: 1fr; }
+  .form .row { grid-template-columns: 1fr; }
+  .form, .info, .steps { padding: 22px; }
+  .foot .cols { grid-template-columns: 1fr 1fr; gap: 24px 18px; }
+  .foot .cols > div:first-child { grid-column: span 2; }
+  .foot .cols > div + div { border-left: 0; padding-left: 0; }
+  .flowers { width: 80px; right: 10px; bottom: 60px; opacity: .8; }
+  .lb .prev { left: 4px; } .lb .next { right: 4px; } .lb .x { right: 4px; top: -16px; }
+}
+
+/* Marca em destaque: só o leão + nome grande */
+.head .wrap { padding-block: 10px; }
+.brand { gap: 14px; }
+.brand img { width: 92px; height: 92px; box-shadow: 0 0 0 4px var(--yellow), 0 6px 16px rgba(19,35,91,.18); }
+.brand .nm { display: flex; flex-direction: column; }
+.brand small { order: 0; margin: 0 0 3px; font-size: 1.04rem; font-weight: 700; letter-spacing: .26em; color: var(--blue-ink); }
+.brand b { font-size: 2.75rem; font-weight: 700; letter-spacing: .03em; line-height: .95; }
+.foot .brand img { width: 72px; height: 72px; }
+.foot .brand small { font-size: .78rem; }
+.foot .brand b { font-size: 2rem; }
+@media (max-width: 1360px) { .phone { display: none; } }
+@media (max-width: 1180px) { .menu a { padding: 8px 7px; font-size: .86rem; } .brand b { font-size: 2.1rem; } .brand small { font-size: .82rem; } }
+@media (max-width: 640px) {
+  .brand img { width: 62px; height: 62px; box-shadow: 0 0 0 3px var(--yellow), 0 4px 10px rgba(19,35,91,.15); }
+  .brand { gap: 10px; }
+  .brand b { font-size: 1.8rem; }
+  .plane { display: none; }
+  .brand small { font-size: .7rem; letter-spacing: .2em; }
+}
+
+/* Logo oficial (banner do Levy) */
+.brand img.logo-banner { width: auto; height: 86px; border-radius: 0; box-shadow: none; filter: drop-shadow(0 3px 6px rgba(19,35,91,.12)); }
+.foot .brand img.logo-banner { height: 74px; width: auto; }
+@media (max-width: 1180px) { .brand img.logo-banner { height: 72px; } }
+@media (max-width: 640px) { .brand img.logo-banner { height: 58px; } .foot .brand img.logo-banner { height: 64px; } }
+@media (max-width: 380px) { .brand img.logo-banner { height: 50px; } }
+.b2b{background:#13235b;text-align:center;padding:12px 20px;font-size:.82rem;color:rgba(255,255,255,.75)}
+.b2b a{color:#fff;font-weight:700;text-decoration:none;border-bottom:1px dotted rgba(255,255,255,.5)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M3 8 H13 M9 4 L13 8 L9 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21 C5 15.5 2 12 2 8.5 A5 5 0 0 1 12 6.5 A5 5 0 0 1 22 8.5 C22 12 19 15.5 12 21Z" fill="currentColor"/></symbol>
+    <symbol id="heart-o" viewBox="0 0 24 24"><path d="M12 21 C5 15.5 2 12 2 8.5 A5 5 0 0 1 12 6.5 A5 5 0 0 1 22 8.5 C22 12 19 15.5 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10 H21 M8 3 V7 M16 3 V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="15" r="1.8" fill="currentColor"/></symbol>
+    <symbol id="tel" viewBox="0 0 24 24"><path d="M6 3 h4 l2 5 -2.5 1.6 a11 11 0 0 0 4.9 4.9 L16 12 l5 2 v4 a2 2 0 0 1 -2 2 A16 16 0 0 1 4 5 a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M12 2 A7 7 0 0 1 19 9 C19 14 12 22 12 22 C12 22 5 14 5 9 A7 7 0 0 1 12 2Z" fill="currentColor"/><circle cx="12" cy="9" r="2.6" fill="#fff"/></symbol>
+    <symbol id="star" viewBox="0 0 24 24"><path d="M12 2 L14.8 8.6 L22 9.2 L16.5 13.9 L18.2 21 L12 17.2 L5.8 21 L7.5 13.9 L2 9.2 L9.2 8.6Z" fill="currentColor"/></symbol>
+    <symbol id="wa" viewBox="0 0 24 24"><path d="M12 3 A9 9 0 0 0 4.2 16.5 L3 21 L7.6 19.8 A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8.5 C9 12 11.5 15 15 15.3 L16 13.8 L14.3 13 L13.5 13.8 C12.2 13.3 11 12 10.6 10.6 L11.4 9.8 L10.6 8 Z" fill="currentColor"/></symbol>
+    <symbol id="ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="cloud" viewBox="0 0 80 44"><path d="M18 42 H64 A14 14 0 0 0 64 14 A18 18 0 0 0 30 10 A14 14 0 0 0 18 42Z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img class="logo-banner" src="img/logo-rei-leao-banner.webp" alt="Creche Escola Rei Leão" width="1400" height="323"></a>
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <a class="on" href="#inicio">Início</a>
+      <a href="#turmas">Turmas</a>
+      <a href="#programas">Programas</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#pais">Pais</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="head-cta">
+      <a class="phone" href="https://wa.me/5521971035209" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#tel"/></svg>(21) 97103-5209</a>
+      <a class="btn btn-red" href="#contato">Matricule-se</a>
+      <button class="burger" id="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7 H20 M4 12 H20 M4 17 H20" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <svg class="plane" viewBox="0 0 170 80" aria-hidden="true"><path d="M4 70 C30 74 40 40 64 48 C84 55 70 76 56 66 C44 57 66 30 104 30" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round"/><path d="M112 22 L166 4 L140 50 L130 34Z" fill="#fff" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M130 34 L166 4 M130 34 L128 46 L136 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+    <svg class="cloud-s" viewBox="0 0 80 44" aria-hidden="true"><use href="#cloud"/></svg>
+    <div class="txt">
+      <h1>Cuidando <span class="bl">do hoje</span>,<br><span class="r">inspirando</span><br>o amanhã<svg class="doodle-heart" viewBox="0 0 24 24" aria-hidden="true"><use href="#heart-o"/></svg></h1>
+      <p class="lead">Um lugar perfeito para seu filho <b class="c1">aprender</b>, <b class="c2">crescer</b> e <b class="c3">brilhar</b>, onde pequenas mentes florescem.</p>
+      <div class="ctas">
+        <a class="btn btn-blue" href="https://wa.me/5521971035209" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#cal"/></svg>Agendar visita</a>
+        <a class="btn btn-ghost" href="#turmas">Nossas turmas</a>
+      </div>
+      <div class="feats">
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 L27 7 V15 Q27 25 16 29 Q5 25 5 15 V7Z" fill="none" stroke="#1d63d6" stroke-width="2.4" stroke-linejoin="round"/><path d="M11 16 L14.5 19.5 L21 12.5" fill="none" stroke="#1d63d6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Ambiente seguro</strong><span>Espaço protegido e acolhedor</span></div></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27 C8 21 4 17 4 12.5 A6 6 0 0 1 16 10 A6 6 0 0 1 28 12.5 C28 17 24 21 16 27Z" fill="none" stroke="#e3262f" stroke-width="2.4" stroke-linejoin="round"/></svg><div><strong>Professores experientes</strong><span>Carinho e atenção todo dia</span></div></div>
+        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 L19.6 11.4 L28.6 12.1 L21.7 18 L23.8 27 L16 22.2 L8.2 27 L10.3 18 L3.4 12.1 L12.4 11.4Z" fill="none" stroke="#e0a200" stroke-width="2.4" stroke-linejoin="round"/></svg><div><strong>Aprender brincando</strong><span>Programas criativos</span></div></div>
+      </div>
+    </div>
+    <div class="art">
+      <svg class="blob-b" viewBox="0 0 200 200" aria-hidden="true"><path d="M44 20 C90 -10 170 10 186 70 C200 130 150 190 90 184 C30 178 -6 120 8 76 C14 52 24 32 44 20Z" fill="currentColor"/></svg>
+      <svg class="blob-y" viewBox="0 0 200 200" aria-hidden="true"><path d="M120 6 C170 14 204 70 196 124 C188 176 140 204 86 196 C40 189 8 150 22 110 C34 76 70 80 84 46 C94 22 100 3 120 6Z" fill="currentColor"/></svg>
+      <svg class="dots-y" viewBox="0 0 54 54" aria-hidden="true"><g fill="currentColor"><circle cx="6" cy="20" r="3"/><circle cx="18" cy="8" r="3"/><circle cx="32" cy="4" r="3"/><circle cx="46" cy="8" r="3"/><circle cx="14" cy="34" r="2.4"/><circle cx="40" cy="22" r="2.4"/></g></svg>
+      <div class="photo"><img src="img/hero.jpg" alt="Crianças brincando com blocos coloridos ao lado da professora" width="900" height="900"></div>
+      <svg class="leaf" viewBox="0 0 60 80" aria-hidden="true"><path d="M8 76 C20 50 30 30 52 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M22 46 C8 44 2 32 4 22 C16 24 24 34 22 46Z M32 32 C30 18 38 8 48 6 C50 18 42 28 32 32Z M28 40 C40 34 52 38 58 46 C46 52 36 48 28 40Z" fill="currentColor"/></svg>
+      <svg class="star-r" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
+      <div class="badge"><div>Um lugar para<br><span class="bl">Aprender</span>, <span class="r">Brincar</span><br>&amp; Crescer Juntos<svg viewBox="0 0 60 32" aria-hidden="true"><path d="M6 30 A24 24 0 0 1 54 30" fill="none" stroke="#e3262f" stroke-width="5" stroke-linecap="round"/><path d="M13 30 A17 17 0 0 1 47 30" fill="none" stroke="#ffc20e" stroke-width="5" stroke-linecap="round"/><path d="M20 30 A10 10 0 0 1 40 30" fill="none" stroke="#1d63d6" stroke-width="5" stroke-linecap="round"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="turmas">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="kicker">Nossas turmas</span><h2>Turmas pensadas para<br>cada fase do <span class="bl">crescimento</span></h2></div>
+      <div class="side"><p>Grupos organizados por idade, com atividades e rotina pensadas para o ritmo de cada criança. Do Berçário ao 5º ano, em horário integral ou parcial.</p><a class="more" href="#contato">Quero conhecer <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+    </div>
+    <div class="turmas">
+      <article class="turma t1 rv">
+        <div class="ph"><img src="img/card-brincar.jpg" alt="Crianças pequenas montando blocos" width="400" height="400" loading="lazy"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="10" cy="9.5" r="1" fill="currentColor"/><circle cx="14" cy="9.5" r="1" fill="currentColor"/><path d="M10 12 Q12 13.6 14 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 21 Q12 16 17 21" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span></div>
+        <div class="bd"><h3>Berçário</h3><span class="age">0 a 1 ano</span><p>Colo, estímulos sensoriais e muito carinho nos primeiros passos.</p><span class="shift">Manhã, tarde ou integral</span><a class="more" href="#contato">Saiba mais <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      </article>
+      <article class="turma t2 rv">
+        <div class="ph"><img src="img/card-crescendo.jpg" alt="Crianças brincando de roda" width="400" height="400" loading="lazy"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="7" height="7" rx="1.5" fill="currentColor"/><rect x="13" y="11" width="7" height="7" rx="1.5" fill="currentColor" opacity=".75"/><rect x="8.5" y="4" width="7" height="7" rx="1.5" fill="currentColor" opacity=".9"/></svg></span></div>
+        <div class="bd"><h3>Maternal I</h3><span class="age">1 a 2 anos</span><p>Descobertas, primeiras palavras e brincadeiras em grupo.</p><span class="shift">Manhã, tarde ou integral</span><a class="more" href="#contato">Saiba mais <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      </article>
+      <article class="turma t3 rv">
+        <div class="ph"><img src="img/card-ambiente.jpg" alt="Menino com as mãos pintadas de tinta" width="400" height="400" loading="lazy"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3 L21 8 L9 20 L3 21 L4 15Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M14 5 L19 10" stroke="currentColor" stroke-width="2.2"/></svg></span></div>
+        <div class="bd"><h3>Maternal II</h3><span class="age">2 a 3 anos</span><p>Autonomia, música, arte e a alegria de fazer amigos.</p><span class="shift">Manhã, tarde ou integral</span><a class="more" href="#contato">Saiba mais <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      </article>
+      <article class="turma t4 rv">
+        <div class="ph"><img src="img/card-comeco.jpg" alt="Menina lendo um livro ilustrado" width="400" height="400" loading="lazy"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 L23 9 L12 14 L1 9Z" fill="currentColor"/><path d="M5 11.5 V16 Q12 21 19 16 V11.5 L12 15Z" fill="currentColor" opacity=".75"/></svg></span></div>
+        <div class="bd"><h3>Pré-escola</h3><span class="age">4 a 5 anos</span><p>Histórias, letras e números em projetos cheios de curiosidade.</p><span class="shift">Manhã, tarde ou integral</span><a class="more" href="#contato">Saiba mais <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+      </article>
+    </div>
+
+    <div class="stats rv" aria-label="A Rei Leão em números">
+      <svg class="deco1" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
+      <svg class="deco2" viewBox="0 0 24 24" aria-hidden="true"><use href="#heart-o"/></svg>
+      <svg class="deco3" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
+      <div class="stat"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 34 V16 L20 6 L34 16 V34Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M16 34 V24 H24 V34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg><b>2</b><span>Unidades</span></div>
+      <div class="stat"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6 L37 14 L20 22 L3 14Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 17.5 V26 Q20 33 31 26 V17.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg><b>5º ano</b><span>Do Berçário ao Fundamental</span></div>
+      <div class="stat"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M20 12 V20 L26 23" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg><b>Integral</b><span>ou parcial, como for melhor</span></div>
+      <div class="stat"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34 C10 27 5 22 5 16 A7.5 7.5 0 0 1 20 13 A7.5 7.5 0 0 1 35 16 C35 22 30 27 20 34Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg><b>1.700+</b><span>Famílias e amigos no Instagram</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="programas" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="kicker">Programas</span><h2>Aprender <span class="r">brincando</span>,<br>todos os dias</h2></div>
+      <div class="side"><p>Cada atividade tem um objetivo: despertar a curiosidade, estimular a fala, o movimento e o convívio com os amigos.</p></div>
+    </div>
+    <div class="progs">
+      <article class="prog p1 rv"><div class="ic"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="16" width="11" height="11" rx="2.5" fill="currentColor"/><rect x="17" y="19" width="11" height="8" rx="2.5" fill="currentColor" opacity=".6"/><rect x="10" y="5" width="11" height="11" rx="2.5" fill="currentColor" opacity=".85"/></svg></div><div><h3>Brincar e Aprender</h3><p>Jogos de encaixe, blocos e faz de conta que trabalham a coordenação, a atenção e a imaginação.</p><ul class="tags"><li>Coordenação motora</li><li>Faz de conta</li><li>Raciocínio</li></ul></div></article>
+      <article class="prog p2 rv"><div class="ic"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 C8 4 3 10 3 16 C3 23 9 28 15 28 C18 28 18 25 16.5 23.5 C15 22 16 19.5 19 19.5 H23 C26.5 19.5 29 17 29 13.5 C29 8 23 4 16 4Z" fill="currentColor"/><circle cx="10" cy="14" r="2.2" fill="#fff"/><circle cx="15" cy="9.5" r="2.2" fill="#fff"/><circle cx="21.5" cy="10.5" r="2.2" fill="#fff"/></svg></div><div><h3>Arte e Música</h3><p>Pintura, massinha, cantigas e instrumentos de percussão para a criança se expressar do seu jeito.</p><ul class="tags"><li>Pintura</li><li>Cantigas</li><li>Ritmo</li></ul></div></article>
+      <article class="prog p3 rv"><div class="ic"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29 V14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M16 18 C7 18 5 11 5 6 C13 6 16 11 16 18Z M16 15 C16 9 19 4 27 4 C27 10 24 15 16 15Z" fill="currentColor"/></svg></div><div><h3>Natureza e Movimento</h3><p>Horta, parquinho e brincadeiras ao ar livre para gastar energia e conhecer o mundo ao redor.</p><ul class="tags"><li>Horta</li><li>Parquinho</li><li>Circuitos</li></ul></div></article>
+      <article class="prog p4 rv"><div class="ic"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 7 Q10 4 16 8 Q22 4 29 7 V27 Q22 24 16 28 Q10 24 3 27Z" fill="currentColor"/><path d="M16 8 V28" stroke="#fff" stroke-width="2"/></svg></div><div><h3>Primeiras Letras e Números</h3><p>Histórias, rimas e jogos de contagem que preparam a criança para a leitura e a escrita, sem pressa.</p><ul class="tags"><li>Contação de histórias</li><li>Letras</li><li>Números</li></ul></div></article>
+    </div>
+
+    <div class="day rv">
+      <h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.5 V4 M12 20 V22.5 M1.5 12 H4 M20 12 H22.5 M4.6 4.6 L6.3 6.3 M17.7 17.7 L19.4 19.4 M4.6 19.4 L6.3 17.7 M17.7 6.3 L19.4 4.6"/></g></svg>Um dia na creche</h3>
+      <ol class="timeline">
+        <li><b>7h30</b>Acolhida</li><li><b>8h30</b>Café da manhã</li><li><b>9h30</b>Atividades dirigidas</li><li><b>11h</b>Almoço</li>
+        <li><b>12h</b>Soneca e descanso</li><li><b>15h</b>Lanche da tarde</li><li><b>16h</b>Brincadeira livre</li><li><b>17h30</b>Saída com as famílias</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sobre" style="padding-top:20px">
+  <div class="wrap">
+    <div class="welcome">
+      <div class="quote rv">
+        <svg class="qm" viewBox="0 0 40 30" aria-hidden="true"><path d="M2 28 V18 C2 8 8 2 16 1 V7 C11 8 9 11 9 15 H16 V28Z M22 28 V18 C22 8 28 2 36 1 V7 C31 8 29 11 29 15 H36 V28Z" fill="currentColor"/></svg>
+        <h3>Boas-vindas à nossa creche!</h3>
+        <p>Oferecemos um ambiente carinhoso e acolhedor, onde as crianças desenvolvem o amor pelo aprendizado para a vida toda. Nossos programas valorizam a criatividade, a curiosidade e a confiança por meio da educação baseada no brincar.</p>
+        <div class="who"><img src="img/leao-badge.webp" alt="" width="46" height="46" style="box-shadow:none;object-fit:contain"><div><b>Equipe Rei Leão</b><small>Creche Escola Rei Leão</small></div></div>
+      </div>
+      <div class="trio">
+        <button type="button" class="rv" data-i="5"><img src="img/boas-vindas.jpg" alt="Crianças sorrindo montando blocos" width="1100" height="825" loading="lazy"></button>
+        <button type="button" class="rv" data-i="1"><img src="img/galeria-parquinho.jpg" alt="Menina descendo o escorregador no parquinho" width="960" height="720" loading="lazy"></button>
+        <button type="button" class="rv" data-i="3"><img src="img/galeria-musica.jpg" alt="Roda de música com instrumentos" width="960" height="720" loading="lazy"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="novidades" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="kicker">Novidades</span><h2>Últimas <span class="y">novidades</span></h2></div>
+      <div class="side"><p>Acompanhe também os eventos e as datas especiais no nosso Instagram.</p><a class="more" href="https://www.instagram.com/crecheescolareileao/" target="_blank" rel="noopener">Ver todas as novidades <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
+    </div>
+    <div class="news">
+      <article class="new rv"><img src="img/novidade-colonia.jpg" alt="Crianças brincando ao ar livre na colônia de férias" width="360" height="270" loading="lazy"><div><span class="tag">Colônia de férias</span><h3>Colônia de Férias 2026</h3><p>Nossa colônia é cheia de diversão, aprendizado e aventura!</p><a class="more" href="#galeria">Ver fotos <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div></article>
+      <article class="new rv"><img src="img/novidade-oficina.jpg" alt="Pais reunidos em roda numa oficina" width="360" height="270" loading="lazy"><div><span class="tag">Para os pais</span><h3>Oficina para Pais</h3><p>Participe da nossa próxima oficina sobre desenvolvimento e aprendizagem infantil.</p><a class="more" href="#contato">Saiba mais <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="galeria" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="kicker">Galeria</span><h2>Momentos que nos<br>fazem <span class="r">sorrir</span></h2></div>
+      <div class="side"><p>Toque em uma imagem para ampliar.</p></div>
+    </div>
+    <div class="gal" id="gal">
+      <button type="button" class="rv" data-i="0"><img src="img/galeria-pintura.jpg" alt="Crianças pintando um quadro" width="960" height="720" loading="lazy"><span>Hora da pintura</span></button>
+      <button type="button" class="rv" data-i="1"><img src="img/galeria-parquinho.jpg" alt="Menina descendo o escorregador" width="960" height="720" loading="lazy"><span>Tarde no parquinho</span></button>
+      <button type="button" class="rv" data-i="2"><img src="img/galeria-horta.jpg" alt="Crianças regando a horta" width="960" height="720" loading="lazy"><span>Cuidando da horta</span></button>
+      <button type="button" class="rv" data-i="3"><img src="img/galeria-musica.jpg" alt="Roda de música com instrumentos" width="960" height="720" loading="lazy"><span>Roda de música</span></button>
+      <button type="button" class="rv" data-i="4"><img src="img/galeria-lanche.jpg" alt="Crianças lanchando frutas" width="960" height="720" loading="lazy"><span>Hora do lanche</span></button>
+      <button type="button" class="rv" data-i="6"><img src="img/galeria-festa.jpg" alt="Crianças dançando com fitas coloridas" width="960" height="720" loading="lazy"><span>Festa das cores</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="pais" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="kicker">Para os pais</span><h2>Tudo que você<br>precisa <span class="bl">saber</span></h2></div>
+      <div class="side"><p>Respostas para as dúvidas mais comuns e o passo a passo da matrícula.</p></div>
+    </div>
+    <div class="parents">
+      <div class="faq rv">
+        <details open><summary>Como funciona o período de adaptação?</summary><p>A criança chega aos poucos, com horários curtos nos primeiros dias, acompanhada por alguém da família quando necessário. Aumentamos o tempo conforme ela se sente segura.</p></details>
+        <details><summary>Quais documentos são necessários para a matrícula?</summary><p>Certidão de nascimento, cartão de vacinas, documento e comprovante de residência do responsável e duas fotos 3x4. Na visita, a equipe confirma a lista completa.</p></details>
+        <details><summary>A creche oferece alimentação?</summary><p>Sim. O cardápio inclui café da manhã, almoço e lanche da tarde, com atenção a alergias e restrições alimentares informadas na matrícula.</p></details>
+        <details><summary>Como acompanho o dia do meu filho?</summary><p>Você recebe um relato diário com alimentação, sono e atividades, além de reuniões periódicas com a professora da turma.</p></details>
+        <details><summary>Posso visitar antes de decidir?</summary><p>Pode e deve. Agende uma visita e conheça as salas, o parquinho e a equipe com calma.</p></details>
+      </div>
+      <aside class="steps rv">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
+        <h3>Como fazer a matrícula</h3>
+        <ol>
+          <li><div><strong>Agende uma visita</strong>Pelo WhatsApp ou pelo formulário desta página.</div></li>
+          <li><div><strong>Conheça a creche</strong>Passeie pelas salas e converse com a coordenação.</div></li>
+          <li><div><strong>Entregue os documentos</strong>A equipe orienta cada detalhe.</div></li>
+          <li><div><strong>Comece a adaptação</strong>Seu filho entra na turma no ritmo dele.</div></li>
+        </ol>
+        <a class="btn btn-yellow" href="https://wa.me/5521971035209" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#cal"/></svg>Agendar visita</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contato" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="kicker">Contato</span><h2>Vamos <span class="r">conversar</span>?</h2></div>
+      <div class="side"><p>Conte um pouco sobre seu filho e escolha o melhor jeito de falarmos com você.</p></div>
+    </div>
+    <div class="contact">
+      <form class="form rv" id="form" novalidate>
+        <div class="row">
+          <label for="f-nome">Seu nome<input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Nome e sobrenome"></label>
+          <label for="f-tel">Telefone ou WhatsApp<input id="f-tel" name="tel" type="tel" autocomplete="tel" placeholder="(21) 90000-0000"></label>
+        </div>
+        <div class="row">
+          <label for="f-mail">E-mail<input id="f-mail" name="mail" type="email" autocomplete="email" placeholder="voce@email.com"></label>
+          <label for="f-turma">Turma de interesse
+            <select id="f-turma" name="turma"><option value="">Ainda não sei</option><option>Berçário (0 a 1 ano)</option><option>Maternal I (1 a 2 anos)</option><option>Maternal II (2 a 3 anos)</option><option>Pré-escola (4 a 5 anos)</option><option>Ensino Fundamental (1º ao 5º ano)</option></select></label>
+        </div>
+        <label for="f-msg">Mensagem<textarea id="f-msg" name="msg" placeholder="Qual a idade do seu filho? Prefere meio período ou integral?"></textarea></label>
+        <div class="err" id="f-err" role="alert"></div>
+        <div><button class="btn btn-red" type="submit">Preparar mensagem <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></button></div>
+        <div class="ready" id="ready" hidden>
+          <strong style="font-family:var(--display);color:var(--blue-ink)">Mensagem pronta para enviar</strong>
+          <pre id="ready-txt"></pre>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><a class="btn btn-blue" id="send-wa" href="https://wa.me/5521971035209" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Enviar pelo WhatsApp</a><button class="btn btn-ghost" type="button" id="copy">Copiar</button><span id="copy-ok" style="font-weight:800;color:var(--blue)"></span></div>
+          <small>O botão abre o WhatsApp da creche, (21) 97103-5209, com a mensagem já escrita.</small>
+        </div>
+      </form>
+      <aside class="info rv">
+        <svg class="cl" viewBox="0 0 80 44" aria-hidden="true"><use href="#cloud"/></svg>
+        <h3>Fale com a gente</h3>
+        <div class="unit"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pin"/></svg></i><div><b>Rua Cairo, 376</b><small>Telefone e WhatsApp: <a href="https://wa.me/5521971035209" target="_blank" rel="noopener">(21) 97103-5209</a></small></div></div>
+        <div class="unit"><i><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pin"/></svg></i><div><b>Rua Rio da Prata, 331</b><small>Telefone: <a href="tel:+5521965951182">(21) 96595-1182</a></small></div></div>
+        <div class="row2"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 7 V12 L15.5 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>Do Berçário ao 5º ano · Integral e parcial</div>
+        <div class="row2"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ig"/></svg><a href="https://www.instagram.com/crecheescolareileao/" target="_blank" rel="noopener">@crecheescolareileao</a></div>
+        <a class="btn btn-yellow" style="justify-self:start" href="https://wa.me/5521971035209" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Chamar no WhatsApp</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="cta rv">
+    <svg class="sunny" viewBox="0 0 70 70" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M35 3 V11 M35 59 V67 M3 35 H11 M59 35 H67 M12 12 L18 18 M52 52 L58 58 M12 58 L18 52 M52 18 L58 12"/></g><circle cx="35" cy="35" r="17" fill="currentColor"/><circle cx="29" cy="32" r="2" fill="#13235b"/><circle cx="41" cy="32" r="2" fill="#13235b"/><path d="M28 39 Q35 45 42 39" fill="none" stroke="#13235b" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <div><h2>Pronto para começar?</h2><p>Crianças felizes, futuros brilhantes! Vamos adorar receber você e seu filho na família Rei Leão.</p></div>
+    <a class="btn btn-blue" href="https://wa.me/5521971035209" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#cal"/></svg>Agende sua visita</a>
+    <svg class="hearts" viewBox="0 0 64 44" aria-hidden="true"><path d="M20 38 C10 31 4 26 4 19 A7 7 0 0 1 20 15 A7 7 0 0 1 36 19 C36 26 30 31 20 38Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M48 24 C42 20 38 17 38 13 A4.5 4.5 0 0 1 48 10.5 A4.5 4.5 0 0 1 58 13 C58 17 54 20 48 24Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap cols">
+    <div>
+      <a class="brand" href="#inicio"><img class="logo-banner" src="img/logo-rei-leao-banner.webp" alt="Creche Escola Rei Leão" width="1400" height="323" loading="lazy"></a>
+      <p>Onde pequenas mentes florescem. Um ambiente carinhoso, seguro e alegre para cada criança aprender brincando.</p>
+      <div class="soc"><a href="https://www.instagram.com/crecheescolareileao/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ig"/></svg></a><a href="https://wa.me/5521971035209" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></a></div>
+    </div>
+    <div><h4>Links rápidos</h4><ul><li><a href="#turmas">Turmas</a></li><li><a href="#programas">Programas</a></li><li><a href="#sobre">Sobre nós</a></li><li><a href="#galeria">Galeria</a></li><li><a href="#contato">Contato</a></li></ul></div>
+    <div><h4>Para os pais</h4><ul><li><a href="#pais">Matrícula</a></li><li><a href="#programas">Rotina do dia</a></li><li><a href="#pais">Alimentação</a></li><li><a href="#pais">Adaptação</a></li><li><a href="#novidades">Novidades</a></li></ul></div>
+    <div><h4>Contato</h4><ul class="ci"><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pin"/></svg><span>Rua Cairo, 376<br>(21) 97103-5209</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#pin"/></svg><span>Rua Rio da Prata, 331<br>(21) 96595-1182</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg><a href="https://wa.me/5521971035209" target="_blank" rel="noopener">WhatsApp</a></li></ul></div>
+    <div><h4>Atendimento</h4><ul><li><b style="color:var(--blue-ink)">Integral e parcial</b></li><li>Do Berçário ao 5º ano</li><li>Visitas com agendamento</li></ul></div>
+  </div>
+  <p class="copy">© 2026 Creche Escola Rei Leão. Todos os direitos reservados. <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#heart"/></svg></p>
+  <svg class="flowers" viewBox="0 0 120 80" aria-hidden="true">
+    <path d="M30 78 C30 62 32 52 34 44 M64 78 C64 58 62 46 60 36 M94 78 C96 66 98 58 100 52" fill="none" stroke="#1d63d6" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M64 60 C72 56 78 58 80 62 C74 66 68 64 64 60Z M30 66 C22 62 18 64 16 68 C22 72 26 70 30 66Z" fill="#1d63d6" opacity=".6"/>
+    <g transform="translate(34 38)"><circle r="5" cx="0" cy="-7" fill="#1d63d6"/><circle r="5" cx="7" cy="0" fill="#1d63d6"/><circle r="5" cx="0" cy="7" fill="#1d63d6"/><circle r="5" cx="-7" cy="0" fill="#1d63d6"/><circle r="3.6" fill="#ffc20e"/></g>
+    <g transform="translate(60 28)"><circle r="6.5" cx="0" cy="-9" fill="#e3262f"/><circle r="6.5" cx="9" cy="0" fill="#e3262f"/><circle r="6.5" cx="0" cy="9" fill="#e3262f"/><circle r="6.5" cx="-9" cy="0" fill="#e3262f"/><circle r="4.4" fill="#ffc20e"/></g>
+    <g transform="translate(100 46)"><path d="M0 0 C-8 -14 -2 -20 0 -10 C2 -20 8 -14 0 0Z M0 0 C14 -8 20 -2 10 0 C20 2 14 8 0 0Z M0 0 C-14 -8 -20 -2 -10 0 C-20 2 -14 8 0 0Z" fill="#ffc20e"/><circle r="3" fill="#e3262f"/></g>
+  </svg>
+  <div class="b2b">Prévia criada pela <a href="https://levytikus.github.io/B2B-novo/" target="_blank" rel="noopener">Business 2 Brothers</a></div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap"></figcaption>
+    <button class="ctl prev" type="button" id="lb-prev" aria-label="Foto anterior">‹</button>
+    <button class="ctl next" type="button" id="lb-next" aria-label="Próxima foto">›</button>
+    <button class="x" type="button" id="lb-x" aria-label="Fechar">✕</button>
+  </figure>
+</div>
+
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+
+  /* Menu no celular */
+  var burger = $('#burger'), menu = $('#menu');
+  burger.addEventListener('click', function () { var o = menu.classList.toggle('open'); burger.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+  menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') { menu.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); } });
+
+  /* Item ativo do menu conforme a rolagem */
+  var links = [].slice.call(menu.querySelectorAll('a'));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function onScroll() {
+    var y = window.scrollY + 140, cur = 0;
+    secs.forEach(function (s, i) { if (s && s.offsetTop <= y) cur = i; });
+    links.forEach(function (a, i) { a.classList.toggle('on', i === cur); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  /* Aparecer ao rolar */
+  var rv = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    rv.forEach(function (el) { io.observe(el); });
+  } else { rv.forEach(function (el) { el.classList.add('in'); }); }
+
+  /* Ampliação das fotos */
+  var fotos = [
+    ['img/galeria-pintura.jpg', 'Hora da pintura'], ['img/galeria-parquinho.jpg', 'Tarde no parquinho'], ['img/galeria-horta.jpg', 'Cuidando da horta'],
+    ['img/galeria-musica.jpg', 'Roda de música'], ['img/galeria-lanche.jpg', 'Hora do lanche'], ['img/boas-vindas.jpg', 'Brincando juntos'], ['img/galeria-festa.jpg', 'Festa das cores']
+  ];
+  var lb = $('#lb'), li = $('#lb-img'), lc = $('#lb-cap'), cur = 0, last = null;
+  function show(i) { cur = (i + fotos.length) % fotos.length; li.src = fotos[cur][0]; li.alt = fotos[cur][1]; lc.textContent = fotos[cur][1]; }
+  function open(i) { last = document.activeElement; show(i); lb.hidden = false; $('#lb-x').focus(); }
+  function close() { lb.hidden = true; if (last) last.focus(); }
+  document.querySelectorAll('[data-i]').forEach(function (b) { b.addEventListener('click', function () { open(+b.getAttribute('data-i')); }); });
+  $('#lb-prev').addEventListener('click', function () { show(cur - 1); });
+  $('#lb-next').addEventListener('click', function () { show(cur + 1); });
+  $('#lb-x').addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(cur - 1);
+    if (e.key === 'ArrowRight') show(cur + 1);
+  });
+
+  /* Formulário: monta a mensagem e abre o WhatsApp */
+  var form = $('#form'), err = $('#f-err'), ready = $('#ready'), txt = $('#ready-txt');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var nome = $('#f-nome').value.trim(), tel = $('#f-tel').value.trim(), mail = $('#f-mail').value.trim();
+    var turma = $('#f-turma').value, msg = $('#f-msg').value.trim();
+    if (!nome) { err.textContent = 'Escreva seu nome para continuarmos.'; $('#f-nome').focus(); ready.hidden = true; return; }
+    if (!tel && !mail) { err.textContent = 'Informe um telefone ou um e-mail para retornarmos o contato.'; $('#f-tel').focus(); ready.hidden = true; return; }
+    if (mail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)) { err.textContent = 'Confira o e-mail: parece faltar algo, como o @ ou o final do endereço.'; $('#f-mail').focus(); ready.hidden = true; return; }
+    err.textContent = '';
+    var lines = ['Olá! Sou ' + nome + ' e gostaria de conhecer a Creche Escola Rei Leão.'];
+    if (turma) lines.push('Turma de interesse: ' + turma + '.');
+    if (msg) lines.push(msg);
+    var c = []; if (tel) c.push('telefone ' + tel); if (mail) c.push('e-mail ' + mail);
+    lines.push('Podem falar comigo pelo ' + c.join(' ou ') + '.');
+    var t = lines.join('\n');
+    txt.textContent = t;
+    $('#send-wa').href = 'https://wa.me/5521971035209?text=' + encodeURIComponent(t);
+    $('#copy-ok').textContent = '';
+    ready.hidden = false;
+  });
+  $('#copy').addEventListener('click', function () {
+    var ok = $('#copy-ok');
+    function fallback() { var r = document.createRange(); r.selectNodeContents(txt); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); ok.textContent = 'Texto selecionado. Copie com Ctrl+C.'; }
+    try { navigator.clipboard.writeText(txt.textContent).then(function () { ok.textContent = 'Copiado!'; }, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
