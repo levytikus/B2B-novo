@@ -380,6 +380,26 @@ section[id] { scroll-margin-top: 90px; }
 @media (max-width: 380px) { .brand img.logo-banner { height: 50px; } }
 .b2b{background:#13235b;text-align:center;padding:12px 20px;font-size:.82rem;color:rgba(255,255,255,.75)}
 .b2b a{color:#fff;font-weight:700;text-decoration:none;border-bottom:1px dotted rgba(255,255,255,.5)}
+
+/* Ícones 3D feitos no Canva */
+img.i3d, img.feat-ic, img.stat-ic, img.day-sol, img.sunny, img.plane3d, img.badge-arco { height: auto; object-fit: contain; }
+.feat.f3d { grid-template-columns: 52px 1fr; align-items: center; }
+.feat img.feat-ic { width: 52px; height: 52px; filter: drop-shadow(0 6px 8px rgba(19,35,91,.16)); }
+.plane3d { z-index: 4; width: 118px; top: 4px; left: 42%; filter: drop-shadow(0 8px 10px rgba(19,35,91,.12)); }
+.badge img.badge-arco { width: 62px; margin: 6px auto 0; display: block; }
+.turma .ic.ic3d { width: 84px; height: 84px; left: 10px; bottom: -34px; background: #fff; border: 0; box-shadow: 0 10px 20px rgba(19,35,91,.16); }
+.turma .ic.ic3d img { width: 62px; height: 62px; aspect-ratio: auto; object-fit: contain; border-radius: 0; filter: drop-shadow(0 4px 6px rgba(19,35,91,.15)); transition: transform .25s ease; }
+.turma:hover .ic.ic3d img { transform: rotate(-6deg) scale(1.08); }
+.turma .bd { padding-top: 44px; }
+.stat img.stat-ic { width: 70px; height: 70px; filter: drop-shadow(0 8px 12px rgba(0,0,0,.25)); }
+.prog .ic { width: 84px; height: 84px; border-radius: 24px; }
+.prog { grid-template-columns: 84px 1fr; }
+.prog .ic img.i3d { width: 68px; height: 68px; filter: drop-shadow(0 6px 8px rgba(19,35,91,.16)); transition: transform .25s ease; }
+.prog:hover .ic img.i3d { transform: translateY(-3px) rotate(-5deg) scale(1.06); }
+.day h3 img.day-sol { width: 46px; height: 46px; }
+.cta img.sunny { width: 96px; filter: drop-shadow(0 8px 12px rgba(224,162,0,.3)); }
+@media (max-width: 960px) { .plane3d { left: auto; right: 2%; top: 4px; width: 110px; } }
+@media (max-width: 640px) { .plane3d { display: none; } .prog { grid-template-columns: 1fr; } .stat img.stat-ic { width: 58px; height: 58px; } }
 </style>
 </head>
 <body>
@@ -422,7 +442,7 @@ section[id] { scroll-margin-top: 90px; }
 <main>
 <section class="hero" id="inicio">
   <div class="wrap">
-    <svg class="plane" viewBox="0 0 170 80" aria-hidden="true"><path d="M4 70 C30 74 40 40 64 48 C84 55 70 76 56 66 C44 57 66 30 104 30" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round"/><path d="M112 22 L166 4 L140 50 L130 34Z" fill="#fff" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M130 34 L166 4 M130 34 L128 46 L136 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg>
+    <img class="plane plane3d" src="img/icons/aviao.webp" alt="" width="400" height="372">
     <svg class="cloud-s" viewBox="0 0 80 44" aria-hidden="true"><use href="#cloud"/></svg>
     <div class="txt">
       <h1>Cuidando <span class="bl">do hoje</span>,<br><span class="r">inspirando</span><br>o amanhã<svg class="doodle-heart" viewBox="0 0 24 24" aria-hidden="true"><use href="#heart-o"/></svg></h1>
@@ -432,9 +452,9 @@ section[id] { scroll-margin-top: 90px; }
         <a class="btn btn-ghost" href="#turmas">Nossas turmas</a>
       </div>
       <div class="feats">
-        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 L27 7 V15 Q27 25 16 29 Q5 25 5 15 V7Z" fill="none" stroke="#1d63d6" stroke-width="2.4" stroke-linejoin="round"/><path d="M11 16 L14.5 19.5 L21 12.5" fill="none" stroke="#1d63d6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><div><strong>Ambiente seguro</strong><span>Espaço protegido e acolhedor</span></div></div>
-        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27 C8 21 4 17 4 12.5 A6 6 0 0 1 16 10 A6 6 0 0 1 28 12.5 C28 17 24 21 16 27Z" fill="none" stroke="#e3262f" stroke-width="2.4" stroke-linejoin="round"/></svg><div><strong>Professores experientes</strong><span>Carinho e atenção todo dia</span></div></div>
-        <div class="feat"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 L19.6 11.4 L28.6 12.1 L21.7 18 L23.8 27 L16 22.2 L8.2 27 L10.3 18 L3.4 12.1 L12.4 11.4Z" fill="none" stroke="#e0a200" stroke-width="2.4" stroke-linejoin="round"/></svg><div><strong>Aprender brincando</strong><span>Programas criativos</span></div></div>
+        <div class="feat f3d"><img class="feat-ic" src="img/icons/escudo.webp" alt="" width="72" height="72"><div><strong>Ambiente seguro</strong><span>Espaço protegido e acolhedor</span></div></div>
+        <div class="feat f3d"><img class="feat-ic" src="img/icons/maca.webp" alt="" width="72" height="72"><div><strong>Professores experientes</strong><span>Carinho e atenção todo dia</span></div></div>
+        <div class="feat f3d"><img class="feat-ic" src="img/icons/estrela.webp" alt="" width="72" height="72"><div><strong>Aprender brincando</strong><span>Programas criativos</span></div></div>
       </div>
     </div>
     <div class="art">
@@ -444,7 +464,7 @@ section[id] { scroll-margin-top: 90px; }
       <div class="photo"><img src="img/hero.jpg" alt="Crianças brincando com blocos coloridos ao lado da professora" width="900" height="900"></div>
       <svg class="leaf" viewBox="0 0 60 80" aria-hidden="true"><path d="M8 76 C20 50 30 30 52 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M22 46 C8 44 2 32 4 22 C16 24 24 34 22 46Z M32 32 C30 18 38 8 48 6 C50 18 42 28 32 32Z M28 40 C40 34 52 38 58 46 C46 52 36 48 28 40Z" fill="currentColor"/></svg>
       <svg class="star-r" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
-      <div class="badge"><div>Um lugar para<br><span class="bl">Aprender</span>, <span class="r">Brincar</span><br>&amp; Crescer Juntos<svg viewBox="0 0 60 32" aria-hidden="true"><path d="M6 30 A24 24 0 0 1 54 30" fill="none" stroke="#e3262f" stroke-width="5" stroke-linecap="round"/><path d="M13 30 A17 17 0 0 1 47 30" fill="none" stroke="#ffc20e" stroke-width="5" stroke-linecap="round"/><path d="M20 30 A10 10 0 0 1 40 30" fill="none" stroke="#1d63d6" stroke-width="5" stroke-linecap="round"/></svg></div></div>
+      <div class="badge"><div>Um lugar para<br><span class="bl">Aprender</span>, <span class="r">Brincar</span><br>&amp; Crescer Juntos<img class="badge-arco" src="img/icons/arco.webp" alt="" width="400" height="252"></div></div>
     </div>
   </div>
 </section>
@@ -457,19 +477,19 @@ section[id] { scroll-margin-top: 90px; }
     </div>
     <div class="turmas">
       <article class="turma t1 rv">
-        <div class="ph"><img src="img/card-brincar.jpg" alt="Crianças pequenas montando blocos" width="400" height="400" loading="lazy"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="10" cy="9.5" r="1" fill="currentColor"/><circle cx="14" cy="9.5" r="1" fill="currentColor"/><path d="M10 12 Q12 13.6 14 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M7 21 Q12 16 17 21" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span></div>
+        <div class="ph"><img src="img/card-brincar.jpg" alt="Crianças pequenas montando blocos" width="400" height="400" loading="lazy"><span class="ic ic3d"><img class="i3d" src="img/icons/chocalho.webp" alt="" width="110" height="110" loading="lazy"></span></div>
         <div class="bd"><h3>Berçário</h3><span class="age">0 a 1 ano</span><p>Colo, estímulos sensoriais e muito carinho nos primeiros passos.</p><span class="shift">Manhã, tarde ou integral</span><a class="more" href="#contato">Saiba mais <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
       </article>
       <article class="turma t2 rv">
-        <div class="ph"><img src="img/card-crescendo.jpg" alt="Crianças brincando de roda" width="400" height="400" loading="lazy"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="7" height="7" rx="1.5" fill="currentColor"/><rect x="13" y="11" width="7" height="7" rx="1.5" fill="currentColor" opacity=".75"/><rect x="8.5" y="4" width="7" height="7" rx="1.5" fill="currentColor" opacity=".9"/></svg></span></div>
+        <div class="ph"><img src="img/card-crescendo.jpg" alt="Crianças brincando de roda" width="400" height="400" loading="lazy"><span class="ic ic3d"><img class="i3d" src="img/icons/ursinho.webp" alt="" width="110" height="110" loading="lazy"></span></div>
         <div class="bd"><h3>Maternal I</h3><span class="age">1 a 2 anos</span><p>Descobertas, primeiras palavras e brincadeiras em grupo.</p><span class="shift">Manhã, tarde ou integral</span><a class="more" href="#contato">Saiba mais <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
       </article>
       <article class="turma t3 rv">
-        <div class="ph"><img src="img/card-ambiente.jpg" alt="Menino com as mãos pintadas de tinta" width="400" height="400" loading="lazy"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3 L21 8 L9 20 L3 21 L4 15Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M14 5 L19 10" stroke="currentColor" stroke-width="2.2"/></svg></span></div>
+        <div class="ph"><img src="img/card-ambiente.jpg" alt="Menino com as mãos pintadas de tinta" width="400" height="400" loading="lazy"><span class="ic ic3d"><img class="i3d" src="img/icons/lapis.webp" alt="" width="110" height="110" loading="lazy"></span></div>
         <div class="bd"><h3>Maternal II</h3><span class="age">2 a 3 anos</span><p>Autonomia, música, arte e a alegria de fazer amigos.</p><span class="shift">Manhã, tarde ou integral</span><a class="more" href="#contato">Saiba mais <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
       </article>
       <article class="turma t4 rv">
-        <div class="ph"><img src="img/card-comeco.jpg" alt="Menina lendo um livro ilustrado" width="400" height="400" loading="lazy"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 L23 9 L12 14 L1 9Z" fill="currentColor"/><path d="M5 11.5 V16 Q12 21 19 16 V11.5 L12 15Z" fill="currentColor" opacity=".75"/></svg></span></div>
+        <div class="ph"><img src="img/card-comeco.jpg" alt="Menina lendo um livro ilustrado" width="400" height="400" loading="lazy"><span class="ic ic3d"><img class="i3d" src="img/icons/mochila.webp" alt="" width="110" height="110" loading="lazy"></span></div>
         <div class="bd"><h3>Pré-escola</h3><span class="age">4 a 5 anos</span><p>Histórias, letras e números em projetos cheios de curiosidade.</p><span class="shift">Manhã, tarde ou integral</span><a class="more" href="#contato">Saiba mais <svg viewBox="0 0 16 16" aria-hidden="true"><use href="#arrow"/></svg></a></div>
       </article>
     </div>
@@ -478,10 +498,10 @@ section[id] { scroll-margin-top: 90px; }
       <svg class="deco1" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
       <svg class="deco2" viewBox="0 0 24 24" aria-hidden="true"><use href="#heart-o"/></svg>
       <svg class="deco3" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
-      <div class="stat"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 34 V16 L20 6 L34 16 V34Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M16 34 V24 H24 V34" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg><b>2</b><span>Unidades</span></div>
-      <div class="stat"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 6 L37 14 L20 22 L3 14Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/><path d="M9 17.5 V26 Q20 33 31 26 V17.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg><b>5º ano</b><span>Do Berçário ao Fundamental</span></div>
-      <div class="stat"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M20 12 V20 L26 23" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg><b>Integral</b><span>ou parcial, como for melhor</span></div>
-      <div class="stat"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34 C10 27 5 22 5 16 A7.5 7.5 0 0 1 20 13 A7.5 7.5 0 0 1 35 16 C35 22 30 27 20 34Z" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/></svg><b>1.700+</b><span>Famílias e amigos no Instagram</span></div>
+      <div class="stat s3d"><img class="stat-ic" src="img/icons/escola.webp" alt="" width="110" height="110" loading="lazy"><b>2</b><span>Unidades</span></div>
+      <div class="stat s3d"><img class="stat-ic" src="img/icons/capelo.webp" alt="" width="110" height="110" loading="lazy"><b>5º ano</b><span>Do Berçário ao Fundamental</span></div>
+      <div class="stat s3d"><img class="stat-ic" src="img/icons/relogio.webp" alt="" width="110" height="110" loading="lazy"><b>Integral</b><span>ou parcial, como for melhor</span></div>
+      <div class="stat s3d"><img class="stat-ic" src="img/icons/baloes.webp" alt="" width="110" height="110" loading="lazy"><b>1.700+</b><span>Famílias e amigos no Instagram</span></div>
     </div>
   </div>
 </section>
@@ -493,14 +513,14 @@ section[id] { scroll-margin-top: 90px; }
       <div class="side"><p>Cada atividade tem um objetivo: despertar a curiosidade, estimular a fala, o movimento e o convívio com os amigos.</p></div>
     </div>
     <div class="progs">
-      <article class="prog p1 rv"><div class="ic"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="16" width="11" height="11" rx="2.5" fill="currentColor"/><rect x="17" y="19" width="11" height="8" rx="2.5" fill="currentColor" opacity=".6"/><rect x="10" y="5" width="11" height="11" rx="2.5" fill="currentColor" opacity=".85"/></svg></div><div><h3>Brincar e Aprender</h3><p>Jogos de encaixe, blocos e faz de conta que trabalham a coordenação, a atenção e a imaginação.</p><ul class="tags"><li>Coordenação motora</li><li>Faz de conta</li><li>Raciocínio</li></ul></div></article>
-      <article class="prog p2 rv"><div class="ic"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 C8 4 3 10 3 16 C3 23 9 28 15 28 C18 28 18 25 16.5 23.5 C15 22 16 19.5 19 19.5 H23 C26.5 19.5 29 17 29 13.5 C29 8 23 4 16 4Z" fill="currentColor"/><circle cx="10" cy="14" r="2.2" fill="#fff"/><circle cx="15" cy="9.5" r="2.2" fill="#fff"/><circle cx="21.5" cy="10.5" r="2.2" fill="#fff"/></svg></div><div><h3>Arte e Música</h3><p>Pintura, massinha, cantigas e instrumentos de percussão para a criança se expressar do seu jeito.</p><ul class="tags"><li>Pintura</li><li>Cantigas</li><li>Ritmo</li></ul></div></article>
-      <article class="prog p3 rv"><div class="ic"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29 V14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M16 18 C7 18 5 11 5 6 C13 6 16 11 16 18Z M16 15 C16 9 19 4 27 4 C27 10 24 15 16 15Z" fill="currentColor"/></svg></div><div><h3>Natureza e Movimento</h3><p>Horta, parquinho e brincadeiras ao ar livre para gastar energia e conhecer o mundo ao redor.</p><ul class="tags"><li>Horta</li><li>Parquinho</li><li>Circuitos</li></ul></div></article>
-      <article class="prog p4 rv"><div class="ic"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 7 Q10 4 16 8 Q22 4 29 7 V27 Q22 24 16 28 Q10 24 3 27Z" fill="currentColor"/><path d="M16 8 V28" stroke="#fff" stroke-width="2"/></svg></div><div><h3>Primeiras Letras e Números</h3><p>Histórias, rimas e jogos de contagem que preparam a criança para a leitura e a escrita, sem pressa.</p><ul class="tags"><li>Contação de histórias</li><li>Letras</li><li>Números</li></ul></div></article>
+      <article class="prog p1 rv"><div class="ic"><img class="i3d" src="img/icons/blocos.webp" alt="" width="120" height="120" loading="lazy"></div><div><h3>Brincar e Aprender</h3><p>Jogos de encaixe, blocos e faz de conta que trabalham a coordenação, a atenção e a imaginação.</p><ul class="tags"><li>Coordenação motora</li><li>Faz de conta</li><li>Raciocínio</li></ul></div></article>
+      <article class="prog p2 rv"><div class="ic"><img class="i3d" src="img/icons/arte.webp" alt="" width="120" height="120" loading="lazy"></div><div><h3>Arte e Música</h3><p>Pintura, massinha, cantigas e instrumentos de percussão para a criança se expressar do seu jeito.</p><ul class="tags"><li>Pintura</li><li>Cantigas</li><li>Ritmo</li></ul></div></article>
+      <article class="prog p3 rv"><div class="ic"><img class="i3d" src="img/icons/natureza.webp" alt="" width="120" height="120" loading="lazy"></div><div><h3>Natureza e Movimento</h3><p>Horta, parquinho e brincadeiras ao ar livre para gastar energia e conhecer o mundo ao redor.</p><ul class="tags"><li>Horta</li><li>Parquinho</li><li>Circuitos</li></ul></div></article>
+      <article class="prog p4 rv"><div class="ic"><img class="i3d" src="img/icons/letras.webp" alt="" width="120" height="120" loading="lazy"></div><div><h3>Primeiras Letras e Números</h3><p>Histórias, rimas e jogos de contagem que preparam a criança para a leitura e a escrita, sem pressa.</p><ul class="tags"><li>Contação de histórias</li><li>Letras</li><li>Números</li></ul></div></article>
     </div>
 
     <div class="day rv">
-      <h3><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1.5 V4 M12 20 V22.5 M1.5 12 H4 M20 12 H22.5 M4.6 4.6 L6.3 6.3 M17.7 17.7 L19.4 19.4 M4.6 19.4 L6.3 17.7 M17.7 6.3 L19.4 4.6"/></g></svg>Um dia na creche</h3>
+      <h3><img class="day-sol" src="img/icons/sol.webp" alt="" width="80" height="80" loading="lazy">Um dia na creche</h3>
       <ol class="timeline">
         <li><b>7h30</b>Acolhida</li><li><b>8h30</b>Café da manhã</li><li><b>9h30</b>Atividades dirigidas</li><li><b>11h</b>Almoço</li>
         <li><b>12h</b>Soneca e descanso</li><li><b>15h</b>Lanche da tarde</li><li><b>16h</b>Brincadeira livre</li><li><b>17h30</b>Saída com as famílias</li>
@@ -628,7 +648,7 @@ section[id] { scroll-margin-top: 90px; }
 
 <section class="wrap">
   <div class="cta rv">
-    <svg class="sunny" viewBox="0 0 70 70" aria-hidden="true"><g stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M35 3 V11 M35 59 V67 M3 35 H11 M59 35 H67 M12 12 L18 18 M52 52 L58 58 M12 58 L18 52 M52 18 L58 12"/></g><circle cx="35" cy="35" r="17" fill="currentColor"/><circle cx="29" cy="32" r="2" fill="#13235b"/><circle cx="41" cy="32" r="2" fill="#13235b"/><path d="M28 39 Q35 45 42 39" fill="none" stroke="#13235b" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <img class="sunny" src="img/icons/sol.webp" alt="" width="140" height="140" loading="lazy">
     <div><h2>Pronto para começar?</h2><p>Crianças felizes, futuros brilhantes! Vamos adorar receber você e seu filho na família Rei Leão.</p></div>
     <a class="btn btn-blue" href="https://wa.me/5521971035209" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#cal"/></svg>Agende sua visita</a>
     <svg class="hearts" viewBox="0 0 64 44" aria-hidden="true"><path d="M20 38 C10 31 4 26 4 19 A7 7 0 0 1 20 15 A7 7 0 0 1 36 19 C36 26 30 31 20 38Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M48 24 C42 20 38 17 38 13 A4.5 4.5 0 0 1 48 10.5 A4.5 4.5 0 0 1 58 13 C58 17 54 20 48 24Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
