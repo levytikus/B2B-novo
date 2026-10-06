@@ -4,15 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<meta name="description" content="Jardim Escola Belo Jasmim: creche e escola com horário integral, salas climatizadas e câmeras. R. São Renato, 173.">
-<title>Jardim Escola Belo Jasmim | Creche e escola em horário integral</title>
+<meta name="description" content="Jardim Escola Belo Jasmin: creche e escola com horário integral, salas climatizadas e câmeras. R. São Renato, 173.">
+<title>Jardim Escola Belo Jasmin | Creche e escola em horário integral</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23013f05'/%3E%3Cg fill='%23fff'%3E%3Cellipse cx='32' cy='17' rx='7.5' ry='11' transform='rotate(0 32 32)'/%3E%3Cellipse cx='32' cy='17' rx='7.5' ry='11' transform='rotate(45 32 32)'/%3E%3Cellipse cx='32' cy='17' rx='7.5' ry='11' transform='rotate(90 32 32)'/%3E%3Cellipse cx='32' cy='17' rx='7.5' ry='11' transform='rotate(135 32 32)'/%3E%3Cellipse cx='32' cy='17' rx='7.5' ry='11' transform='rotate(180 32 32)'/%3E%3Cellipse cx='32' cy='17' rx='7.5' ry='11' transform='rotate(225 32 32)'/%3E%3Cellipse cx='32' cy='17' rx='7.5' ry='11' transform='rotate(270 32 32)'/%3E%3Cellipse cx='32' cy='17' rx='7.5' ry='11' transform='rotate(315 32 32)'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='8' fill='%23fbdc00'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="logo.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --leaf:#2f7d5b;
-  --leaf-dark:#1f5a41;
+  --logo-green:#013f05;
+  --logo-yellow:#fbdc00;
+  --leaf:#1e8532;
+  --leaf-dark:#0a5a14;
   --leaf-soft:#dff1e6;
   --cream:#fffcf3;
   --cream2:#fbf3dc;
@@ -38,7 +42,7 @@ a{color:inherit}
 h1,h2,h3{font-family:var(--display);color:var(--ink);line-height:1.08;margin:0;font-weight:800;text-wrap:balance}
 p{margin:0}
 .wrap{max-width:1140px;margin:0 auto;padding-inline:20px}
-section[id]{scroll-margin-top:80px}
+section[id]{scroll-margin-top:104px}
 :focus-visible{outline:3px solid var(--peach);outline-offset:3px;border-radius:10px}
 
 /* Botões */
@@ -50,18 +54,18 @@ section[id]{scroll-margin-top:80px}
 .btn-ghost{background:#fff;color:var(--ink);border-color:rgba(36,55,46,.18)}
 
 /* Cabeçalho */
-.header{position:sticky;top:0;z-index:30;background:rgba(255,252,243,.93);backdrop-filter:blur(8px);border-bottom:1px solid rgba(36,55,46,.07)}
-.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px}
+.header{position:sticky;top:0;z-index:30;background:var(--logo-green);box-shadow:0 6px 20px rgba(1,63,5,.22)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:92px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
-.logo svg{width:44px;height:44px;flex:none}
+.logo img{display:block;height:72px;width:auto;flex:none}
 .logo b{display:block;font-family:var(--display);font-size:1.32rem;color:var(--leaf-dark);line-height:1;font-weight:800;white-space:nowrap}
 .logo small{display:block;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--peach);margin-top:4px}
 .nav{display:flex;align-items:center;gap:24px}
-.nav a{text-decoration:none;font-weight:800;color:var(--ink);font-size:.95rem}
-.nav a:not(.btn):hover{color:var(--leaf)}
+.nav a{text-decoration:none;font-weight:800;color:#fff;font-size:.95rem}
+.nav a:not(.btn):hover{color:var(--logo-yellow)}
 .nav .btn{padding:10px 20px;font-size:1rem}
-.nav .btn-leaf{color:#fff}
-.menu-btn{display:none;background:none;border:0;padding:8px;color:var(--ink);cursor:pointer}
+.nav .btn-leaf{background:var(--logo-yellow);color:var(--logo-green)}
+.menu-btn{display:none;background:none;border:0;padding:8px;color:#fff;cursor:pointer}
 .menu-btn svg{width:28px;height:28px}
 
 /* Topo */
@@ -179,14 +183,15 @@ section[id]{scroll-margin-top:80px}
 .cta-flower{position:absolute;right:-40px;bottom:-50px;width:220px;opacity:.25}
 
 /* Rodapé */
-.footer{background:var(--ink);color:#c5d3cb;padding:46px 0 0;font-size:.95rem}
+.footer{background:var(--logo-green);color:#d6e6d7;padding:46px 0 0;font-size:.95rem}
+.footer .logo img{height:104px}
 .footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:28px}
 .footer .logo b{color:#fff}
 .footer h4{font-family:var(--display);color:#fff;font-size:1.1rem;margin:0 0 8px}
 .footer a{color:#fff}
 .footer p+p{margin-top:4px}
-.credit{margin-top:40px;border-top:1px solid rgba(255,255,255,.1);padding:16px 20px;text-align:center;font-size:.8rem;color:#8fa298}
-.credit a{color:#c5d3cb;text-decoration:none;border-bottom:1px dotted rgba(197,211,203,.5)}
+.credit{margin-top:40px;border-top:1px solid rgba(255,255,255,.14);padding:16px 20px;text-align:center;font-size:.8rem;color:#a9c4ab}
+.credit a{color:#d6e6d7;text-decoration:none;border-bottom:1px dotted rgba(197,211,203,.5)}
 
 /* Botão fixo no celular */
 .fab{display:none}
@@ -198,9 +203,11 @@ section[id]{scroll-margin-top:80px}
 }
 @media (max-width:860px){
   .menu-btn{display:block}
-  .nav{position:absolute;top:70px;left:0;right:0;background:var(--cream);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px;border-bottom:1px solid rgba(36,55,46,.08);display:none}
+  .nav{position:absolute;top:76px;left:0;right:0;background:var(--logo-green);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px;box-shadow:0 14px 24px rgba(1,63,5,.25);display:none}
+  .header .wrap{min-height:76px}
+  .logo img{height:60px}
   .nav.open{display:flex}
-  .nav a:not(.btn){padding:12px 0;border-bottom:1px solid rgba(36,55,46,.06)}
+  .nav a:not(.btn){padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14)}
   .nav .btn{margin-top:14px}
   .hero{padding:34px 0 80px}
   .hero .wrap,.pais .wrap,.onde .wrap,.cta-box{grid-template-columns:1fr}
@@ -210,7 +217,7 @@ section[id]{scroll-margin-top:80px}
   .tile.big{grid-column:span 2;grid-row:auto}
   .footer .wrap{grid-template-columns:1fr}
   .sec{padding:68px 0}
-  .fab{display:flex;position:fixed;right:16px;bottom:16px;z-index:40;width:58px;height:58px;border-radius:50%;background:var(--leaf);color:#fff;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(31,90,65,.4)}
+  .fab{display:flex;position:fixed;right:16px;bottom:16px;z-index:40;width:58px;height:58px;border-radius:50%;background:var(--leaf);color:#fff;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(1,63,5,.4)}
   .fab svg{width:26px;height:26px}
   .footer{padding-bottom:70px}
 }
@@ -264,9 +271,8 @@ section[id]{scroll-margin-top:80px}
 
 <header class="header">
   <div class="wrap">
-    <a class="logo" href="#topo" aria-label="Jardim Escola Belo Jasmim, início">
-      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#2f7d5b"/><path d="M10 38c6-2 10-8 14-14M38 38c-6-2-10-8-14-14" stroke="#7fc79f" stroke-width="2.4" fill="none" stroke-linecap="round"/><use href="#jasmim" x="6" y="4" width="36" height="36"/></svg>
-      <span><b>Belo Jasmim</b><small>Jardim Escola</small></span>
+    <a class="logo" href="#topo" aria-label="Jardim Escola Belo Jasmin, início">
+      <img src="logo.webp" width="720" height="271" alt="Jardim Escola Belo Jasmin">
     </a>
     <button class="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -277,7 +283,7 @@ section[id]{scroll-margin-top:80px}
       <a href="#estrutura">Estrutura</a>
       <a href="#familias">Famílias</a>
       <a href="#onde">Onde estamos</a>
-      <a class="btn btn-leaf" href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmim%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#whatsapp"/></svg>WhatsApp</a>
+      <a class="btn btn-leaf" href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmin%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#whatsapp"/></svg>WhatsApp</a>
     </nav>
   </div>
 </header>
@@ -288,14 +294,14 @@ section[id]{scroll-margin-top:80px}
     <div>
       <span class="tagline"><svg aria-hidden="true"><use href="#jasmim2"/></svg> Creche e escola · Horário integral</span>
       <h1>Um jardim para os pequenos <em>florescerem</em></h1>
-      <p class="lead">No Jardim Escola Belo Jasmim, seu filho passa o dia inteiro em salas fresquinhas, num ambiente seguro e acompanhado de perto. Mais tranquilidade para a família, mais alegria para quem está crescendo.</p>
+      <p class="lead">No Jardim Escola Belo Jasmin, seu filho passa o dia inteiro em salas fresquinhas, num ambiente seguro e acompanhado de perto. Mais tranquilidade para a família, mais alegria para quem está crescendo.</p>
       <ul class="chips">
         <li><i style="background:var(--sun)"></i>Horário integral</li>
         <li><i style="background:var(--sky)"></i>Salas climatizadas</li>
         <li><i style="background:var(--peach)"></i>Câmeras</li>
       </ul>
       <div class="ctas">
-        <a class="btn btn-leaf" href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmim%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#whatsapp"/></svg>Agende uma visita</a>
+        <a class="btn btn-leaf" href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmin%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#whatsapp"/></svg>Agende uma visita</a>
         <a class="btn btn-ghost" href="#sobre">Conheça a escola</a>
       </div>
     </div>
@@ -327,7 +333,7 @@ section[id]{scroll-margin-top:80px}
         </g>
         <!-- arbusto de jasmim esquerda -->
         <g class="sway">
-          <path d="M40 420c-4-60 30-110 70-120 10 40-10 100-70 120z" fill="#2f7d5b"/>
+          <path d="M40 420c-4-60 30-110 70-120 10 40-10 100-70 120z" fill="#1e8532"/>
           <path d="M60 420c10-50 40-80 80-80-4 40-30 70-80 80z" fill="#4c9d72"/>
           <use href="#jasmim" x="70" y="300" width="34" height="34"/>
           <use href="#jasmim" x="100" y="350" width="28" height="28"/>
@@ -335,7 +341,7 @@ section[id]{scroll-margin-top:80px}
         </g>
         <!-- arbusto direita -->
         <g class="sway" style="animation-delay:-2s">
-          <path d="M480 420c4-60-30-110-70-120-10 40 10 100 70 120z" fill="#2f7d5b"/>
+          <path d="M480 420c4-60-30-110-70-120-10 40 10 100 70 120z" fill="#1e8532"/>
           <path d="M460 420c-10-50-40-80-80-80 4 40 30 70 80 80z" fill="#4c9d72"/>
           <use href="#jasmim" x="416" y="300" width="34" height="34"/>
           <use href="#jasmim" x="392" y="352" width="28" height="28"/>
@@ -363,7 +369,7 @@ section[id]{scroll-margin-top:80px}
       </div>
     </div>
   </div>
-  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34c240 36 480 36 720 8s480-36 720 0v18H0z" fill="#2f7d5b"/></svg>
+  <svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34c240 36 480 36 720 8s480-36 720 0v18H0z" fill="#1e8532"/></svg>
 </section>
 
 <div class="band">
@@ -388,7 +394,7 @@ section[id]{scroll-margin-top:80px}
     <div class="sec-head">
       <span class="eyebrow"><svg aria-hidden="true"><use href="#jasmim2"/></svg>A escola</span>
       <h2>Cuidado de perto, do jeito que as famílias procuram</h2>
-      <p>O Belo Jasmim é creche e escola em horário integral. Câmeras, salas refrigeradas e um custo-benefício que cabe no orçamento são justamente o que as famílias mais elogiam.</p>
+      <p>O Belo Jasmin é creche e escola em horário integral. Câmeras, salas refrigeradas e um custo-benefício que cabe no orçamento são justamente o que as famílias mais elogiam.</p>
     </div>
     <div class="cards">
       <article class="card c1">
@@ -424,19 +430,19 @@ section[id]{scroll-margin-top:80px}
     </div>
     <div class="turma-grid">
       <article class="turma t1">
-        <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="48" fill="#efe8ff"/><path d="M48 76c-4-14-4-30 0-40" stroke="#2f7d5b" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M48 58c-10-2-16-10-16-18 10 0 16 8 16 18z" fill="#4c9d72"/><path d="M48 30c-6-8-6-16 0-20 6 4 6 12 0 20z" fill="#fff" stroke="#b49ae8" stroke-width="2"/></svg>
+        <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="48" fill="#efe8ff"/><path d="M48 76c-4-14-4-30 0-40" stroke="#1e8532" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M48 58c-10-2-16-10-16-18 10 0 16 8 16 18z" fill="#4c9d72"/><path d="M48 30c-6-8-6-16 0-20 6 4 6 12 0 20z" fill="#fff" stroke="#b49ae8" stroke-width="2"/></svg>
         <h3>Berçário</h3>
         <p>Colo, rotina tranquila e atenção constante para os bebês nos primeiros tempos longe de casa.</p>
         <span class="stem">Primeiros passos</span>
       </article>
       <article class="turma t2">
-        <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="48" fill="#e1f3fb"/><path d="M48 80V40" stroke="#2f7d5b" stroke-width="4" stroke-linecap="round"/><path d="M48 62c-12-2-18-12-18-20 12 0 18 10 18 20zM48 54c12-2 18-12 18-20-12 0-18 10-18 20z" fill="#4c9d72"/><use href="#jasmim" x="32" y="12" width="32" height="32"/></svg>
+        <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="48" fill="#e1f3fb"/><path d="M48 80V40" stroke="#1e8532" stroke-width="4" stroke-linecap="round"/><path d="M48 62c-12-2-18-12-18-20 12 0 18 10 18 20zM48 54c12-2 18-12 18-20-12 0-18 10-18 20z" fill="#4c9d72"/><use href="#jasmim" x="32" y="12" width="32" height="32"/></svg>
         <h3>Maternal</h3>
         <p>Brincadeiras, música e convivência para ganhar autonomia, fazer amigos e se expressar.</p>
         <span class="stem">Descobertas</span>
       </article>
       <article class="turma t3">
-        <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="48" fill="#ffe5dc"/><path d="M48 82V44" stroke="#2f7d5b" stroke-width="4" stroke-linecap="round"/><path d="M48 66c-12-2-18-12-18-20 12 0 18 10 18 20zM48 58c12-2 18-12 18-20-12 0-18 10-18 20z" fill="#4c9d72"/><use href="#jasmim" x="18" y="8" width="30" height="30"/><use href="#jasmim" x="48" y="10" width="28" height="28"/><use href="#jasmim" x="34" y="26" width="26" height="26"/></svg>
+        <svg viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="48" fill="#ffe5dc"/><path d="M48 82V44" stroke="#1e8532" stroke-width="4" stroke-linecap="round"/><path d="M48 66c-12-2-18-12-18-20 12 0 18 10 18 20zM48 58c12-2 18-12 18-20-12 0-18 10-18 20z" fill="#4c9d72"/><use href="#jasmim" x="18" y="8" width="30" height="30"/><use href="#jasmim" x="48" y="10" width="28" height="28"/><use href="#jasmim" x="34" y="26" width="26" height="26"/></svg>
         <h3>Pré-escola</h3>
         <p>Primeiras letras, números e projetos que preparam a criança para o ensino fundamental.</p>
         <span class="stem">Florescendo</span>
@@ -462,7 +468,7 @@ section[id]{scroll-margin-top:80px}
           <path d="M80 118q6 10 0 20M115 118q6 10 0 20M150 118q6 10 0 20" stroke="#7cc4e8" stroke-width="4" fill="none" stroke-linecap="round"/>
           <rect x="230" y="60" width="120" height="150" rx="14" fill="#fff"/><path d="M290 60v150M230 135h120" stroke="#e1f3fb" stroke-width="6"/>
           <g font-family="Baloo 2, sans-serif" font-weight="800" font-size="34"><rect x="40" y="200" width="44" height="44" rx="8" fill="#ff8f70"/><text x="62" y="234" fill="#fff" text-anchor="middle">A</text><rect x="92" y="200" width="44" height="44" rx="8" fill="#f7b928"/><text x="114" y="234" fill="#fff" text-anchor="middle">B</text><rect x="144" y="200" width="44" height="44" rx="8" fill="#b49ae8"/><text x="166" y="234" fill="#fff" text-anchor="middle">C</text></g>
-          <rect x="60" y="300" width="220" height="22" rx="8" fill="#2f7d5b"/><rect x="80" y="322" width="12" height="60" fill="#1f5a41"/><rect x="248" y="322" width="12" height="60" fill="#1f5a41"/>
+          <rect x="60" y="300" width="220" height="22" rx="8" fill="#1e8532"/><rect x="80" y="322" width="12" height="60" fill="#0a5a14"/><rect x="248" y="322" width="12" height="60" fill="#0a5a14"/>
           <circle cx="110" cy="290" r="12" fill="#ff8f70"/><rect x="160" y="276" width="30" height="24" rx="5" fill="#7cc4e8"/><path d="M220 300l14-26 14 26z" fill="#f7b928"/>
           <circle cx="330" cy="380" r="30" fill="#ff8f70"/><path d="M300 380h60M330 350v60" stroke="#fff" stroke-width="4"/>
         </svg>
@@ -472,7 +478,7 @@ section[id]{scroll-margin-top:80px}
         <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de brinquedos e blocos de montar">
           <rect width="300" height="220" fill="#fff1c7"/>
           <rect x="40" y="120" width="50" height="50" rx="8" fill="#ff8f70"/><rect x="94" y="120" width="50" height="50" rx="8" fill="#7cc4e8"/><rect x="67" y="66" width="50" height="50" rx="8" fill="#b49ae8"/>
-          <circle cx="210" cy="140" r="32" fill="#2f7d5b"/><path d="M178 140h64M210 108v64" stroke="#7fc79f" stroke-width="4"/>
+          <circle cx="210" cy="140" r="32" fill="#1e8532"/><path d="M178 140h64M210 108v64" stroke="#7fc79f" stroke-width="4"/>
           <path d="M190 70l12-30 12 30z" fill="#ff8f70"/><rect x="186" y="70" width="32" height="14" rx="4" fill="#f7b928"/>
         </svg>
         <figcaption>Hora de brincar</figcaption>
@@ -481,7 +487,7 @@ section[id]{scroll-margin-top:80px}
         <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de livros infantis empilhados">
           <rect width="300" height="220" fill="#dff1e6"/>
           <rect x="70" y="150" width="160" height="26" rx="6" fill="#ff8f70"/><rect x="82" y="124" width="140" height="26" rx="6" fill="#f7b928"/><rect x="62" y="98" width="150" height="26" rx="6" fill="#7cc4e8"/>
-          <path d="M150 90c-20-14-50-14-60-4v-34c10-10 40-10 60 4 20-14 50-14 60-4v34c-10-10-40-10-60 4z" fill="#fff" stroke="#2f7d5b" stroke-width="3"/><path d="M150 56v34" stroke="#2f7d5b" stroke-width="3"/>
+          <path d="M150 90c-20-14-50-14-60-4v-34c10-10 40-10 60 4 20-14 50-14 60-4v34c-10-10-40-10-60 4z" fill="#fff" stroke="#1e8532" stroke-width="3"/><path d="M150 56v34" stroke="#1e8532" stroke-width="3"/>
           <use href="#jasmim" x="226" y="30" width="44" height="44"/>
         </svg>
         <figcaption>Leitura e histórias</figcaption>
@@ -490,7 +496,7 @@ section[id]{scroll-margin-top:80px}
         <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustração de lanche com frutas">
           <rect width="300" height="220" fill="#ffe5dc"/>
           <ellipse cx="150" cy="150" rx="100" ry="26" fill="#fff"/>
-          <circle cx="110" cy="128" r="24" fill="#ff8f70"/><path d="M110 104q4-12 14-12" stroke="#2f7d5b" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <circle cx="110" cy="128" r="24" fill="#ff8f70"/><path d="M110 104q4-12 14-12" stroke="#1e8532" stroke-width="4" fill="none" stroke-linecap="round"/>
           <path d="M150 140c0-30 20-48 44-48-2 30-20 48-44 48z" fill="#f7b928"/>
           <circle cx="200" cy="136" r="14" fill="#b49ae8"/><circle cx="218" cy="128" r="12" fill="#b49ae8"/>
         </svg>
@@ -502,7 +508,7 @@ section[id]{scroll-margin-top:80px}
           <rect x="60" y="40" width="10" height="70" rx="4" fill="#24372e"/><path d="M70 60h40" stroke="#24372e" stroke-width="8" stroke-linecap="round"/>
           <rect x="100" y="44" width="90" height="40" rx="10" fill="#fff" stroke="#24372e" stroke-width="4"/><circle cx="174" cy="64" r="10" fill="#7cc4e8" stroke="#24372e" stroke-width="3"/>
           <path d="M190 64l60 50v40l-80-60z" fill="#b49ae8" opacity=".35"/>
-          <path d="M120 150c0-22 60-22 60 0v20h-60z" fill="#2f7d5b"/><path d="M138 150v-10a12 12 0 0 1 24 0v10" stroke="#2f7d5b" stroke-width="6" fill="none"/>
+          <path d="M120 150c0-22 60-22 60 0v20h-60z" fill="#1e8532"/><path d="M138 150v-10a12 12 0 0 1 24 0v10" stroke="#1e8532" stroke-width="6" fill="none"/>
           <path d="M140 160l8 8 14-14" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <figcaption>Segurança com câmeras</figcaption>
@@ -553,7 +559,7 @@ section[id]{scroll-margin-top:80px}
       <p>Agende uma visita para conhecer as salas, a rotina e tirar todas as suas dúvidas pessoalmente.</p>
       <div class="addr">
         <svg aria-hidden="true"><use href="#pin"/></svg>
-        <span><b>R. São Renato, 173</b>Jardim Escola Belo Jasmim</span>
+        <span><b>R. São Renato, 173</b>Jardim Escola Belo Jasmin</span>
       </div>
       <div class="ctas">
         <a class="btn btn-leaf" href="https://www.google.com/maps/search/?api=1&amp;query=Jardim%20Escola%20Belo%20Jasmim%20R.%20S%C3%A3o%20Renato%2C%20173" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pin"/></svg>Abrir no Google Maps</a>
@@ -568,11 +574,11 @@ section[id]{scroll-margin-top:80px}
       <svg class="cta-flower" aria-hidden="true"><use href="#jasmim"/></svg>
       <div>
         <h2>Vamos marcar uma visita?</h2>
-        <p>Chame a escola no WhatsApp e venha conhecer o Belo Jasmim. Vai ser um prazer receber você e o seu pequeno.</p>
+        <p>Chame a escola no WhatsApp e venha conhecer o Belo Jasmin. Vai ser um prazer receber você e o seu pequeno.</p>
       </div>
       <div class="cta-side">
-        <a class="phone" href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmim%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener">(21) 99165-2345</a>
-        <a class="btn btn-leaf" href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmim%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#whatsapp"/></svg>Chamar no WhatsApp</a>
+        <a class="phone" href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmin%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener">(21) 99165-2345</a>
+        <a class="btn btn-leaf" href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmin%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#whatsapp"/></svg>Chamar no WhatsApp</a>
         <a class="phone-alt" href="tel:+552134665396">ou ligue: (21) 3466-5396</a>
       </div>
     </div>
@@ -583,9 +589,8 @@ section[id]{scroll-margin-top:80px}
 <footer class="footer">
   <div class="wrap">
     <div>
-      <a class="logo" href="#topo" aria-label="Jardim Escola Belo Jasmim, início">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#2f7d5b"/><use href="#jasmim" x="6" y="4" width="36" height="36"/></svg>
-        <span><b>Belo Jasmim</b><small>Jardim Escola</small></span>
+      <a class="logo" href="#topo" aria-label="Jardim Escola Belo Jasmin, início">
+      <img src="logo.webp" width="720" height="271" alt="Jardim Escola Belo Jasmin">
       </a>
       <p style="margin-top:14px">Creche e escola em horário integral.</p>
     </div>
@@ -596,14 +601,14 @@ section[id]{scroll-margin-top:80px}
     </div>
     <div>
       <h4>Contato</h4>
-      <p><a href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmim%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener">WhatsApp (21) 99165-2345</a></p>
+      <p><a href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmin%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener">WhatsApp (21) 99165-2345</a></p>
       <p><a href="tel:+552134665396">Telefone (21) 3466-5396</a></p>
     </div>
   </div>
   <div class="credit">Ilustrações feitas para esta prévia. · <a href="https://levytikus.github.io/B2B-novo/" target="_blank" rel="noopener">Prévia criada pela Business 2 Brothers</a></div>
 </footer>
 
-<a class="fab" href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmim%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener" aria-label="Chamar a escola no WhatsApp"><svg aria-hidden="true"><use href="#whatsapp"/></svg></a>
+<a class="fab" href="https://wa.me/5521991652345?text=Ol%C3%A1!%20Vi%20o%20site%20do%20Belo%20Jasmin%20e%20gostaria%20de%20agendar%20uma%20visita." target="_blank" rel="noopener" aria-label="Chamar a escola no WhatsApp"><svg aria-hidden="true"><use href="#whatsapp"/></svg></a>
 
 <script>
   const btn=document.querySelector('.menu-btn'),menu=document.getElementById('menu');
