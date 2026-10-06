@@ -409,6 +409,15 @@ section[id], div[id] { scroll-margin-top: 16px; }
 
 /* Topo centralizado no computador */
 @media (min-width: 761px) { .header { justify-content: center; } .header .logo { gap: 20px; } }
+
+/* Logo oficial (banner do Levy) */
+.logo { flex-direction: column; align-items: center; gap: 4px; }
+.logo img.banner { display: block; width: min(560px, 86vw); height: auto; filter: drop-shadow(0 4px 10px rgba(19,35,91,.14)); }
+.header .logo .tag { margin-top: 0; text-align: center; }
+.logo-foot { align-items: flex-start; }
+.logo-foot img.banner { width: min(300px, 80vw); filter: none; }
+.logo-foot .tag { color: #fff; font-size: .85rem; }
+@media (max-width: 760px) { .header { justify-content: center; } .header .logo img.banner { width: min(380px, 88vw); } }
 </style>
 </head>
 <body>
@@ -486,11 +495,8 @@ section[id], div[id] { scroll-margin-top: 16px; }
   <div class="wrap">
     <header class="header">
       <a class="logo" href="#inicio" aria-label="Creche Escola Rei Leão, onde pequenas mentes florescem">
-        <img class="sun" src="img/logo-rei-leao.webp" alt="" width="108" height="108">
-        <div>
-          <div class="kicker" aria-hidden="true">Creche Escola</div><div class="name" aria-hidden="true"><span class="w"><i>R</i><i>E</i><i>I</i></span><span class="w"><i>L</i><i>E</i><i>Ã</i><i>O</i></span></div>
-          <div class="tag">Onde pequenas mentes florescem <b>♥</b></div>
-        </div>
+        <img class="banner" src="img/logo-rei-leao-banner.webp" alt="Creche Escola Rei Leão" width="1400" height="323">
+        <div class="tag">Onde pequenas mentes florescem <b>♥</b></div>
       </a>
     </header>
 
@@ -732,12 +738,9 @@ section[id], div[id] { scroll-margin-top: 16px; }
   <div class="wrap">
     <div class="cols">
       <div>
-        <div class="logo">
-          <img class="sun" src="img/logo-rei-leao.webp" alt="" width="108" height="108">
-          <div>
-            <div class="kicker" aria-hidden="true">Creche Escola</div><div class="name" aria-hidden="true"><span class="w"><i>R</i><i>E</i><i>I</i></span><span class="w"><i>L</i><i>E</i><i>Ã</i><i>O</i></span></div>
-            <div class="tag">Onde pequenas mentes florescem <b>♥</b></div>
-          </div>
+        <div class="logo logo-foot">
+          <img class="banner" src="img/logo-rei-leao-banner.webp" alt="Creche Escola Rei Leão" width="1400" height="323" loading="lazy">
+          <div class="tag">Onde pequenas mentes florescem <b>♥</b></div>
         </div>
       </div>
       <div>
