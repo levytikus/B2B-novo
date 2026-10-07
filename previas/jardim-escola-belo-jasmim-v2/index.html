@@ -39,10 +39,10 @@ a{color:inherit}
 h1,h2,h3,h4,p{margin:0}
 h1,h2,h3{text-wrap:balance}
 :focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:6px}
-.container{width:100%;max-width:1000px;margin-inline:auto;padding-inline:20px}
+.container{width:100%;max-width:1040px;margin-inline:auto;padding-inline:20px}
 
 /* Botões */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 30px;border-radius:30px;font:600 16px/1.5 var(--font);color:var(--white);text-decoration:none;background:var(--orange);border:0;cursor:pointer;white-space:nowrap;transition:opacity .2s,transform .2s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 24px;border-radius:30px;font:600 16px/1.5 var(--font);color:var(--white);text-decoration:none;background:var(--orange);border:0;cursor:pointer;white-space:nowrap;transition:opacity .2s,transform .2s}
 .btn:hover{opacity:.9;transform:translateY(-2px)}
 .btn.green{background:var(--title)}
 .btn svg{width:20px;height:20px;fill:currentColor}
@@ -92,13 +92,17 @@ h1,h2,h3{text-wrap:balance}
   -webkit-mask:url("data:image/svg+xml,%3Csvg width='94' height='560' viewBox='0 0 94 560' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M92.9411 104.595C88.98 215.217 21.183 318.261 46.0974 458.448L45.8678 457.702C51.7806 493.121 48.7955 529.575 31.918 560H0V0H67.51C69.06 1.60738 70.4951 3.27217 71.8729 5.05177C92.2522 31.1143 94.204 69.347 92.9411 104.595Z' fill='black'/%3E%3C/svg%3E") center/100% 100% no-repeat;
   mask:url("data:image/svg+xml,%3Csvg width='94' height='560' viewBox='0 0 94 560' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M92.9411 104.595C88.98 215.217 21.183 318.261 46.0974 458.448L45.8678 457.702C51.7806 493.121 48.7955 529.575 31.918 560H0V0H67.51C69.06 1.60738 70.4951 3.27217 71.8729 5.05177C92.2522 31.1143 94.204 69.347 92.9411 104.595Z' fill='black'/%3E%3C/svg%3E") center/100% 100% no-repeat}
 .wave .inner{position:relative;z-index:3;width:100%;padding:48px 30px 85px;min-width:0}
-.wave .image{order:2;min-height:280px}
+.wave .image{order:2;min-height:280px;position:relative}
 .wave .image img{width:100%;height:100%;min-height:280px;max-height:360px;object-fit:cover}
 .wave h1{font-size:40px;line-height:52px;font-weight:400;margin-bottom:18px}
 .wave h1 strong{color:var(--yellow);font-weight:900}
 .wave h2{font-size:25px;line-height:32.5px;font-weight:900}
 .wave p{font-size:16px;line-height:24px}
-.wave .stack{display:flex;flex-direction:column;gap:24px}
+.wave .stack{display:flex;flex-direction:column}
+.wave .stack h2{margin-bottom:18px}
+.wave.lime .stack h2{margin-bottom:34px}
+.wave.lime .stack .dash{margin-bottom:31px}
+.wave.lime .stack .sub{margin-bottom:24px}
 .wave .sub{font-size:20px;line-height:30px;font-weight:600}
 .dash{height:2px;width:100%;max-width:367px;background:repeating-linear-gradient(90deg,currentColor 0 12px,transparent 12px 22px)}
 .hero-btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:999px;background:var(--orange-hero);color:var(--white);font:700 14px/1 var(--font);text-decoration:none;transition:opacity .2s,transform .2s}
@@ -118,7 +122,7 @@ h1,h2,h3{text-wrap:balance}
 .blob.b .back,.blob.b img{clip-path:url(#blobB)}
 
 /* Seção de texto + imagem */
-.split{padding-block:60px;overflow-x:clip}
+.split{padding-block:60px 67px;overflow-x:clip}
 .brincar{overflow-x:clip}
 .split .container{display:grid;gap:26px;align-items:center}
 .split p.big{font-size:20px;line-height:30px}
@@ -127,11 +131,11 @@ h1,h2,h3{text-wrap:balance}
 .split h3 span{color:var(--title)}
 
 /* Diferenciais */
-.difs{background:var(--cream);padding-block:60px 70px;text-align:center}
+.difs{background:var(--cream);padding-block:60px 84px;text-align:center}
 .difs h2{font-size:25px;line-height:32.5px;font-weight:700;color:var(--title)}
-.difs .dash{color:var(--title);max-width:321px;margin:12px auto 0}
-.dif-grid{display:grid;grid-template-columns:1fr;gap:36px 26px;margin-top:38px}
-.dif svg{width:80px;height:80px;margin:0 auto 14px;fill:none;stroke:var(--title);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.difs .dash{color:var(--title);max-width:321px;margin:12px auto 0;height:1px}
+.dif-grid{display:grid;grid-template-columns:1fr;gap:48px 26px;margin-top:38px}
+.dif svg{width:80px;height:80px;margin:0 auto 17px;fill:none;stroke:var(--title);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .dif p{max-width:316px;margin-inline:auto}
 
 /* Aprender brincando (colagem) */
@@ -167,13 +171,13 @@ h1,h2,h3{text-wrap:balance}
 .err{color:#C0392B;font-size:14px;text-align:center;margin-top:12px;min-height:1.4em}
 .f-grid{display:grid;gap:34px;margin-top:50px}
 .map{border-radius:16px;overflow:hidden;background:var(--white);line-height:0}
-.map svg{width:100%;height:auto}
+.map svg{width:100%;height:254px;display:block}
 .addr{display:flex;flex-direction:column;gap:18px;margin-top:20px}
 .addr .tel{display:flex;align-items:center;gap:12px;font-size:14px;text-decoration:none}
 .addr .tel svg{width:32px;height:32px;fill:none;stroke:var(--white);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .addr a.lnk{color:var(--white);font-weight:600;font-size:14px}
-.brand{display:flex;flex-direction:column;align-items:center;gap:20px}
-.brand .selo img{height:110px}
+.brand{display:flex;flex-direction:column;align-items:center;gap:24px}
+.brand .selo img{height:95px}
 .brand .socials a{background:var(--white)}
 .brand .socials svg{fill:var(--orange)}
 .navg h4{font-size:25px;line-height:32.5px;font-weight:700;text-align:center}
@@ -181,8 +185,8 @@ h1,h2,h3{text-wrap:balance}
 .navg .links{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px}
 .navg .links a{text-decoration:none;font-size:16px}
 .navg .links a:hover{text-decoration:underline}
-.navg .btn{margin-top:22px;width:100%}
-.bottom{background:var(--teal);text-align:center;padding:26px 20px;font-size:14px;line-height:1.6}
+.navg .btn{margin-top:20px;width:288px;max-width:100%}
+.bottom{background:var(--teal);text-align:center;padding:26px 20px;font-size:14px;line-height:1.6;min-height:203px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .bottom b{font-weight:700}
 
 /* WhatsApp flutuante */
@@ -199,26 +203,30 @@ h1,h2,h3{text-wrap:balance}
   .wave .content::after{inset:0 -80px 0 auto;width:94px;height:100%;transform:none}
   .wave .inner{max-width:90%;margin-left:auto;padding:30px}
   .wave .image{min-height:400px}
-  .wave .image img{min-height:400px;max-height:none}
+  .wave .image img{position:absolute;inset:0;min-height:0;max-height:none}
   .wave.left{grid-template-columns:45% 55%}
   .wave.left .content{grid-column:2;grid-row:1}
   .wave.left .image{grid-column:1;grid-row:1}
   .wave.left .content::after{inset:0 auto 0 -80px;transform:rotate(180deg)}
   .wave.left .inner{margin-left:0;margin-right:auto;padding:30px 30px 30px 60px}
-  .hero.wave{min-height:426px}
+  .hero.wave,.hero.wave .content{min-height:426px}
   .split .container,.brincar .container{grid-template-columns:1fr 1fr}
-  .f-grid{grid-template-columns:1fr 1fr 1fr;gap:40px;align-items:start}
+  .f-grid{grid-template-columns:1fr 1fr 1fr;gap:26px;align-items:start}
   .card{padding:44px 60px}
 }
 @media (min-width:992px){
-  .hdr-top .tools{display:flex;align-items:center;gap:32px;flex:1;justify-content:space-between;margin-left:40px}
+  .hdr-top .in{justify-content:flex-start;gap:0}
+  .hdr-top .tools{display:flex;align-items:center;flex:1;margin-left:65px}
+  .tools .phone{margin-left:22px}
+  .tools .socials{margin-left:auto}
+  .tools .portal{margin-left:83px}
   .hdr-top .logo-wrap{flex:none;padding-left:0}
   .menu-btn{display:none}
   .hdr-top .in{min-height:102px}
-  .selo img{height:66px}
+  .selo img{height:65px}
   .hdr-nav{display:block!important}
   .hdr-nav ul{flex-direction:row;justify-content:center;padding:8px 20px 9px}
-  .dif-grid{grid-template-columns:repeat(3,1fr)}
+  .dif-grid{grid-template-columns:repeat(3,1fr);row-gap:53px}
 }
 </style>
 </head>
@@ -286,7 +294,7 @@ h1,h2,h3{text-wrap:balance}
         <img src="img/entrada.webp" width="1400" height="1050" loading="lazy" alt="Foto de uma mãe deixando a filha no portão, recebida pela professora">
       </div>
       <div class="txt">
-        <p class="big">Na R. São Renato, em Bangu, um lugar seguro, fresquinho e cheio de cuidado para o seu filho passar o dia.<br><br>O Jardim Escola Belo Jasmin acredita que cada criança cresce no seu tempo, como uma flor no jardim, com acolhimento, brincadeira e aprendizado em cada momento.</p>
+        <p class="big">Em Bangu, um lugar seguro, fresquinho e cheio de cuidado o dia inteiro.<br><br>O Jardim Escola Belo Jasmin acredita que cada criança cresce no seu tempo, como uma flor no jardim.</p>
         <a class="btn" href="#contato">Agende uma visita</a>
       </div>
     </div>
@@ -341,9 +349,7 @@ h1,h2,h3{text-wrap:balance}
     <div class="content">
       <div class="inner stack">
         <h2>Por que os primeiros anos na escola fazem tanta diferença?</h2>
-        <p>Aqui, cada momento do dia é ponto de partida para uma descoberta: a roda de conversa, a hora do lanche, a brincadeira no pátio.</p>
-        <p>É na primeira infância que a criança aprende a se relacionar, a se expressar e a confiar no mundo à sua volta.</p>
-        <p>Escolher uma escola com rotina clara, equipe próxima e um ambiente seguro é cuidar do desenvolvimento do seu filho para a vida inteira.</p>
+        <p>Aqui, cada momento do dia é ponto de partida para uma descoberta: a roda de conversa, a hora do lanche, a brincadeira no pátio.<br><br>É na primeira infância que a criança aprende a se relacionar, a se expressar e a confiar no mundo à sua volta.<br><br>Escolher uma escola com rotina clara, equipe próxima e um ambiente seguro é cuidar do desenvolvimento do seu filho para a vida inteira.</p>
       </div>
     </div>
     <div class="image"><img src="img/artes.webp" width="1400" height="1050" loading="lazy" alt="Foto de crianças tocando instrumentos com a professora"></div>
@@ -415,7 +421,7 @@ h1,h2,h3{text-wrap:balance}
     <div class="f-grid">
       <div>
         <div class="map">
-<iframe title="Mapa: R. São Renato, 173, Bangu" src="https://maps.google.com/maps?q=R.%20S%C3%A3o%20Renato%2C%20173%20-%20Bangu%2C%20Rio%20de%20Janeiro%20-%20RJ&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;width:100%;height:260px;display:block"></iframe>
+<iframe title="Mapa: R. São Renato, 173, Bangu" src="https://maps.google.com/maps?q=R.%20S%C3%A3o%20Renato%2C%20173%20-%20Bangu%2C%20Rio%20de%20Janeiro%20-%20RJ&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border:0;width:100%;height:254px;display:block"></iframe>
         </div>
         <div class="addr">
           <p>R. São Renato, 173 - Bangu, Rio de Janeiro - RJ, 21860-140</p>
