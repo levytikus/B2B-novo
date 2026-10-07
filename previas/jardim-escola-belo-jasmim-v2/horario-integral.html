@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>Jardim Escola Belo Jasmin</title>
+<title>Horário Integral · Jardim Escola Belo Jasmin</title>
 <meta name="description" content="Jardim Escola Belo Jasmin: creche e pré-escola em horário integral em Bangu, com salas climatizadas, câmeras, parque infantil e pátio coberto.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,6 +235,74 @@ h1,h2,h3{text-wrap:balance}
 @keyframes loaderPop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
 @keyframes loaderDot{0%,70%,100%{transform:scale(.5);opacity:.55}35%{transform:scale(1.15);opacity:1}}
 @media (prefers-reduced-motion:reduce){.loader{animation:loaderOut .01s linear 1.6s forwards!important}}
+
+/* Página Horário integral (medidas da página equivalente do Viva) */
+.sec-banner{background-color:var(--green);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cg fill='%23ffffff' fill-opacity='.09'%3E%3Cg transform='translate(30 34)'%3E%3Cellipse rx='6' ry='12' cy='-11'/%3E%3Cellipse rx='6' ry='12' cy='-11' transform='rotate(72)'/%3E%3Cellipse rx='6' ry='12' cy='-11' transform='rotate(144)'/%3E%3Cellipse rx='6' ry='12' cy='-11' transform='rotate(216)'/%3E%3Cellipse rx='6' ry='12' cy='-11' transform='rotate(288)'/%3E%3C/g%3E%3Cpath d='M118 20c18-6 34 4 36 20-16 6-32-2-36-20z'/%3E%3Cpath d='M70 96c-4-16 8-28 22-28 2 16-8 28-22 28z'/%3E%3Ccircle cx='150' cy='112' r='9'/%3E%3Ccircle cx='22' cy='132' r='6'/%3E%3Cpath d='M98 150c10-12 30-12 40 0-10 12-30 12-40 0z'/%3E%3Cg transform='translate(150 168) scale(.7)'%3E%3Cellipse rx='6' ry='12' cy='-11'/%3E%3Cellipse rx='6' ry='12' cy='-11' transform='rotate(72)'/%3E%3Cellipse rx='6' ry='12' cy='-11' transform='rotate(144)'/%3E%3Cellipse rx='6' ry='12' cy='-11' transform='rotate(216)'/%3E%3Cellipse rx='6' ry='12' cy='-11' transform='rotate(288)'/%3E%3C/g%3E%3Cpath d='M40 70q10-14 24 0t24 0' fill='none' stroke='%23ffffff' stroke-opacity='.09' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M8 176q8-12 20 0t20 0' fill='none' stroke='%23ffffff' stroke-opacity='.09' stroke-width='6' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E");background-size:180px 180px;padding-block:40px;color:var(--white)}
+.sec-banner .container{display:flex;align-items:center;justify-content:center;gap:24px;min-height:127px}
+.sec-icon{width:127px;height:127px;flex:none}
+.sec-banner h1{font-size:40px;line-height:52px;font-weight:900}
+.hi-title{padding-top:60px;text-align:center}
+.hi-title h2{font-size:25px;line-height:32.5px;font-weight:700;color:var(--title)}
+.hi-title{padding-bottom:8px}
+.hi-title .dash{color:var(--title);max-width:141px;height:1px;margin:13px auto 0}
+.hi-text{padding-block:30px 60px}
+.hi-text .container{display:grid;gap:24px}
+.hi-text p{font-size:16px;line-height:24px}
+.horarios{width:100%}
+.horarios__tabs{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none}
+.horarios__tabs::-webkit-scrollbar{display:none}
+.horarios__tab{flex:1 0 auto;min-width:108px;min-height:50px;margin:0;padding:10px 14px;border:0;border-radius:9px 9px 0 0;background:var(--teal);color:var(--white);font:600 14px/1.2 var(--font);text-transform:uppercase;cursor:pointer;transition:background-color .25s,transform .25s}
+.horarios__tab:hover{background:#54AEBE;transform:translateY(-2px)}
+.horarios__tab.is-active{background:#43AD32}
+.horarios__tab.is-active:hover{background:#389D29}
+.horarios__content{overflow:hidden;border:4px solid #43AD32;border-radius:0 0 8px 8px;background:#FFF0C9}
+.horarios__panel{display:none}
+.horarios__panel.is-active{display:block}
+.horarios__row{display:grid;grid-template-columns:1fr;border-bottom:3px solid #43AD32}
+.horarios__row:last-child{border-bottom:0}
+.horarios__title,.horarios__desc{padding:14px 16px}
+.horarios__title{display:flex;align-items:center;gap:12px;background:#95C51F;color:var(--white);font-size:14px;font-weight:700;line-height:1.4}
+.horarios__desc{display:flex;flex-direction:column;justify-content:center;gap:3px;background:#FFF0C9;color:#222;font-size:13px;font-weight:500;line-height:1.45;border-top:1px solid rgba(67,173,50,.4)}
+.clock{position:relative;flex:0 0 21px;width:21px;height:21px;border:2px solid var(--white);border-radius:50%}
+.clock::before{content:"";position:absolute;top:3px;left:8px;width:2px;height:7px;border-radius:2px;background:var(--white)}
+.clock::after{content:"";position:absolute;top:9px;left:9px;width:6px;height:2px;border-radius:2px;background:var(--white);transform:rotate(38deg);transform-origin:left center}
+.horarios__note{font-size:13px;line-height:1.5;color:#6b6b6b;margin-top:12px}
+.hi-visit{padding-block:60px}
+.visita{display:flex;flex-direction:column;width:100%;overflow:hidden;border-radius:20px}
+.visita__img{position:relative;overflow:hidden;height:240px}
+.visita__img img{display:block;width:100%;height:100%;object-fit:cover}
+.visita__conteudo{position:relative;display:flex;align-items:center;padding:55px 24px 30px;background:var(--green)}
+.visita__onda{display:none}
+.visita__texto{position:relative;z-index:1}
+.visita__texto h3{margin:0 0 18px;color:var(--white);font-size:27px;line-height:1.3;font-weight:900}
+.visita__botao{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:100px;background:var(--orange);color:var(--white);font:700 16px/1 var(--font);text-decoration:none;transition:transform .2s,opacity .2s}
+.visita__botao:hover{opacity:.9;transform:translateY(-2px)}
+@media (max-width:767px){
+  .sec-banner .container{gap:16px}
+  .sec-icon{width:96px;height:96px}
+  .sec-banner h1{font-size:32px;line-height:40px}
+}
+@media (min-width:768px){
+  .hi-text .container{grid-template-columns:487px 487px;column-gap:26px}
+  .hi-text p{padding-right:0}
+  .hi-text p+p{padding-left:0}
+  .horarios__tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;align-items:end;overflow:visible}
+  .horarios__tab{min-height:58px;padding:12px 20px;font-size:20px;text-align:left}
+  .horarios__content{border-width:7px}
+  .horarios__row{grid-template-columns:minmax(320px,1fr) minmax(0,1fr);border-bottom-width:2px}
+  .horarios__title,.horarios__desc{min-height:63px;padding:13px 20px}
+  .horarios__title{gap:16px;font-size:15px}
+  .horarios__desc{font-size:14px;border-top:0}
+  .clock{flex-basis:23px;width:23px;height:23px}
+  .clock::before{top:4px;left:9px}
+  .clock::after{top:10px;left:10px}
+  .visita{display:grid;grid-template-columns:45% 55%;min-height:288px;border-radius:300px}
+  .visita__img{height:auto}
+  .visita__img img{position:absolute;inset:0;min-height:288px}
+  .visita__conteudo{min-height:288px;padding:40px 60px 40px 70px}
+  .visita__onda{display:block;position:absolute;top:0;bottom:0;left:-47px;width:48px;height:100%;line-height:0;pointer-events:none}
+  .visita__onda svg{display:block;width:48px;height:100%}
+}
 </style>
 </head>
 <body>
@@ -254,7 +322,7 @@ h1,h2,h3{text-wrap:balance}
   <div class="hdr-top">
     <div class="in">
       <div class="logo-wrap">
-        <a class="selo" href="#topo" aria-label="Jardim Escola Belo Jasmin, início"><img src="logo.webp" width="720" height="271" alt="Jardim Escola Belo Jasmin"></a>
+        <a class="selo" href="index.html" aria-label="Jardim Escola Belo Jasmin, início"><img src="logo.webp" width="720" height="271" alt="Jardim Escola Belo Jasmin"></a>
       </div>
       <div class="tools">
         <a class="search" href="https://www.google.com/maps/search/?api=1&amp;query=R.+S%C3%A3o+Renato%2C+173+-+Bangu%2C+Rio+de+Janeiro+-+RJ" target="_blank" rel="noopener"><span>R. São Renato, 173 · Bangu</span><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l5.5 5.5"/></svg></a>
@@ -270,103 +338,101 @@ h1,h2,h3{text-wrap:balance}
   </div>
   <nav class="hdr-nav" id="nav" aria-label="Principal">
     <ul>
-      <li><a href="#escola"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-6h6v6"/><path d="M12 4V1.5h3"/><circle cx="12" cy="10" r="1.6"/></svg>A escola</a></li>
+      <li><a href="index.html#escola"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l9-6 9 6v11"/><path d="M9 21v-6h6v6"/><path d="M12 4V1.5h3"/><circle cx="12" cy="10" r="1.6"/></svg>A escola</a></li>
       <li><a href="horario-integral.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Horário integral</a></li>
-      <li><a href="#turmas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3c-3 3-3 15 0 18M12 3c3 3 3 15 0 18M3.5 9h17M3.5 15h17"/></svg>Turmas</a></li>
-      <li><a href="#rotina"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5z"/><path d="M12 6v13"/></svg>Rotina</a></li>
+      <li><a href="index.html#turmas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3c-3 3-3 15 0 18M12 3c3 3 3 15 0 18M3.5 9h17M3.5 15h17"/></svg>Turmas</a></li>
+      <li><a href="index.html#rotina"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-1.5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5v-13c-3-.5-6 0-8 1.5z"/><path d="M12 6v13"/></svg>Rotina</a></li>
       <li><a href="#contato"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 0 1 3 3L8 19z"/><path d="M14.5 6.5l3 3"/></svg>Agende uma visita</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <section class="wave hero">
-    <div class="content">
-      <div class="inner">
-        <h1><strong>Um jardim para os pequenos florescerem,</strong> com cuidado o dia inteiro</h1>
-        <a class="hero-btn" href="#contato">Agende uma visita</a>
-      </div>
+  <section class="sec-banner">
+    <div class="container">
+      <svg class="sec-icon" viewBox="0 0 128 128" aria-hidden="true">
+        <g fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="64" cy="70" r="40"/>
+          <circle cx="64" cy="70" r="31"/>
+          <path d="M26 40a17 17 0 0 1 24-22"/>
+          <path d="M102 40a17 17 0 0 0-24-22"/>
+          <path d="M38 104l-8 12M90 104l8 12"/>
+          <path d="M64 70V50M64 70l13 9"/>
+          <path d="M64 30v-8"/>
+        </g>
+        <g fill="#fff">
+          <circle cx="64" cy="70" r="4"/>
+          <circle cx="64" cy="14" r="5"/><circle cx="57" cy="9" r="4.5"/><circle cx="71" cy="9" r="4.5"/><circle cx="59.5" cy="2.5" r="4"/><circle cx="68.5" cy="2.5" r="4"/>
+          <circle cx="64" cy="44" r="2.4"/><circle cx="90" cy="70" r="2.4"/><circle cx="64" cy="96" r="2.4"/><circle cx="38" cy="70" r="2.4"/>
+        </g>
+      </svg>
+      <h1>Horário<br>Integral</h1>
     </div>
-    <div class="image"><img src="img/hero.webp" width="1400" height="1050" alt="Foto de crianças correndo e rindo no gramado florido da escola"></div>
   </section>
 
-  <section class="split" id="escola">
+  <section class="hi-title">
     <div class="container">
-      <div class="blob a" style="--bc:var(--title)">
-        <div class="back"></div>
-        <img src="img/entrada.webp" width="1400" height="1050" loading="lazy" alt="Foto de uma mãe deixando a filha no portão, recebida pela professora">
-      </div>
-      <div class="txt">
-        <p class="big">Em Bangu, um lugar seguro, fresquinho e cheio de cuidado o dia inteiro.<br><br>O Jardim Escola Belo Jasmin acredita que cada criança cresce no seu tempo, como uma flor no jardim.</p>
-        <a class="btn" href="#contato">Agende uma visita</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="difs" id="diferenciais">
-    <div class="container">
-      <h2>Nossos diferenciais</h2>
+      <h2>Horários</h2>
       <div class="dash" aria-hidden="true"></div>
-      <div class="dif-grid">
-        <div class="dif">
-          <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="34" r="22"/><path d="M32 20v14l9 6"/><path d="M14 12l-6 6M50 12l6 6"/></svg>
-          <p>Horário integral: um dia inteiro de cuidado para a família que trabalha.</p>
-        </div>
-        <div class="dif">
-          <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="10" width="48" height="18" rx="4"/><path d="M14 22h36"/><path d="M20 36v18M32 36v22M44 36v18"/><path d="M16 42l4 3 4-3M28 46l4 3 4-3M40 42l4 3 4-3"/></svg>
-          <p>Salas climatizadas para brincar e aprender com conforto, mesmo no calor.</p>
-        </div>
-        <div class="dif">
-          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 18l34 8v14L8 32z"/><path d="M42 30l12-6v16l-12-6"/><path d="M16 32v12h-8"/><circle cx="20" cy="25" r="2"/><path d="M50 10c3 2 5 5 5 8M46 14c2 1 3 3 3 5"/></svg>
-          <p>Câmeras do portão à sala, para mais tranquilidade dos pais.</p>
-        </div>
-        <div class="dif">
-          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 54V20h12v34"/><path d="M8 20l8-10 8 10"/><path d="M22 28c10 2 20 12 28 26"/><path d="M40 20h18M44 20v34M54 20v34"/><path d="M4 54h56"/></svg>
-          <p>Parque infantil e pátio coberto para brincar com sol ou com chuva.</p>
-        </div>
-        <div class="dif">
-          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 20c-6-5-20-4-20 12 0 14 10 24 16 24 2 0 3-1 4-1s2 1 4 1c6 0 16-10 16-24 0-16-14-17-20-12z"/><path d="M32 20c0-6 2-10 6-12"/><path d="M34 14c4-6 12-6 14-4-2 6-10 8-14 4z"/></svg>
-          <p>Refeições preparadas na cozinha da própria escola.</p>
-        </div>
-        <div class="dif">
-          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 16c-7-5-16-6-24-4v38c8-2 17-1 24 4 7-5 16-6 24-4V12c-8-2-17-1-24 4z"/><path d="M32 16v38"/><path d="M14 22c4-1 8 0 12 2M14 30c4-1 8 0 12 2M38 24c4-2 8-3 12-2M38 32c4-2 8-3 12-2"/></svg>
-          <p>Sala de leitura, jogos educativos e materiais de arte.</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section class="wave lime left" id="turmas">
-    <div class="content">
-      <div class="inner stack">
-        <h2>Do Berçário à Pré-escola.</h2>
-        <div class="dash" aria-hidden="true"></div>
-        <p class="sub">Cada fase com o cuidado certo, desde o colo até as primeiras letras.</p>
-        <p>No Berçário, colo e rotina tranquila. No Maternal, brincadeiras, música e autonomia. Na Pré-escola, letras, números e projetos que preparam para o ensino fundamental.</p>
-      </div>
-    </div>
-    <div class="image"><img src="img/parque.webp" width="1400" height="1050" loading="lazy" alt="Foto de crianças brincando no escorrega e no balanço do parque"></div>
-  </section>
-
-  <section class="wave red" id="rotina">
-    <div class="content">
-      <div class="inner stack">
-        <h2>Por que os primeiros anos na escola fazem tanta diferença?</h2>
-        <p>Aqui, cada momento do dia é ponto de partida para uma descoberta: a roda de conversa, a hora do lanche, a brincadeira no pátio.<br><br>É na primeira infância que a criança aprende a se relacionar, a se expressar e a confiar no mundo à sua volta.<br><br>Escolher uma escola com rotina clara, equipe próxima e um ambiente seguro é cuidar do desenvolvimento do seu filho para a vida inteira.</p>
-      </div>
-    </div>
-    <div class="image"><img src="img/artes.webp" width="1400" height="1050" loading="lazy" alt="Foto de crianças tocando instrumentos com a professora"></div>
-  </section>
-
-  <section class="split">
+  <section class="hi-text">
     <div class="container">
-      <div class="blob b" style="--bc:var(--red)">
-        <div class="back"></div>
-        <img src="img/acolhimento.webp" width="1400" height="1050" loading="lazy" alt="Foto da professora abraçando duas crianças no corredor da escola">
+      <p>Sabemos que a rotina da família que trabalha pede uma escola que acompanhe o seu dia. Por isso, o Jardim Escola Belo Jasmin oferece horário integral para a creche e a pré-escola, com opções de entrada e saída que se encaixam na sua agenda e na rotina de cada criança.</p>
+      <p>Durante o período, além dos cuidados e da alimentação feita na cozinha da própria escola, a criança tem brincadeiras no parque e no pátio coberto, hora da história, artes, música e momentos de descanso em sala climatizada, sempre com acompanhamento de perto da equipe.</p>
+    </div>
+  </section>
+
+  <section class="hi-table">
+    <div class="container">
+      <div class="horarios">
+        <div class="horarios__tabs" role="tablist" aria-label="Turmas">
+          <button class="horarios__tab is-active" type="button" role="tab" id="tab-bercario" aria-selected="true" aria-controls="painel-bercario" data-tab="bercario">Berçário</button>
+          <button class="horarios__tab" type="button" role="tab" id="tab-maternal" aria-selected="false" aria-controls="painel-maternal" data-tab="maternal" tabindex="-1">Maternal</button>
+          <button class="horarios__tab" type="button" role="tab" id="tab-pre" aria-selected="false" aria-controls="painel-pre" data-tab="pre" tabindex="-1">Pré-escola</button>
+        </div>
+        <div class="horarios__content">
+          <div class="horarios__panel is-active" id="painel-bercario" role="tabpanel" aria-labelledby="tab-bercario">
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 7h às 17h</span></div><div class="horarios__desc">Refeições: Café da manhã, Colação, Almoço e Lanche</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 7h às 18h</span></div><div class="horarios__desc">Refeições: Café da manhã, Colação, Almoço, Lanche e Jantar</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 8h às 17h</span></div><div class="horarios__desc">Das 8h às 17h // Refeições: Colação, Almoço e Lanche</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 8h às 18h</span></div><div class="horarios__desc">Refeições: Colação, Almoço, Lanche e Jantar</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Meio período da manhã</span></div><div class="horarios__desc">Das 7h às 12h // Refeições: Café da manhã, Colação e Almoço</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Meio período da tarde</span></div><div class="horarios__desc">Das 13h às 18h // Refeições: Lanche e Jantar</div></div>
+          </div>
+          <div class="horarios__panel" id="painel-maternal" role="tabpanel" aria-labelledby="tab-maternal">
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 7h às 17h</span></div><div class="horarios__desc">Refeições: Café da manhã, Colação, Almoço e Lanche</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 7h às 18h</span></div><div class="horarios__desc">Refeições: Café da manhã, Colação, Almoço, Lanche e Jantar</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 8h às 17h</span></div><div class="horarios__desc">Das 8h às 17h // Refeições: Colação, Almoço e Lanche</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 8h às 18h</span></div><div class="horarios__desc">Refeições: Colação, Almoço, Lanche e Jantar</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Meio período da manhã</span></div><div class="horarios__desc">Das 7h às 12h // Refeições: Café da manhã, Colação e Almoço</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Meio período da tarde</span></div><div class="horarios__desc">Das 13h às 18h // Refeições: Lanche e Jantar</div></div>
+          </div>
+          <div class="horarios__panel" id="painel-pre" role="tabpanel" aria-labelledby="tab-pre">
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 7h às 17h</span></div><div class="horarios__desc">Refeições: Café da manhã, Colação, Almoço e Lanche</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 7h às 18h</span></div><div class="horarios__desc">Refeições: Café da manhã, Colação, Almoço, Lanche e Jantar</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Horário Integral das 8h às 17h</span></div><div class="horarios__desc">Das 8h às 17h // Refeições: Colação, Almoço e Lanche</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Meio período da manhã</span></div><div class="horarios__desc">Das 7h às 12h // Refeições: Café da manhã, Colação e Almoço</div></div>
+            <div class="horarios__row"><div class="horarios__title"><span class="clock"></span><span>Meio período da tarde</span></div><div class="horarios__desc">Das 13h às 17h // Refeição: Lanche</div></div>
+          </div>
+        </div>
+        <p class="horarios__note">Horários de exemplo para esta prévia. Consulte a escola sobre horários, refeições e vagas de cada turma.</p>
       </div>
-      <div class="txt">
-        <h3>Agende sua visita e veja de perto o que faz do Belo Jasmin <span>o jardim dos pequenos em Bangu</span></h3>
-        <a class="btn green" href="#contato">Agende uma visita</a>
+    </div>
+  </section>
+
+  <section class="hi-visit">
+    <div class="container">
+      <div class="visita">
+        <div class="visita__img"><img src="img/patio.webp" width="1254" height="1254" loading="lazy" alt="Foto de crianças brincando de roda no pátio coberto"></div>
+        <div class="visita__conteudo">
+          <div class="visita__onda" aria-hidden="true"><svg viewBox="0 0 48 288" preserveAspectRatio="none"><path d="M0.154389 53.7915C2.1915 110.683 37.0585 163.677 24.2454 235.773L24.3635 235.389C21.3226 253.605 22.8578 272.353 31.5377 288L47.9527 288L47.9526 0L13.2332 3.03527e-06C12.4361 0.826656 11.698 1.68283 10.9894 2.59806C0.508668 16.0016 -0.495126 35.6642 0.154389 53.7915Z" fill="#33AB68"/></svg></div>
+          <div class="visita__texto">
+            <h3>Faça uma visita<br>e saiba mais</h3>
+            <a class="visita__botao" href="#contato">Agende uma visita</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -416,10 +482,10 @@ h1,h2,h3{text-wrap:balance}
         <h4>Navegar</h4>
         <div class="dash" aria-hidden="true"></div>
         <nav class="links" aria-label="Rodapé">
-          <a href="#escola">A escola</a><a href="horario-integral.html">Horário integral</a>
-          <a href="#turmas">Berçário</a><a href="#diferenciais">Estrutura</a>
-          <a href="#turmas">Maternal</a><a href="#rotina">Rotina</a>
-          <a href="#turmas">Pré-escola</a><a href="#contato">Contato</a>
+          <a href="index.html#escola">A escola</a><a href="horario-integral.html">Horário integral</a>
+          <a href="index.html#turmas">Berçário</a><a href="index.html#diferenciais">Estrutura</a>
+          <a href="index.html#turmas">Maternal</a><a href="index.html#rotina">Rotina</a>
+          <a href="index.html#turmas">Pré-escola</a><a href="#contato">Contato</a>
         </nav>
         <a class="btn" href="#contato">Faça uma visita e saiba mais</a>
       </div>
@@ -455,6 +521,10 @@ enviar.addEventListener('click',e=>{
   err.textContent='';montar();
 });
 montar();
+
+const tabs=[...document.querySelectorAll('.horarios__tab')];
+function ativar(t){tabs.forEach(b=>{const on=b===t;b.classList.toggle('is-active',on);b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;document.getElementById(b.getAttribute('aria-controls')).classList.toggle('is-active',on)})}
+tabs.forEach((t,i)=>{t.addEventListener('click',()=>ativar(t));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];ativar(n);n.focus()}})});
 </script>
 
 </body>
