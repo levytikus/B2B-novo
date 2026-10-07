@@ -24,7 +24,7 @@
   --yellow:#FCE900;     /* título do hero */
   --title:#48A636;      /* títulos verdes e botão verde */
   --navy:#0D3455;       /* botão do menu no celular */
-  --logo-bg:#013F05;    /* fundo obrigatório atrás da logo */
+  --leaf:#48A636;       /* verde folha do topo */
   --ink:#26272B;
   --white:#FFFFFF;
   --font:"Poppins",system-ui,"Segoe UI",Roboto,sans-serif;
@@ -48,22 +48,22 @@ h1,h2,h3{text-wrap:balance}
 .btn svg{width:20px;height:20px;fill:currentColor}
 
 /* Selo da logo: a logo fica sempre sobre o verde dela */
-.selo{display:inline-flex;align-items:center;background:var(--logo-bg);border-radius:14px;padding:6px 12px;line-height:0}
-.selo img{height:54px;width:auto}
+.selo{display:inline-flex;align-items:center;line-height:0}
+.selo img{height:60px;width:auto;filter:drop-shadow(0 2px 3px rgba(0,0,0,.18))}
 
 /* Cabeçalho */
-.hdr-top{background:var(--cream)}
+.hdr-top{background:var(--leaf)}
 .hdr-top .in{max-width:1200px;margin-inline:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:94px}
 .hdr-top .tools{display:none}
 .search{display:flex;align-items:center;gap:10px;width:276px;height:30px;padding:0 6px 0 16px;background:var(--white);border-radius:30px;font-size:12.8px;color:#6b6b6b;text-decoration:none;white-space:nowrap;overflow:hidden}
 .search span{flex:1;overflow:hidden;text-overflow:ellipsis}
 .search svg{width:20px;height:20px;fill:none;stroke:var(--title);stroke-width:2.6;stroke-linecap:round;flex:none}
-.phone{display:flex;align-items:center;gap:12px;font-size:12.8px;color:#1F140F;text-decoration:none;white-space:nowrap}
-.phone svg{width:32px;height:32px;fill:none;stroke:#1F140F;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.phone{display:flex;align-items:center;gap:12px;font-size:12.8px;font-weight:600;color:var(--white);text-decoration:none;white-space:nowrap}
+.phone svg{width:32px;height:32px;fill:none;stroke:var(--white);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .socials{display:flex;gap:10px}
-.socials a{width:30px;height:30px;border-radius:50%;background:var(--title);display:grid;place-items:center}
-.socials svg{width:17px;height:17px;fill:var(--white)}
-.portal{display:inline-flex;align-items:center;justify-content:center;width:174px;height:50px;border-radius:8px;background:var(--title);color:var(--white);font:600 12px/1.5 var(--font);text-decoration:none;box-shadow:0 6px 14px rgba(0,0,0,.18)}
+.socials a{width:30px;height:30px;border-radius:50%;background:var(--white);display:grid;place-items:center}
+.socials svg{width:17px;height:17px;fill:var(--leaf)}
+.portal{display:inline-flex;align-items:center;justify-content:center;width:174px;height:50px;border-radius:8px;background:var(--orange-hero);color:var(--white);font:600 12px/1.5 var(--font);text-decoration:none;box-shadow:0 6px 14px rgba(0,0,0,.18)}
 .menu-btn{width:46px;height:46px;border-radius:6px;background:var(--navy);border:0;display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.25);flex:none}
 .menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:24px;height:3px;border-radius:2px;background:var(--white);position:relative;content:"";transition:transform .25s}
 .menu-btn span::before{position:absolute;top:-8px}
@@ -173,7 +173,7 @@ h1,h2,h3{text-wrap:balance}
 .addr .tel svg{width:32px;height:32px;fill:none;stroke:var(--white);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .addr a.lnk{color:var(--white);font-weight:600;font-size:14px}
 .brand{display:flex;flex-direction:column;align-items:center;gap:20px}
-.brand .selo img{height:96px}
+.brand .selo img{height:110px}
 .brand .socials a{background:var(--white)}
 .brand .socials svg{fill:var(--orange)}
 .navg h4{font-size:25px;line-height:32.5px;font-weight:700;text-align:center}
@@ -215,7 +215,7 @@ h1,h2,h3{text-wrap:balance}
   .hdr-top .logo-wrap{flex:none;padding-left:0}
   .menu-btn{display:none}
   .hdr-top .in{min-height:102px}
-  .selo img{height:56px}
+  .selo img{height:66px}
   .hdr-nav{display:block!important}
   .hdr-nav ul{flex-direction:row;justify-content:center;padding:8px 20px 9px}
   .dif-grid{grid-template-columns:repeat(3,1fr)}
