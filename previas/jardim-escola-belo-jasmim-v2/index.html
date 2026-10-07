@@ -242,13 +242,12 @@ h1,h2,h3{text-wrap:balance}
 .loader{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;background:rgba(36,98,128,.6);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);animation:loaderOut .45s ease 1.6s forwards}
 .loader img{width:190px;height:auto;animation:loaderPop .5s ease both}
 .loader .dots{display:flex;align-items:center;gap:14px}
-.loader .dots i{display:block;border-radius:50%;background:var(--white);animation:loaderDot 1s ease-in-out infinite}
-.loader .dots i:nth-child(1){width:9px;height:9px}
-.loader .dots i:nth-child(2){width:6px;height:6px;opacity:.75;animation-delay:.15s}
-.loader .dots i:nth-child(3){width:3px;height:3px;opacity:.5;animation-delay:.3s}
+.loader .dots i{display:block;width:10px;height:10px;border-radius:50%;background:var(--white);transform:scale(.35);opacity:.5;animation:loaderDot 1.2s ease-in-out infinite}
+.loader .dots i:nth-child(2){animation-delay:.2s}
+.loader .dots i:nth-child(3){animation-delay:.4s}
 @keyframes loaderOut{to{opacity:0;visibility:hidden}}
 @keyframes loaderPop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
-@keyframes loaderDot{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+@keyframes loaderDot{0%,60%,100%{transform:scale(.35);opacity:.5}25%{transform:scale(1);opacity:1}}
 @media (prefers-reduced-motion:reduce){.loader{animation:loaderOut .01s linear 1.6s forwards!important}}
 </style>
 </head>
