@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Creche Pequenos Passos</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--sky1:#bfe2ff;--sky2:#eaf6ff;--ink:#1d2b5c;--txt:#46506b;--blue:#3f9df0;--pink:#ef4f86;--green:#7cbf2f;--orange:#f5a623;--cream:#fff6d9;--card:#fff;--foot:#5f9a27;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a33;--sky1:#1d2a55;--sky2:#26346b;--ink:#f1f4ff;--txt:#b9c2e0;--cream:#2a2a3d;--card:#1c2446;--foot:#2f4d17}}
+:root[data-theme="dark"]{--bg:#141a33;--sky1:#1d2a55;--sky2:#26346b;--ink:#f1f4ff;--txt:#b9c2e0;--cream:#2a2a3d;--card:#1c2446;--foot:#2f4d17}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:400 17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3,.brand{font-family:"Baloo 2",Nunito,system-ui,sans-serif;color:var(--ink);line-height:1.1;margin:0}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+svg{display:block}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.k1{--k:#f1c09a;--h:#5a3825;--s:#2e9e5b}.k2{--k:#c98a5e;--h:#2b1b12;--s:#ef4f86}.k3{--k:#8a5a3c;--h:#1c1210;--s:#ffd23f}.k4{--k:#f6d2b4;--h:#e0a23a;--s:#3f9df0}.k5{--k:#f1c09a;--h:#7a3f1d;--s:#f5a623}.k6{--k:#e3a97d;--h:#3a2418;--s:#8e6bd8}
+.top{background:linear-gradient(var(--sky1),var(--sky2));position:relative;overflow:hidden;padding-bottom:40px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;flex-wrap:wrap;position:relative}
+.brand{font-size:30px;font-weight:800;display:flex;align-items:center;gap:10px}
+.brand b{background:linear-gradient(90deg,var(--pink),var(--orange),var(--green),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{display:block;font:700 14px Nunito,sans-serif;color:var(--txt)}
+.btn{display:inline-block;border:2px solid var(--pink);background:var(--pink);color:#fff;font:800 16px Nunito,sans-serif;padding:12px 26px;border-radius:99px;box-shadow:0 5px 0 #b8325f}
+.btn.o{background:var(--card);color:var(--ink);border-color:var(--ink);box-shadow:0 5px 0 #1d2b5c55}
+nav{background:var(--card);border-radius:22px;padding:10px 18px;display:flex;gap:6px 26px;flex-wrap:wrap;justify-content:center;font-weight:800;color:var(--ink);box-shadow:0 8px 20px #1d2b5c22;position:relative}
+nav a{padding:6px 4px;border-bottom:4px solid transparent}
+nav a:hover,nav a:first-child{border-color:var(--pink);color:var(--pink)}
+.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:10px;align-items:center;padding-top:30px;position:relative}
+.hero h1{font-size:clamp(40px,6vw,64px);font-weight:800}
+.hero h1 span{color:var(--pink)}
+.hero p{font-size:21px;max-width:28ch;margin:14px 0 0}
+.hero p b:nth-of-type(1){color:var(--blue)}.hero p b:nth-of-type(2){color:var(--green)}.hero p b:nth-of-type(3){color:var(--orange)}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+.cl{position:absolute;width:110px;opacity:.95}
+.wave{height:46px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0;margin-top:-46px;position:relative}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:10px}
+.c{border-radius:24px;padding:20px;color:#fff;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 8px 0 #0002}
+.c h3{color:#fff;font-size:23px}.c p{margin:0;font-size:16px;color:#fff}
+.c .i{width:130px;height:130px;border-radius:50%;background:#fff6d9;border:5px solid #fff;overflow:hidden}
+.c a{background:#fff;border-radius:99px;padding:6px 22px;font-weight:800;margin-top:auto}
+.c:nth-child(1){background:#2f86d9}.c:nth-child(1) a{color:#2f86d9}
+.c:nth-child(2){background:#d63a74}.c:nth-child(2) a{color:#d63a74}
+.c:nth-child(3){background:#4f8f14}.c:nth-child(3) a{color:#4f8f14}
+.c:nth-child(4){background:#b86f00}.c:nth-child(4) a{color:#b86f00}
+.why{background:var(--cream);border-radius:24px;padding:20px 26px;margin-top:32px;display:grid;grid-template-columns:auto repeat(4,1fr);gap:18px;align-items:center}
+.why h2{font-size:28px}.why h2 span{color:var(--pink)}
+.why div{font-weight:800;color:var(--ink);text-align:center;line-height:1.25}
+.why div svg{width:44px;height:44px;margin:0 auto 4px}
+section{padding:50px 0 0}
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:32px}
+h2{font-size:30px;margin-bottom:16px}
+.about{display:flex;gap:20px;align-items:center}
+.pic{flex:0 0 250px;border-radius:20px;overflow:hidden;box-shadow:0 8px 0 #0002}
+.news{background:var(--cream);border-radius:18px;padding:12px;margin-bottom:12px;display:flex;gap:14px;align-items:center}
+.news svg{flex:0 0 84px;height:70px;border-radius:12px}
+.news h3{font-size:19px}.news p{margin:2px 0 2px;font-size:15px;line-height:1.35}.news a{color:var(--blue);font-weight:800;font-size:15px}
+.band{margin-top:56px;background:linear-gradient(var(--sky1),var(--sky2));border-radius:30px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;overflow:hidden;padding:20px 0 0 36px}
+.band h2{font-size:clamp(30px,4.5vw,44px);margin:0 0 18px}.band h2 span{color:var(--pink)}
+.band svg{width:min(480px,100%);flex:1 1 320px}
+.fence{height:34px;margin-top:40px;background:var(--bg)}
+footer{background:var(--foot);color:#fff;padding:34px 0 24px}
+footer .g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+footer h3{color:#fff;font-size:21px;margin-bottom:8px}footer p,footer a{display:block;margin:0 0 4px;font-size:15px}
+footer small{display:block;margin-top:22px;opacity:.85}
+@media(max-width:760px){.hero,.two{grid-template-columns:1fr}.why{grid-template-columns:1fr 1fr}.why h2{grid-column:1/-1}.about{flex-direction:column;align-items:flex-start}.pic{flex-basis:auto;width:100%}.band{padding-left:24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="kid" viewBox="0 0 100 120"><rect x="20" y="72" width="60" height="50" rx="24" fill="var(--s)"/><circle cx="22" cy="96" r="9" fill="var(--k)"/><circle cx="78" cy="96" r="9" fill="var(--k)"/><circle cx="50" cy="46" r="29" fill="var(--k)"/><path d="M21 46a29 28 0 0 1 58 0c-12-3-22-11-26-19-5 11-18 17-32 19z" fill="var(--h)"/><circle cx="39" cy="50" r="3.5" fill="#2b2b3a"/><circle cx="61" cy="50" r="3.5" fill="#2b2b3a"/><circle cx="31" cy="59" r="5" fill="#ff7a9c" opacity=".55"/><circle cx="69" cy="59" r="5" fill="#ff7a9c" opacity=".55"/><path d="M42 59q8 9 16 0" stroke="#2b2b3a" stroke-width="3" fill="none" stroke-linecap="round"/></symbol>
+<symbol id="girl" viewBox="0 0 100 120"><circle cx="17" cy="42" r="11" fill="var(--h)"/><circle cx="83" cy="42" r="11" fill="var(--h)"/><use href="#kid" width="100" height="120"/><circle cx="24" cy="28" r="5" fill="var(--s)"/><circle cx="76" cy="28" r="5" fill="var(--s)"/></symbol>
+<symbol id="mom" viewBox="0 0 100 120"><path d="M16 50a34 36 0 0 1 68 0v44q-16 8-16-16H32q0 24-16 16z" fill="var(--h)"/><use href="#kid" width="100" height="120"/></symbol>
+<symbol id="cloud" viewBox="0 0 100 50"><path d="M20 48a16 16 0 0 1 3-31 22 22 0 0 1 41-4 19 19 0 0 1 20 21 14 14 0 0 1-2 14z" fill="#fff"/></symbol>
+<symbol id="rb" viewBox="0 0 400 210"><g fill="none" stroke-width="20"><path d="M10 210a190 190 0 0 1 380 0" stroke="#ef4f86"/><path d="M30 210a170 170 0 0 1 340 0" stroke="#f5a623"/><path d="M50 210a150 150 0 0 1 300 0" stroke="#ffd93b"/><path d="M70 210a130 130 0 0 1 260 0" stroke="#7cbf2f"/><path d="M90 210a110 110 0 0 1 220 0" stroke="#3f9df0"/><path d="M110 210a90 90 0 0 1 180 0" stroke="#8e6bd8"/></g></symbol>
+</defs></svg>
+
+<header class="top">
+<svg class="cl" style="left:3%;top:150px" viewBox="0 0 100 50"><use href="#cloud"/></svg>
+<svg class="cl" style="left:42%;top:120px;width:90px" viewBox="0 0 100 50"><use href="#cloud"/></svg>
+<div class="wrap">
+<div class="bar">
+<div class="brand"><svg width="54" height="54" viewBox="0 0 54 54" aria-hidden="true"><g stroke="#ffb400" stroke-width="5" stroke-linecap="round"><path d="M27 3v7M27 44v7M3 27h7M44 27h7M10 10l5 5M39 39l5 5M44 10l-5 5M15 39l-5 5"/></g><circle cx="27" cy="27" r="15" fill="#ffd93b"/><circle cx="22" cy="25" r="2" fill="#5a3825"/><circle cx="32" cy="25" r="2" fill="#5a3825"/><path d="M22 31q5 5 10 0" stroke="#5a3825" stroke-width="2" fill="none" stroke-linecap="round"/></svg><div><b>Pequenos Passos</b><small>Onde pequenas mentes florescem ♥</small></div></div>
+<div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap"><span style="font-weight:800;color:var(--ink)">📞 (24) 99999-0000</span><a class="btn" href="#contato">Agendar visita</a></div>
+</div>
+<nav aria-label="Principal"><a href="#">Início</a><a href="#sobre">Sobre nós</a><a href="#programas">Programas</a><a href="#novidades">Novidades</a><a href="#galeria">Galeria</a><a href="#contato">Contato</a></nav>
+<div class="hero">
+<div>
+<h1>Cuidar hoje,<br><span>Inspirar</span> o amanhã</h1>
+<p>Um lugar perfeito para seu filho <b>aprender</b>, <b>crescer</b> e <b>brilhar</b>.</p>
+<div class="cta"><a class="btn" href="#contato">Matricule agora</a><a class="btn o" href="#sobre">Saiba mais</a></div>
+</div>
+<svg viewBox="0 0 520 400" role="img" aria-label="Professora e duas crianças brincando com blocos">
+<use href="#rb" x="60" y="10" width="440" height="231"/>
+<use href="#mom" x="190" y="100" width="150" height="180" class="k1" style="--h:#3a2418;--s:#ffc83d"/>
+<use href="#kid" x="50" y="170" width="130" height="156" class="k5" style="--s:#2e9e5b"/>
+<use href="#girl" x="350" y="175" width="130" height="156" class="k4" style="--h:#7a3f1d;--s:#ef7fa8"/>
+<rect x="20" y="318" width="480" height="26" rx="13" fill="#e0a64f"/><rect x="40" y="340" width="440" height="40" rx="10" fill="#c98a3a"/>
+<rect x="215" y="292" width="90" height="28" rx="4" fill="#3f9df0"/><rect x="225" y="264" width="70" height="28" rx="4" fill="#ef4f86"/><rect x="236" y="238" width="48" height="26" rx="4" fill="#7cbf2f"/><path d="M240 238l20-24 20 24z" fill="#f5a623"/>
+<rect x="130" y="296" width="28" height="24" rx="4" fill="#ffd93b"/><rect x="170" y="302" width="26" height="18" rx="4" fill="#8e6bd8"/><rect x="330" y="298" width="30" height="22" rx="4" fill="#ef4f86"/><rect x="372" y="304" width="26" height="16" rx="4" fill="#3f9df0"/>
+<path d="M60 120l6-12 6 12-6 12z M450 70l6-12 6 12-6 12z" fill="#ffd93b"/>
+<path d="M405 95c-8-10-22 2-8 14l8 7 8-7c14-12 0-24-8-14z" fill="none" stroke="#ef4f86" stroke-width="4"/>
+</svg>
+</div>
+</div>
+</header>
+<div class="wave"></div>
+
+<main class="wrap">
+<div class="cards" id="programas">
+<div class="c"><h3>Brincar e aprender</h3><svg class="i" viewBox="0 0 120 120"><use href="#kid" x="8" y="30" width="55" height="66" class="k1"/><use href="#girl" x="58" y="34" width="55" height="66" class="k2"/><rect x="40" y="94" width="40" height="14" rx="3" fill="#3f9df0"/><rect x="48" y="80" width="24" height="14" rx="3" fill="#ef4f86"/></svg><p>Atividades divertidas que despertam a curiosidade e a criatividade.</p><a href="#sobre">Saiba mais</a></div>
+<div class="c"><h3>Crescer juntos</h3><svg class="i" viewBox="0 0 120 120"><use href="#girl" x="40" y="8" width="40" height="48" class="k4"/><use href="#kid" x="8" y="50" width="40" height="48" class="k3"/><use href="#kid" x="72" y="50" width="40" height="48" class="k6"/><use href="#girl" x="40" y="68" width="40" height="48" class="k2"/></svg><p>Confiança, amizades e habilidades sociais todos os dias.</p><a href="#sobre">Saiba mais</a></div>
+<div class="c"><h3>Começo inteligente</h3><svg class="i" viewBox="0 0 120 120"><use href="#girl" x="25" y="20" width="70" height="84" class="k5" style="--s:#ffc83d"/><path d="M25 96l35-8 35 8v14l-35-8-35 8z" fill="#fff" stroke="#4f8f14" stroke-width="3"/><path d="M60 88v14" stroke="#4f8f14" stroke-width="3"/></svg><p>Programas de alfabetização inicial pensados para um futuro brilhante.</p><a href="#sobre">Saiba mais</a></div>
+<div class="c"><h3>Seguro e acolhedor</h3><svg class="i" viewBox="0 0 120 120"><use href="#kid" x="25" y="20" width="70" height="84" class="k1" style="--s:#f5a623"/><circle cx="24" cy="76" r="11" fill="#ef4f86"/><circle cx="96" cy="76" r="11" fill="#3f9df0"/></svg><p>Um ambiente seguro, feliz e carinhoso para cada criança.</p><a href="#sobre">Saiba mais</a></div>
+</div>
+
+<div class="why">
+<h2>Por que <span>nos escolher?</span></h2>
+<div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#4fa83d"/><circle cx="22" cy="17" r="7" fill="#fff"/><path d="M9 36c2-9 24-9 26 0z" fill="#fff"/></svg>Professoras experientes</div>
+<div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#8e6bd8"/><path d="M22 9l12 4v9c0 8-6 13-12 15-6-2-12-7-12-15v-9z" fill="#fff"/></svg>Ambiente seguro</div>
+<div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#f5a623"/><path d="M22 8l4 9 10 1-8 7 3 10-9-6-9 6 3-10-8-7 10-1z" fill="#fff"/></svg>Programas criativos</div>
+<div><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#3f9df0"/><path d="M22 34c-12-8-12-18-5-18 3 0 5 2 5 4 0-2 2-4 5-4 7 0 7 10-5 18z" fill="#fff"/></svg>Confiança das famílias</div>
+</div>
+
+<section class="two" id="sobre">
+<div>
+<h2>Bem-vindo à nossa creche! <span style="color:var(--pink)">♥</span></h2>
+<div class="about"><svg class="pic" viewBox="0 0 250 170" role="img" aria-label="Quatro crianças sorrindo"><rect width="250" height="170" fill="#ffe9a8"/><rect y="130" width="250" height="40" fill="#f3c969"/><use href="#kid" x="4" y="40" width="64" height="77" class="k3"/><use href="#girl" x="64" y="48" width="64" height="77" class="k5"/><use href="#kid" x="124" y="44" width="64" height="77" class="k4"/><use href="#girl" x="184" y="40" width="64" height="77" class="k2" style="--s:#ffd23f"/><rect x="90" y="132" width="30" height="24" rx="4" fill="#ef4f86"/><rect x="128" y="138" width="26" height="18" rx="4" fill="#3f9df0"/></svg>
+<div><p>Oferecemos um ambiente amoroso e estimulante, onde as crianças desenvolvem o gosto por aprender. Nossos programas valorizam a criatividade, a curiosidade e a confiança por meio da brincadeira.</p><a class="btn" style="background:var(--blue);border-color:var(--blue);box-shadow:0 5px 0 #2a6fb0" href="#contato">Conheça a creche</a></div></div>
+</div>
+<div id="novidades">
+<h2>Novidades</h2>
+<div class="news"><svg viewBox="0 0 84 70"><rect width="84" height="70" fill="#ffe9a8"/><use href="#kid" x="4" y="14" width="38" height="46" class="k1"/><use href="#girl" x="42" y="14" width="38" height="46" class="k2"/></svg><div><h3>Colônia de férias</h3><p>Dias cheios de diversão, aprendizado e aventura!</p><a href="#contato">Ler mais</a></div></div>
+<div class="news"><svg viewBox="0 0 84 70"><rect width="84" height="70" fill="#d7ecff"/><use href="#kid" x="4" y="14" width="38" height="46" class="k4"/><use href="#girl" x="42" y="14" width="38" height="46" class="k3"/></svg><div><h3>Oficina para pais</h3><p>Encontro sobre desenvolvimento e aprendizagem infantil.</p><a href="#contato">Ler mais</a></div></div>
+</div>
+</section>
+
+<div class="band" id="galeria">
+<div><h2>Crianças felizes,<br><span>Futuros brilhantes!</span></h2><a class="btn" href="#contato">Ver galeria de fotos</a></div>
+<svg viewBox="0 0 480 270" role="img" aria-label="Menina em um jardim com moinho">
+<use href="#cloud" x="20" y="20" width="90" height="45"/><use href="#cloud" x="370" y="30" width="80" height="40"/>
+<ellipse cx="90" cy="290" rx="220" ry="90" fill="#8bc83f"/><ellipse cx="400" cy="295" rx="200" ry="85" fill="#6cb02a"/>
+<circle cx="230" cy="130" r="100" fill="#cfeab0" stroke="#5fa626" stroke-width="20"/>
+<circle cx="140" cy="50" r="5" fill="#fff"/><circle cx="318" cy="90" r="5" fill="#ffd93b"/><circle cx="170" cy="215" r="5" fill="#ef4f86"/><circle cx="300" cy="200" r="5" fill="#fff"/>
+<use href="#girl" x="180" y="70" width="100" height="120" class="k4" style="--h:#7a3f1d;--s:#ffd23f"/>
+<ellipse cx="230" cy="102" rx="46" ry="10" fill="#fff5dc" stroke="#e5d3a0" stroke-width="2"/><path d="M199 102a31 29 0 0 1 62 0z" fill="#fff5dc"/><path d="M199 98h62" stroke="#ef4f86" stroke-width="4"/>
+<path d="M410 250l12-90h16l12 90z" fill="#f4e3c0"/><path d="M405 160l33-30 33 30z" fill="#e0453a"/><circle cx="438" cy="150" r="5" fill="#8e5a2b"/>
+<g stroke="#e0453a" stroke-width="7" stroke-linecap="round"><path d="M438 150l-40-35M438 150l40 35M438 150l35-40M438 150l-35 40"/></g>
+<rect x="60" y="215" width="12" height="35" fill="#8e5a2b"/><circle cx="66" cy="205" r="26" fill="#3f9a2e"/>
+<rect x="372" y="225" width="9" height="28" fill="#8e5a2b"/><circle cx="376" cy="218" r="18" fill="#4fae3a"/>
+<path d="M20 250l10-10 10 10v18H20zM48 250l10-10 10 10v18H48z" fill="#f5c26b"/>
+</svg>
+</div>
+</main>
+
+<svg class="fence" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="fp" width="28" height="34" patternUnits="userSpaceOnUse"><path d="M3 10l6-8 6 8v24H3z" fill="#f5c26b"/><path d="M17 14l5-6 5 6v20H17z" fill="#ef7fa8"/></pattern></defs><rect width="1200" height="34" fill="url(#fp)"/></svg>
+<footer id="contato">
+<div class="wrap">
+<div class="g">
+<div><h3>☀️ Pequenos Passos</h3><p>Onde pequenas mentes florescem ♥</p></div>
+<div><h3>Links rápidos</h3><a href="#sobre">Sobre nós</a><a href="#programas">Programas</a><a href="#galeria">Galeria</a></div>
+<div><h3>Contato</h3><p>📞 (24) 99999-0000</p><p>✉️ contato@pequenospassos.com.br</p><p>📍 Rua das Crianças, 123 – Centro</p></div>
+<div><h3>Siga-nos</h3><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">YouTube</a></div>
+</div>
+<small>© 2026 Creche Pequenos Passos. Todos os direitos reservados.</small>
+</div>
+</footer>
+</body>
+</html>
