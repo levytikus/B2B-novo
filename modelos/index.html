@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Modelos de site | Business 2 Brothers</title>
+<meta name="description" content="Modelos de site da Business 2 Brothers para creches, clínicas de estética, studios de beleza e consultórios odontológicos. Escolha um e veja com a sua marca.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Modelos de site | Business 2 Brothers">
+<meta property="og:description" content="Escolha um modelo e veja o seu site com a sua marca antes de decidir.">
+<meta property="og:url" content="https://sites.business2brothers.com/modelos/">
+<meta property="og:image" content="https://sites.business2brothers.com/modelos/capa-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2317130f'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial' font-weight='900' font-size='40' text-anchor='middle' fill='%23f08a24'%3E2%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fundo:#17130f;
+  --fundo-2:#211b15;
+  --linha:#3a3129;
+  --texto:#f5efe7;
+  --suave:#b9ad9f;
+  --laranja:#f08a24;
+  --laranja-claro:#ffb36b;
+  --tela:#ece6dd;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--fundo);color:var(--texto);font-family:"Archivo",system-ui,sans-serif;font-stretch:100%;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--laranja);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+
+/* topo */
+.topo{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0}
+.marca{font-weight:900;font-stretch:112%;letter-spacing:.02em;line-height:.95;text-decoration:none;font-size:19px;text-transform:uppercase}
+.marca b{color:var(--laranja);font-weight:900}
+.topo a.conversa{font-weight:600;font-size:15px;text-decoration:none;padding:10px 18px;border:1.5px solid var(--linha);border-radius:999px;transition:border-color .2s}
+.topo a.conversa:hover{border-color:var(--laranja)}
+
+/* abertura */
+.abertura{padding:56px 0 40px;display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end}
+h1{font-stretch:118%;font-weight:800;font-size:clamp(40px,6.2vw,82px);line-height:.98;letter-spacing:-.02em;text-wrap:balance}
+.abertura p{color:var(--suave);font-size:18px;max-width:46ch}
+.abertura p strong{color:var(--texto);font-weight:600}
+
+/* filtro */
+.filtro{display:flex;flex-wrap:wrap;gap:8px;padding:24px 0 8px;border-top:1px solid var(--linha);margin-top:16px}
+.filtro button{font:inherit;font-size:15px;font-weight:600;color:var(--suave);background:transparent;border:1.5px solid var(--linha);border-radius:999px;padding:9px 16px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+.filtro button small{font-size:13px;opacity:.7;margin-left:6px;font-weight:500}
+.filtro button:hover{color:var(--texto)}
+.filtro button[aria-pressed="true"]{background:var(--texto);color:var(--fundo);border-color:var(--texto)}
+
+/* modelos */
+.grade{display:grid;grid-template-columns:repeat(2,1fr);gap:72px 48px;padding:40px 0 96px}
+.modelo{display:flex;flex-direction:column;gap:22px}
+.modelo[hidden]{display:none}
+.vitrine{position:relative;padding:0 9% 9% 0;text-decoration:none;display:block}
+.janela{background:var(--tela);border-radius:12px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);transition:transform .35s ease}
+.janela i{display:flex;gap:6px;padding:9px 12px;background:#d9d1c6}
+.janela i::before,.janela i::after,.janela i span{content:"";width:9px;height:9px;border-radius:50%;background:#b8ad9f}
+.janela img{aspect-ratio:16/10;object-fit:cover;object-position:top;width:100%}
+.celular{position:absolute;right:0;bottom:0;width:23%;border-radius:18px;padding:5px;background:#0d0b09;box-shadow:0 24px 40px -18px rgba(0,0,0,.8);transition:transform .35s ease}
+.celular img{border-radius:13px;aspect-ratio:390/760;object-fit:cover;object-position:top;width:100%}
+.vitrine:hover .janela{transform:translateY(-4px)}
+.vitrine:hover .celular{transform:translateY(-10px)}
+.info{display:grid;grid-template-columns:1fr auto;gap:6px 20px;align-items:start}
+.info h2{font-stretch:115%;font-weight:800;font-size:28px;line-height:1.1}
+.info .nicho{grid-column:1;color:var(--laranja-claro);font-size:15px;font-weight:600}
+.info p{grid-column:1/-1;color:var(--suave);max-width:52ch}
+.info a.ver{grid-row:1/3;grid-column:2;align-self:center;font-weight:700;font-size:15px;text-decoration:none;background:var(--laranja);color:#1a0f04;padding:11px 18px;border-radius:999px;white-space:nowrap;transition:background .2s}
+.info a.ver:hover{background:var(--laranja-claro)}
+
+/* como funciona */
+.passos{border-top:1px solid var(--linha);padding:80px 0}
+.passos h2,.final h2{font-stretch:118%;font-weight:800;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.01em;max-width:20ch;text-wrap:balance}
+.passos ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:44px;counter-reset:p}
+.passos li{counter-increment:p;border-top:3px solid var(--laranja);padding-top:20px}
+.passos li::before{content:counter(p);display:block;font-stretch:125%;font-weight:900;font-size:44px;line-height:1;color:var(--laranja);margin-bottom:14px}
+.passos h3{font-size:20px;font-weight:700;margin-bottom:6px}
+.passos li p{color:var(--suave)}
+
+/* final */
+.final{background:var(--laranja);color:#1a0f04;border-radius:28px;padding:64px clamp(24px,6vw,72px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:56px}
+.final p{font-size:18px;max-width:44ch;margin-top:14px}
+.final a{background:#1a0f04;color:var(--texto);text-decoration:none;font-weight:700;padding:16px 26px;border-radius:999px;white-space:nowrap;transition:transform .2s}
+.final a:hover{transform:translateY(-2px)}
+footer{border-top:1px solid var(--linha);padding:28px 0 40px;color:var(--suave);font-size:14px;display:flex;flex-wrap:wrap;gap:12px 28px}footer span:first-child{margin-right:auto}
+footer a{color:var(--texto)}
+
+@media (max-width:900px){
+  .abertura{grid-template-columns:1fr;gap:20px;padding-top:32px}
+  .grade{grid-template-columns:1fr;gap:56px}
+  .passos ol{grid-template-columns:1fr;gap:28px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .info{grid-template-columns:1fr}
+  .info a.ver{grid-row:auto;grid-column:1;justify-self:start;margin-top:8px}
+  .info h2{font-size:24px}
+  .topo a.conversa{font-size:14px;padding:8px 14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topo">
+    <a class="marca" href="https://business2brothers.com/" aria-label="Business 2 Brothers">Business<b>2</b><br>Brothers</a>
+    <a class="conversa" href="https://wa.me/5521980602549?text=Ol%C3%A1!%20Vi%20os%20modelos%20de%20site%20e%20queria%20conversar." target="_blank" rel="noopener">Marcar uma conversa</a>
+  </header>
+
+  <main>
+    <section class="abertura">
+      <h1>Escolha um começo. O site sai com a sua cara.</h1>
+      <p>Cada modelo é um ponto de partida. Com a sua logo, as suas cores e as fotos do seu espaço, montamos uma <strong>prévia do seu site em poucos minutos</strong>, antes de você decidir qualquer coisa.</p>
+    </section>
+
+    <nav class="filtro" aria-label="Filtrar modelos por área">
+      <button type="button" data-f="todos" aria-pressed="true">Todos<small>10</small></button>
+      <button type="button" data-f="creches" aria-pressed="false">Creches e escolas<small>5</small></button>
+      <button type="button" data-f="estetica" aria-pressed="false">Estética e beleza<small>3</small></button>
+      <button type="button" data-f="odonto" aria-pressed="false">Odontologia<small>2</small></button>
+    </nav>
+
+    <div class="grade" id="grade">
+      <!-- Os cartões são montados pelo script abaixo a partir da lista MODELOS -->
+    </div>
+
+    <section class="passos" aria-labelledby="t-passos">
+      <h2 id="t-passos">Do modelo ao site no ar</h2>
+      <ol>
+        <li><h3>Você manda a logo</h3><p>Junto com o WhatsApp e, se quiser, algumas fotos do seu espaço. Pode ser do próprio Instagram.</p></li>
+        <li><h3>Recebe a prévia</h3><p>Um link com o seu site montado no modelo escolhido, para abrir no celular e mostrar para quem quiser.</p></li>
+        <li><h3>Ajustamos e publicamos</h3><p>Textos, fotos e detalhes do jeito do seu negócio. Depois, o site vai para o ar no seu endereço.</p></li>
+      </ol>
+    </section>
+
+    <section class="final" aria-labelledby="t-final">
+      <div>
+        <h2 id="t-final">Quer ver um desses com a sua marca?</h2>
+        <p>Conte qual modelo chamou a sua atenção. A gente monta a prévia e te manda o link.</p>
+      </div>
+      <a href="https://wa.me/5521980602549?text=Ol%C3%A1!%20Vi%20os%20modelos%20de%20site%20e%20queria%20ver%20uma%20pr%C3%A9via%20com%20a%20minha%20marca." target="_blank" rel="noopener">Marcar uma conversa</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>Nomes, fotos e textos dos modelos são de exemplo.</span>
+    <span><a href="https://business2brothers.com/">business2brothers.com</a></span><span><a href="https://www.instagram.com/business2brothers.oficial/" target="_blank" rel="noopener">@business2brothers.oficial</a></span>
+  </footer>
+</div>
+
+<script>
+const MODELOS = [
+  {id:"petala", nome:"Pétala", area:"estetica", nicho:"Clínica de estética", txt:"Claro e editorial, com fotos em arco e os tratamentos apresentados como um cardápio de spa."},
+  {id:"lumen", nome:"Lumen", area:"estetica", nicho:"Estética avançada", txt:"Escuro e sofisticado, para clínicas com tecnologia e protocolos de maior valor."},
+  {id:"atelier", nome:"Atelier", area:"estetica", nicho:"Studio de beleza", txt:"Sobrancelha, cílios, unhas e maquiagem, com trabalhos em quadrados no ritmo do Instagram."},
+  {id:"esmalte", nome:"Esmalte", area:"odonto", nicho:"Consultório da família", txt:"Acolhedor, com faixa de urgência, tratamentos explicados pelo problema do paciente e espaço para as crianças."},
+  {id:"apice", nome:"Ápice", area:"odonto", nicho:"Odontologia estética e implantes", txt:"Branco amplo e tipografia de revista, com o planejamento digital do sorriso em destaque."},
+  {id:"ipe", nome:"Ipê", area:"creches", nicho:"Escola infantil", txt:"Premium e completo, para escolas que querem mostrar estrutura e proposta pedagógica."},
+  {id:"girassol", nome:"Girassol", area:"creches", nicho:"Creche de bairro", txt:"Página longa e calorosa, com ilustrações e agendamento de visita direto no WhatsApp."},
+  {id:"rei-leao", nome:"Rei Leão", area:"creches", nicho:"Creche e pré-escola", txt:"Colorido e alegre, com turmas, rotina do dia, galeria e perguntas frequentes."},
+  {id:"belo-jasmin", nome:"Belo Jasmin", area:"creches", nicho:"Creche de horário integral", txt:"Duas páginas, com uma só para o horário integral e a tabela de turmas."},
+  {id:"mundo-baby", nome:"Mundo Baby", area:"creches", nicho:"Berçário", txt:"Lúdico e delicado, pensado para quem ainda não tem boas fotos do espaço."}
+];
+const grade = document.getElementById("grade");
+grade.innerHTML = MODELOS.map(m => {
+  const url = `../previas/modelo-${m.id}/`;
+  return `<article class="modelo" data-area="${m.area}">
+    <a class="vitrine" href="${url}" target="_blank" rel="noopener" aria-label="Abrir o modelo ${m.nome}">
+      <div class="janela"><i><span></span></i><img src="img/${m.id}.webp" width="1200" height="750" alt="Modelo ${m.nome} no computador" loading="lazy" decoding="async"></div>
+      <div class="celular"><img src="img/${m.id}-m.webp" width="390" height="844" alt="Modelo ${m.nome} no celular" loading="lazy" decoding="async"></div>
+    </a>
+    <div class="info">
+      <h2>${m.nome}</h2>
+      <span class="nicho">${m.nicho}</span>
+      <a class="ver" href="${url}" target="_blank" rel="noopener">Ver modelo</a>
+      <p>${m.txt}</p>
+    </div>
+  </article>`;
+}).join("");
+const imgs = grade.querySelectorAll("img");
+imgs[0].loading = imgs[1].loading = "eager";
+document.querySelectorAll(".filtro button").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".filtro button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  grade.querySelectorAll(".modelo").forEach(c => c.hidden = !(b.dataset.f === "todos" || c.dataset.area === b.dataset.f));
+}));
+</script>
+</body>
+</html>
