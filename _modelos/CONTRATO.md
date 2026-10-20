@@ -6,7 +6,10 @@ O objetivo é a prévia sair em poucos minutos e parecer feita sob medida para a
 
 ## Arquivos do modelo
 - `index.html` (e outras páginas .html, se o site tiver), `img/` com as imagens, e `modelo.json`:
-  `{"id": "...", "nome": "Modelo Rei Leão", "descricao": "uma linha: estilo e para que escola combina", "baseado_em": "previas/..."}`
+  `{"id": "...", "nome": "Modelo Rei Leão", "descricao": "uma linha: estilo e para que escola combina", "baseado_em": "previas/...", "og_fundo": "img/hero.webp"}`
+- `og_fundo` (opcional): foto de fundo do cartão que aparece quando o link é colado no WhatsApp/Instagram.
+  O gerador monta sozinho `capa-og.jpg` (1200x630, foto + véu na cor da marca + logo + nome) e as tags
+  `og:`/`twitter:` em todas as páginas. Sem `og_fundo`, o cartão sai em fundo claro com as cores da marca.
 - Sem arquivos `logo.*` na pasta: o gerador grava `logo.png` com a logo da escola nova.
 - Nada de imagens em data: URI dentro do HTML. Extraia para `img/` (webp, até ~250 KB cada).
 
@@ -71,6 +74,11 @@ Cores neutras (fundo, texto corrido) podem continuar fixas. Mantenha o tema que 
 - `<title>{{nome}}</title>` (pode ter complemento: `{{nome}} | Creche e pré-escola`).
 
 ## Imagens
+- NUNCA use fotos reais de crianças (nem de pessoas) tiradas do Instagram ou do site de uma escola: elas
+  apareceriam na prévia de outra escola (direito de imagem de menores, ECA/LGPD, e passa a ideia de que
+  os alunos são de lá). Só imagens geradas ou de banco com licença.
+- Imagem com texto escrito (ex.: "Volta às aulas", "É Primavera") também não: data o site e não se traduz.
+- Imagens abaixo da primeira tela com `loading="lazy" decoding="async"`; formato WebP.
 Fotos e ilustrações genéricas de crianças, salas e atividades podem ficar.
 Imagem com nome, logo, mascote ou tema específico da escola antiga (leão, girassol, globo/mundo,
 fachada com placa) precisa ser trocada por uma imagem neutra no mesmo estilo, gerada no Canva.

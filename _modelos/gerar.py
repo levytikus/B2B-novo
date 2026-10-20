@@ -224,7 +224,7 @@ def gerar(modelo, logo, dados, slug=None, saida=None):
     dst = Path(saida) if saida else PREVIAS / slug
     if dst.exists():
         shutil.rmtree(dst)
-    shutil.copytree(src, dst, ignore=shutil.ignore_patterns("modelo.json", "*.md", "logo.*"))
+    shutil.copytree(src, dst, ignore=shutil.ignore_patterns("modelo.json", "*.md", "logo.*", "capa-og.*"))
     # logo
     im = Image.open(logo)
     im = im.convert("RGBA")
@@ -235,13 +235,116 @@ def gerar(modelo, logo, dados, slug=None, saida=None):
     im.save(dst / "logo.png", optimize=True)
     cores = dados.get("cores") or cores_da_logo(logo)
     bloco = bloco_cores(cores)
+    url = BASE_URL + slug + "/"
+    info = json.loads((src / "modelo.json").read_text()) if (src / "modelo.json").exists() else {}
+    fundo = src / info["og_fundo"] if info.get("og_fundo") else None
+    cartao_og(dst, dst / "logo.png", f, cores, fundo)
+    desc_padrao = f"{f['nome']}: conheça o nosso espaço, a nossa proposta e fale com a gente pelo WhatsApp."
     for page in dst.rglob("*.html"):
         html = page.read_text(encoding="utf-8")
         html = re.sub(r"/\*MARCA\*/.*?/\*/MARCA\*/", lambda m: bloco, html, flags=re.S)
         html = preencher(html, f)
+        pag_url = url if page.name == "index.html" else url + page.name
+        html = tags_og(html, f, pag_url, desc_padrao).replace('content="' + pag_url + 'capa-og.jpg"', 'content="' + url + 'capa-og.jpg"')
         page.write_text(html, encoding="utf-8")
-    url = BASE_URL + slug + "/"
     return {"slug": slug, "url": url, "pasta": str(dst), "cores": cores}
+
+
+# ---------- cartão do link (WhatsApp, Instagram, Facebook) ----------
+FONTES = MODELOS / "_fontes"
+
+
+def _fonte(peso, tam):
+    from PIL import ImageFont
+    for nome in (f"Poppins-{peso}.ttf", "Poppins-Bold.ttf"):
+        try:
+            return ImageFont.truetype(str(FONTES / nome), tam)
+        except OSError:
+            continue
+    return ImageFont.load_default()
+
+
+def _quebrar(draw, texto, fonte, largura):
+    linhas, atual = [], ""
+    for p in texto.split():
+        t = (atual + " " + p).strip()
+        if draw.textlength(t, font=fonte) <= largura:
+            atual = t
+        else:
+            if atual:
+                linhas.append(atual)
+            atual = p
+    if atual:
+        linhas.append(atual)
+    return linhas
+
+
+def cartao_og(dst, logo_png, f, cores, fundo=None):
+    """Gera capa-og.jpg (1200x630): foto do modelo com véu na cor da marca, logo num cartão branco e o nome."""
+    from PIL import ImageDraw, ImageFilter, ImageOps
+    W, H = 1200, 630
+    c1 = hex2rgb(cores[0])
+    escuro = tuple(int(v) for v in mix(c1, (0, 0, 0), .55))
+    if fundo and Path(fundo).exists():
+        base = ImageOps.fit(Image.open(fundo).convert("RGB"), (W, H), Image.LANCZOS, centering=(0.6, 0.45))
+    else:
+        base = Image.new("RGB", (W, H), tuple(int(v) for v in mix(c1, (255, 255, 255), .78)))
+        d0 = ImageDraw.Draw(base)
+        for i, (x, y, r) in enumerate(((1050, 90, 260), (980, 600, 200), (120, 640, 160))):
+            cor = hex2rgb(cores[(i % 2) + 1]) if len(cores) > 2 else c1
+            d0.ellipse((x - r, y - r, x + r, y + r), fill=tuple(int(v) for v in mix(cor, (255, 255, 255), .55)))
+        escuro = tuple(int(v) for v in mix(c1, (0, 0, 0), .35))
+    # véu: da cor escura da marca (esquerda, opaco) para transparente (direita)
+    veu = Image.new("RGBA", (W, H), escuro + (0,))
+    perfil = [int(235 if x < W * .42 else max(0, 235 * (1 - (x - W * .42) / (W * .43)))) if fundo else 0 for x in range(W)]
+    alfa = Image.new("L", (W, 1))
+    alfa.putdata(perfil)
+    alfa = alfa.resize((W, H))
+    veu.putalpha(alfa)
+    img = Image.alpha_composite(base.convert("RGBA"), veu)
+    d = ImageDraw.Draw(img)
+    texto_cor = (255, 255, 255) if fundo else (27, 27, 27)
+    # cartão branco com a logo
+    lg = Image.open(logo_png).convert("RGBA")
+    lg.thumbnail((360, 180))
+    cw, ch = lg.width + 70, lg.height + 60
+    sombra = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(sombra).rounded_rectangle((70, 70 + 10, 70 + cw, 70 + ch + 10), 28, fill=(0, 0, 0, 90))
+    img = Image.alpha_composite(img, sombra.filter(ImageFilter.GaussianBlur(14)))
+    d = ImageDraw.Draw(img)
+    d.rounded_rectangle((70, 70, 70 + cw, 70 + ch), 28, fill=(255, 255, 255, 255))
+    img.alpha_composite(lg, (70 + 35, 70 + 30))
+    # nome e chamada
+    y = 70 + ch + 40
+    fn = _fonte("Bold", 62)
+    for ln in _quebrar(d, f["nome"], fn, 640)[:2]:
+        d.text((72, y), ln, font=fn, fill=texto_cor)
+        y += 74
+    sub = "Conheça o nosso site" + (f"  ·  {f['bairro']}" if f.get("bairro") else "")
+    d.text((74, y + 14), sub, font=_fonte("Medium", 30), fill=texto_cor)
+    # faixa na cor da marca
+    d.rectangle((0, H - 14, W, H), fill=c1)
+    img.convert("RGB").save(dst / "capa-og.jpg", quality=86, optimize=True, progressive=True)
+
+
+def tags_og(html, f, url, descricao_padrao):
+    """Coloca no <head> as tags que o WhatsApp/Instagram/Facebook leem para montar o cartão do link."""
+    from html import escape
+    html = re.sub(r'\s*<meta (property|name)="(og|twitter):[^"]*"[^>]*>', "", html)
+    m = (re.search(r'<meta name="description" content="([^"]*)"', html)
+         or re.search(r'<meta content="([^"]*)" name="description"', html))
+    desc = m.group(1) if m else descricao_padrao
+    if not m:
+        html = html.replace("</head>", f'<meta name="description" content="{escape(desc)}">\n</head>', 1)
+    t = escape(f["nome"]); dsc = escape(desc); img = url + "capa-og.jpg"
+    bloco = (f'<meta property="og:type" content="website">\n<meta property="og:locale" content="pt_BR">\n'
+             f'<meta property="og:site_name" content="{t}">\n<meta property="og:title" content="{t}">\n'
+             f'<meta property="og:description" content="{dsc}">\n<meta property="og:url" content="{url}">\n'
+             f'<meta property="og:image" content="{img}">\n<meta property="og:image:width" content="1200">\n'
+             f'<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="{t}">\n'
+             f'<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:image" content="{img}">\n'
+             f'<link rel="icon" href="logo.png">\n')
+    return html.replace("</head>", bloco + "</head>", 1)
 
 
 def listar():
