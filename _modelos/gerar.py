@@ -64,7 +64,7 @@ def wa_num(s):
 
 def nome_curto(nome):
     s = re.sub(r"^(creche\s+e\s+escola|creche[\s-]+escola|escola[\s-]+creche|centro\s+educacional|jardim\s+escola|"
-               r"espa[cç]o\s+infantil|creche|escola|col[eé]gio|ber[cç][aá]rio)\s+(infantil\s+)?", "", nome.strip(), flags=re.I)
+               r"espa[cç]o\s+infantil|cl[ií]nica\s+de\s+est[eé]tica(\s+e\s+\w+)?|cl[ií]nica|est[eé]tica|studio|est[uú]dio|instituto|espa[cç]o|creche|escola|col[eé]gio|ber[cç][aá]rio)\s+(infantil\s+)?", "", nome.strip(), flags=re.I)
     return s or nome
 
 
@@ -348,7 +348,7 @@ def tags_og(html, f, url, descricao_padrao):
 
 
 def listar():
-    return sorted(p.name for p in MODELOS.iterdir() if (p / "index.html").exists())
+    return sorted(p.name for p in MODELOS.iterdir() if (p / "index.html").exists() and not p.name.startswith("_"))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>{{nome}} | Estética facial e corporal</title>
+<meta name="description" content="{{nome}}: tratamentos faciais e corporais com avaliação individual, ambiente tranquilo e agendamento pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/*MARCA*/:root{--marca-1:#b5577a;--marca-1-forte:#9c3f62;--marca-1-ink:#ffffff;--marca-1-claro:#f4e3ea;--marca-1-escuro:#763951;
+--marca-2:#c9a46a;--marca-2-forte:#7d5f2c;--marca-2-ink:#1b1b1b;--marca-2-claro:#f6eee1;--marca-2-escuro:#836b45;
+--marca-3:#6f7f73;--marca-3-forte:#56645a;--marca-3-ink:#ffffff;--marca-3-claro:#e5e9e6;--marca-3-escuro:#48534b;}/*/MARCA*/
+/* Modelo Pétala: clínica de estética de bairro. Linguagem de revista de beleza: Bodoni no título, fotos em arco (o espelho da cabine),
+   tratamentos como cardápio de spa e um único bloco escuro (a primeira visita, que é a decisão de quem chega). */
+:root{
+  --perola:#F4F5F3;      /* fundo frio, sem creme */
+  --branco:#FFFFFF;
+  --tinta:#26232B;       /* texto principal, ameixa quase preta */
+  --pedra:#6E6875;       /* texto secundário */
+  --fio:#DCD9DE;         /* linhas finas */
+  --acento:var(--marca-1-forte);
+  --acento-fundo:var(--marca-1);
+  --acento-ink:var(--marca-1-ink);
+  --suave:var(--marca-1-claro);
+  --noite:color-mix(in srgb,var(--marca-1-escuro) 38%,#1f1c24);
+  --serif:"Bodoni Moda",Didot,"Times New Roman",serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--perola);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;line-height:1.05;text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acento);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:22px}
+.sec{padding-block:clamp(72px,10vw,128px)}
+.h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.lead{color:var(--pedra);font-size:1.08rem;max-width:52ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 1rem/1 var(--sans);text-decoration:none;border-radius:999px;padding:17px 28px;border:0;cursor:pointer;transition:background .2s,color .2s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-cheio{background:var(--acento-fundo);color:var(--acento-ink)}
+.btn-cheio:hover{background:var(--marca-1-escuro);color:#fff}
+.btn-fio{color:var(--tinta);box-shadow:inset 0 0 0 1.5px var(--tinta)}
+.btn-fio:hover{background:var(--tinta);color:var(--perola)}
+.arco{border-radius:999px 999px 18px 18px;overflow:hidden;background:var(--suave)}
+.arco img{width:100%;height:100%;object-fit:cover}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--perola) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--fio)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:76px}
+.logo{display:flex;align-items:center;height:76px}
+.logo img{max-height:52px;max-width:190px;width:auto;object-fit:contain}
+.menu{display:flex;gap:30px;font-size:.95rem;font-weight:500}
+.menu a{text-decoration:none;color:var(--pedra)}
+.menu a:hover{color:var(--tinta)}
+.topo .btn{padding:12px 20px;font-size:.92rem}
+@media(max-width:900px){.menu{display:none}}
+@media(max-width:480px){.topo .btn span{display:none}.topo .btn{padding:12px}}
+
+/* hero */
+.hero{padding-block:clamp(40px,7vw,88px) clamp(64px,8vw,104px)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,88px);align-items:center}
+.hero h1{font-size:clamp(2.9rem,7.4vw,6rem);letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--acento)}
+.hero .lead{margin-top:26px;font-size:1.15rem}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.nota{display:flex;align-items:center;gap:12px;margin-top:34px;color:var(--pedra);font-size:.95rem}
+.nota b{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--tinta);line-height:1}
+.estrelas{color:var(--marca-2);letter-spacing:2px}
+.hero-foto{position:relative}
+.hero-foto .arco{aspect-ratio:3/4}
+.hero-foto .selo{position:absolute;left:-28px;bottom:42px;background:var(--branco);border-radius:16px;padding:16px 20px;box-shadow:0 18px 40px -18px rgba(38,35,43,.35);max-width:230px;font-size:.92rem;line-height:1.45}
+.hero-foto .selo strong{display:block;font-family:var(--serif);font-weight:400;font-size:1.25rem;margin-bottom:2px}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.hero-foto{max-width:420px;margin-inline:auto;width:100%}.hero-foto .selo{left:12px;bottom:18px}}
+.hero h1,.hero .lead,.hero .acoes,.hero-foto{animation:entra .9s cubic-bezier(.2,.7,.2,1) both}
+.hero .lead{animation-delay:.08s}.hero .acoes{animation-delay:.16s}.hero-foto{animation-delay:.1s}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* cardápio de tratamentos */
+.cardapio{background:var(--branco)}
+.cardapio .cab{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+@media(max-width:820px){.cardapio .cab{grid-template-columns:1fr;gap:18px}}
+.listas{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,80px)}
+@media(max-width:820px){.listas{grid-template-columns:1fr}}
+.lista h3{font-size:1.9rem;padding-bottom:14px;border-bottom:1px solid var(--tinta);display:flex;justify-content:space-between;align-items:baseline}
+.lista h3 small{font:500 .85rem var(--sans);color:var(--pedra)}
+.item{padding:20px 0;border-bottom:1px solid var(--fio)}
+.item .linha{display:flex;align-items:baseline;gap:10px}
+.item .linha strong{font-weight:600;font-size:1.05rem}
+.item .linha i{flex:1;border-bottom:1.5px dotted var(--fio);transform:translateY(-4px)}
+.item .linha a{font-size:.9rem;font-weight:600;color:var(--acento);text-decoration:none;white-space:nowrap}
+.item .linha a:hover{text-decoration:underline}
+.item p{color:var(--pedra);font-size:.95rem;margin-top:4px;max-width:46ch}
+.nota-cardapio{margin-top:32px;color:var(--pedra);font-size:.92rem}
+
+/* faixa de fotos */
+.faixa{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:18px;align-items:end;margin-top:-1px}
+.faixa .arco{aspect-ratio:3/4}
+.faixa .arco:nth-child(2){aspect-ratio:4/5}
+@media(max-width:700px){.faixa{grid-template-columns:1fr 1fr}.faixa .arco:nth-child(3){display:none}}
+
+/* primeira visita (sequência real) */
+.visita{background:var(--noite);color:#F3EFF4}
+.visita .h2{color:#fff;max-width:16ch}
+.visita .lead{color:#CFC8D4}
+.passos{list-style:none;padding:0;margin:56px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:p}
+.passos li{counter-increment:p;padding:28px 28px 8px 0;border-top:1px solid rgba(255,255,255,.22)}
+.passos li+li{padding-left:28px;border-left:1px solid rgba(255,255,255,.12)}
+.passos li::before{content:counter(p);display:block;font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--marca-1-claro);margin-bottom:18px}
+.passos h3{font-size:1.6rem;color:#fff;margin-bottom:10px}
+.passos p{color:#CFC8D4;font-size:.98rem}
+@media(max-width:820px){.passos{grid-template-columns:1fr}.passos li,.passos li+li{padding:26px 0 10px;border-left:0}}
+.visita .acoes{margin-top:48px}
+.visita .btn-fio{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.visita .btn-fio:hover{background:#fff;color:var(--tinta)}
+
+/* sobre */
+.sobre .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,96px);align-items:center}
+.sobre .arco{aspect-ratio:4/5}
+.sobre .texto{display:grid;gap:18px}
+.sobre .texto p{color:var(--pedra);max-width:56ch}
+.compromissos{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:0}
+.compromissos li{padding:16px 0;border-top:1px solid var(--fio);display:grid;grid-template-columns:150px 1fr;gap:18px}
+.compromissos b{font-family:var(--serif);font-weight:400;font-size:1.2rem}
+.compromissos span{color:var(--pedra);font-size:.96rem}
+@media(max-width:820px){.sobre .wrap{grid-template-columns:1fr}.sobre .arco{max-width:420px}.compromissos li{grid-template-columns:1fr;gap:4px}}
+
+/* dúvidas */
+.duvidas{background:var(--branco)}
+.duvidas .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,80px)}
+@media(max-width:820px){.duvidas .wrap{grid-template-columns:1fr}}
+details{border-bottom:1px solid var(--fio)}
+details:first-of-type{border-top:1px solid var(--fio)}
+summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-weight:600;font-size:1.05rem;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";position:absolute;right:6px;top:50%;width:12px;height:12px;border-right:1.5px solid var(--tinta);border-bottom:1.5px solid var(--tinta);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+details p{color:var(--pedra);padding:0 0 22px;max-width:62ch}
+
+/* onde estamos */
+.onde .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:stretch}
+.onde dl{margin:28px 0 0;display:grid;gap:0}
+.onde dl div{padding:18px 0;border-top:1px solid var(--fio);display:grid;grid-template-columns:120px 1fr;gap:16px}
+.onde dt{color:var(--pedra);font-size:.92rem}
+.onde dd{margin:0;font-weight:500}
+.onde dd a{text-decoration:none;border-bottom:1px solid var(--fio)}
+.mapa{border-radius:18px;overflow:hidden;min-height:360px;background:var(--suave)}
+.mapa iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+@media(max-width:820px){.onde .wrap{grid-template-columns:1fr}.onde dl div{grid-template-columns:1fr;gap:2px}}
+
+/* fim */
+.fim{text-align:center}
+.fim .h2{max-width:18ch;margin-inline:auto}
+.fim .lead{margin:20px auto 0}
+.fim .acoes{justify-content:center}
+.rodape{border-top:1px solid var(--fio);padding-block:36px;font-size:.88rem;color:var(--pedra)}
+.rodape .wrap{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;align-items:center}
+.rodape img{max-height:40px;width:auto;max-width:150px;object-fit:contain}
+.rodape a{color:var(--tinta)}
+.zap{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.35)}
+.zap svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="{{nome}}, início"><img src="logo.png" alt="{{nome}}"></a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#primeira-visita">Primeira visita</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#onde">Onde estamos</a>
+    </nav>
+    <a class="btn btn-cheio" href="{{wa_link}}" target="_blank" rel="noopener" aria-label="Agendar pelo WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Agendar</span></a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Cuidado de pele e corpo, no seu tempo</h1>
+        <p class="lead">Na {{nome_curto}}, cada tratamento começa por uma conversa: entendemos a sua pele, a sua rotina e o que você quer sentir ao se olhar no espelho.</p>
+        <div class="acoes">
+          <a class="btn btn-cheio" href="{{wa_link}}" target="_blank" rel="noopener">Agendar avaliação</a>
+          <a class="btn btn-fio" href="#tratamentos">Ver tratamentos</a>
+        </div>
+        <p class="nota" data-opcional="nota avaliacoes"><b>{{nota}}</b><span><span class="estrelas" aria-hidden="true">★★★★★</span><br>{{avaliacoes}} avaliações no Google</span></p>
+      </div>
+      <div class="hero-foto">
+        <div class="arco"><img src="img/hero.webp" alt="Cliente relaxada durante um tratamento facial" width="900" height="1200"></div>
+        <p class="selo" data-opcional="bairro"><strong>Em {{bairro}}</strong>Atendimento com hora marcada, sem pressa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cardapio sec" id="tratamentos">
+    <div class="wrap">
+      <div class="cab">
+        <h2 class="h2">Tratamentos</h2>
+        <p class="lead">Protocolos escolhidos depois da avaliação, combinados entre si quando faz sentido para você. Pergunte pelo WhatsApp o que está disponível hoje.</p>
+      </div>
+      <div class="listas">
+        <div class="lista">
+          <h3>Rosto <small>facial</small></h3>
+          <div class="item"><div class="linha"><strong>Limpeza de pele</strong><i></i><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar</a></div><p>Higienização profunda, extração cuidadosa e hidratação de acordo com o seu tipo de pele.</p></div>
+          <div class="item"><div class="linha"><strong>Peeling</strong><i></i><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar</a></div><p>Renovação da camada superficial para uniformizar o tom e a textura.</p></div>
+          <div class="item"><div class="linha"><strong>Microagulhamento</strong><i></i><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar</a></div><p>Estímulo de colágeno para marcas, poros e viço da pele.</p></div>
+          <div class="item"><div class="linha"><strong>Revitalização facial</strong><i></i><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar</a></div><p>Ativos e massagem para a pele cansada recuperar brilho e hidratação.</p></div>
+        </div>
+        <div class="lista">
+          <h3>Corpo <small>corporal e bem-estar</small></h3>
+          <div class="item"><div class="linha"><strong>Drenagem linfática</strong><i></i><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar</a></div><p>Movimentos leves e ritmados que ajudam a reduzir o inchaço e a sensação de peso.</p></div>
+          <div class="item"><div class="linha"><strong>Massagem modeladora</strong><i></i><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar</a></div><p>Manobras firmes, pensadas para contorno e firmeza.</p></div>
+          <div class="item"><div class="linha"><strong>Massagem relaxante</strong><i></i><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar</a></div><p>Uma hora para desacelerar, com óleos e ambiente silencioso.</p></div>
+          <div class="item"><div class="linha"><strong>Depilação</strong><i></i><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar</a></div><p>Cera ou método indicado na avaliação, com higiene descartável.</p></div>
+        </div>
+      </div>
+      <p class="nota-cardapio">Os resultados variam de pessoa para pessoa. A indicação de cada tratamento é feita na avaliação.</p>
+    </div>
+  </section>
+
+  <div class="wrap faixa" aria-hidden="true">
+    <div class="arco"><img loading="lazy" decoding="async" src="img/detalhe.webp" alt="" width="900" height="1200"></div>
+    <div class="arco"><img loading="lazy" decoding="async" src="img/sala.webp" alt="" width="960" height="1200"></div>
+    <div class="arco"><img loading="lazy" decoding="async" src="img/corporal.webp" alt="" width="900" height="1200"></div>
+  </div>
+
+  <section class="visita sec" id="primeira-visita">
+    <div class="wrap">
+      <h2 class="h2">Como é a sua primeira visita</h2>
+      <p class="lead" style="margin-top:20px">Ninguém começa um tratamento sem antes ser ouvida. É assim que funciona o primeiro encontro.</p>
+      <ol class="passos">
+        <li><h3>Conversa e avaliação</h3><p>Olhamos a sua pele ou a região a tratar, falamos da sua rotina, dos cuidados em casa e do que você espera.</p></li>
+        <li><h3>Plano sob medida</h3><p>Você recebe a indicação do tratamento, o número de sessões sugerido e os cuidados antes e depois.</p></li>
+        <li><h3>Sessões no seu ritmo</h3><p>Os horários são marcados com antecedência e o acompanhamento continua a cada retorno.</p></li>
+      </ol>
+      <div class="acoes">
+        <a class="btn btn-cheio" href="{{wa_link}}" target="_blank" rel="noopener">Marcar minha avaliação</a>
+        <a class="btn btn-fio" href="#duvidas">Tirar dúvidas</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre sec" id="sobre">
+    <div class="wrap">
+      <div class="arco"><img loading="lazy" decoding="async" src="img/recepcao.webp" alt="Ambiente de atendimento claro e tranquilo" width="960" height="1200"></div>
+      <div class="texto">
+        <h2 class="h2">Um espaço para você desacelerar</h2>
+        <p>A {{nome_curto}} nasceu da vontade de oferecer estética com atenção de verdade: horário marcado, conversa franca sobre resultados e um ambiente onde dá vontade de voltar.</p>
+        <ul class="compromissos">
+          <li><b>Higiene</b><span>Materiais descartáveis ou esterilizados a cada atendimento.</span></li>
+          <li><b>Transparência</b><span>Você sabe o que vai ser feito, quantas sessões e quais cuidados ter.</span></li>
+          <li><b>Pontualidade</b><span>Agenda organizada para você não esperar.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="duvidas sec" id="duvidas">
+    <div class="wrap">
+      <div>
+        <h2 class="h2">Dúvidas frequentes</h2>
+        <p class="lead" style="margin-top:18px">Não encontrou a sua? <a href="{{wa_link}}" target="_blank" rel="noopener">Pergunte pelo WhatsApp</a>.</p>
+      </div>
+      <div>
+        <details><summary>Preciso fazer avaliação antes?</summary><p>Sim. A avaliação mostra qual tratamento faz sentido para a sua pele ou para a região que você quer tratar, e evita sessões desnecessárias.</p></details>
+        <details><summary>Quantas sessões vou precisar?</summary><p>Depende do tratamento e do seu objetivo. O número sugerido é passado na avaliação, antes de você decidir qualquer coisa.</p></details>
+        <details><summary>Como faço para agendar?</summary><p>Pelo WhatsApp {{whatsapp_fmt}}. Respondemos com os horários disponíveis.<span data-opcional="horario"> Atendemos {{horario}}.</span></p></details>
+        <details><summary>Quais formas de pagamento vocês aceitam?</summary><p>As formas de pagamento e os pacotes de sessões são informados pelo WhatsApp.</p></details>
+        <details data-opcional="endereco"><summary>Onde fica a clínica?</summary><p>{{endereco_completo}}.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="onde sec" id="onde">
+    <div class="wrap">
+      <div>
+        <h2 class="h2">Onde estamos</h2>
+        <dl>
+          <div data-opcional="endereco"><dt>Endereço</dt><dd>{{endereco_completo}}</dd></div>
+          <div><dt>WhatsApp</dt><dd><a href="{{wa_link}}" target="_blank" rel="noopener">{{whatsapp_fmt}}</a></dd></div>
+          <div data-opcional="horario"><dt>Horário</dt><dd>{{horario}}</dd></div>
+          <div data-opcional="instagram"><dt>Instagram</dt><dd><a href="https://www.instagram.com/{{instagram}}/" target="_blank" rel="noopener">@{{instagram}}</a></dd></div>
+        </dl>
+      </div>
+      <div class="mapa" data-opcional="endereco"><iframe loading="lazy" title="Mapa até a {{nome_curto}}" src="https://maps.google.com/maps?q={{maps_q}}&amp;output=embed"></iframe></div>
+    </div>
+  </section>
+
+  <section class="fim sec">
+    <div class="wrap">
+      <h2 class="h2">Sua próxima pausa começa com uma mensagem</h2>
+      <p class="lead">Conte o que você gostaria de tratar e receba os horários disponíveis.</p>
+      <div class="acoes"><a class="btn btn-cheio" href="{{wa_link}}" target="_blank" rel="noopener">Agendar pelo WhatsApp</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <img loading="lazy" decoding="async" src="logo.png" alt="{{nome}}">
+    <span>© {{ano}} {{nome}}</span>
+    <span>Prévia criada pela <a href="https://levytikus.github.io/B2B-novo/" target="_blank" rel="noopener">Business 2 Brothers</a></span>
+  </div>
+</footer>
+
+<a class="zap" href="{{wa_link}}" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.1 19.8L3 29l6.4-1.8A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.8 1 1-3.7-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 4.9c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.2-.3-.3-.6-.4z"/></svg></a>
+
+</body>
+</html>
