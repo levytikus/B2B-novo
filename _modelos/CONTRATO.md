@@ -71,7 +71,7 @@ Cores neutras (fundo, texto corrido) podem continuar fixas. Mantenha o tema que 
 - Mantenha o layout, as seções, as animações e a qualidade visual do site original. É o mesmo site,
   só que preenchível.
 - Mantenha `<meta name="robots" content="noindex">` e a assinatura no rodapé:
-  `Prévia criada pela <a href="https://levytikus.github.io/B2B-novo/" target="_blank" rel="noopener">Business 2 Brothers</a>`.
+  `Prévia criada pela <a href="https://business2brothers.com/" target="_blank" rel="noopener">Business 2 Brothers</a>`.
 - `<title>{{nome}}</title>` (pode ter complemento: `{{nome}} | Creche e pré-escola`).
 
 ## Imagens

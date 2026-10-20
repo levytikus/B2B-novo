@@ -17,8 +17,10 @@ dados.json (só "nome" e "whatsapp" são obrigatórios):
     "nota": "4,8", "avaliacoes": "32",         # opcional (Google)
     "responsavel": "Dra. Ana Souza",            # opcional (responsável técnico: odontologia/saúde)
     "registro": "CRO-RJ 12345",                # opcional (registro profissional do responsável)
-    "cores": ["#e63946", "#1d3557", "#f1c40f"]  # opcional: força as cores em vez de tirar da logo
-  }
+    "cores": ["#e63946", "#1d3557", "#f1c40f"], # opcional: força as cores em vez de tirar da logo
+    "fotos": {"hero": {"arquivo": "fotos/fachada.jpg", "alt": "Fachada da clínica"}}  # opcional: fotos do próprio cliente (Instagram, Google)
+  }                                            # no lugar das imagens do modelo; caminho relativo ao dados.json.
+                                               # Veja as vagas de cada modelo com --vagas <modelo>.
 
 Saída: previas/<slug>/ pronto para publicar no GitHub Pages.
 Os modelos ficam em _modelos/<id>/ (a pasta com "_" não é publicada pelo GitHub Pages).
@@ -219,7 +221,42 @@ def preencher(html, f):
     return html
 
 
-def gerar(modelo, logo, dados, slug=None, saida=None):
+def encaixar_foto(origem, destino):
+    """Recorta a foto do cliente no formato da imagem do modelo e grava por cima (mesmo nome)."""
+    alvo = Image.open(destino)
+    tw, th = alvo.size
+    im = Image.open(origem).convert("RGB")
+    W, H = im.size
+    r = tw / th
+    w, h = (int(H * r), H) if W / H > r else (W, int(W / r))
+    x, y = (W - w) // 2, (H - h) // 3  # um pouco acima do centro: preserva rostos
+    im = im.crop((x, y, x + w, y + h))
+    if im.size[0] > tw:
+        im = im.resize((tw, th), Image.LANCZOS)
+    fmt = {".webp": "WEBP", ".jpg": "JPEG", ".jpeg": "JPEG", ".png": "PNG"}[destino.suffix.lower()]
+    im.save(destino, fmt, quality=84)
+    if im.size[0] < tw * 0.6:
+        print(f"aviso: foto {Path(origem).name} é pequena para {destino.name} ({im.size[0]}px de {tw}px)", file=sys.stderr)
+
+
+def vagas(modelo):
+    """Lista as imagens do modelo (vagas para fotos do cliente) com formato e descrição."""
+    src = MODELOS / modelo
+    usos = {}
+    for page in src.glob("*.html"):
+        for img in BeautifulSoup(page.read_text(encoding="utf-8"), "html.parser").find_all("img"):
+            s = img.get("src", "")
+            if s.startswith("img/") and "icons/" not in s:
+                usos.setdefault(Path(s).stem, img.get("alt", ""))
+    for nome, alt in usos.items():
+        arq = next((src / "img").glob(nome + ".*"), None)
+        if arq:
+            w, h = Image.open(arq).size
+            forma = "quadrada" if abs(w - h) < 20 else ("vertical" if h > w else "horizontal")
+            print(f"{nome:22} {forma:10} {w}x{h}  {alt}")
+
+
+def gerar(modelo, logo, dados, slug=None, saida=None, base_dados=None):
     src = MODELOS / modelo
     if not (src / "index.html").exists():
         sys.exit(f"Modelo '{modelo}' não existe. Modelos: {', '.join(listar())}")
@@ -237,17 +274,32 @@ def gerar(modelo, logo, dados, slug=None, saida=None):
         im = im.crop(bbox)
     im.thumbnail((800, 800))
     im.save(dst / "logo.png", optimize=True)
+    alts = {}
+    for nome, arq in (dados.get("fotos") or {}).items():
+        if isinstance(arq, dict):
+            alts[nome] = arq.get("alt", "")
+            arq = arq["arquivo"]
+        origem = Path(arq) if Path(arq).is_absolute() else Path(base_dados or ".") / arq
+        destino = next((dst / "img").glob(nome + ".*"), None)
+        if not destino:
+            print(f"aviso: o modelo {modelo} não tem a imagem '{nome}'", file=sys.stderr)
+            continue
+        encaixar_foto(origem, destino)
     cores = dados.get("cores") or cores_da_logo(logo)
     bloco = bloco_cores(cores)
     url = BASE_URL + slug + "/"
     info = json.loads((src / "modelo.json").read_text()) if (src / "modelo.json").exists() else {}
-    fundo = src / info["og_fundo"] if info.get("og_fundo") else None
+    fundo = dst / info["og_fundo"] if info.get("og_fundo") else None
     cartao_og(dst, dst / "logo.png", f, cores, fundo)
     desc_padrao = f"{f['nome']}: conheça o nosso espaço, a nossa proposta e fale com a gente pelo WhatsApp."
     for page in dst.rglob("*.html"):
         html = page.read_text(encoding="utf-8")
         html = re.sub(r"/\*MARCA\*/.*?/\*/MARCA\*/", lambda m: bloco, html, flags=re.S)
         html = preencher(html, f)
+        for nome, alt in alts.items():
+            if alt:
+                html = re.sub(r'(<img[^>]*src="img/' + re.escape(nome) + r'\.[a-z]+"[^>]*?alt=")[^"]*', lambda m: m.group(1) + alt.replace('"', "'"), html)
+                html = re.sub(r'(<img[^>]*?alt=")[^"]*("[^>]*src="img/' + re.escape(nome) + r'\.[a-z]+")', lambda m: m.group(1) + alt.replace('"', "'") + m.group(2), html)
         pag_url = url if page.name == "index.html" else url + page.name
         html = tags_og(html, f, pag_url, desc_padrao).replace('content="' + pag_url + 'capa-og.jpg"', 'content="' + url + 'capa-og.jpg"')
         page.write_text(html, encoding="utf-8")
@@ -364,6 +416,7 @@ if __name__ == "__main__":
     ap.add_argument("--saida")
     ap.add_argument("--listar", action="store_true")
     ap.add_argument("--cores", help="só mostra as cores tiradas da logo")
+    ap.add_argument("--vagas", help="lista as imagens de um modelo que podem receber fotos do cliente")
     a = ap.parse_args()
     if a.listar:
         for m in listar():
@@ -371,8 +424,11 @@ if __name__ == "__main__":
             info = json.loads(j.read_text()) if j.exists() else {}
             print(f"{m}: {info.get('descricao', '')}")
         sys.exit()
+    if a.vagas:
+        vagas(a.vagas)
+        sys.exit()
     if a.cores:
         print(cores_da_logo(a.cores))
         sys.exit()
     dados = json.loads(Path(a.dados).read_text(encoding="utf-8"))
-    print(json.dumps(gerar(a.modelo, a.logo, dados, a.slug, a.saida), ensure_ascii=False, indent=2))
+    print(json.dumps(gerar(a.modelo, a.logo, dados, a.slug, a.saida, Path(a.dados).resolve().parent), ensure_ascii=False, indent=2))
