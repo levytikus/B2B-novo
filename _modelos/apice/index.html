@@ -18,7 +18,7 @@
    é o que justifica o ticket alto. Nada de antes e depois (o CFO restringe) e sempre nome + CRO do responsável quando informados. */
 :root{
   --branco:#FFFFFF; --pedra:#E8EAEA; --tinta:#16181D; --cinza:#5E636B; --fio:#DADDDF;
-  --escuro:color-mix(in srgb,var(--marca-1-escuro) 70%,#0f1218);
+  --escuro:color-mix(in srgb,var(--marca-1-escuro) 16%,#121722);
   --acento:var(--marca-1-forte); --acento-fundo:var(--marca-1); --acento-ink:var(--marca-1-ink);
   --display:"Gilda Display",Didot,Georgia,serif; --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
   color-scheme:light;
@@ -57,7 +57,7 @@ a{color:inherit}
 .hero .lead{margin-top:28px}
 .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 .hero figure{margin:0;align-self:stretch}
-.hero figure img{width:100%;height:100%;min-height:440px;object-fit:cover;object-position:62% center}
+.hero figure img{width:100%;height:100%;min-height:560px;object-fit:cover;object-position:62% center}
 .faixa-dados{border-top:1px solid var(--fio);border-bottom:1px solid var(--fio);margin-top:clamp(40px,6vw,72px)}
 .faixa-dados .wrap{display:flex;flex-wrap:wrap;gap:18px 56px;padding-block:22px;color:var(--cinza);font-size:.95rem}
 .faixa-dados b{color:var(--tinta);font-weight:500}
@@ -90,7 +90,7 @@ a{color:inherit}
 
 /* responsável */
 .quem .wrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(30px,6vw,96px);align-items:center}
-.quem img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.quem img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .quem .nome{font-family:var(--display);font-size:clamp(2rem,4vw,3rem);line-height:1.1}
 .quem .reg{color:var(--cinza);margin-top:6px}
 .quem p.txt{color:var(--cinza);margin-top:24px;max-width:56ch}
@@ -217,7 +217,7 @@ details p{color:var(--cinza);padding:0 0 24px;max-width:62ch}
 
   <section class="quem sec" id="responsavel" data-opcional="responsavel registro">
     <div class="wrap">
-      <img loading="lazy" decoding="async" src="img/dentista.webp" alt="Dentista responsável pela clínica" width="960" height="1280">
+      <img loading="lazy" decoding="async" src="img/detalhe.webp" alt="Escala de cores e lentes de porcelana sobre a bandeja" width="1200" height="900">
       <div>
         <p class="nome">{{responsavel}}</p>
         <p class="reg">Responsável técnico, {{registro}}</p>
