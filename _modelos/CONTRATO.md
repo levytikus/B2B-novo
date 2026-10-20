@@ -27,6 +27,7 @@ O objetivo é a prévia sair em poucos minutos e parecer feita sob medida para a
 | `{{horario}}` | Segunda a sexta, das 7h às 19h |
 | `{{nota}}`, `{{avaliacoes}}` | 4,8 / 32 (Google) |
 | `{{ano}}` | 2026 |
+| `{{responsavel}}`, `{{registro}}` | Dra. Ana Souza / CRO-RJ 12345 (saúde: o CFO pede nome e CRO do responsável na publicidade) |
 
 Campos que podem faltar: marque o elemento que depende deles com `data-opcional="campo"`
 (pode listar vários: `data-opcional="endereco bairro"`). Se o campo vier vazio, o gerador

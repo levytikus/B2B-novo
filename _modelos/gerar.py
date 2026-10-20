@@ -15,6 +15,8 @@ dados.json (só "nome" e "whatsapp" são obrigatórios):
     "instagram": "pinguinhodegente",           # opcional, sem @
     "horario": "Segunda a sexta, das 7h às 19h",  # opcional
     "nota": "4,8", "avaliacoes": "32",         # opcional (Google)
+    "responsavel": "Dra. Ana Souza",            # opcional (responsável técnico: odontologia/saúde)
+    "registro": "CRO-RJ 12345",                # opcional (registro profissional do responsável)
     "cores": ["#e63946", "#1d3557", "#f1c40f"]  # opcional: força as cores em vez de tirar da logo
   }
 
@@ -188,6 +190,8 @@ def campos(d):
         "nota": d.get("nota", ""),
         "avaliacoes": d.get("avaliacoes", ""),
         "ano": str(datetime.date.today().year),
+        "responsavel": d.get("responsavel", ""),      # ex.: Dra. Ana Souza (odontologia/saúde)
+        "registro": d.get("registro", ""),            # ex.: CRO-RJ 12345
     }
     return f
 

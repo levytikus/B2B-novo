@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>{{nome}} | Implantes, lentes e estética do sorriso</title>
+<meta name="description" content="{{nome}}: implantes, lentes de contato dental, ortodontia e estética do sorriso com planejamento digital. Agende sua avaliação pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:wght@400;500;600&display=swap">
+<style>
+/*MARCA*/:root{--marca-1:#1f3b66;--marca-1-forte:#1f3b66;--marca-1-ink:#ffffff;--marca-1-claro:#d6dde8;--marca-1-escuro:#142642;
+--marca-2:#b9a27e;--marca-2-forte:#6f5c3c;--marca-2-ink:#1b1b1b;--marca-2-claro:#f1ece4;--marca-2-escuro:#786a52;
+--marca-3:#8fa9b5;--marca-3-forte:#4b6570;--marca-3-ink:#1b1b1b;--marca-3-claro:#e9eef0;--marca-3-escuro:#5d6e76;}/*/MARCA*/
+/* Modelo Ápice: odontologia premium (implantes, lentes, estética do sorriso). Branco amplo, pedra fria e a cor escura da marca;
+   tipografia de revista (Gilda Display) em tamanho grande, como peça gráfica. A seção que diferencia é o planejamento digital:
+   é o que justifica o ticket alto. Nada de antes e depois (o CFO restringe) e sempre nome + CRO do responsável quando informados. */
+:root{
+  --branco:#FFFFFF; --pedra:#E8EAEA; --tinta:#16181D; --cinza:#5E636B; --fio:#DADDDF;
+  --escuro:color-mix(in srgb,var(--marca-1-escuro) 70%,#0f1218);
+  --acento:var(--marca-1-forte); --acento-fundo:var(--marca-1); --acento-ink:var(--marca-1-ink);
+  --display:"Gilda Display",Didot,Georgia,serif; --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--branco);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.06;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acento-fundo);outline-offset:3px}
+.wrap{max-width:1220px;margin:0 auto;padding-inline:24px}
+.sec{padding-block:clamp(76px,10vw,140px)}
+.h2{font-size:clamp(2.3rem,5vw,3.8rem)}
+.lead{color:var(--cinza);font-size:1.1rem;max-width:52ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:500 1rem/1 var(--sans);letter-spacing:.02em;text-decoration:none;padding:19px 30px;border-radius:0;border:0;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
+.btn-cheio{background:var(--acento-fundo);color:var(--acento-ink)}
+.btn-cheio:hover{background:var(--tinta);color:#fff}
+.btn-fio{box-shadow:inset 0 0 0 1px var(--tinta);color:var(--tinta)}
+.btn-fio:hover{background:var(--tinta);color:#fff}
+
+.topo{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--fio)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:80px}
+.logo img{max-height:50px;max-width:200px;width:auto;object-fit:contain}
+.menu{display:flex;gap:34px;font-size:.95rem}
+.menu a{text-decoration:none;color:var(--cinza)}
+.menu a:hover{color:var(--tinta)}
+.topo .btn{padding:14px 22px;font-size:.92rem}
+@media(max-width:940px){.menu{display:none}}
+
+/* hero: frase grande e retrato */
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,80px);align-items:end;padding-block:clamp(48px,7vw,96px) 0}
+.hero h1{font-size:clamp(3rem,7.4vw,6.4rem);letter-spacing:-.015em}
+.hero .lead{margin-top:28px}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.hero figure{margin:0;align-self:stretch}
+.hero figure img{width:100%;height:100%;min-height:440px;object-fit:cover;object-position:62% center}
+.faixa-dados{border-top:1px solid var(--fio);border-bottom:1px solid var(--fio);margin-top:clamp(40px,6vw,72px)}
+.faixa-dados .wrap{display:flex;flex-wrap:wrap;gap:18px 56px;padding-block:22px;color:var(--cinza);font-size:.95rem}
+.faixa-dados b{color:var(--tinta);font-weight:500}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero figure img{min-height:0;aspect-ratio:4/3}}
+
+/* especialidades: título fixo à esquerda, lista à direita */
+.esp .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,96px)}
+.esp .fixo{position:sticky;top:120px;align-self:start}
+.esp .fixo .lead{margin-top:20px}
+.esp article{padding:34px 0;border-top:1px solid var(--fio)}
+.esp article:last-child{border-bottom:1px solid var(--fio)}
+.esp h3{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:12px}
+.esp p{color:var(--cinza);max-width:58ch}
+.esp a{display:inline-block;margin-top:16px;color:var(--acento);text-decoration:none;font-weight:500;border-bottom:1px solid currentColor}
+@media(max-width:860px){.esp .wrap{grid-template-columns:1fr}.esp .fixo{position:static}}
+
+/* planejamento digital: o diferencial */
+.digital{background:var(--escuro);color:#fff}
+.digital .topo-sec{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:end}
+.digital .lead{color:#B8BFCA}
+.digital .duas{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-top:56px}
+.digital .duas img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.digital .duas img+img{aspect-ratio:auto}
+.digital ul{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.digital li{padding:24px 28px 0 0;border-top:1px solid rgba(255,255,255,.2)}
+.digital li+li{padding-left:28px;border-left:1px solid rgba(255,255,255,.1)}
+.digital li h3{font-size:1.45rem;margin-bottom:8px}
+.digital li p{color:#B8BFCA;font-size:.98rem}
+@media(max-width:860px){.digital .topo-sec,.digital .duas{grid-template-columns:1fr}.digital ul{grid-template-columns:1fr}.digital li,.digital li+li{padding:22px 0 10px;border-left:0}}
+
+/* responsável */
+.quem .wrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(30px,6vw,96px);align-items:center}
+.quem img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.quem .nome{font-family:var(--display);font-size:clamp(2rem,4vw,3rem);line-height:1.1}
+.quem .reg{color:var(--cinza);margin-top:6px}
+.quem p.txt{color:var(--cinza);margin-top:24px;max-width:56ch}
+@media(max-width:860px){.quem .wrap{grid-template-columns:1fr}.quem img{max-width:420px}}
+
+/* primeira consulta */
+.passos-sec{background:var(--pedra)}
+.passos{list-style:none;padding:0;margin:52px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:p}
+.passos li{counter-increment:p;border-top:2px solid var(--tinta);padding-top:20px}
+.passos li::before{content:"Etapa " counter(p);display:block;font-size:.9rem;color:var(--cinza);margin-bottom:12px}
+.passos h3{font-size:1.5rem;margin-bottom:8px}
+.passos p{color:var(--cinza);font-size:.97rem}
+@media(max-width:900px){.passos{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.passos{grid-template-columns:1fr}}
+
+/* ambiente */
+.ambiente .grade{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:48px}
+.ambiente img{width:100%;height:100%;object-fit:cover}
+.ambiente .a{aspect-ratio:3/2}
+.ambiente .b{aspect-ratio:auto}
+@media(max-width:760px){.ambiente .grade{grid-template-columns:1fr}.ambiente .b{aspect-ratio:4/5}}
+
+.duvidas .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,96px)}
+@media(max-width:860px){.duvidas .wrap{grid-template-columns:1fr}}
+details{border-top:1px solid var(--fio)}
+details:last-child{border-bottom:1px solid var(--fio)}
+summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;font-size:1.08rem;font-weight:500;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::before,summary::after{content:"";position:absolute;right:6px;top:50%;width:16px;height:1px;background:var(--tinta);transition:transform .25s}
+summary::after{transform:rotate(90deg)}
+details[open] summary::after{transform:rotate(0)}
+details p{color:var(--cinza);padding:0 0 24px;max-width:62ch}
+
+.contato{background:var(--escuro);color:#fff}
+.contato .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px)}
+.contato .lead{color:#B8BFCA}
+.contato dl{margin:30px 0 36px;display:grid}
+.contato dl div{padding:16px 0;border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:120px 1fr;gap:16px}
+.contato dt{color:#B8BFCA;font-size:.92rem}
+.contato dd{margin:0}
+.contato dd a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.contato .btn-cheio{background:#fff;color:var(--tinta)}
+.contato .btn-cheio:hover{background:var(--pedra)}
+.mapa{min-height:380px;background:#222833}
+.mapa iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.5)}
+@media(max-width:860px){.contato .wrap{grid-template-columns:1fr}.contato dl div{grid-template-columns:1fr;gap:2px}}
+.rodape{padding-block:30px;font-size:.88rem;color:var(--cinza)}
+.rodape .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+.rodape a{color:var(--tinta)}
+.zap{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.35)}
+.zap svg{width:30px;height:30px;fill:#fff}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="{{nome}}, início"><img src="logo.png" alt="{{nome}}"></a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#especialidades">Especialidades</a>
+      <a href="#planejamento">Planejamento digital</a>
+      <a href="#primeira-consulta">Primeira consulta</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <a class="btn btn-cheio" href="{{wa_link}}" target="_blank" rel="noopener">Agendar avaliação</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>O sorriso planejado em cada detalhe</h1>
+        <p class="lead">Implantes, lentes de contato dental e estética do sorriso com planejamento digital: você entende o tratamento antes de começar.</p>
+        <div class="acoes">
+          <a class="btn btn-cheio" href="{{wa_link}}" target="_blank" rel="noopener">Agendar avaliação</a>
+          <a class="btn btn-fio" href="#especialidades">Conhecer especialidades</a>
+        </div>
+      </div>
+      <figure><img src="img/hero.webp" alt="Mulher sorrindo com naturalidade" width="1536" height="864" fetchpriority="high"></figure>
+    </div>
+    <div class="faixa-dados">
+      <div class="wrap">
+        <span data-opcional="nota avaliacoes"><b>{{nota}} no Google</b>, {{avaliacoes}} avaliações</span>
+        <span data-opcional="bairro">Clínica em <b>{{bairro}}</b></span>
+        <span data-opcional="horario">{{horario}}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="esp sec" id="especialidades">
+    <div class="wrap">
+      <div class="fixo">
+        <h2 class="h2">Especialidades</h2>
+        <p class="lead">Cada caso começa por uma avaliação completa. A indicação do tratamento é sempre individual.</p>
+      </div>
+      <div>
+        <article><h3>Implantes dentários</h3><p>Reposição de um ou mais dentes com implantes, planejada a partir de exames de imagem para devolver função e estética com segurança.</p><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar avaliação para implante</a></article>
+        <article><h3>Lentes de contato dental e facetas</h3><p>Lâminas finas de porcelana ou resina para corrigir forma, cor e pequenos espaços, com prévia do resultado antes da execução.</p><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar avaliação para lentes</a></article>
+        <article><h3>Ortodontia e alinhadores</h3><p>Aparelhos fixos ou alinhadores transparentes, com acompanhamento a cada etapa do movimento dos dentes.</p><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar avaliação ortodôntica</a></article>
+        <article><h3>Clareamento</h3><p>Clareamento de consultório ou supervisionado em casa, depois de avaliar a saúde dos dentes e da gengiva.</p><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar avaliação para clareamento</a></article>
+        <article><h3>Reabilitação oral</h3><p>Tratamentos combinados para quem precisa recuperar vários dentes, a mordida e a confiança para sorrir.</p><a href="{{wa_link}}" target="_blank" rel="noopener">Agendar avaliação completa</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="digital sec" id="planejamento">
+    <div class="wrap">
+      <div class="topo-sec">
+        <h2 class="h2">Planejamento digital</h2>
+        <p class="lead">Escaneamento, imagens e projeto do sorriso no computador. Você vê o plano, pergunta e decide com segurança.</p>
+      </div>
+      <div class="duas">
+        <img loading="lazy" decoding="async" src="img/planejamento.webp" alt="Dentista e paciente analisando o planejamento digital na tela" width="1280" height="960">
+        <img loading="lazy" decoding="async" src="img/scanner.webp" alt="Escaneamento digital dos dentes" width="1280" height="960">
+      </div>
+      <ul>
+        <li><h3>Escaneamento</h3><p>Moldagem digital, sem massa, mais rápida e confortável.</p></li>
+        <li><h3>Projeto do sorriso</h3><p>Forma, tamanho e proporção dos dentes desenhados para o seu rosto.</p></li>
+        <li><h3>Previsibilidade</h3><p>Cada etapa planejada antes de começar, com prazos claros.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="quem sec" id="responsavel" data-opcional="responsavel registro">
+    <div class="wrap">
+      <img loading="lazy" decoding="async" src="img/dentista.webp" alt="Dentista responsável pela clínica" width="960" height="1280">
+      <div>
+        <p class="nome">{{responsavel}}</p>
+        <p class="reg">Responsável técnico, {{registro}}</p>
+        <p class="txt">Na {{nome_curto}}, quem planeja o seu tratamento acompanha você do primeiro exame à última consulta de revisão.</p>
+        <div class="acoes"><a class="btn btn-cheio" href="{{wa_link}}" target="_blank" rel="noopener">Agendar com a equipe</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="passos-sec sec" id="primeira-consulta">
+    <div class="wrap">
+      <h2 class="h2">Do primeiro contato ao novo sorriso</h2>
+      <ol class="passos">
+        <li><h3>Avaliação</h3><p>Conversa sobre o que você deseja, exame clínico e pedido dos exames necessários.</p></li>
+        <li><h3>Planejamento</h3><p>Escaneamento e projeto do tratamento, apresentados com calma.</p></li>
+        <li><h3>Tratamento</h3><p>Sessões marcadas com antecedência, seguindo o plano aprovado.</p></li>
+        <li><h3>Manutenção</h3><p>Revisões periódicas para cuidar do resultado ao longo do tempo.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ambiente sec" id="clinica">
+    <div class="wrap">
+      <h2 class="h2">A clínica</h2>
+      <p class="lead" style="margin-top:18px">Ambiente reservado, pontualidade e biossegurança em cada atendimento.</p>
+      <div class="grade">
+        <img class="a" loading="lazy" decoding="async" src="img/consultorio.webp" alt="Consultório odontológico" width="1344" height="896">
+        <img class="b" loading="lazy" decoding="async" src="img/recepcao.webp" alt="Recepção da clínica" width="1024" height="1280">
+      </div>
+    </div>
+  </section>
+
+  <section class="duvidas sec" id="duvidas">
+    <div class="wrap">
+      <div>
+        <h2 class="h2">Dúvidas frequentes</h2>
+        <p class="lead" style="margin-top:18px">Não encontrou a sua? <a href="{{wa_link}}" target="_blank" rel="noopener">Pergunte pelo WhatsApp</a>.</p>
+      </div>
+      <div>
+        <details><summary>A avaliação é paga?</summary><p>Informamos pelo WhatsApp como funciona a avaliação e o que está incluído nela.</p></details>
+        <details><summary>Lentes de contato dental desgastam os dentes?</summary><p>Depende do caso. Em muitos casos o desgaste é mínimo ou nenhum. Isso é avaliado e explicado no planejamento.</p></details>
+        <details><summary>Quanto tempo leva um implante?</summary><p>O tempo varia conforme o osso e a saúde de cada paciente. O cronograma é apresentado no planejamento, antes de começar.</p></details>
+        <details><summary>Vocês parcelam?</summary><p>As formas de pagamento são apresentadas junto com o plano de tratamento.</p></details>
+        <details><summary>Como agendo?</summary><p>Pelo WhatsApp {{whatsapp_fmt}}.<span data-opcional="horario"> Atendemos {{horario}}.</span></p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato sec" id="contato">
+    <div class="wrap">
+      <div>
+        <h2 class="h2">Agende sua avaliação</h2>
+        <p class="lead" style="margin-top:16px">Conte o que você quer mudar no seu sorriso e receba os horários disponíveis.</p>
+        <dl>
+          <div><dt>WhatsApp</dt><dd><a href="{{wa_link}}" target="_blank" rel="noopener">{{whatsapp_fmt}}</a></dd></div>
+          <div data-opcional="endereco"><dt>Endereço</dt><dd>{{endereco_completo}}</dd></div>
+          <div data-opcional="horario"><dt>Horário</dt><dd>{{horario}}</dd></div>
+          <div data-opcional="instagram"><dt>Instagram</dt><dd><a href="https://www.instagram.com/{{instagram}}/" target="_blank" rel="noopener">@{{instagram}}</a></dd></div>
+        </dl>
+        <a class="btn btn-cheio" href="{{wa_link}}" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+      </div>
+      <div class="mapa" data-opcional="endereco"><iframe loading="lazy" title="Mapa até a {{nome_curto}}" src="https://maps.google.com/maps?q={{maps_q}}&amp;output=embed"></iframe></div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <span>© {{ano}} {{nome}}<span data-opcional="responsavel registro">. Responsável técnico: {{responsavel}}, {{registro}}</span></span>
+    <span>Prévia criada pela <a href="https://levytikus.github.io/B2B-novo/" target="_blank" rel="noopener">Business 2 Brothers</a></span>
+  </div>
+</footer>
+
+<a class="zap" href="{{wa_link}}" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.1 19.8L3 29l6.4-1.8A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.8 1 1-3.7-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 4.9c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.2-.3-.3-.6-.4z"/></svg></a>
+</body>
+</html>
