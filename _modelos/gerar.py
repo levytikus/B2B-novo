@@ -35,7 +35,7 @@ from PIL import Image
 RAIZ = Path(__file__).resolve().parent.parent
 MODELOS = RAIZ / "_modelos"
 PREVIAS = RAIZ / "previas"
-BASE_URL = "https://levytikus.github.io/B2B-novo/previas/"
+BASE_URL = "https://sites.business2brothers.com/previas/"
 
 
 # ---------- utilidades ----------
