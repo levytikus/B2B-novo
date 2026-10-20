@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="noindex" name="robots"/>
+<title>Sorriso Leve Odontologia | Dentista para toda a família</title>
+<meta content="Sorriso Leve Odontologia: dentista para toda a família, do check-up ao aparelho e implante, com atendimento infantil e horário marcado pelo WhatsApp." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+/*MARCA*/:root{--marca-1:#1f6f8a;--marca-1-forte:#1f6f8a;--marca-1-ink:#ffffff;--marca-1-claro:#d7e5ea;--marca-1-escuro:#14485a;--marca-2:#7cc4a4;--marca-2-forte:#4b7763;--marca-2-ink:#1b1b1b;--marca-2-claro:#e7f4ef;--marca-2-escuro:#517f6b;--marca-3:#8eb6c4;--marca-3-forte:#5e7881;--marca-3-ink:#1b1b1b;--marca-3-claro:#ebf2f4;--marca-3-escuro:#5c767f;}/*/MARCA*/
+/* Modelo Esmalte: consultório odontológico de bairro, para a família toda. Serifa arredondada (Young Serif) para tirar o ar frio de clínica,
+   fundo branco e névoa azul-acinzentada, e a cor da logo como acento. O jeito de navegar é pelo problema da pessoa ("perdeu um dente?"),
+   não pelo nome técnico da especialidade. A faixa de urgência é o único elemento chamativo. */
+:root{
+  --branco:#FFFFFF; --nevoa:#EEF3F5; --tinta:#1D2B33; --ardosia:#566770; --fio:#D9E2E6;
+  --acento:var(--marca-1-forte); --acento-fundo:var(--marca-1); --acento-ink:var(--marca-1-ink); --acento-claro:var(--marca-1-claro);
+  --display:"Young Serif",Georgia,serif; --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--branco);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.12;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acento-fundo);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:22px}
+.sec{padding-block:clamp(68px,9vw,116px)}
+.h2{font-size:clamp(2rem,4.2vw,3rem)}
+.lead{color:var(--ardosia);font-size:1.08rem;max-width:54ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:700 1rem/1 var(--sans);text-decoration:none;border-radius:14px;padding:17px 24px;border:0;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-cheio{background:var(--acento-fundo);color:var(--acento-ink)}
+.btn-cheio:hover{background:var(--marca-1-escuro);color:#fff}
+.btn-fio{color:var(--tinta);box-shadow:inset 0 0 0 2px var(--fio);background:var(--branco)}
+.btn-fio:hover{box-shadow:inset 0 0 0 2px var(--tinta)}
+
+.topo{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--fio)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:76px}
+.logo img{max-height:50px;max-width:190px;width:auto;object-fit:contain}
+.menu{display:flex;gap:28px;font-weight:500;font-size:.96rem}
+.menu a{text-decoration:none;color:var(--ardosia)}
+.menu a:hover{color:var(--tinta)}
+.topo .btn{padding:12px 18px;font-size:.92rem}
+@media(max-width:920px){.menu{display:none}}
+@media(max-width:420px){.topo .btn span{display:none}.topo .btn{padding:12px}}
+
+.hero{background:var(--nevoa)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:center;padding-block:clamp(44px,7vw,88px)}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.3rem)}
+.hero .lead{margin-top:22px;font-size:1.14rem}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.provas{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:30px;color:var(--ardosia);font-size:.95rem}
+.provas b{color:var(--tinta)}
+.hero figure{margin:0;position:relative}
+.hero figure img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:28px 28px 120px 28px}
+.hero figcaption{position:absolute;left:18px;bottom:18px;background:var(--branco);border-radius:14px;padding:12px 16px;font-size:.9rem;box-shadow:0 14px 30px -18px rgba(29,43,51,.45);max-width:260px}
+.hero figcaption b{display:block}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+
+.urgencia{background:var(--tinta);color:#fff}
+.urgencia .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;padding-block:22px}
+.urgencia p{font-size:1.08rem}
+.urgencia p b{font-family:var(--display);font-weight:400;font-size:1.35rem;margin-right:8px}
+.urgencia .btn{background:#fff;color:var(--tinta)}
+.urgencia .btn:hover{background:var(--acento-claro)}
+
+.problemas .cab{max-width:640px}
+.grade{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;margin-top:48px}
+.prob{display:grid;grid-template-columns:1fr auto;gap:6px 20px;padding:24px 0;border-top:1px solid var(--fio);align-items:start}
+.prob h3{font-size:1.4rem}
+.prob .trat{grid-column:1;font-size:.9rem;font-weight:700;color:var(--acento)}
+.prob p{grid-column:1;color:var(--ardosia);font-size:.98rem}
+.prob a{grid-row:1/span 3;grid-column:2;align-self:center;font-weight:700;font-size:.92rem;text-decoration:none;color:var(--tinta);border-bottom:2px solid var(--acento-fundo);padding-bottom:2px}
+@media(max-width:820px){.grade{grid-template-columns:1fr}}
+
+.criancas{background:var(--marca-2-claro)}
+.criancas .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,72px);align-items:center}
+.criancas img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:28px 120px 28px 28px}
+.criancas ul{list-style:none;padding:0;margin:26px 0 30px;display:grid;gap:12px}
+.criancas li{display:flex;gap:12px;align-items:flex-start}
+.criancas li::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;background:var(--marca-2-forte);margin-top:.5em}
+@media(max-width:820px){.criancas .wrap{grid-template-columns:1fr}.criancas img{max-width:440px}}
+
+.consulta .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(30px,5vw,72px)}
+.etapas{list-style:none;padding:0;margin:0;counter-reset:e}
+.etapas li{counter-increment:e;position:relative;padding:0 0 30px 64px}
+.etapas li::before{content:counter(e);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;background:var(--acento-claro);color:var(--acento);display:grid;place-items:center;font-family:var(--display);font-size:1.2rem}
+.etapas li:not(:last-child)::after{content:"";position:absolute;left:20px;top:48px;bottom:6px;width:2px;background:var(--fio)}
+.etapas h3{font-size:1.3rem;margin-bottom:6px}
+.etapas p{color:var(--ardosia)}
+@media(max-width:820px){.consulta .wrap{grid-template-columns:1fr}}
+
+.estrutura{background:var(--nevoa)}
+.fotos{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:16px;margin-top:40px}
+.fotos img{width:100%;height:100%;object-fit:cover;border-radius:20px;aspect-ratio:4/3}
+.fotos img:first-child{grid-row:span 2;aspect-ratio:auto}
+@media(max-width:820px){.fotos{grid-template-columns:1fr 1fr}.fotos img:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:3/2}}
+.cuidados{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+.cuidados h3{font-size:1.2rem;margin-bottom:6px}
+.cuidados p{color:var(--ardosia);font-size:.97rem}
+@media(max-width:820px){.cuidados{grid-template-columns:1fr;gap:18px}}
+
+.responsavel{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;margin-top:40px;padding:22px 24px;border-radius:18px;background:var(--branco);border:1px solid var(--fio)}
+.responsavel b{font-family:var(--display);font-weight:400;font-size:1.25rem}
+.responsavel span{color:var(--ardosia)}
+
+.duvidas .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,80px)}
+@media(max-width:820px){.duvidas .wrap{grid-template-columns:1fr}}
+details{border-top:1px solid var(--fio)}
+details:last-child{border-bottom:1px solid var(--fio)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:700;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:1.6rem;font-weight:400;color:var(--acento);transition:transform .2s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
+
+.onde{background:var(--tinta);color:#fff}
+.onde .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
+.onde .lead{color:#B9C7CD}
+.onde dl{margin:26px 0 32px;display:grid}
+.onde dl div{padding:15px 0;border-top:1px solid rgba(255,255,255,.14);display:grid;grid-template-columns:120px 1fr;gap:16px}
+.onde dt{color:#B9C7CD;font-size:.92rem}
+.onde dd{margin:0}
+.onde dd a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.onde .btn-cheio{background:#fff;color:var(--tinta)}
+.mapa{border-radius:20px;overflow:hidden;min-height:360px;background:#2a3a43}
+.mapa iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+@media(max-width:820px){.onde .wrap{grid-template-columns:1fr}.onde dl div{grid-template-columns:1fr;gap:2px}}
+.rodape{padding-block:30px;font-size:.88rem;color:var(--ardosia)}
+.rodape .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+.rodape a{color:var(--tinta)}
+.zap{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.35)}
+.zap svg{width:30px;height:30px;fill:#fff}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Sorriso Leve Odontologia">
+<meta property="og:title" content="Sorriso Leve Odontologia">
+<meta property="og:description" content="Sorriso Leve Odontologia: dentista para toda a família, do check-up ao aparelho e implante, com atendimento infantil e horário marcado pelo WhatsApp.">
+<meta property="og:url" content="https://levytikus.github.io/B2B-novo/previas/modelo-esmalte/">
+<meta property="og:image" content="https://levytikus.github.io/B2B-novo/previas/modelo-esmalte/capa-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sorriso Leve Odontologia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://levytikus.github.io/B2B-novo/previas/modelo-esmalte/capa-og.jpg">
+<link rel="icon" href="logo.png">
+</head>
+<body>
+<header class="topo">
+<div class="wrap">
+<a aria-label="Sorriso Leve Odontologia, início" class="logo" href="#inicio"><img alt="Sorriso Leve Odontologia" src="logo.png"/></a>
+<nav aria-label="Seções" class="menu">
+<a href="#tratamentos">Tratamentos</a>
+<a href="#criancas">Crianças</a>
+<a href="#primeira-consulta">Primeira consulta</a>
+<a href="#onde">Onde estamos</a>
+</nav>
+<a aria-label="Marcar consulta pelo WhatsApp" class="btn btn-cheio" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="15" rx="2.5" width="17" x="3.5" y="5"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg><span>Marcar consulta</span></a>
+</div>
+</header>
+<main id="inicio">
+<section class="hero">
+<div class="wrap">
+<div>
+<h1>Dentista de confiança para a família inteira</h1>
+<p class="lead">Da primeira consulta do seu filho ao implante dos avós, a Sorriso Leve cuida de cada sorriso com calma, explicação clara e horário marcado.</p>
+<div class="acoes">
+<a class="btn btn-cheio" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Marcar avaliação</a>
+<a class="btn btn-fio" href="#tratamentos">Ver tratamentos</a>
+</div>
+<p class="provas"></p>
+</div>
+<figure>
+<img alt="Dentista conversando com mãe e filho no consultório" height="960" src="img/hero.webp" width="1280"/>
+
+</figure>
+</div>
+</section>
+<div class="urgencia">
+<div class="wrap">
+<p><b>Está com dor?</b>Fale com a gente agora e veja o primeiro horário livre.</p>
+<a class="btn" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Falar sobre urgência</a>
+</div>
+</div>
+<section class="problemas sec" id="tratamentos">
+<div class="wrap">
+<div class="cab">
+<h2 class="h2">O que te trouxe aqui?</h2>
+<p class="lead" style="margin-top:16px">Escolha pelo que você sente ou quer resolver. O tratamento certo é definido na avaliação.</p>
+</div>
+<div class="grade">
+<div class="prob"><h3>Faz tempo que não vou ao dentista</h3><span class="trat">Clínica geral e limpeza</span><p>Check-up, limpeza, restaurações e orientação para manter os dentes saudáveis.</p><a href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Meus dentes estão tortos</h3><span class="trat">Ortodontia</span><p>Aparelho fixo ou alinhadores, com plano e manutenção acompanhados de perto.</p><a href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Perdi um ou mais dentes</h3><span class="trat">Implantes e próteses</span><p>Soluções fixas ou removíveis para voltar a mastigar e sorrir com segurança.</p><a href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Quero dentes mais brancos</h3><span class="trat">Clareamento</span><p>Clareamento de consultório ou caseiro supervisionado, depois de avaliar a saúde dos dentes.</p><a href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Sinto dor ou sensibilidade</h3><span class="trat">Tratamento de canal e restaurações</span><p>Diagnóstico da causa e tratamento para aliviar a dor e salvar o dente sempre que possível.</p><a href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Minha gengiva sangra</h3><span class="trat">Periodontia</span><p>Cuidado com a gengiva e com o osso que sustenta os dentes, com acompanhamento.</p><a href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+</div>
+</div>
+</section>
+<section class="criancas sec" id="criancas">
+<div class="wrap">
+<img alt="Menina sorrindo na cadeira do dentista" decoding="async" height="1280" loading="lazy" src="img/crianca.webp" width="960"/>
+<div>
+<h2 class="h2">Criança no dentista sem choro</h2>
+<p class="lead" style="margin-top:16px">A primeira visita pode ser assim que nascem os primeiros dentes. Quanto mais cedo, mais tranquila a relação da criança com o dentista.</p>
+<ul>
+<li>Consulta com tempo para a criança conhecer a cadeira e os instrumentos</li>
+<li>Orientação para os pais sobre escovação, alimentação e chupeta</li>
+<li>Aplicação de flúor e selantes para prevenir cáries</li>
+</ul>
+<a class="btn btn-cheio" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Marcar consulta infantil</a>
+</div>
+</div>
+</section>
+<section class="consulta sec" id="primeira-consulta">
+<div class="wrap">
+<div>
+<h2 class="h2">Como é a primeira consulta</h2>
+<p class="lead" style="margin-top:16px">Sem surpresas: você sai sabendo o que precisa ser feito, em que ordem e o porquê.</p>
+</div>
+<ol class="etapas">
+<li><h3>Conversa</h3><p>Você conta o que incomoda e o que espera. Perguntamos também sobre saúde e medicamentos.</p></li>
+<li><h3>Exame</h3><p>Avaliação de dentes, gengiva e mordida, com radiografia quando for necessário.</p></li>
+<li><h3>Plano de tratamento</h3><p>Você recebe o que precisa ser feito, por prioridade, com prazos e formas de pagamento explicados.</p></li>
+</ol>
+</div>
+</section>
+<section class="estrutura sec" id="estrutura">
+<div class="wrap">
+<h2 class="h2">Nosso consultório</h2>
+<div class="fotos">
+<img alt="Sala de atendimento com cadeira odontológica" decoding="async" height="896" loading="lazy" src="img/consultorio.webp" width="1344"/>
+<img alt="Recepção do consultório" decoding="async" height="1280" loading="lazy" src="img/recepcao.webp" width="1024"/>
+<img alt="Dentista mostrando a escovação correta" decoding="async" height="960" loading="lazy" src="img/escovacao.webp" width="1280"/>
+<img alt="Paciente conferindo o sorriso no espelho" decoding="async" height="1280" loading="lazy" src="img/sorriso.webp" width="960"/>
+</div>
+<div class="cuidados">
+<div><h3>Esterilização</h3><p>Instrumentos esterilizados e materiais descartáveis em cada atendimento.</p></div>
+<div><h3>Explicação clara</h3><p>Tudo é explicado antes de começar, sem termos difíceis.</p></div>
+<div><h3>Horário respeitado</h3><p>Agenda organizada para você não perder o dia esperando.</p></div>
+</div>
+
+</div>
+</section>
+<section class="duvidas sec" id="duvidas">
+<div class="wrap">
+<div>
+<h2 class="h2">Dúvidas frequentes</h2>
+<p class="lead" style="margin-top:16px">Não achou a sua? <a href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Pergunte pelo WhatsApp</a>.</p>
+</div>
+<div>
+<details><summary>Vocês atendem convênio?</summary><p>Pergunte pelo WhatsApp quais convênios são aceitos hoje. Também atendemos particular, com formas de pagamento facilitadas.</p></details>
+<details><summary>Dá para parcelar o tratamento?</summary><p>As formas de pagamento são apresentadas junto com o plano de tratamento, depois da avaliação.</p></details>
+<details><summary>Atendem urgência?</summary><p>Em caso de dor, fale pelo WhatsApp (21) 98060-2549. Encaixamos no primeiro horário possível.</p></details>
+<details><summary>Com que idade levar a criança ao dentista?</summary><p>A recomendação é a primeira consulta assim que nascem os primeiros dentes, ou até o primeiro ano de vida.</p></details>
+<details><summary>De quanto em quanto tempo devo fazer limpeza?</summary><p>Na maioria dos casos, a cada seis meses. O intervalo certo para você é indicado na consulta.</p></details>
+</div>
+</div>
+</section>
+<section class="onde sec" id="onde">
+<div class="wrap">
+<div>
+<h2 class="h2">Marque sua consulta</h2>
+<p class="lead" style="margin-top:14px">Responda pelo WhatsApp e escolha o melhor horário.</p>
+<dl>
+<div><dt>WhatsApp</dt><dd><a href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">(21) 98060-2549</a></dd></div>
+
+
+
+</dl>
+<a class="btn btn-cheio" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Marcar pelo WhatsApp</a>
+</div>
+
+</div>
+</section>
+</main>
+<footer class="rodape">
+<div class="wrap">
+<span>© 2026 Sorriso Leve Odontologia</span>
+<span>Prévia criada pela <a href="https://levytikus.github.io/B2B-novo/" rel="noopener" target="_blank">Business 2 Brothers</a></span>
+</div>
+</footer>
+<a aria-label="Conversar pelo WhatsApp" class="zap" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Sorriso%20Leve%20Odontologia%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.1 19.8L3 29l6.4-1.8A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.8 1 1-3.7-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 4.9c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.2-.3-.3-.6-.4z"></path></svg></a>
+</body>
+</html>

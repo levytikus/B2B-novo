@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="noindex" name="robots"/>
+<title>Studio Lírio | Sobrancelhas, cílios, unhas e maquiagem</title>
+<meta content="Studio Lírio: design de sobrancelhas, extensão de cílios, unhas e maquiagem com hora marcada. Agende pelo WhatsApp." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&amp;family=Outfit:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+/*MARCA*/:root{--marca-1:#1e1a1c;--marca-1-forte:#1e1a1c;--marca-1-ink:#ffffff;--marca-1-claro:#d6d6d6;--marca-1-escuro:#141112;--marca-2:#c98b9a;--marca-2-forte:#90646e;--marca-2-ink:#1b1b1b;--marca-2-claro:#f5eaed;--marca-2-escuro:#835a64;--marca-3:#8e8c8d;--marca-3-forte:#6f6d6e;--marca-3-ink:#1b1b1b;--marca-3-claro:#ebeaea;--marca-3-escuro:#5c5b5c;}/*/MARCA*/
+/* Modelo Atelier: studio de beleza (sobrancelha, cílios, unhas, maquiagem). A linguagem é a do Instagram da cliente:
+   quadrados de foto, letra fina de vitrine (Italiana) em tamanho grande e muito respiro. O nome do studio entra como peça
+   tipográfica gigante no topo. Fundo neutro com leve tom da marca, preto para contraste. */
+:root{
+  --fundo:color-mix(in srgb,var(--marca-1-claro) 55%,#F7F6F5);
+  --branco:#FFFFFF; --tinta:#1C191B; --taupe:#6F6569; --fio:#E3DCDD;
+  --acento:var(--marca-1-forte); --acento-fundo:var(--tinta); --acento-ink:#fff;
+  --display:"Italiana","Didot",Georgia,serif; --sans:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--fundo);color:var(--tinta);font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.02;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acento);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:22px}
+.sec{padding-block:clamp(70px,9vw,124px)}
+.h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.lead{color:var(--taupe);font-size:1.08rem;max-width:50ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:500 1rem/1 var(--sans);letter-spacing:.02em;text-decoration:none;border-radius:999px;padding:18px 30px;border:0;cursor:pointer;transition:background .2s,color .2s}
+.btn-cheio{background:var(--tinta);color:#fff}
+.btn-cheio:hover{background:var(--acento)}
+.btn-fio{color:var(--tinta);box-shadow:inset 0 0 0 1px var(--tinta)}
+.btn-fio:hover{background:var(--tinta);color:#fff}
+
+.topo{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--fundo) 92%,transparent);backdrop-filter:blur(10px)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px}
+.logo img{max-height:48px;max-width:180px;width:auto;object-fit:contain}
+.menu{display:flex;gap:30px;font-size:.95rem}
+.menu a{text-decoration:none;color:var(--taupe)}
+.menu a:hover{color:var(--tinta)}
+.topo .btn{padding:13px 22px;font-size:.92rem}
+@media(max-width:900px){.menu{display:none}}
+
+/* hero: nome gigante + retrato */
+.hero{padding-top:clamp(20px,4vw,48px)}
+.hero .nome{font-family:var(--display);font-size:clamp(3.4rem,13vw,11rem);line-height:.92;letter-spacing:-.01em;overflow-wrap:anywhere}
+.hero .grade{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(26px,5vw,72px);align-items:end;margin-top:clamp(24px,4vw,44px)}
+.hero .grade img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:220px 220px 0 0}
+.hero .lado{padding-bottom:clamp(10px,3vw,40px)}
+.hero h1{font-family:var(--sans);font-weight:300;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.3;max-width:24ch}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .dados{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;color:var(--taupe);font-size:.95rem}
+.hero .dados b{color:var(--tinta);font-weight:500}
+@media(max-width:820px){.hero .grade{grid-template-columns:1fr}.hero .grade img{max-width:460px}}
+
+/* serviços em quadrados */
+.servicos .cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.card img{width:100%;aspect-ratio:1;object-fit:cover}
+.card h3{font-size:1.9rem;margin-top:16px}
+.card p{color:var(--taupe);font-size:.96rem;margin-top:6px}
+.card ul{list-style:none;padding:0;margin:12px 0 0;font-size:.93rem;display:grid;gap:4px}
+.card li{border-top:1px solid var(--fio);padding-top:6px}
+@media(max-width:980px){.cards{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.cards{grid-template-columns:1fr}}
+
+/* resultados (vitrine estilo Instagram) */
+.vitrine{background:var(--branco)}
+.vitrine .cab{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px}
+.grade3{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:40px}
+.grade3 img{width:100%;aspect-ratio:1;object-fit:cover}
+.vitrine .rodape-v{margin-top:22px;color:var(--taupe);font-size:.92rem}
+@media(max-width:520px){.grade3{grid-template-columns:1fr 1fr}.grade3 img:nth-child(3){display:none}}
+
+/* como agendar */
+.agendar .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center}
+.agendar img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:0 0 220px 220px}
+.passos{list-style:none;padding:0;margin:34px 0 34px;counter-reset:p}
+.passos li{counter-increment:p;display:grid;grid-template-columns:52px 1fr;gap:12px;padding:18px 0;border-top:1px solid var(--fio)}
+.passos li::before{content:counter(p);font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--acento)}
+.passos b{font-weight:500}
+.passos span{display:block;color:var(--taupe);font-size:.96rem}
+@media(max-width:820px){.agendar .wrap{grid-template-columns:1fr}.agendar img{max-width:440px}}
+
+.duvidas{background:var(--branco)}
+.duvidas .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,80px)}
+@media(max-width:820px){.duvidas .wrap{grid-template-columns:1fr}}
+details{border-top:1px solid var(--fio)}
+details:last-child{border-bottom:1px solid var(--fio)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:500;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:1.5rem;font-weight:300;transition:transform .2s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{color:var(--taupe);padding:0 0 20px;max-width:62ch}
+
+.contato{background:var(--tinta);color:#fff}
+.contato .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px)}
+.contato .lead{color:#C9BFC2}
+.contato dl{margin:28px 0 34px;display:grid}
+.contato dl div{padding:15px 0;border-top:1px solid rgba(255,255,255,.15);display:grid;grid-template-columns:120px 1fr;gap:16px}
+.contato dt{color:#C9BFC2;font-size:.92rem}
+.contato dd{margin:0}
+.contato dd a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.contato .btn-cheio{background:#fff;color:var(--tinta)}
+.contato .btn-cheio:hover{background:var(--marca-1-claro)}
+.mapa{min-height:360px;background:#2b2629;border-radius:6px;overflow:hidden}
+.mapa iframe{width:100%;height:100%;min-height:360px;border:0;display:block}
+@media(max-width:820px){.contato .wrap{grid-template-columns:1fr}.contato dl div{grid-template-columns:1fr;gap:2px}}
+.rodape{padding-block:30px;font-size:.88rem;color:var(--taupe)}
+.rodape .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+.rodape a{color:var(--tinta)}
+.zap{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.35)}
+.zap svg{width:30px;height:30px;fill:#fff}
+</style>
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Studio Lírio">
+<meta property="og:title" content="Studio Lírio">
+<meta property="og:description" content="Studio Lírio: design de sobrancelhas, extensão de cílios, unhas e maquiagem com hora marcada. Agende pelo WhatsApp.">
+<meta property="og:url" content="https://levytikus.github.io/B2B-novo/previas/modelo-atelier/">
+<meta property="og:image" content="https://levytikus.github.io/B2B-novo/previas/modelo-atelier/capa-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Studio Lírio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://levytikus.github.io/B2B-novo/previas/modelo-atelier/capa-og.jpg">
+<link rel="icon" href="logo.png">
+</head>
+<body>
+<header class="topo">
+<div class="wrap">
+<a aria-label="Studio Lírio, início" class="logo" href="#inicio"><img alt="Studio Lírio" src="logo.png"/></a>
+<nav aria-label="Seções" class="menu">
+<a href="#servicos">Serviços</a>
+<a href="#trabalhos">Trabalhos</a>
+<a href="#agendar">Como agendar</a>
+<a href="#contato">Contato</a>
+</nav>
+<a class="btn btn-cheio" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Studio%20L%C3%ADrio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a>
+</div>
+</header>
+<main id="inicio">
+<section class="hero">
+<div class="wrap">
+<p aria-hidden="true" class="nome">Lírio</p>
+<div class="grade">
+<img alt="Cliente com maquiagem e sobrancelhas feitas no studio" fetchpriority="high" height="1280" src="img/hero.webp" width="960"/>
+<div class="lado">
+<h1>Sobrancelhas, cílios, unhas e maquiagem com hora marcada e acabamento de quem ama detalhe.</h1>
+<div class="acoes">
+<a class="btn btn-cheio" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Studio%20L%C3%ADrio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar horário</a>
+<a class="btn btn-fio" href="#servicos">Ver serviços</a>
+</div>
+<p class="dados"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="servicos sec" id="servicos">
+<div class="wrap">
+<div class="cab">
+<h2 class="h2">Serviços</h2>
+<p class="lead">Consulte valores e horários livres pelo WhatsApp.</p>
+</div>
+<div class="cards">
+<article class="card"><img alt="Design de sobrancelha" decoding="async" height="1024" loading="lazy" src="img/sobrancelha.webp" width="1024"/><h3>Sobrancelhas</h3><p>Desenho pensado para o formato do seu rosto.</p><ul><li>Design</li><li>Design com henna</li><li>Brow lamination</li></ul></article>
+<article class="card"><img alt="Extensão de cílios" decoding="async" height="1024" loading="lazy" src="img/cilios.webp" width="1024"/><h3>Cílios</h3><p>Do efeito natural ao volume marcado.</p><ul><li>Extensão fio a fio</li><li>Volume</li><li>Lash lifting</li></ul></article>
+<article class="card"><img alt="Unhas feitas" decoding="async" height="1024" loading="lazy" src="img/unhas.webp" width="1024"/><h3>Unhas</h3><p>Acabamento impecável e materiais de qualidade.</p><ul><li>Manicure e pedicure</li><li>Alongamento em gel</li><li>Esmaltação em gel</li></ul></article>
+<article class="card"><img alt="Maquiagem profissional" decoding="async" height="1024" loading="lazy" src="img/maquiagem.webp" width="1024"/><h3>Maquiagem</h3><p>Para o dia a dia, eventos e noivas.</p><ul><li>Maquiagem social</li><li>Noivas e madrinhas</li><li>Penteado sob consulta</li></ul></article>
+</div>
+</div>
+</section>
+<section class="vitrine sec" id="trabalhos">
+<div class="wrap">
+<div class="cab">
+<h2 class="h2">Trabalhos</h2>
+
+</div>
+<div class="grade3">
+<img alt="Cílios e sobrancelhas" decoding="async" height="1024" loading="lazy" src="img/resultado1.webp" width="1024"/>
+<img alt="Unhas em gel" decoding="async" height="1024" loading="lazy" src="img/resultado2.webp" width="1024"/>
+<img alt="Maquiagem" decoding="async" height="1024" loading="lazy" src="img/resultado3.webp" width="1024"/>
+</div>
+<p class="rodape-v">Imagens ilustrativas.</p>
+</div>
+</section>
+<section class="agendar sec" id="agendar">
+<div class="wrap">
+<img alt="Espaço do studio" decoding="async" height="1280" loading="lazy" src="img/espaco.webp" width="1024"/>
+<div>
+<h2 class="h2">Como agendar</h2>
+<ol class="passos">
+<li><div><b>Chame no WhatsApp</b><span>Diga qual serviço você quer e o melhor dia para você.</span></div></li>
+<li><div><b>Escolha o horário</b><span>Enviamos os horários livres e confirmamos na hora.</span></div></li>
+<li><div><b>Venha se cuidar</b><span>Atendimento pontual, num espaço pensado para o seu conforto.</span></div></li>
+</ol>
+<a class="btn btn-cheio" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Studio%20L%C3%ADrio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar agora</a>
+</div>
+</div>
+</section>
+<section class="duvidas sec" id="duvidas">
+<div class="wrap">
+<div>
+<h2 class="h2">Dúvidas</h2>
+<p class="lead" style="margin-top:16px">Não achou a sua? <a href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Studio%20L%C3%ADrio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Pergunte pelo WhatsApp</a>.</p>
+</div>
+<div>
+<details><summary>Quanto tempo dura a extensão de cílios?</summary><p>Depende do ciclo natural dos seus fios e dos cuidados em casa. A manutenção costuma ser indicada a cada duas a três semanas.</p></details>
+<details><summary>Preciso fazer teste de alergia?</summary><p>Para henna, cílios e alguns produtos, recomendamos teste antes do primeiro atendimento. Combine pelo WhatsApp.</p></details>
+<details><summary>Atendem noivas fora do studio?</summary><p>Consulte disponibilidade e condições pelo WhatsApp.</p></details>
+<details><summary>Quais as formas de pagamento?</summary><p>Valores e formas de pagamento são informados pelo WhatsApp.</p></details>
+<details><summary>Qual o horário de atendimento?</summary><p>Atendimento com hora marcada.</p></details>
+</div>
+</div>
+</section>
+<section class="contato sec" id="contato">
+<div class="wrap">
+<div>
+<h2 class="h2">Reserve seu horário</h2>
+<p class="lead" style="margin-top:14px">Respondemos pelo WhatsApp com os horários livres.</p>
+<dl>
+<div><dt>WhatsApp</dt><dd><a href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Studio%20L%C3%ADrio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">(21) 98060-2549</a></dd></div>
+
+
+
+</dl>
+<a class="btn btn-cheio" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Studio%20L%C3%ADrio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar pelo WhatsApp</a>
+</div>
+
+</div>
+</section>
+</main>
+<footer class="rodape">
+<div class="wrap">
+<span>© 2026 Studio Lírio</span>
+<span>Prévia criada pela <a href="https://levytikus.github.io/B2B-novo/" rel="noopener" target="_blank">Business 2 Brothers</a></span>
+</div>
+</footer>
+<a aria-label="Conversar pelo WhatsApp" class="zap" href="https://wa.me/5521980602549?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Studio%20L%C3%ADrio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.1 19.8L3 29l6.4-1.8A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.8 1 1-3.7-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 4.9c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.2-.3-.3-.6-.4z"></path></svg></a>
+</body>
+</html>
