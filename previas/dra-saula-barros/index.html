@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="noindex" name="robots"/>
+<title>Dra. Saula M. Barros | Odontologia especializada em Ipanema</title>
+<meta content="Dra. Saula M. Barros: odontologia especializada em Ipanema, do tratamento de canal à prótese e estética, com clareamento e alinhadores. Agende pelo WhatsApp." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&amp;family=Jost:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+/*MARCA*/:root{--marca-1:#3f7a73;--marca-1-forte:#3f7a73;--marca-1-ink:#ffffff;--marca-1-claro:#dce7e6;--marca-1-escuro:#294f4b;--marca-2:#a8794e;--marca-2-forte:#8e6642;--marca-2-ink:#1b1b1b;--marca-2-claro:#efe7df;--marca-2-escuro:#6d4f33;--marca-3:#7d8c86;--marca-3-forte:#6a7671;--marca-3-ink:#1b1b1b;--marca-3-claro:#e8eae9;--marca-3-escuro:#515b57;}/*/MARCA*/
+/* Modelo Ápice: odontologia premium (implantes, lentes, estética do sorriso). Branco amplo, pedra fria e a cor escura da marca;
+   tipografia de revista (Gilda Display) em tamanho grande, como peça gráfica. A seção que diferencia é o planejamento digital:
+   é o que justifica o ticket alto. Nada de antes e depois (o CFO restringe) e sempre nome + CRO do responsável quando informados. */
+:root{
+  --branco:#FFFFFF; --pedra:#E8EAEA; --tinta:#16181D; --cinza:#5E636B; --fio:#DADDDF;
+  --escuro:color-mix(in srgb,var(--marca-1-escuro) 16%,#121722);
+  --acento:var(--marca-1-forte); --acento-fundo:var(--marca-1); --acento-ink:var(--marca-1-ink);
+  --display:"Gilda Display",Didot,Georgia,serif; --sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--branco);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:1.06;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acento-fundo);outline-offset:3px}
+.wrap{max-width:1220px;margin:0 auto;padding-inline:24px}
+.sec{padding-block:clamp(76px,10vw,140px)}
+.h2{font-size:clamp(2.3rem,5vw,3.8rem)}
+.lead{color:var(--cinza);font-size:1.1rem;max-width:52ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:500 1rem/1 var(--sans);letter-spacing:.02em;text-decoration:none;padding:19px 30px;border-radius:0;border:0;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
+.btn-cheio{background:var(--acento-fundo);color:var(--acento-ink)}
+.btn-cheio:hover{background:var(--tinta);color:#fff}
+.btn-fio{box-shadow:inset 0 0 0 1px var(--tinta);color:var(--tinta)}
+.btn-fio:hover{background:var(--tinta);color:#fff}
+
+.topo{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--fio)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:80px}
+.logo img{max-height:50px;max-width:200px;width:auto;object-fit:contain}
+.menu{display:flex;gap:34px;font-size:.95rem}
+.menu a{text-decoration:none;color:var(--cinza)}
+.menu a:hover{color:var(--tinta)}
+.topo .btn{padding:14px 22px;font-size:.92rem}
+@media(max-width:940px){.menu{display:none}}
+
+/* hero: frase grande e retrato */
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,80px);align-items:end;padding-block:clamp(48px,7vw,96px) 0}
+.hero h1{font-size:clamp(3rem,7.4vw,6.4rem);letter-spacing:-.015em}
+.hero .lead{margin-top:28px}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.hero figure{margin:0;align-self:stretch}
+.hero figure img{width:100%;height:100%;min-height:560px;max-height:760px;object-fit:cover;object-position:50% 45%}
+.faixa-dados{border-top:1px solid var(--fio);border-bottom:1px solid var(--fio);margin-top:clamp(40px,6vw,72px)}
+.faixa-dados .wrap{display:flex;flex-wrap:wrap;gap:18px 56px;padding-block:22px;color:var(--cinza);font-size:.95rem}
+.faixa-dados b{color:var(--tinta);font-weight:500}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero figure img{min-height:0;aspect-ratio:4/3;object-position:50% 38%}}
+
+/* especialidades: título fixo à esquerda, lista à direita */
+.esp .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,96px)}
+.esp .fixo{position:sticky;top:120px;align-self:start}
+.esp .fixo .lead{margin-top:20px}
+.esp article{padding:34px 0;border-top:1px solid var(--fio)}
+.esp article:last-child{border-bottom:1px solid var(--fio)}
+.esp h3{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:12px}
+.esp p{color:var(--cinza);max-width:58ch}
+.esp a{display:inline-block;margin-top:16px;color:var(--acento);text-decoration:none;font-weight:500;border-bottom:1px solid currentColor}
+@media(max-width:860px){.esp .wrap{grid-template-columns:1fr}.esp .fixo{position:static}}
+
+/* planejamento digital: o diferencial */
+.digital{background:var(--escuro);color:#fff}
+.digital .topo-sec{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:end}
+.digital .lead{color:#B8BFCA}
+.digital .duas{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;margin-top:56px}
+.digital .duas img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.digital .duas img+img{aspect-ratio:auto}
+.digital ul{list-style:none;padding:0;margin:48px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.digital li{padding:24px 28px 0 0;border-top:1px solid rgba(255,255,255,.2)}
+.digital li+li{padding-left:28px;border-left:1px solid rgba(255,255,255,.1)}
+.digital li h3{font-size:1.45rem;margin-bottom:8px}
+.digital li p{color:#B8BFCA;font-size:.98rem}
+@media(max-width:860px){.digital .topo-sec,.digital .duas{grid-template-columns:1fr}.digital ul{grid-template-columns:1fr}.digital li,.digital li+li{padding:22px 0 10px;border-left:0}}
+
+/* responsável */
+.quem .wrap{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(30px,6vw,96px);align-items:center}
+.quem img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.quem .nome{font-family:var(--display);font-size:clamp(2rem,4vw,3rem);line-height:1.1}
+.quem .reg{color:var(--cinza);margin-top:6px}
+.quem p.txt{color:var(--cinza);margin-top:24px;max-width:56ch}
+@media(max-width:860px){.quem .wrap{grid-template-columns:1fr}.quem img{max-width:420px}}
+
+/* primeira consulta */
+.passos-sec{background:var(--pedra)}
+.passos{list-style:none;padding:0;margin:52px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:p}
+.passos li{counter-increment:p;border-top:2px solid var(--tinta);padding-top:20px}
+.passos li::before{content:"Etapa " counter(p);display:block;font-size:.9rem;color:var(--cinza);margin-bottom:12px}
+.passos h3{font-size:1.5rem;margin-bottom:8px}
+.passos p{color:var(--cinza);font-size:.97rem}
+@media(max-width:900px){.passos{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.passos{grid-template-columns:1fr}}
+
+/* depoimentos */
+.depo .lista{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px}
+.depo blockquote{margin:0;padding-top:24px;border-top:2px solid var(--acento-fundo)}
+.depo blockquote p{font-family:var(--display);font-size:1.32rem;line-height:1.45}
+.depo cite{display:block;margin-top:18px;font-style:normal;color:var(--cinza);font-size:.95rem}
+@media(max-width:900px){.depo .lista{grid-template-columns:1fr}}
+.tira{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}
+.tira img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.tira .esc{object-position:66% center}
+@media(max-width:760px){.tira{grid-template-columns:1fr 1fr}.tira img:last-child{grid-column:1/-1;aspect-ratio:4/3;object-position:center 70%}}
+/* ambiente */
+.ambiente .grade{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;margin-top:48px}
+.ambiente img{width:100%;height:100%;object-fit:cover}
+.ambiente .a{aspect-ratio:3/2}
+.ambiente .b{aspect-ratio:auto}
+@media(max-width:760px){.ambiente .grade{grid-template-columns:1fr}.ambiente .b{aspect-ratio:4/5}}
+
+.duvidas .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,96px)}
+@media(max-width:860px){.duvidas .wrap{grid-template-columns:1fr}}
+details{border-top:1px solid var(--fio)}
+details:last-child{border-bottom:1px solid var(--fio)}
+summary{list-style:none;cursor:pointer;padding:24px 44px 24px 0;font-size:1.08rem;font-weight:500;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::before,summary::after{content:"";position:absolute;right:6px;top:50%;width:16px;height:1px;background:var(--tinta);transition:transform .25s}
+summary::after{transform:rotate(90deg)}
+details[open] summary::after{transform:rotate(0)}
+details p{color:var(--cinza);padding:0 0 24px;max-width:62ch}
+
+.contato{background:var(--escuro);color:#fff}
+.contato .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px)}
+.contato .lead{color:#B8BFCA}
+.contato dl{margin:30px 0 36px;display:grid}
+.contato dl div{padding:16px 0;border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:120px 1fr;gap:16px}
+.contato dt{color:#B8BFCA;font-size:.92rem}
+.contato dd{margin:0}
+.contato dd a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.contato .btn-cheio{background:#fff;color:var(--tinta)}
+.contato .btn-cheio:hover{background:var(--pedra)}
+.mapa{min-height:380px;background:#222833}
+.mapa iframe{width:100%;height:100%;min-height:380px;border:0;display:block;filter:grayscale(.5)}
+@media(max-width:860px){.contato .wrap{grid-template-columns:1fr}.contato dl div{grid-template-columns:1fr;gap:2px}}
+.rodape{padding-block:30px;font-size:.88rem;color:var(--cinza)}
+.rodape .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+.rodape a{color:var(--tinta)}
+.zap{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.35)}
+.zap svg{width:30px;height:30px;fill:#fff}
+</style>
+<meta content="website" property="og:type"/>
+<meta content="pt_BR" property="og:locale"/>
+<meta content="Dra. Saula M. Barros" property="og:site_name"/>
+<meta content="Dra. Saula M. Barros" property="og:title"/>
+<meta content="Dra. Saula M. Barros: odontologia especializada em Ipanema, do tratamento de canal à prótese e estética, com clareamento e alinhadores. Agende pelo WhatsApp." property="og:description"/>
+<meta content="https://sites.business2brothers.com/previas/dra-saula-barros/" property="og:url"/>
+<meta content="https://sites.business2brothers.com/previas/dra-saula-barros/capa-og.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Dra. Saula M. Barros" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://sites.business2brothers.com/previas/dra-saula-barros/capa-og.jpg" name="twitter:image"/>
+<link href="logo.png" rel="icon"/>
+</head>
+<body>
+<header class="topo">
+<div class="wrap">
+<a aria-label="Dra. Saula M. Barros, início" class="logo" href="#inicio"><img alt="Dra. Saula M. Barros" src="logo.png"/></a>
+<nav aria-label="Seções" class="menu">
+<a href="#especialidades">Especialidades</a>
+<a href="#planejamento">Planejamento</a>
+<a href="#primeira-consulta">Primeira consulta</a>
+<a href="#contato">Contato</a>
+</nav>
+<a class="btn btn-cheio" href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar avaliação</a>
+</div>
+</header>
+<main id="inicio">
+<section class="hero">
+<div class="wrap">
+<div>
+<h1>Saúde, função e beleza no mesmo sorriso</h1>
+<p class="lead">Tratamento de canal, prótese e estética com a Dra. Saula Barros, no Edifício Quartier, em Ipanema. Cada etapa explicada com calma, do diagnóstico ao resultado.</p>
+<div class="acoes">
+<a class="btn btn-cheio" href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar avaliação</a>
+<a class="btn btn-fio" href="#especialidades">Conhecer especialidades</a>
+</div>
+</div>
+<figure><img alt="Consultório da Dra. Saula com vista para o Morro Dois Irmãos" fetchpriority="high" height="1440" src="img/hero.webp" width="870"/></figure>
+</div>
+<div class="faixa-dados">
+<div class="wrap"><span>Atende <b>convênios</b></span>
+<span>Clínica em <b>Ipanema</b></span>
+<span>Segunda a quinta, das 9h às 19h</span>
+</div>
+</div>
+</section>
+<section class="esp sec" id="especialidades">
+<div class="wrap">
+<div class="fixo">
+<h2 class="h2">Especialidades</h2>
+<p class="lead">Odontologia especializada desde 2011. Cada caso começa por uma avaliação completa e a indicação é sempre individual.</p>
+</div>
+<div>
+
+
+
+
+
+<article><h3>Tratamento de canal</h3><p>Especialista em endodontia, a Dra. Saula trata a dor e a infecção dentro do dente para mantê-lo na boca, com anestesia cuidadosa e acompanhamento por imagem.</p><a href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar avaliação</a></article>
+<article><h3>Prótese e reabilitação oral</h3><p>Coroas, pontes e próteses para recuperar dentes perdidos ou desgastados, devolvendo mastigação, conforto e um sorriso natural.</p><a href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar avaliação</a></article>
+<article><h3>Estética do sorriso</h3><p>Facetas e restaurações estéticas para corrigir forma, cor e pequenos espaços, sempre buscando um resultado saudável e com a sua cara.</p><a href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar avaliação estética</a></article>
+<article><h3>Clareamento</h3><p>Clareamento no consultório ou com moldeira em casa, supervisionado, depois de avaliar a saúde dos dentes e da gengiva.</p><a href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar avaliação para clareamento</a></article>
+<article><h3>Alinhadores transparentes</h3><p>Correção da posição dos dentes com placas transparentes, feitas a partir do planejamento do seu caso e trocadas por etapas.</p><a href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar avaliação ortodôntica</a></article>
+</div>
+</div>
+</section>
+<section class="digital sec" id="planejamento">
+<div class="wrap">
+<div class="topo-sec">
+<h2 class="h2">Cada caso, planejado</h2>
+<p class="lead">Exames de imagem, modelos do seu sorriso e o plano apresentado antes de começar. Você entende o tratamento, pergunta e decide com segurança.</p>
+</div>
+<div class="duas">
+<img alt="Modelo dos dentes com alinhador transparente, planejado pela Dra. Saula" decoding="async" height="640" loading="lazy" src="img/alinhador.webp" width="1122"/>
+<img alt="Mesa de planejamento com alinhadores e modelo dentário" decoding="async" height="1440" loading="lazy" src="img/mesa.webp" width="1080"/>
+</div>
+<ul>
+<li><h3>Diagnóstico</h3><p>Exame clínico e de imagem para entender a causa, não só o sintoma.</p></li>
+<li><h3>Plano sob medida</h3><p>Forma, cor e função pensadas para o seu rosto e a sua rotina.</p></li>
+<li><h3>Previsibilidade</h3><p>Cada etapa planejada antes de começar, com prazos claros.</p></li>
+</ul>
+</div>
+</section>
+<section class="quem sec" id="responsavel">
+<div class="wrap">
+<img alt="Dra. Saula Magalhães Barros, cirurgiã-dentista" decoding="async" height="608" loading="lazy" src="img/dra-saula.webp" width="486"/>
+<div>
+<p class="nome">Dra. Saula Magalhães Barros</p>
+<p class="reg">Cirurgiã-dentista e responsável técnica, CRO-RJ 31015</p>
+<p class="txt">Formada pela Universidade Estácio de Sá, especialista em Prótese Dentária pela São Leopoldo Mandic e em Endodontia pela Estácio. Atua também na estética do sorriso e participa de congressos e cursos para trazer ao consultório as técnicas mais atuais. Quem planeja o seu tratamento é quem acompanha você até a última revisão.</p>
+<div class="acoes"><a class="btn btn-cheio" href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar com a Dra. Saula</a></div>
+</div>
+</div>
+</section>
+<section class="passos-sec sec" id="primeira-consulta">
+<div class="wrap">
+<h2 class="h2">Do primeiro contato ao novo sorriso</h2>
+<ol class="passos">
+<li><h3>Avaliação</h3><p>Conversa sobre o que você deseja, exame clínico e pedido dos exames necessários.</p></li>
+<li><h3>Planejamento</h3><p>Exames e planejamento do tratamento, apresentados com calma.</p></li>
+<li><h3>Tratamento</h3><p>Sessões marcadas com antecedência, seguindo o plano aprovado.</p></li>
+<li><h3>Manutenção</h3><p>Revisões periódicas para cuidar do resultado ao longo do tempo.</p></li>
+</ol>
+</div>
+</section>
+<section class="ambiente sec" id="clinica">
+<div class="wrap">
+<h2 class="h2">O consultório</h2>
+<p class="lead" style="margin-top:18px">No alto do Edifício Quartier, em Ipanema, com vista para o mar e o Morro Dois Irmãos. Ambiente reservado, pontualidade e biossegurança em cada atendimento.</p>
+<div class="grade">
+<img alt="Dra. Saula atendendo uma paciente no consultório" class="a" decoding="async" height="965" loading="lazy" src="img/consultorio.webp" width="1448"/>
+<img alt="Recepção com o letreiro Saula M. Barros Odontologia Especializada" class="b" decoding="async" height="1440" loading="lazy" src="img/recepcao.webp" width="1080"/>
+</div>
+<div class="tira"><img alt="Estojo de alinhador na janela, com o Morro Dois Irmãos ao fundo" decoding="async" height="1402" loading="lazy" src="img/vista.webp" width="1122"/><img alt="Sala de atendimento com vista para o mar" class="esc" decoding="async" height="1086" loading="lazy" src="img/escritorio.webp" width="1448"/><img alt="Kit de clareamento com a sacola Saula Barros Odontologia Especializada" decoding="async" height="1402" loading="lazy" src="img/clareamento.webp" width="1122"/></div></div>
+</section>
+<section class="depo sec" id="pacientes" style="padding-top:0">
+<div class="wrap">
+<h2 class="h2">Quem já foi atendido</h2>
+<div class="lista">
+<blockquote><p>Se preocupa com todos os detalhes, explica tudo e é muito atenciosa. A recepcionista também. Fora que o consultório é impecável.</p><cite>Camila Ferreira</cite></blockquote>
+<blockquote><p>Consultório lindo, organizado, limpo e com os melhores equipamentos. Profissional maravilhosa e muito dedicada.</p><cite>Mery Albuquerque</cite></blockquote>
+<blockquote><p>Eu, que tenho pavor de dentista, me senti muito bem acolhido. E o mais importante para mim: todo o procedimento sem sentir dor.</p><cite>Jhonatan Silva</cite></blockquote>
+</div>
+</div>
+</section>
+<section class="duvidas sec" id="duvidas">
+<div class="wrap">
+<div>
+<h2 class="h2">Dúvidas frequentes</h2>
+<p class="lead" style="margin-top:18px">Não encontrou a sua? <a href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Pergunte pelo WhatsApp</a>.</p>
+</div>
+<div>
+<details><summary>A avaliação é paga?</summary><p>Informamos pelo WhatsApp como funciona a avaliação e o que está incluído nela.</p></details>
+<details><summary>Atende convênio?</summary><p>Sim. Atendemos planos como Bradesco Dental, SulAmérica, Golden Cross, Eletros e Furnas. Confirme pelo WhatsApp se o seu plano cobre o tratamento que você procura.</p></details>
+<details><summary>Tratamento de canal dói?</summary><p>O tratamento é feito com anestesia e a maioria dos pacientes sente apenas o desconforto de ficar com a boca aberta. Depois, pode haver uma sensibilidade leve por alguns dias, que é acompanhada de perto.</p></details>
+<details><summary>Vocês parcelam?</summary><p>As formas de pagamento são apresentadas junto com o plano de tratamento.</p></details>
+<details><summary>Como agendo?</summary><p>Pelo WhatsApp (21) 99920-3458.<span> Atendemos Segunda a quinta, das 9h às 19h.</span></p></details>
+</div>
+</div>
+</section>
+<section class="contato sec" id="contato">
+<div class="wrap">
+<div>
+<h2 class="h2">Agende sua avaliação</h2>
+<p class="lead" style="margin-top:16px">Conte o que você quer mudar no seu sorriso e receba os horários disponíveis.</p>
+<dl>
+<div><dt>WhatsApp</dt><dd><a href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">(21) 99920-3458</a></dd></div>
+<div><dt>Endereço</dt><dd>Rua Visconde de Pirajá, 414, sala 1009 (Edifício Quartier), Ipanema, Rio de Janeiro</dd></div>
+<div><dt>Horário</dt><dd>Segunda a quinta, das 9h às 19h</dd></div>
+<div><dt>Instagram</dt><dd><a href="https://www.instagram.com/saulambarros/" rel="noopener" target="_blank">@saulambarros</a></dd></div>
+</dl>
+<a class="btn btn-cheio" href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar pelo WhatsApp</a>
+</div>
+<div class="mapa"><iframe loading="lazy" src="https://maps.google.com/maps?q=Dra.%20Saula%20M.%20Barros%2C%20Rua%20Visconde%20de%20Piraj%C3%A1%2C%20414%2C%20sala%201009%20%28Edif%C3%ADcio%20Quartier%29%2C%20Ipanema%2C%20Rio%20de%20Janeiro&amp;output=embed" title="Mapa até a Dra. Saula Barros"></iframe></div>
+</div>
+</section>
+</main>
+<footer class="rodape">
+<div class="wrap">
+<span>© 2026 Dra. Saula M. Barros<span>. Responsável técnica: Dra. Saula Magalhães Barros, CRO-RJ 31015</span></span>
+<span>Prévia criada pela <a href="https://business2brothers.com/" rel="noopener" target="_blank">Business 2 Brothers</a></span>
+</div>
+</footer>
+<a aria-label="Conversar pelo WhatsApp" class="zap" href="https://wa.me/5521999203458?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Dra.%20Saula%20M.%20Barros%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.1 19.8L3 29l6.4-1.8A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.8 1 1-3.7-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 4.9c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.2-.3-.3-.6-.4z"></path></svg></a>
+</body>
+</html>
