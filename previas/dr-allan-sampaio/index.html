@@ -312,13 +312,12 @@ details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
 <script>
 (function(){var c=document.querySelector('.carrossel');if(!c)return;var t=c.querySelector('.car-trilho'),d=[].slice.call(c.querySelectorAll('.car-pontos button')),n=d.length,a=0,tm,red=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function mark(){d.forEach(function(b,i){b.setAttribute('aria-current',i===a?'true':'false')})}
-function ir(i,s){a=(i+n)%n;t.scrollTo({left:a*t.clientWidth,behavior:s?'auto':'smooth'});mark()}
-d.forEach(function(b,i){b.addEventListener('click',function(){ir(i);re()})});
+function ir(i){a=(i+n)%n;t.scrollTo({left:a*t.clientWidth,behavior:red?'auto':'smooth'});mark()}
+function play(){clearInterval(tm);tm=setInterval(function(){if(!document.hidden)ir(a+1)},4500)}
+d.forEach(function(b,i){b.addEventListener('click',function(){ir(i);play()})});
 var st;t.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(function(){a=Math.round(t.scrollLeft/t.clientWidth);mark()},80)},{passive:true});
-function play(){if(red)return;clearInterval(tm);tm=setInterval(function(){if(!document.hidden)ir(a+1)},4500)}
-function re(){clearInterval(tm);play()}
-['mouseenter','touchstart','focusin'].forEach(function(e){c.addEventListener(e,function(){clearInterval(tm)},{passive:true})});
-['mouseleave','touchend','focusout'].forEach(function(e){c.addEventListener(e,play,{passive:true})});
+['touchend','pointerup'].forEach(function(e){t.addEventListener(e,play,{passive:true})});
+addEventListener('resize',function(){t.scrollTo({left:a*t.clientWidth,behavior:'auto'})});
 mark();play()})();
 </script>
 </body>
