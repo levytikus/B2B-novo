@@ -21,7 +21,7 @@
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&family=Caveat:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&family=Caveat:wght@500;600&family=Allura&display=swap">
 <style>
 :root{
   --azul:#0a5cb8; --azul-escuro:#084a96; --marinho:#0d2440; --texto:#4a5a6e;
@@ -138,6 +138,26 @@ h1,h2,h3,p{margin:0}
 @media(max-width:1100px){.sobre .conteudo{grid-template-columns:1fr}}
 @media(max-width:860px){.sobre{grid-template-columns:1fr}.sobre .foto{height:440px}}
 
+/* medo de dentista */
+.medo{background:var(--ceu-2)}
+.medo .grade{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.medo .lado{position:sticky;top:110px}
+.medo .lado .sub{color:var(--texto);margin-top:14px;max-width:46ch}
+.medo .lado img{width:100%;aspect-ratio:5/4;object-fit:cover;object-position:50% 30%;border-radius:12px;margin-top:26px;box-shadow:0 14px 34px -18px rgba(13,36,64,.5)}
+.passos{display:grid;grid-template-columns:1fr 1fr;gap:16px;counter-reset:p}
+.passo{background:#fff;border-radius:12px;padding:22px 24px 24px;box-shadow:0 6px 24px -12px rgba(13,36,64,.25),0 0 0 1px var(--fio);counter-increment:p;position:relative}
+.passo::after{content:counter(p);position:absolute;top:18px;right:20px;width:28px;height:28px;border-radius:50%;background:var(--ceu);color:var(--azul);font-size:.8rem;font-weight:700;display:grid;place-items:center}
+.passo h3{font:400 2.5rem/1 "Allura",var(--mao);color:var(--azul-escuro);padding-bottom:8px;border-bottom:2px solid #c9dbf0;display:inline-block;padding-right:24px}
+.passo p{font-size:.9rem;color:var(--texto);margin-top:12px}
+.consulta{grid-column:1/-1;background:var(--marinho);color:#fff;border-radius:12px;padding:26px 28px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center}
+.consulta .preco{font-size:2rem;font-weight:800;letter-spacing:-.02em;line-height:1}
+.consulta .preco small{display:block;font-size:.78rem;font-weight:500;color:#a9bdd6;letter-spacing:0;margin-bottom:6px}
+.consulta p{font-size:.9rem;color:#d3deeb}
+.consulta b{color:#fff}
+.consulta .btn{background:#fff;color:var(--marinho)}
+@media(max-width:1000px){.medo .grade{grid-template-columns:1fr}.medo .lado{position:static}.consulta{grid-template-columns:1fr}}
+@media(max-width:600px){.passos{grid-template-columns:1fr}}
+
 /* depoimentos */
 .depo .wrap{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:center}
 .depo h2{font-size:clamp(2rem,3.2vw,2.6rem);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin-top:8px}
@@ -230,6 +250,7 @@ h1,h2,h3,p{margin:0}
       <a class="ativo" href="#inicio">Início</a>
       <a href="#sobre">Sobre</a>
       <a href="#tratamentos">Tratamentos</a>
+      <a href="#medo">Primeira consulta</a>
       <a href="#depoimentos">Depoimentos</a>
       <a href="#convenios">Convênios</a>
       <a href="#contato">Contato</a>
@@ -299,6 +320,30 @@ h1,h2,h3,p{margin:0}
         <div><span class="bola"><svg class="ic"><use href="#i-engrenagem"/></svg></span><p><b>Técnicas atuais</b><span>Exames de imagem e planejamento de cada caso.</span></p></div>
         <div><span class="bola"><svg class="ic"><use href="#i-escudo"/></svg></span><p><b>Biossegurança</b><span>Materiais estéreis e protocolos rigorosos.</span></p></div>
         <div><span class="bola"><svg class="ic"><use href="#i-calendario"/></svg></span><p><b>Horário marcado</b><span>Segunda a quinta, das 9h às 19h.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="medo sec" id="medo">
+    <div class="wrap grade">
+      <div class="lado">
+        <p class="olho">Medo de dentista?</p>
+        <h2 class="h2">Seu medo não precisa te afastar do cuidado com o sorriso</h2>
+        <p class="sub">Muita gente sente. A Dra. Saula atende com calma, explica cada passo e respeita o seu tempo. Estes são os conselhos dela para a primeira consulta.</p>
+        <img src="img/atendendo.webp" alt="Dra. Saula atendendo uma paciente no consultório" width="859" height="880" loading="lazy">
+      </div>
+      <div class="passos">
+        <article class="passo"><h3>Dialogue</h3><p>Você pode e deve conversar com o seu dentista. A consulta inicial serve para isso: conhecer os seus medos e, junto com você, decidir a melhor maneira de te ajudar.</p></article>
+        <article class="passo"><h3>Combine</h3><p>Antes de começar, combine alguns sinais, como levantar a mão, caso sinta algum desconforto durante o tratamento. Isso é muito comum, não tenha vergonha.</p></article>
+        <article class="passo"><h3>Relaxe</h3><p>Faça exercícios de respiração para ficar mais relaxado antes e durante a consulta.</p></article>
+        <article class="passo"><h3>Decida</h3><p>Decida que o medo não pode te impedir de cuidar da sua saúde. Problemas que não são tratados no início só evoluem.</p></article>
+        <article class="passo"><h3>Pergunte</h3><p>Tire todas as suas dúvidas. Peça para entender o que você tem e quais são as opções de tratamento, para decidirem juntos o melhor caminho.</p></article>
+        <article class="passo"><h3>Busque</h3><p>Se ainda assim for difícil enfrentar esse medo, não tenha vergonha de buscar ajuda de um psicólogo. Você não está sozinho, e estamos aqui para te ajudar.</p></article>
+        <div class="consulta">
+          <p class="preco"><small>Consulta inicial</small>R$ 450</p>
+          <p>Inclui avaliação, <b>raspagem supragengival e profilaxia</b>. E um cafezinho esperando por você, num espaço charmoso e acolhedor.</p>
+          <a class="btn" href="https://wa.me/5521999203458?text=Ol%C3%A1%2C%20Dra.%20Saula%21%20Gostaria%20de%20agendar%20a%20consulta%20inicial." target="_blank" rel="noopener">Agendar <svg class="ic seta"><use href="#i-seta"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
