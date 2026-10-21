@@ -20,6 +20,8 @@
 <meta name="twitter:image" content="https://sites.business2brothers.com/previas/dra-saula-barros-2/capa-og.jpg">
 <link rel="icon" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
+<link rel="preload" as="image" href="img/carga-mono.webp">
+<link rel="preload" as="image" href="img/carga-nome.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&family=Caveat:wght@500;600&family=Allura&display=swap">
@@ -50,6 +52,23 @@ h1,h2,h3,p{margin:0}
 .btn .seta{width:16px;height:16px}
 .nota{font-family:var(--mao);color:var(--azul-escuro);line-height:1.02;font-weight:500}
 .nota svg{display:block;width:70px;height:10px;margin-top:6px;stroke:var(--salvia);fill:none;stroke-width:2;stroke-linecap:round}
+
+/* abertura (3 s) */
+.carga{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:radial-gradient(120% 90% at 50% 40%,#fcf8f4 0%,#f8efe8 55%,#efe6dc 100%);animation:cargaSai .45s ease 2.55s forwards}
+.carga .caixa{width:min(560px,80vw);position:relative}
+.carga .logo{position:relative;aspect-ratio:2015/699}
+.carga .logo img{position:absolute;inset:0;width:100%;height:100%}
+.carga .mono{transform-origin:50% 22%;opacity:0;animation:cargaMono .7s cubic-bezier(.2,.8,.2,1) .1s forwards}
+.carga .nome{clip-path:inset(0 100% 0 0);animation:cargaNome 1.25s cubic-bezier(.55,.1,.35,1) .55s forwards}
+.carga .sub{opacity:0;transform:translateY(6px);animation:cargaSub .5s ease 1.6s forwards}
+.carga .linha{height:2px;margin:26px auto 0;width:62%;background:#e3d9cd;border-radius:2px;overflow:hidden}
+.carga .linha i{display:block;height:100%;width:0;background:var(--mono);animation:cargaLinha 2.3s cubic-bezier(.4,0,.2,1) .15s forwards}
+@keyframes cargaMono{from{opacity:0;transform:scale(.6) rotate(-14deg)}to{opacity:1;transform:none}}
+@keyframes cargaNome{to{clip-path:inset(0 0 0 0)}}
+@keyframes cargaSub{to{opacity:1;transform:none}}
+@keyframes cargaLinha{to{width:100%}}
+@keyframes cargaSai{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.carga .mono,.carga .nome,.carga .sub,.carga .linha i{animation:none;opacity:1;transform:none;clip-path:none;width:100%}.carga{animation:cargaSai .3s linear 1.2s forwards}}
 
 /* barra do topo */
 .aviso{background:var(--marinho);color:#fff;font-size:.82rem}
@@ -237,6 +256,17 @@ h1,h2,h3,p{margin:0}
   <symbol id="i-sublinha" viewBox="0 0 70 10"><path d="M2 7c14-4 34-6 66-3"/></symbol>
 </svg>
 
+<div class="carga" aria-hidden="true">
+  <div class="caixa">
+    <div class="logo">
+      <img class="mono" src="img/carga-mono.webp" alt="" width="1008" height="350">
+      <img class="nome" src="img/carga-nome.webp" alt="" width="1008" height="350">
+      <img class="sub" src="img/carga-sub.webp" alt="" width="1008" height="350">
+    </div>
+    <div class="linha"><i></i></div>
+  </div>
+</div>
+
 <div class="aviso">
   <div class="wrap">
     <span><span class="txt-longo">Atendemos Bradesco Dental, SulAmérica, Golden Cross e outros convênios</span><span class="txt-curto">Atendemos convênios</span></span>
@@ -246,7 +276,7 @@ h1,h2,h3,p{margin:0}
 
 <header class="topo">
   <div class="wrap">
-    <a class="marca" href="#inicio" aria-label="Dra. Saula M. Barros, início"><img src="logo.png" alt="Saula Barros, Odontologia Especializada" width="2015" height="699"></a>
+    <a class="marca" href="#inicio" aria-label="Dra. Saula M. Barros, início"><img src="logo.webp" alt="Saula Barros, Odontologia Especializada" width="2015" height="699"></a>
     <nav class="menu" aria-label="Seções">
       <a class="ativo" href="#inicio">Início</a>
       <a href="#sobre">Sobre</a>
@@ -386,7 +416,7 @@ h1,h2,h3,p{margin:0}
 <footer class="rodape" id="contato">
   <div class="wrap cols">
     <div>
-      <a class="marca" href="#inicio"><img src="logo.png" alt="Saula Barros, Odontologia Especializada" width="2015" height="699" loading="lazy"></a>
+      <a class="marca" href="#inicio"><img src="logo.webp" alt="Saula Barros, Odontologia Especializada" width="2015" height="699" loading="lazy"></a>
       <p class="lema">Saúde, função e beleza no mesmo sorriso.</p>
       <div class="redes">
         <a href="https://www.instagram.com/saulambarros/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic"><use href="#i-insta"/></svg></a>
