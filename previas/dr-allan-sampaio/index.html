@@ -22,7 +22,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 body{margin:0;background:var(--branco);color:var(--tinta);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
@@ -43,7 +43,10 @@ a{color:inherit}
 
 .topo{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--fio)}
 .topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:76px}
-.logo img{max-height:50px;max-width:190px;width:auto;object-fit:contain}
+.logo img{height:52px;width:auto;max-width:none;object-fit:contain;transition:height .25s ease}
+.topo .wrap{transition:height .25s ease}
+@media(min-width:921px){.topo .wrap{height:132px}.logo img{height:108px}.topo.encolhido .wrap{height:104px}.topo.encolhido .logo img{height:88px}}
+@media(max-width:920px){.topo .wrap{height:100px}.logo img{height:78px}.topo.encolhido .wrap{height:84px}.topo.encolhido .logo img{height:66px}}
 .menu{display:flex;gap:28px;font-weight:500;font-size:.96rem}
 .menu a{text-decoration:none;color:var(--ardosia)}
 .menu a:hover{color:var(--tinta)}
@@ -161,19 +164,19 @@ details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
 <meta property="og:image:alt" content="Dr. Allan Sampaio">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sites.business2brothers.com/previas/dr-allan-sampaio/capa-og.jpg">
-<link rel="icon" href="logo.png">
+<link rel="icon" href="favicon.png">
 </head>
 <body>
 <header class="topo">
 <div class="wrap">
-<a aria-label="Dr. Allan Sampaio, início" class="logo" href="#inicio"><img alt="Dr. Allan Sampaio" src="logo.png"/></a>
+<a aria-label="Dr. Allan Sampaio, início" class="logo" href="#inicio"><img alt="Dr. Allan Sampaio, especialista em renovar sorrisos" height="427" src="logo.png" width="1200"/></a>
 <nav aria-label="Seções" class="menu">
 <a href="#tratamentos">Tratamentos</a>
 <a href="#criancas">Crianças</a>
 <a href="#primeira-consulta">Primeira consulta</a>
 <a href="#onde">Onde estamos</a>
 </nav>
-<a aria-label="Marcar consulta pelo WhatsApp" class="btn btn-cheio" href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="15" rx="2.5" width="17" x="3.5" y="5"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg><span>Marcar consulta</span></a>
+<a aria-label="Marcar consulta pelo WhatsApp" class="btn btn-cheio" href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="15" rx="2.5" width="17" x="3.5" y="5"></rect><path d="M3.5 10h17M8 3v4M16 3v4"></path></svg><span>Marcar consulta</span></a>
 </div>
 </header>
 <main id="inicio">
@@ -183,7 +186,7 @@ details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
 <h1>Dentista de confiança para a família inteira</h1>
 <p class="lead">Da primeira consulta do seu filho ao implante dos avós, o consultório do Dr. Allan Sampaio cuida de cada sorriso com calma, explicação clara e horário marcado.</p>
 <div class="acoes">
-<a class="btn btn-cheio" href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Marcar avaliação</a>
+<a class="btn btn-cheio" href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Marcar avaliação</a>
 <a class="btn btn-fio" href="#tratamentos">Ver tratamentos</a>
 </div>
 <p class="provas"><span>Atendimento em <b>Bangu</b></span><span>Equipe com <b>ortodontia e implantes</b></span></p>
@@ -204,7 +207,7 @@ details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
 <div class="urgencia">
 <div class="wrap">
 <p><b>Está com dor?</b>Fale com a gente agora e veja o primeiro horário livre.</p>
-<a class="btn" href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Falar sobre urgência</a>
+<a class="btn" href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Falar sobre urgência</a>
 </div>
 </div>
 <section class="problemas sec" id="tratamentos">
@@ -214,12 +217,12 @@ details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
 <p class="lead" style="margin-top:16px">Escolha pelo que você sente ou quer resolver. O tratamento certo é definido na avaliação.</p>
 </div>
 <div class="grade">
-<div class="prob"><h3>Faz tempo que não vou ao dentista</h3><span class="trat">Clínica geral e limpeza</span><p>Check-up, limpeza, restaurações e orientação para manter os dentes saudáveis.</p><a href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
-<div class="prob"><h3>Meus dentes estão tortos</h3><span class="trat">Ortodontia</span><p>Aparelho fixo ou alinhadores, com plano e manutenção acompanhados de perto.</p><a href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
-<div class="prob"><h3>Perdi um ou mais dentes</h3><span class="trat">Implantes e próteses</span><p>Soluções fixas ou removíveis para voltar a mastigar e sorrir com segurança.</p><a href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
-<div class="prob"><h3>Quero dentes mais brancos</h3><span class="trat">Clareamento</span><p>Clareamento de consultório ou caseiro supervisionado, depois de avaliar a saúde dos dentes.</p><a href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
-<div class="prob"><h3>Sinto dor ou sensibilidade</h3><span class="trat">Tratamento de canal e restaurações</span><p>Diagnóstico da causa e tratamento para aliviar a dor e salvar o dente sempre que possível.</p><a href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
-<div class="prob"><h3>Ranjo ou aperto os dentes</h3><span class="trat">Placa para bruxismo</span><p>Placa sob medida para quem range ou aperta os dentes: alivia as dores, protege os dentes e relaxa a musculatura.</p><a href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Faz tempo que não vou ao dentista</h3><span class="trat">Clínica geral e limpeza</span><p>Check-up, limpeza, restaurações e orientação para manter os dentes saudáveis.</p><a href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Meus dentes estão tortos</h3><span class="trat">Ortodontia</span><p>Aparelho fixo ou alinhadores, com plano e manutenção acompanhados de perto.</p><a href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Perdi um ou mais dentes</h3><span class="trat">Implantes e próteses</span><p>Soluções fixas ou removíveis para voltar a mastigar e sorrir com segurança.</p><a href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Quero dentes mais brancos</h3><span class="trat">Clareamento</span><p>Clareamento de consultório ou caseiro supervisionado, depois de avaliar a saúde dos dentes.</p><a href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Sinto dor ou sensibilidade</h3><span class="trat">Tratamento de canal e restaurações</span><p>Diagnóstico da causa e tratamento para aliviar a dor e salvar o dente sempre que possível.</p><a href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
+<div class="prob"><h3>Ranjo ou aperto os dentes</h3><span class="trat">Placa para bruxismo</span><p>Placa sob medida para quem range ou aperta os dentes: alivia as dores, protege os dentes e relaxa a musculatura.</p><a href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Agendar</a></div>
 </div>
 </div>
 </section>
@@ -234,7 +237,7 @@ details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
 <li>Orientação para os pais sobre escovação, alimentação e chupeta</li>
 <li>Aplicação de flúor e selantes para prevenir cáries</li>
 </ul>
-<a class="btn btn-cheio" href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Marcar consulta infantil</a>
+<a class="btn btn-cheio" href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Marcar consulta infantil</a>
 </div>
 </div>
 </section>
@@ -272,12 +275,12 @@ details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
 <div class="wrap">
 <div>
 <h2 class="h2">Dúvidas frequentes</h2>
-<p class="lead" style="margin-top:16px">Não achou a sua? <a href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Pergunte pelo WhatsApp</a>.</p>
+<p class="lead" style="margin-top:16px">Não achou a sua? <a href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Pergunte pelo WhatsApp</a>.</p>
 </div>
 <div>
 <details><summary>Vocês atendem convênio?</summary><p>Pergunte pelo WhatsApp quais convênios são aceitos hoje. Também atendemos particular, com formas de pagamento facilitadas.</p></details>
 <details><summary>Dá para parcelar o tratamento?</summary><p>As formas de pagamento são apresentadas junto com o plano de tratamento, depois da avaliação.</p></details>
-<details><summary>Atendem urgência?</summary><p>Em caso de dor, fale pelo WhatsApp (21) 95909-7618. Encaixamos no primeiro horário possível.</p></details>
+<details><summary>Atendem urgência?</summary><p>Em caso de dor, fale pelo WhatsApp (21) 95905-7618. Encaixamos no primeiro horário possível.</p></details>
 <details><summary>Com que idade levar a criança ao dentista?</summary><p>A recomendação é a primeira consulta assim que nascem os primeiros dentes, ou até o primeiro ano de vida.</p></details>
 <details><summary>De quanto em quanto tempo devo fazer limpeza?</summary><p>Na maioria dos casos, a cada seis meses. O intervalo certo para você é indicado na consulta.</p></details>
 </div>
@@ -289,13 +292,13 @@ details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
 <h2 class="h2">Marque sua consulta</h2>
 <p class="lead" style="margin-top:14px">Responda pelo WhatsApp e escolha o melhor horário.</p>
 <dl>
-<div><dt>WhatsApp</dt><dd><a href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">(21) 95909-7618</a></dd></div>
+<div><dt>WhatsApp</dt><dd><a href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">(21) 95905-7618</a></dd></div>
 <div><dt>Telefone</dt><dd><a href="tel:+552132913549">(21) 3291-3549</a></dd></div>
 <div><dt>Endereço</dt><dd>Rua Rio da Prata, 1385, sala 202 (sobreloja), Bangu, Rio de Janeiro</dd></div>
 
 <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/dr.allansampaio/" rel="noopener" target="_blank">@dr.allansampaio</a></dd></div>
 </dl>
-<a class="btn btn-cheio" href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Marcar pelo WhatsApp</a>
+<a class="btn btn-cheio" href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank">Marcar pelo WhatsApp</a>
 </div>
 <div class="mapa"><iframe loading="lazy" src="https://maps.google.com/maps?q=Rua%20Rio%20da%20Prata%2C%201385%2C%20Bangu%2C%20Rio%20de%20Janeiro&amp;output=embed" title="Mapa até o consultório do Dr. Allan Sampaio"></iframe></div>
 </div>
@@ -308,7 +311,7 @@ details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
 <span>Prévia criada pela <a href="https://business2brothers.com/" rel="noopener" target="_blank">Business 2 Brothers</a></span>
 </div>
 </footer>
-<a aria-label="Conversar pelo WhatsApp" class="zap" href="https://wa.me/5521959097618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.1 19.8L3 29l6.4-1.8A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.8 1 1-3.7-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 4.9c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.2-.3-.3-.6-.4z"></path></svg></a>
+<a aria-label="Conversar pelo WhatsApp" class="zap" href="https://wa.me/5521959057618?text=Ol%C3%A1%21%20Vi%20o%20site%20do%20Dr.%20Allan%20Sampaio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." rel="noopener" target="_blank"><svg aria-hidden="true" viewbox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.1 19.8L3 29l6.4-1.8A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.8 1 1-3.7-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 4.9c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.2-.3-.3-.6-.4z"></path></svg></a>
 <script>
 (function(){var c=document.querySelector('.carrossel');if(!c)return;var t=c.querySelector('.car-trilho'),d=[].slice.call(c.querySelectorAll('.car-pontos button')),n=d.length,a=0,tm,red=matchMedia('(prefers-reduced-motion: reduce)').matches;
 function mark(){d.forEach(function(b,i){b.setAttribute('aria-current',i===a?'true':'false')})}
@@ -319,6 +322,9 @@ var st;t.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(fun
 ['touchend','pointerup'].forEach(function(e){t.addEventListener(e,play,{passive:true})});
 addEventListener('resize',function(){t.scrollTo({left:a*t.clientWidth,behavior:'auto'})});
 mark();play()})();
+</script>
+<script>
+(function(){var t=document.querySelector('.topo');if(!t)return;function f(){t.classList.toggle('encolhido',scrollY>40)}addEventListener('scroll',f,{passive:true});f()})();
 </script>
 </body>
 </html>
