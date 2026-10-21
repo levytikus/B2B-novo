@@ -89,13 +89,13 @@ h1,h2,h3,p{margin:0}
 .hero .selos div+div{border-left:1px solid #ddd3c8}
 .hero .selos .ic{width:30px;height:30px;color:var(--azul);stroke-width:1.5}
 .hero .foto{position:absolute;right:0;top:0;bottom:0;width:56%;z-index:1}
-.hero .foto img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%);mask-image:linear-gradient(90deg,transparent 0,#000 26%)}
+.hero .foto img{width:100%;height:100%;object-fit:cover;object-position:70% 50%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 26%);mask-image:linear-gradient(90deg,transparent 0,#000 26%)}
 .hero .nota{position:absolute;right:28px;top:30px;z-index:3;font-size:1.6rem;text-align:left;transform:rotate(-4deg);color:var(--marinho);background:rgba(255,255,255,.78);backdrop-filter:blur(6px);padding:12px 18px 10px;border-radius:14px;box-shadow:0 8px 24px -14px rgba(38,53,44,.5)}
 @media(max-width:900px){
   .hero{display:flex;flex-direction:column}
   .hero .wrap{grid-template-columns:1fr;min-height:0;width:100%}
   .hero .foto{position:relative;width:100%;height:440px;order:-1}
-  .hero .foto img{-webkit-mask-image:linear-gradient(0deg,transparent 0,#000 30%);mask-image:linear-gradient(0deg,transparent 0,#000 30%);object-position:50% 25%}
+  .hero .foto img{-webkit-mask-image:linear-gradient(0deg,transparent 0,#000 30%);mask-image:linear-gradient(0deg,transparent 0,#000 30%);object-position:96% 50%}
   .hero .texto{padding:0 0 48px;margin-top:-40px}
   .hero .nota{display:none}
   .hero .selos{grid-template-columns:1fr 1fr;row-gap:22px}
@@ -123,7 +123,7 @@ h1,h2,h3,p{margin:0}
 /* sobre */
 .sobre{background:var(--ceu-2);display:grid;grid-template-columns:1fr 1.15fr;min-height:540px}
 .sobre .foto{position:relative}
-.sobre .foto img{width:100%;height:100%;object-fit:cover;object-position:30% 40%}
+.sobre .foto img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
 .sobre .foto .nota{position:absolute;right:28px;top:50%;transform:translateY(-50%) rotate(-5deg);font-size:1.75rem;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.45)}
 .sobre .foto .nota svg{stroke:#fff}
 .sobre .conteudo{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:56px clamp(24px,4vw,64px)}
@@ -143,7 +143,7 @@ h1,h2,h3,p{margin:0}
 .medo .grade{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
 .medo .lado{position:sticky;top:110px}
 .medo .lado .sub{color:var(--texto);margin-top:14px;max-width:46ch}
-.medo .lado img{width:100%;aspect-ratio:5/4;object-fit:cover;object-position:50% 30%;border-radius:12px;margin-top:26px;box-shadow:0 14px 34px -18px rgba(38,53,44,.5)}
+.medo .lado img{width:100%;aspect-ratio:5/4;object-fit:cover;object-position:50% 42%;border-radius:12px;margin-top:26px;box-shadow:0 14px 34px -18px rgba(38,53,44,.5)}
 .passos{display:grid;grid-template-columns:1fr 1fr;gap:16px;counter-reset:p}
 .passo{background:#fbf7f3;border-radius:12px;padding:22px 24px 24px;box-shadow:0 6px 24px -12px rgba(38,53,44,.25),0 0 0 1px var(--fio);counter-increment:p;position:relative}
 .passo::after{content:counter(p);position:absolute;top:18px;right:20px;width:28px;height:28px;border-radius:50%;background:var(--ceu);color:var(--azul);font-size:.8rem;font-weight:700;display:grid;place-items:center}
@@ -280,7 +280,7 @@ h1,h2,h3,p{margin:0}
       </div>
       <p class="nota" aria-hidden="true">Saúde, função<br>e beleza<br>no mesmo sorriso ♡<svg><use href="#i-sublinha"/></svg></p>
     </div>
-    <div class="foto"><img src="img/dra-saula.webp" alt="Dra. Saula Magalhães Barros, cirurgiã-dentista" width="1122" height="1402" fetchpriority="high"></div>
+    <div class="foto"><img src="img/hero-atendimento.webp" alt="Dra. Saula atendendo uma paciente no consultório com vista para Ipanema" width="1448" height="1086" fetchpriority="high"></div>
   </section>
 
   <section class="servicos sec" id="tratamentos">
@@ -305,7 +305,7 @@ h1,h2,h3,p{margin:0}
 
   <section class="sobre" id="sobre">
     <div class="foto">
-      <img src="img/recepcao.webp" alt="Recepção com o letreiro Saula M. Barros Odontologia Especializada na parede de pedra" width="1122" height="1402" loading="lazy">
+      <img src="img/dra-saula.webp" alt="Dra. Saula Magalhães Barros, cirurgiã-dentista" width="1122" height="1402" loading="lazy">
     </div>
     <div class="conteudo">
       <div class="txt">
@@ -330,7 +330,7 @@ h1,h2,h3,p{margin:0}
         <p class="olho">Medo de dentista?</p>
         <h2 class="h2">Seu medo não precisa te afastar do cuidado com o sorriso</h2>
         <p class="sub">Muita gente sente. A Dra. Saula atende com calma, explica cada passo e respeita o seu tempo. Estes são os conselhos dela para a primeira consulta.</p>
-        <img src="img/atendendo.webp" alt="Dra. Saula atendendo uma paciente no consultório" width="859" height="880" loading="lazy">
+        <img src="img/recepcao.webp" alt="Recepção com o letreiro Saula M. Barros na parede de pedra" width="1122" height="1402" loading="lazy">
       </div>
       <div class="passos">
         <article class="passo"><h3>Dialogue</h3><p>Você pode e deve conversar com o seu dentista. A consulta inicial serve para isso: conhecer os seus medos e, junto com você, decidir a melhor maneira de te ajudar.</p></article>
