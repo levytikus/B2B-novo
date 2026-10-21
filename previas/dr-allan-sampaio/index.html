@@ -12,18 +12,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Caveat:wght@500;600&amp;display=swap" rel="stylesheet"/>
 <style>
 /*MARCA*/:root{--marca-1:#2379de;--marca-1-forte:#206fcc;--marca-1-ink:#ffffff;--marca-1-claro:#d7e7f9;--marca-1-escuro:#174f90;--marca-2:#0b3f80;--marca-2-forte:#0b3f80;--marca-2-ink:#ffffff;--marca-2-claro:#d3dce8;--marca-2-escuro:#072953;--marca-3:#6fa8ea;--marca-3-forte:#5078a8;--marca-3-ink:#1b1b1b;--marca-3-claro:#e5effb;--marca-3-escuro:#486d98;}/*/MARCA*/
-/* abertura (2,2 s): o dente se desenha seguindo o traço */
-.carga{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:radial-gradient(120% 90% at 50% 40%,#ffffff 0%,#eef4fc 60%,#dfeaf8 100%);animation:cargaSai .4s ease 1.85s forwards}
-.carga .caixa{width:min(560px,82vw)}
+/* abertura (4,2 s): o dente se desenha seguindo o traço */
+.carga{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:radial-gradient(120% 90% at 50% 40%,#ffffff 0%,#eef4fc 60%,#dfeaf8 100%);animation:cargaSai .45s ease 3.75s forwards}
+.carga .caixa{width:min(500px,60vw)}
+@media(max-width:700px){.carga .caixa{width:62vw}.carga .linha{margin-top:18px}}
 .carga .logo{position:relative;aspect-ratio:800/284}
 .carga .logo img,.carga .logo svg{position:absolute;inset:0;width:100%;height:100%}
 .carga .dente path{fill:none;stroke:#fff;stroke-width:22;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:1}
-.carga .dente .t1{animation:cargaTraco .75s cubic-bezier(.45,.05,.4,1) .1s forwards}
-.carga .dente .t2{animation:cargaTraco .35s cubic-bezier(.3,.1,.3,1) .8s forwards}
-.carga .nome{opacity:0;transform:translateX(-14px);animation:cargaNome .5s cubic-bezier(.2,.8,.2,1) .85s forwards}
-.carga .lema{opacity:0;transform:translateY(6px);animation:cargaLema .4s ease 1.2s forwards}
+.carga .dente .t1{animation:cargaTraco 1.5s cubic-bezier(.45,.05,.4,1) .25s forwards}
+.carga .dente .t2{animation:cargaTraco .6s cubic-bezier(.3,.1,.3,1) 1.65s forwards}
+.carga .nome{opacity:0;transform:translateX(-14px);animation:cargaNome .8s cubic-bezier(.2,.8,.2,1) 2.05s forwards}
+.carga .lema{opacity:0;transform:translateY(6px);animation:cargaLema .6s ease 2.7s forwards}
 .carga .linha{height:2px;margin:28px auto 0;width:58%;background:#d6e2f2;border-radius:2px;overflow:hidden}
-.carga .linha i{display:block;height:100%;width:0;background:var(--marca-1);animation:cargaLinha 1.6s cubic-bezier(.4,0,.2,1) .1s forwards}
+.carga .linha i{display:block;height:100%;width:0;background:var(--marca-1);animation:cargaLinha 3.3s cubic-bezier(.4,0,.2,1) .25s forwards}
 @keyframes cargaTraco{to{stroke-dashoffset:0}}
 @keyframes cargaNome{to{opacity:1;transform:none}}
 @keyframes cargaLema{to{opacity:1;transform:none}}
