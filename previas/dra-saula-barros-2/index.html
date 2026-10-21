@@ -71,12 +71,12 @@ h1,h2,h3,p{margin:0}
 @media(prefers-reduced-motion:reduce){.carga .mono,.carga .nome,.carga .sub,.carga .linha i{animation:none;opacity:1;transform:none;clip-path:none;width:100%}.carga{animation:cargaSai .3s linear 1.2s forwards}}
 
 /* barra do topo */
-.aviso{background:var(--marinho);color:#fff;font-size:.82rem}
-.aviso .wrap{display:flex;align-items:center;justify-content:center;gap:16px;height:40px}
-.aviso a{background:#fff;color:var(--marinho);text-decoration:none;font-weight:600;font-size:.76rem;padding:5px 12px;border-radius:99px;display:inline-flex;gap:6px;align-items:center}
+.aviso{background:var(--ceu);color:var(--azul-escuro);font-size:.8rem}
+.aviso .wrap{display:flex;align-items:center;justify-content:center;gap:16px;height:36px}
+.aviso a{background:transparent;color:var(--azul-escuro);box-shadow:inset 0 0 0 1px #b9c8b6;text-decoration:none;font-weight:600;font-size:.76rem;padding:5px 12px;border-radius:99px;display:inline-flex;gap:6px;align-items:center}
 .aviso .ic{width:16px;height:16px}
 .aviso .txt-curto{display:none}
-@media(max-width:560px){.aviso .txt-longo{display:none}.aviso .txt-curto{display:inline}}
+@media(max-width:700px){.aviso{display:none}}
 
 /* cabeçalho */
 .topo{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--fio)}
@@ -92,14 +92,14 @@ h1,h2,h3,p{margin:0}
 .topo .btn{height:44px;padding:0 20px;font-size:.88rem;white-space:nowrap}
 @media(max-width:1300px){.tel{display:none}}
 @media(max-width:1060px){.menu{display:none}.topo .btn{margin-left:auto}}
-@media(max-width:420px){.topo .marca img{height:48px}.topo .btn{padding:0 14px}}
+@media(max-width:700px){.so-pc{display:none}.topo .wrap{height:84px}.topo .marca img{height:62px}.topo .btn{height:40px;padding:0 16px;font-size:.84rem;box-shadow:none}}
 
 /* hero */
 .hero{position:relative;background:linear-gradient(100deg,#fcf8f4 0%,#f8efe8 50%,#ece9df 100%);overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1fr 1fr;min-height:600px;align-items:center;position:relative}
 .hero .texto{padding:64px 0 56px;position:relative;z-index:2}
-.hero h1{font-size:clamp(2.4rem,4.4vw,3.7rem);font-weight:800;line-height:1.08;letter-spacing:-.02em;margin-top:14px}
-.hero h1 span{display:block;color:var(--azul)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,5.6vw,4.9rem);line-height:1;letter-spacing:-.01em;margin-top:12px}
+.hero h1 span{display:block;font-family:var(--sans);font-weight:700;font-size:.38em;letter-spacing:-.01em;line-height:1.25;color:var(--azul);margin-top:14px}
 .hero .sub{margin-top:20px;font-size:1.05rem;color:var(--texto);max-width:44ch}
 .hero .acoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
 .play{width:30px;height:30px;border-radius:50%;background:var(--marinho);color:#fff;display:grid;place-items:center;margin-left:-12px}
@@ -114,9 +114,9 @@ h1,h2,h3,p{margin:0}
 @media(max-width:900px){
   .hero{display:flex;flex-direction:column}
   .hero .wrap{grid-template-columns:1fr;min-height:0;width:100%}
-  .hero .foto{position:relative;width:100%;height:440px;order:-1}
+  .hero .foto{position:relative;width:100%;height:260px;order:-1}
   .hero .foto img{-webkit-mask-image:linear-gradient(0deg,transparent 0,#000 30%);mask-image:linear-gradient(0deg,transparent 0,#000 30%);object-position:96% 50%}
-  .hero .texto{padding:0 0 48px;margin-top:-40px}
+  .hero .texto{padding:0 0 44px;margin-top:-4px}
   .hero .nota{display:none}
   .hero .selos{grid-template-columns:1fr 1fr;row-gap:22px}
   .hero .selos div:nth-child(3){border-left:0}
@@ -269,7 +269,7 @@ h1,h2,h3,p{margin:0}
 
 <div class="aviso">
   <div class="wrap">
-    <span><span class="txt-longo">Atendemos Bradesco Dental, SulAmérica, Golden Cross e outros convênios</span><span class="txt-curto">Atendemos convênios</span></span>
+    <span><span>Atendemos Bradesco Dental, SulAmérica, Golden Cross e outros convênios</span></span>
     <a href="#convenios">Ver convênios <svg class="ic"><use href="#i-seta"/></svg></a>
   </div>
 </div>
@@ -287,7 +287,7 @@ h1,h2,h3,p{margin:0}
       <a href="#contato">Contato</a>
     </nav>
     <a class="tel" href="tel:+552125122399"><svg class="ic"><use href="#i-tel"/></svg>(21) 2512-2399</a>
-    <a class="btn btn-azul" href="https://wa.me/5521999203458?text=Ol%C3%A1%2C%20Dra.%20Saula%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar consulta</a>
+    <a class="btn btn-azul" href="https://wa.me/5521999203458?text=Ol%C3%A1%2C%20Dra.%20Saula%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar<span class="so-pc"> consulta</span></a>
   </div>
 </header>
 
@@ -295,9 +295,9 @@ h1,h2,h3,p{margin:0}
   <section class="hero">
     <div class="wrap">
       <div class="texto">
-        <p class="olho">Odontologia especializada<br>em Ipanema desde 2011</p>
-        <h1>Cuidado especializado para um sorriso <span>saudável e natural</span></h1>
-        <p class="sub">Tratamento de canal, prótese e estética com a Dra. Saula Barros, num consultório com vista para o Dois Irmãos. Cada etapa explicada com calma.</p>
+        <p class="olho">Cirurgiã-dentista desde 2011, CRO-RJ 31015</p>
+        <h1>Dra. Saula Barros <span>Odontologia especializada em Ipanema</span></h1>
+        <p class="sub">Especialista em tratamento de canal e prótese, com foco em estética do sorriso. Atendimento sem pressa, num consultório com vista para o Dois Irmãos.</p>
         <div class="acoes">
           <a class="btn btn-azul" href="https://wa.me/5521999203458?text=Ol%C3%A1%2C%20Dra.%20Saula%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação <svg class="ic seta"><use href="#i-seta"/></svg></a>
           <a class="btn btn-linha" href="#sobre"><span class="play" style="margin-left:-14px"><svg class="ic"><use href="#i-play"/></svg></span>Conhecer o consultório</a>
