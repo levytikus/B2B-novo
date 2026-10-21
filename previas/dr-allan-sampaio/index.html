@@ -12,6 +12,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
 /*MARCA*/:root{--marca-1:#2379de;--marca-1-forte:#206fcc;--marca-1-ink:#ffffff;--marca-1-claro:#d7e7f9;--marca-1-escuro:#174f90;--marca-2:#0b3f80;--marca-2-forte:#0b3f80;--marca-2-ink:#ffffff;--marca-2-claro:#d3dce8;--marca-2-escuro:#072953;--marca-3:#6fa8ea;--marca-3-forte:#5078a8;--marca-3-ink:#1b1b1b;--marca-3-claro:#e5effb;--marca-3-escuro:#486d98;}/*/MARCA*/
+/* abertura (3 s) */
+@property --giro{syntax:"<angle>";inherits:false;initial-value:0deg}
+.carga{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:radial-gradient(120% 90% at 50% 40%,#ffffff 0%,#eef4fc 60%,#dfeaf8 100%);animation:cargaSai .45s ease 2.55s forwards}
+.carga .caixa{width:min(560px,82vw)}
+.carga .logo{position:relative;aspect-ratio:800/284}
+.carga .logo img{position:absolute;inset:0;width:100%;height:100%}
+.carga .dente{-webkit-mask-image:conic-gradient(from -40deg at 16% 50%,#000 var(--giro),transparent 0);mask-image:conic-gradient(from -40deg at 16% 50%,#000 var(--giro),transparent 0);animation:cargaDente 1.1s cubic-bezier(.55,.1,.35,1) .15s forwards}
+.carga .nome{opacity:0;transform:translateX(-14px);animation:cargaNome .7s cubic-bezier(.2,.8,.2,1) 1s forwards}
+.carga .lema{opacity:0;transform:translateY(6px);animation:cargaLema .5s ease 1.6s forwards}
+.carga .linha{height:2px;margin:28px auto 0;width:58%;background:#d6e2f2;border-radius:2px;overflow:hidden}
+.carga .linha i{display:block;height:100%;width:0;background:var(--marca-1);animation:cargaLinha 2.3s cubic-bezier(.4,0,.2,1) .15s forwards}
+@keyframes cargaDente{to{--giro:360deg}}
+@keyframes cargaNome{to{opacity:1;transform:none}}
+@keyframes cargaLema{to{opacity:1;transform:none}}
+@keyframes cargaLinha{to{width:100%}}
+@keyframes cargaSai{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.carga .dente,.carga .nome,.carga .lema,.carga .linha i{animation:none;opacity:1;transform:none;-webkit-mask-image:none;mask-image:none;width:100%}.carga{animation:cargaSai .3s linear 1.2s forwards}}
+
 /* Modelo Esmalte: consultório odontológico de bairro, para a família toda. Serifa arredondada (Young Serif) para tirar o ar frio de clínica,
    fundo branco e névoa azul-acinzentada, e a cor da logo como acento. O jeito de navegar é pelo problema da pessoa ("perdeu um dente?"),
    não pelo nome técnico da especialidade. A faixa de urgência é o único elemento chamativo. */
@@ -165,8 +183,20 @@ details p{color:var(--ardosia);padding:0 0 20px;max-width:62ch}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sites.business2brothers.com/previas/dr-allan-sampaio/capa-og.jpg">
 <link rel="icon" href="favicon.png">
+<link rel="preload" as="image" href="img/carga-dente.webp">
+<link rel="preload" as="image" href="img/carga-nome.webp">
 </head>
 <body>
+<div class="carga" aria-hidden="true">
+  <div class="caixa">
+    <div class="logo">
+      <img class="dente" src="img/carga-dente.webp" alt="" width="800" height="284">
+      <img class="nome" src="img/carga-nome.webp" alt="" width="800" height="284">
+      <img class="lema" src="img/carga-lema.webp" alt="" width="800" height="284">
+    </div>
+    <div class="linha"><i></i></div>
+  </div>
+</div>
 <header class="topo">
 <div class="wrap">
 <a aria-label="Dr. Allan Sampaio, início" class="logo" href="#inicio"><img alt="Dr. Allan Sampaio, especialista em renovar sorrisos" height="427" src="logo.png" width="1200"/></a>
