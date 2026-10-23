@@ -516,5 +516,6 @@ setInterval(function(){if(document.hidden)return;f[i].classList.remove('ativo');
 (function(){var l=[].slice.call(document.querySelectorAll('.cabecalho nav a'));var s=l.map(function(a){return document.querySelector(a.getAttribute('href'))});
 function f(){var y=scrollY+140,k=0;s.forEach(function(e,i){if(e&&e.offsetTop<=y)k=i});l.forEach(function(a,i){a.classList.toggle('ativo',i===k)})}addEventListener('scroll',f,{passive:true});f()})();
 </script>
+<script src="/previas/visitas.js" defer></script>
 </body>
 </html>

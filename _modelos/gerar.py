@@ -256,6 +256,17 @@ def vagas(modelo):
             print(f"{nome:22} {forma:10} {w}x{h}  {alt}")
 
 
+CONTADOR = '<script src="/previas/visitas.js" defer></script>'
+
+
+def com_contador(html):
+    """Coloca o contador de visitas (previas/visitas.js) antes do </body>, se ainda não tiver."""
+    if "/previas/visitas.js" in html:
+        return html
+    i = html.lower().rfind("</body>")
+    return html[:i] + CONTADOR + "\n" + html[i:] if i >= 0 else html + "\n" + CONTADOR + "\n"
+
+
 def gerar(modelo, logo, dados, slug=None, saida=None, base_dados=None):
     src = MODELOS / modelo
     if not (src / "index.html").exists():
@@ -302,6 +313,7 @@ def gerar(modelo, logo, dados, slug=None, saida=None, base_dados=None):
                 html = re.sub(r'(<img[^>]*?alt=")[^"]*("[^>]*src="img/' + re.escape(nome) + r'\.[a-z]+")', lambda m: m.group(1) + alt.replace('"', "'") + m.group(2), html)
         pag_url = url if page.name == "index.html" else url + page.name
         html = tags_og(html, f, pag_url, desc_padrao).replace('content="' + pag_url + 'capa-og.jpg"', 'content="' + url + 'capa-og.jpg"')
+        html = com_contador(html)
         page.write_text(html, encoding="utf-8")
     return {"slug": slug, "url": url, "pasta": str(dst), "cores": cores}
 

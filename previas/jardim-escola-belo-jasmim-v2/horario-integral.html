@@ -537,5 +537,6 @@ function ativar(t){tabs.forEach(b=>{const on=b===t;b.classList.toggle('is-active
 tabs.forEach((t,i)=>{t.addEventListener('click',()=>ativar(t));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];ativar(n);n.focus()}})});
 </script>
 
+<script src="/previas/visitas.js" defer></script>
 </body>
 </html>

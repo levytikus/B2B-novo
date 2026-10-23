@@ -426,5 +426,6 @@ mark();play()})();
 (function(){var c=document.getElementById('fotos-topo');if(!c)return;var f=c.querySelectorAll('figure'),i=0;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
 setInterval(function(){if(document.hidden)return;f[i].classList.remove('ativo');i=(i+1)%f.length;var im=f[i].querySelector('img');im.loading='eager';f[i].classList.add('ativo')},5000)})();
 </script>
+<script src="/previas/visitas.js" defer></script>
 </body>
 </html>
