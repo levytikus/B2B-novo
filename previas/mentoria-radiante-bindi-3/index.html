@@ -308,13 +308,24 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .end-cta .big svg{width:40%;height:40%}
 .end-cta .pr{grid-column:1/-1;display:flex;gap:16px;flex-wrap:wrap;align-items:baseline;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 .end-cta .pr b{font-family:var(--f-display);font-weight:400;font-size:2rem;letter-spacing:0}
-.end-info{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:clamp(28px,4vw,48px) 0}
+.end-info{display:grid;gap:28px;padding:clamp(28px,4vw,40px) 0;align-content:start}
 @media(min-width:900px){.end-info{padding-left:40px}}
-.end-info h4{margin:0 0 12px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
-.end-info ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:.86rem}
-.end-info .col2{border-left:1px solid var(--line);padding-left:20px}
-.end-info a{text-decoration:none}
-.end-info a:hover{color:var(--red)}
+@media(min-width:560px) and (max-width:899px){.end-info{grid-template-columns:1fr 1fr;column-gap:32px}.end-info .docs{grid-column:1/-1}}
+.end-info h4{margin:0 0 4px;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.ct{display:grid}
+.ct-row{display:grid;grid-template-columns:38px minmax(0,1fr) auto;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.ct-row .i{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--red);color:var(--red);display:grid;place-items:center}
+.ct-row .i svg{width:17px;height:17px}
+.ct-row .k{display:block;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:3px}
+.ct-row .v{display:block;font-weight:700;font-size:.95rem;line-height:1.25;overflow-wrap:anywhere}
+.ct-row .go{width:16px;height:16px;color:var(--ink);transition:transform .2s,color .2s}
+a.ct-row:hover .go{transform:translate(3px,-3px);color:var(--red)}
+a.ct-row:hover .v{color:var(--red)}
+.ct-row .tbd{font-size:.56rem;padding:2px 6px;vertical-align:1px}
+.docs .pills{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+@media(min-width:900px){.docs .pills{display:flex}}
+.docs .pills button{border:1.5px solid var(--ink);background:#fff;color:var(--ink);font:700 .68rem/1 var(--f-body);letter-spacing:.1em;text-transform:uppercase;padding:10px 12px;cursor:pointer;transition:background .2s,color .2s}
+.docs .pills button:hover{background:var(--ink);color:#fff}
 .linkish{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left}
 .linkish:hover{color:var(--red)}
 .base{border-top:1px solid var(--line);padding-block:18px 26px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
@@ -719,22 +730,26 @@ dialog::backdrop{background:rgba(10,10,10,.86)}
       <div class="end-info">
         <div>
           <h4>Fale com o mentor</h4>
-          <ul>
-            <li>E-mail: <span class="tbd" data-email>a confirmar</span></li>
-            <li data-wa-li hidden><a href="#" target="_blank" rel="noopener" data-wa hidden>Tirar dúvidas no WhatsApp</a></li>
-            <li>Felipe de Lima Bindi</li>
-            <li>CPF/CNPJ: <span class="tbd">a confirmar</span></li>
-          </ul>
+          <div class="ct">
+            <a class="ct-row" href="#" target="_blank" rel="noopener" data-wa-link><span class="i"><svg><use href="#wa"/></svg></span><span><span class="k">WhatsApp</span><span class="v num">(14) 99606-3873</span></span><svg class="go"><use href="#a-ur"/></svg></a>
+            <div class="ct-row"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14"/><path d="m3 6 9 7 9-7"/></svg></span><span><span class="k">E-mail</span><span class="v"><span class="tbd" data-email>a confirmar</span></span></span><span></span></div>
+            <div class="ct-row"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c.8-4.2 4-6.5 8-6.5s7.2 2.3 8 6.5"/></svg></span><span><span class="k">Responsável · CPF/CNPJ</span><span class="v">Felipe de Lima Bindi · <span class="tbd">a confirmar</span></span></span><span></span></div>
+          </div>
         </div>
-        <div class="col2">
-          <h4>Siga e leia</h4>
-          <ul>
-            <li><a href="https://www.instagram.com/bindivalorant" target="_blank" rel="noopener">Instagram @bindivalorant</a></li>
-            <li><a href="https://youtube.com/@bindife" target="_blank" rel="noopener">YouTube @bindife</a></li>
-            <li><button class="linkish" type="button" data-doc="termos">Termos de uso</button></li>
-            <li><button class="linkish" type="button" data-doc="privacidade">Privacidade</button></li>
-            <li><button class="linkish" type="button" data-doc="reembolso-doc">Reembolso</button></li>
-          </ul>
+        <div>
+          <h4>Siga o Bindi</h4>
+          <div class="ct">
+            <a class="ct-row" href="https://www.instagram.com/bindivalorant" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span><span><span class="k">Instagram</span><span class="v">@bindivalorant</span></span><svg class="go"><use href="#a-ur"/></svg></a>
+            <a class="ct-row" href="https://youtube.com/@bindife" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9 5 3-5 3z" fill="currentColor"/></svg></span><span><span class="k">YouTube</span><span class="v">@bindife</span></span><svg class="go"><use href="#a-ur"/></svg></a>
+          </div>
+        </div>
+        <div class="docs">
+          <h4>Documentos</h4>
+          <div class="pills">
+            <button type="button" data-doc="termos">Termos</button>
+            <button type="button" data-doc="privacidade">Privacidade</button>
+            <button type="button" data-doc="reembolso-doc">Reembolso</button>
+          </div>
         </div>
       </div>
     </div>
@@ -804,6 +819,7 @@ document.documentElement.classList.add("js");
     const url="https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(CONFIG.waText);
     document.querySelectorAll("[data-wa]").forEach(a=>{a.href=url;a.hidden=false});
     document.querySelectorAll("[data-wa-li]").forEach(li=>li.hidden=false);
+    document.querySelectorAll("[data-wa-link]").forEach(a=>a.href=url);
     document.querySelectorAll("[data-wa-or-anchor]").forEach(a=>{a.href=url;a.target="_blank";a.rel="noopener"});
   }
   const bd=document.getElementById("btnDep"),md=document.getElementById("maisDep");
