@@ -101,30 +101,25 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero-ctas{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center}
 .disc{font-size:.74rem;color:var(--mute);max-width:52ch}
 
-.hero-art{position:relative;min-height:540px;overflow:hidden}
-@media(min-width:980px){.hero-art{overflow:visible}}
+.hero-art{position:relative;min-height:440px}
 @media(min-width:980px){.hero-art{min-height:auto}}
-.redblock{position:absolute;right:0;top:0;bottom:0;width:66%;background:var(--red);color:#fff;overflow:hidden}
+.redblock{position:absolute;right:0;top:0;bottom:0;width:62%;background:var(--red);color:#fff;overflow:hidden}
 .redblock::before{content:"";position:absolute;left:28%;top:0;bottom:0;width:1px;background:rgba(255,255,255,.28)}
 .redblock::after{content:"";position:absolute;right:16%;top:22%;bottom:12%;width:1px;background:rgba(255,255,255,.28)}
-.rb-top{position:absolute;left:calc(28% + 14px);top:24px;text-align:left!important;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-align:right;line-height:1.4}
-.rb-num{position:absolute;right:18px;top:64px;font-family:var(--f-display);font-size:clamp(4.2rem,7.4vw,6.6rem);line-height:.85;color:rgba(255,255,255,.95)}
-.rb-num small{display:block;font-family:var(--f-body);font-weight:700;font-size:.7rem;letter-spacing:.14em;text-align:right;margin-top:8px}
-.hero-photo{position:absolute;z-index:2;bottom:0;right:2%;width:96%;max-width:640px;height:auto;filter:grayscale(1) contrast(1.12) brightness(1.02);pointer-events:none}
-@media(max-width:979px){.hero-photo{right:0;width:100%;max-width:470px}}
-.reel{display:grid;gap:28px;align-items:center}
-@media(min-width:980px){.reel{grid-template-columns:.8fr 1.2fr;gap:56px}}
-.reel h2{font-size:clamp(2.4rem,5vw,3.6rem)}
-.reel h2 span{color:var(--red)}
-.vid{position:relative;background:#000;box-shadow:18px 18px 0 var(--red)}
-.vid video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.rb-top{position:absolute;right:22px;top:24px;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-align:right;line-height:1.4}
+.rb-num{position:absolute;right:18px;bottom:6px;font-family:var(--f-display);font-size:clamp(5rem,12vw,8.4rem);line-height:.85;color:rgba(255,255,255,.95)}
+.rb-num small{display:block;font-family:var(--f-body);font-weight:700;font-size:.7rem;letter-spacing:.14em;text-align:right;margin-bottom:6px}
+.vid{position:absolute;left:0;right:14%;top:50%;transform:translateY(-58%);z-index:2;background:#000;box-shadow:0 30px 60px rgba(0,0,0,.28)}
+@media(max-width:979px){.vid{right:8%}}
+.vid video{width:100%;aspect-ratio:16/9;object-fit:cover;filter:grayscale(1) contrast(1.12);transition:filter .5s}
+.vid:hover video,.vid.on video{filter:none}
 .vid-tag{position:absolute;left:12px;top:12px;background:#fff;color:var(--ink);font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 9px;display:flex;align-items:center;gap:7px}
 .vid-tag i{width:7px;height:7px;border-radius:50%;background:var(--red)}
 .sound{position:absolute;right:10px;bottom:10px;display:flex;align-items:center;gap:8px;min-height:36px;padding:0 12px;border:0;cursor:pointer;background:#fff;color:var(--ink);font:700 .64rem/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase}
 .sound:hover{background:var(--red);color:#fff}
 .sound svg{width:15px;height:15px}
-.badge{position:absolute;z-index:3;left:-2%;bottom:30%;width:132px;height:132px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:grid;place-items:center}
-@media(max-width:979px){.badge{left:0;bottom:24px;width:108px;height:108px}}
+.badge{position:absolute;z-index:3;left:-6%;bottom:6%;width:132px;height:132px;border-radius:50%;background:#fff;border:1.5px solid var(--ink);display:grid;place-items:center}
+@media(max-width:979px){.badge{left:auto;right:56%;bottom:-6%;width:116px;height:116px}}
 .badge svg{position:absolute;inset:6px;width:calc(100% - 12px);height:calc(100% - 12px);animation:spin 18s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .badge text{font:700 9.6px var(--f-body);letter-spacing:.2em;text-transform:uppercase;fill:var(--ink)}
@@ -187,11 +182,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .about-copy{display:grid;gap:16px;padding-right:20px}
 .about-copy h2{font-size:clamp(2rem,3.6vw,2.6rem);line-height:1}
 .about-copy p{color:var(--ink-2);font-size:.92rem;max-width:44ch}
-.sign{font-family:var(--f-sign);font-size:4.6rem;line-height:.8;color:var(--ink)}
-.about-photo{position:relative;justify-self:center;width:min(300px,78vw);aspect-ratio:3/3.6}
-.about-photo::before{content:"";position:absolute;right:-12%;top:-8%;width:46%;height:108%;background:var(--red)}
-.about-photo img{position:relative;width:100%;height:100%;object-fit:cover;object-position:50% 20%;filter:grayscale(1) contrast(1.15)}
-.about-photo .tag{position:absolute;left:-10px;bottom:16px;background:var(--ink);color:#fff;padding:8px 12px;font-family:var(--f-display);font-size:1.1rem;line-height:1;text-transform:uppercase}
+.sign{font-family:var(--f-sign);font-size:5.6rem;line-height:.8;color:var(--ink)}
+.about-photo{position:relative;justify-self:center;width:min(380px,88vw);aspect-ratio:1/1.08;overflow:hidden}
+.about-photo::before{content:"";position:absolute;right:0;top:0;bottom:0;width:66%;background:var(--red)}
+.about-photo::after{content:"";position:absolute;left:calc(34% + 26%);top:0;bottom:0;width:1px;background:rgba(255,255,255,.28)}
+.about-photo img{position:absolute;z-index:1;left:0;right:0;bottom:0;width:100%;height:auto;filter:grayscale(1) contrast(1.12) brightness(1.02)}
+.about-photo .tag{position:absolute;z-index:2;left:0;bottom:16px;background:var(--ink);color:#fff;padding:8px 12px;font-family:var(--f-display);font-size:1.1rem;line-height:1;text-transform:uppercase}
 .about-photo .tag span{color:var(--red)}
 .bars{display:grid;gap:18px;padding-left:0}
 @media(min-width:1000px){.bars{padding-left:36px;border-left:1px solid var(--line);margin-left:20px}}
@@ -394,9 +390,13 @@ dialog::backdrop{background:rgba(10,10,10,.86)}
     <div class="hero-art">
       <div class="redblock" aria-hidden="true">
         <p class="rb-top">Temporada 2025<br>Ato VI</p>
-        <p class="rb-num num">#252<small>Ranque do mentor</small></p>
+        <p class="rb-num num"><small>Ranque do mentor</small>#252</p>
       </div>
-      <img class="hero-photo" src="img/bindi-recorte.webp" alt="Bindi, mentor da Mentoria Radiante" width="1082" height="1101" fetchpriority="high">
+      <figure class="vid" id="vidBox" style="margin:0">
+        <video id="heroVideo" src="img/radiante.mp4" poster="img/radiante-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Gravação da partida em que o Bindi sobe para Radiante #252"></video>
+        <span class="vid-tag"><i></i>Bindi subindo para Radiante</span>
+        <button class="sound" id="soundBtn" type="button" aria-pressed="false"><svg><use href="#mute"/></svg><span>Ativar som</span></button>
+      </figure>
       <div class="badge" aria-hidden="true">
         <svg viewBox="0 0 120 120"><defs><path id="cp" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text><textPath href="#cp">Mentoria · Valorant · Radiante · </textPath></text></svg>
         <b>Até<span>30 dias</span></b>
@@ -413,22 +413,6 @@ dialog::backdrop{background:rgba(10,10,10,.86)}
     <div class="stat"><b class="num">R$297</b><span>Investimento<br>total</span></div>
   </div>
 </div>
-
-<!-- GRAVAÇÃO -->
-<section class="sec" style="padding-bottom:0">
-  <div class="wrap reel">
-    <div class="rv">
-      <p class="kicker">Gravação real</p>
-      <h2 style="margin-top:12px">O dia em que o Bindi chegou ao <span>Radiante #252</span></h2>
-      <p class="lead" style="margin-top:16px">A partida da promoção, com a câmera ligada. Quem vai te orientar já fez o caminho até o topo.</p>
-    </div>
-    <figure class="vid rv" id="vidBox" style="margin:0">
-      <video id="heroVideo" src="img/radiante.mp4" poster="img/radiante-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Gravação da partida em que o Bindi sobe para Radiante #252"></video>
-      <span class="vid-tag"><i></i>Bindi subindo para Radiante</span>
-      <button class="sound" id="soundBtn" type="button" aria-pressed="false"><svg><use href="#mute"/></svg><span>Ativar som</span></button>
-    </figure>
-  </div>
-</section>
 
 <!-- RESULTADOS -->
 <section class="sec" id="resultados">
@@ -559,7 +543,7 @@ dialog::backdrop{background:rgba(10,10,10,.86)}
       <p style="font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)">Felipe de Lima Bindi</p>
     </div>
     <div class="about-photo rv">
-      <img src="img/bindi-retrato.webp" alt="Bindi, mentor da Mentoria Radiante" width="700" height="840" loading="lazy">
+      <img src="img/bindi-recorte.webp" alt="Bindi, mentor da Mentoria Radiante" width="1082" height="1101" loading="lazy">
       <span class="tag">Radiante <span class="num">#252</span></span>
     </div>
     <div class="bars rv" id="bars">
