@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Mentoria de Valorant com o Bindi, jogador Radiante: diagnóstico do seu jogo, mira, posicionamento e decisões em até 30 dias de acompanhamento por R$ 297.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mentoria Radiante | Bindi">
+<meta property="og:description" content="Mentoria de Valorant com o Bindi, jogador Radiante: diagnóstico do seu jogo, mira, posicionamento e decisões em até 30 dias de acompanhamento por R$ 297.">
+<meta property="og:url" content="https://sites.business2brothers.com/previas/mentoria-radiante-bindi/">
+<meta property="og:image" content="https://sites.business2brothers.com/previas/mentoria-radiante-bindi/capa-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<title>Mentoria Radiante | Bindi</title>
+<meta name="theme-color" content="#0B0D12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Barlow:wght@400;500;600;700&family=Chakra+Petch:wght@500;600;700&display=swap">
+<style>
+/* Layout: HUD de partida competitiva. Faixas escuras cortadas em diagonal, escada de elos como fio condutor, vermelho para ação e dourado Radiante para conquista. */
+:root{
+  --void:#0B0D12;
+  --panel:#171B25;
+  --panel-2:#1E2330;
+  --line:#2A3040;
+  --red:#FF4655;
+  --red-deep:#C8313F;
+  --gold:#EBD08E;
+  --gold-deep:#B89A55;
+  --ink:#FFFFFF;
+  --mute:#AAB0BE;
+  --dim:#6E7587;
+  --f-display:"Big Shoulders Display","Oswald","Arial Narrow",Impact,sans-serif;
+  --f-body:"Barlow","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --f-hud:"Chakra Petch","Barlow","Segoe UI",monospace;
+  --cut:14px;
+  --wrap:1180px;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--void);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--void)}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:720px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+
+/* type */
+.eyebrow{font-family:var(--f-hud);font-weight:600;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:.7em}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
+h1,h2,h3{font-family:var(--f-display);font-weight:900;line-height:.95;letter-spacing:.005em;text-transform:uppercase;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.3rem,5.6vw,4rem)}
+h3{font-size:1.45rem;font-weight:800;line-height:1.05}
+p{margin:0}
+.lead{color:var(--mute);font-size:1.08rem;max-width:62ch}
+.hud{font-family:var(--f-hud);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.74rem}
+.num{font-variant-numeric:tabular-nums}
+
+/* buttons */
+.btn{--bg:var(--red);--fg:#fff;position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:54px;padding:0 1.6em;font-family:var(--f-hud);font-weight:700;font-size:.92rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--fg);background:var(--bg);border:0;cursor:pointer;clip-path:polygon(0 0,calc(100% - var(--cut)) 0,100% var(--cut),100% 100%,var(--cut) 100%,0 calc(100% - var(--cut)));transition:transform .18s ease,filter .18s ease,background .18s ease}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn .arr{transition:transform .18s ease}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-ghost{--bg:transparent;--fg:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn-ghost:hover{--bg:var(--panel-2)}
+.btn-gold{--bg:var(--gold);--fg:var(--void)}
+.btn-wa{--bg:#1F8F55;--fg:#fff}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--void) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark{width:34px;height:34px;flex:none}
+.brand-name{font-family:var(--f-display);font-weight:900;font-size:1.65rem;letter-spacing:.04em;line-height:1}
+.brand-sub{display:block;font-family:var(--f-hud);font-size:.62rem;letter-spacing:.24em;color:var(--mute);margin-top:3px}
+.nav-links{display:none;gap:28px}
+.nav-links a{font-family:var(--f-hud);font-weight:600;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--mute);transition:color .15s}
+.nav-links a:hover{color:var(--ink)}
+.nav .btn{min-height:44px;font-size:.78rem;padding:0 1.2em}
+@media(min-width:960px){.nav-links{display:flex}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-block:clamp(40px,7vw,88px) clamp(48px,7vw,96px);isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(900px 500px at 85% 20%,rgba(255,70,85,.18),transparent 60%),
+  radial-gradient(700px 420px at 10% 100%,rgba(235,208,142,.07),transparent 60%),
+  linear-gradient(var(--void),var(--void))}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,#000 30%,transparent 95%);-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent 95%)}
+.hero-ghost{position:absolute;right:-2vw;bottom:-3vw;z-index:-1;font-family:var(--f-display);font-weight:900;font-size:clamp(7rem,22vw,20rem);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.06);pointer-events:none;user-select:none;white-space:nowrap}
+.hero-grid{display:grid;gap:44px;align-items:center}
+@media(min-width:980px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:56px}}
+.hero h1{font-size:clamp(3rem,8.4vw,6.2rem);margin-top:18px}
+.hero h1 .r{color:var(--red)}
+.hero h1 .g{color:var(--gold)}
+.hero .lead{margin-top:22px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;padding:0;list-style:none}
+.chips li{display:flex;align-items:center;gap:9px;padding:9px 14px 9px 12px;background:var(--panel);border:1px solid var(--line);font-weight:600;font-size:.93rem}
+.chips svg{width:16px;height:16px;color:var(--red);flex:none}
+.hero .btn-row{margin-top:30px}
+.disclaimer{margin-top:22px;font-size:.8rem;color:var(--dim);max-width:56ch}
+
+.clip{position:relative;min-width:0}
+.clip-frame{position:relative;background:var(--panel);padding:8px;clip-path:polygon(0 0,calc(100% - 26px) 0,100% 26px,100% 100%,26px 100%,0 calc(100% - 26px))}
+.clip-frame::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--red),transparent 40%,transparent 60%,var(--gold));opacity:.75;z-index:0}
+.clip-inner{position:relative;z-index:1;background:#000;aspect-ratio:16/9;overflow:hidden;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
+.clip-inner video{width:100%;height:100%;object-fit:cover}
+.clip-tag{position:absolute;left:14px;top:14px;z-index:2;display:flex;align-items:center;gap:8px;background:rgba(11,13,18,.82);padding:6px 10px;font-family:var(--f-hud);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.clip-tag i{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,70,85,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,70,85,.7)}70%{box-shadow:0 0 0 9px rgba(255,70,85,0)}100%{box-shadow:0 0 0 0 rgba(255,70,85,0)}}
+.sound{position:absolute;right:14px;bottom:14px;z-index:2;display:flex;align-items:center;gap:8px;min-height:38px;padding:0 12px;border:0;cursor:pointer;background:rgba(11,13,18,.82);color:#fff;font-family:var(--f-hud);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.sound:hover{background:var(--red)}
+.sound svg{width:16px;height:16px}
+.clip-cap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:14px;color:var(--mute)}
+.clip-cap strong{color:var(--gold);font-family:var(--f-display);font-weight:900;font-size:1.5rem;letter-spacing:.02em;line-height:1}
+
+/* proof ticker */
+.proof{border-block:1px solid var(--line);background:var(--panel);overflow:hidden}
+.proof-track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.proof:hover .proof-track{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.proof-item{display:flex;align-items:center;gap:12px;padding:18px 34px;border-right:1px solid var(--line);white-space:nowrap}
+.proof-item b{font-family:var(--f-display);font-weight:800;font-size:1.3rem;letter-spacing:.02em;text-transform:uppercase}
+.proof-item span{color:var(--mute);font-size:.9rem}
+.proof-item .up{color:var(--red)}
+.proof-item .gd{color:var(--gold)}
+
+/* sections */
+.sec{padding-block:clamp(72px,10vw,128px);position:relative}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,56px);max-width:820px}
+.alt{background:linear-gradient(180deg,var(--panel) 0%,var(--void) 100%)}
+.slash{position:relative}
+.slash::before{content:"";position:absolute;left:0;right:0;top:-1px;height:40px;background:var(--void);clip-path:polygon(0 0,100% 0,100% 0,0 100%)}
+
+/* dores */
+.pain-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:640px){.pain-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:980px){.pain-grid{grid-template-columns:repeat(3,1fr)}}
+.pain{background:var(--void);padding:30px 28px 32px;display:grid;gap:12px;align-content:start;transition:background .2s}
+.pain:hover{background:var(--panel)}
+.pain-ic{width:40px;height:40px;color:var(--red)}
+.pain p{color:var(--mute)}
+.quote-band{margin-top:44px;display:grid;gap:24px;align-items:center}
+@media(min-width:900px){.quote-band{grid-template-columns:1fr auto}}
+.quote-band p{font-family:var(--f-display);font-weight:800;font-size:clamp(1.6rem,3.4vw,2.4rem);line-height:1.05;text-transform:uppercase;max-width:30ch}
+.quote-band p em{font-style:normal;color:var(--red)}
+
+/* pilares */
+.pillars{display:grid;gap:14px;counter-reset:p}
+@media(min-width:720px){.pillars{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1080px){.pillars{grid-template-columns:repeat(4,1fr)}}
+.pillar{position:relative;background:var(--panel);padding:26px 24px 28px;display:grid;gap:10px;align-content:start;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%)}
+.pillar::before{counter-increment:p;content:counter(p,decimal-leading-zero);font-family:var(--f-hud);font-weight:700;font-size:.8rem;letter-spacing:.14em;color:var(--red)}
+.pillar p{color:var(--mute);font-size:.96rem}
+.pillar:last-child{background:linear-gradient(160deg,#2a1519,var(--panel))}
+
+/* timeline */
+.timeline{display:grid;gap:0;position:relative}
+@media(min-width:900px){.timeline{grid-template-columns:repeat(4,1fr)}}
+.week{position:relative;padding:0 0 36px 44px}
+.week::before{content:"";position:absolute;left:13px;top:8px;bottom:0;width:2px;background:linear-gradient(var(--red),var(--line))}
+.week:last-child::before{background:linear-gradient(var(--gold),transparent)}
+.week-dot{position:absolute;left:4px;top:2px;width:20px;height:20px;transform:rotate(45deg);background:var(--void);border:2px solid var(--red)}
+.week:last-child .week-dot{border-color:var(--gold);background:var(--gold)}
+@media(min-width:900px){
+  .week{padding:46px 26px 0 0}
+  .week::before{left:0;right:0;top:10px;bottom:auto;width:auto;height:2px;background:linear-gradient(90deg,var(--red),var(--line))}
+  .week:last-child::before{background:linear-gradient(90deg,var(--gold),transparent)}
+  .week-dot{left:0;top:1px}
+}
+.week .hud{color:var(--red)}
+.week:last-child .hud{color:var(--gold)}
+.week h3{margin:8px 0 10px}
+.week p{color:var(--mute);font-size:.96rem}
+
+/* ladder */
+.ladder-wrap{display:grid;gap:40px}
+@media(min-width:980px){.ladder-wrap{grid-template-columns:.8fr 1.2fr;align-items:start}}
+.ladder-legend{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;margin-bottom:10px}
+.ladder-legend span{font-family:var(--f-hud);font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ladder-legend span:last-child{color:var(--gold)}
+.tier-row{display:grid;gap:12px;padding:20px 0;border-top:1px solid var(--line)}
+.tier-row:last-child{border-bottom:1px solid var(--line)}
+.tier-row p{font-weight:600;font-size:1.02rem}
+.bar{display:grid;grid-template-columns:repeat(9,1fr);gap:4px}
+.bar i{height:8px;background:var(--panel-2);transform:skewX(-20deg)}
+.bar i.on{background:var(--red)}
+.bar i.on.gd{background:var(--gold)}
+.ladder-note{font-family:var(--f-display);font-weight:800;font-size:clamp(1.5rem,2.8vw,2rem);line-height:1.05;text-transform:uppercase;margin-top:26px}
+.ladder-note span{color:var(--gold)}
+
+/* mentor */
+.mentor{display:grid;gap:44px;align-items:center}
+@media(min-width:960px){.mentor{grid-template-columns:.9fr 1.1fr;gap:72px}}
+.mentor-card{position:relative;max-width:460px;width:100%;justify-self:center}
+.mentor-photo{position:relative;aspect-ratio:4/4.3;overflow:hidden;background:var(--panel);clip-path:polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,30px 100%,0 calc(100% - 30px))}
+.mentor-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;filter:saturate(1.05) contrast(1.05)}
+.mentor-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,13,18,.95))}
+.mentor-badge{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.mentor-badge .nm{font-family:var(--f-display);font-weight:900;font-size:2.8rem;line-height:.9;text-transform:uppercase}
+.mentor-badge .nm small{display:block;font-family:var(--f-hud);font-weight:600;font-size:.68rem;letter-spacing:.2em;color:var(--mute);margin-top:6px}
+.rank-pill{display:flex;align-items:center;gap:8px;background:var(--gold);color:var(--void);padding:8px 12px;font-family:var(--f-hud);font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.rank-pill svg{width:16px;height:16px}
+.mentor-corner{position:absolute;right:-10px;top:-10px;width:70px;height:70px;border-top:3px solid var(--red);border-right:3px solid var(--red);pointer-events:none}
+.mentor-copy{display:grid;gap:22px;min-width:0}
+.mentor-copy .lead{color:#D3D7E0}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:640px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{background:var(--void);padding:18px 18px 16px;display:grid;gap:6px;min-width:0}
+.stat b{font-family:var(--f-display);font-weight:900;font-size:1.65rem;line-height:1;text-transform:uppercase}
+.stat b.gd{color:var(--gold)}
+.stat span{color:var(--mute);font-size:.82rem;line-height:1.35}
+.yt{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-hud);font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:1.5px solid var(--red);padding-bottom:4px;width:max-content}
+.yt svg{width:22px;height:22px;color:var(--red)}
+
+/* resultados */
+.results-grid{display:grid;gap:16px}
+@media(min-width:720px){.results-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1080px){.results-grid{grid-template-columns:repeat(3,1fr)}}
+.shot{position:relative;background:var(--panel);border:1px solid var(--line);display:grid;grid-template-rows:auto 1fr;cursor:zoom-in;text-align:left;color:inherit;font:inherit;padding:0;transition:border-color .2s,transform .2s}
+.shot:hover{border-color:var(--red);transform:translateY(-3px)}
+.shot-img{aspect-ratio:4/3;overflow:hidden;background:#000}
+.shot-img img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transition:transform .5s ease}
+.shot:hover .shot-img img{transform:scale(1.04)}
+.shot-body{padding:18px 20px 20px;display:grid;gap:10px;align-content:start}
+.jump{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.jump .from{font-family:var(--f-hud);font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding:5px 9px;border:1px solid var(--line)}
+.jump .to{font-family:var(--f-hud);font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--void);background:var(--red);padding:6px 10px}
+.jump .to.gd{background:var(--gold)}
+.jump svg{width:18px;height:18px;color:var(--red)}
+.shot-body p{color:var(--mute);font-size:.95rem}
+.shot-body .who{font-family:var(--f-hud);font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+
+.wall{margin-top:56px;columns:1;column-gap:16px}
+@media(min-width:720px){.wall{columns:2}}
+@media(min-width:1080px){.wall{columns:3}}
+.tm{break-inside:avoid;margin:0 0 16px;background:var(--void);border:1px solid var(--line);padding:24px 24px 22px;display:grid;gap:16px}
+.tm blockquote{margin:0;font-size:1rem;line-height:1.6;color:#D7DAE2}
+.tm blockquote::before{content:"“";display:block;font-family:var(--f-display);font-weight:900;font-size:3.2rem;line-height:.6;color:var(--red);margin-bottom:6px}
+.tm footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tm .nick{display:flex;align-items:center;gap:10px;font-family:var(--f-hud);font-weight:700;letter-spacing:.08em}
+.tm .av{width:34px;height:34px;display:grid;place-items:center;background:var(--panel-2);color:var(--gold);font-family:var(--f-display);font-weight:900;font-size:1.05rem;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%)}
+.tm .src{color:var(--dim);font-size:.78rem;font-family:var(--f-hud);letter-spacing:.1em;text-transform:uppercase}
+.tm .tag{font-family:var(--f-hud);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.see-print{margin-top:8px;display:flex;justify-content:center}
+
+/* incluso */
+.incl{display:grid;gap:44px}
+@media(min-width:980px){.incl{grid-template-columns:1fr 1fr;gap:56px}}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.check li{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line);font-weight:500}
+.check svg{width:20px;height:20px;flex:none;color:var(--red);margin-top:3px}
+.spec{background:var(--panel);border:1px solid var(--line)}
+.spec-head{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.spec dl{margin:0;display:grid}
+.spec .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:16px;padding:14px 22px;border-bottom:1px solid var(--line)}
+.spec .row:last-child{border-bottom:0}
+.spec dt{color:var(--mute);font-size:.94rem}
+.spec dd{margin:0;font-weight:600;font-size:.96rem;min-width:0}
+.tbd{display:inline-block;font-family:var(--f-hud);font-weight:700;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px dashed var(--gold-deep);padding:3px 8px;background:rgba(235,208,142,.06)}
+
+/* preço */
+.offer-sec{position:relative;overflow:hidden}
+.offer-sec::before{content:"";position:absolute;inset:0;background:radial-gradient(800px 420px at 50% 0%,rgba(255,70,85,.16),transparent 70%);pointer-events:none}
+.offer{position:relative;max-width:620px;margin:0 auto;background:var(--panel);padding:2px;clip-path:polygon(0 0,calc(100% - 34px) 0,100% 34px,100% 100%,34px 100%,0 calc(100% - 34px))}
+.offer::before{content:"";position:absolute;inset:0;background:linear-gradient(140deg,var(--red),var(--line) 35%,var(--line) 65%,var(--gold))}
+.offer-in{position:relative;background:linear-gradient(180deg,#1b1f2b,var(--panel));padding:clamp(28px,5vw,48px);display:grid;gap:22px;clip-path:polygon(0 0,calc(100% - 33px) 0,100% 33px,100% 100%,33px 100%,0 calc(100% - 33px))}
+.offer h3{font-size:clamp(1.8rem,4vw,2.5rem)}
+.price{display:flex;align-items:flex-start;gap:8px;font-family:var(--f-display);font-weight:900;line-height:.85}
+.price .cur{font-size:1.8rem;margin-top:10px;color:var(--mute)}
+.price .val{font-size:clamp(5rem,14vw,7.2rem);letter-spacing:-.01em}
+.price .cts{font-size:2rem;margin-top:10px}
+.offer .check li{padding:11px 0;font-size:.98rem}
+.offer .btn{width:100%}
+.secure{display:flex;gap:12px;align-items:flex-start;color:var(--mute);font-size:.86rem;border-top:1px solid var(--line);padding-top:18px}
+.secure svg{width:22px;height:22px;flex:none;color:var(--gold)}
+
+/* reembolso */
+.refund{display:grid;gap:40px}
+@media(min-width:960px){.refund{grid-template-columns:1fr 1fr;gap:64px}}
+.refund-copy{display:grid;gap:16px;color:#D3D7E0;max-width:60ch}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--panel);padding:18px 20px}
+.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;background:var(--void);border:1px solid var(--line);font-family:var(--f-display);font-weight:900;font-size:1.4rem;color:var(--red)}
+.steps b{display:block;margin-bottom:2px}
+.steps span{color:var(--mute);font-size:.94rem}
+
+/* faq */
+.faq{max-width:880px;display:grid;gap:10px}
+.faq details{background:var(--panel);border:1px solid var(--line);transition:border-color .2s}
+.faq details[open]{border-color:color-mix(in srgb,var(--red) 55%,var(--line))}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:20px 22px;font-weight:700;font-size:1.04rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{position:relative;width:16px;height:16px;flex:none}
+.faq summary .pm::before,.faq summary .pm::after{content:"";position:absolute;left:0;right:0;top:7px;height:2px;background:var(--red);transition:transform .2s}
+.faq summary .pm::after{transform:rotate(90deg)}
+.faq details[open] .pm::after{transform:rotate(0)}
+.faq .ans{padding:0 22px 22px;color:var(--mute);max-width:70ch}
+
+/* final */
+.final{position:relative;overflow:hidden;text-align:center;padding-block:clamp(88px,12vw,150px);isolation:isolate}
+.final::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,var(--void),rgba(11,13,18,.7) 40%,var(--void)),
+  url("img/final-bg.jpg") center/cover no-repeat;filter:saturate(.7)}
+.final::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(600px 300px at 50% 55%,rgba(255,70,85,.18),transparent 70%)}
+.final h2{font-size:clamp(2.8rem,8vw,6rem);max-width:15ch;margin:0 auto}
+.final .lead{margin:22px auto 0}
+.final .price-inline{margin-top:28px;font-family:var(--f-display);font-weight:900;font-size:2.6rem;color:var(--gold);line-height:1}
+.final .price-inline small{display:block;font-family:var(--f-hud);font-size:.72rem;letter-spacing:.2em;color:var(--mute);margin-top:6px}
+.final .btn-row{justify-content:center;margin-top:30px}
+
+/* footer */
+footer.site{border-top:1px solid var(--line);background:#08090D;padding-block:56px 40px;font-size:.9rem;color:var(--mute)}
+.foot{display:grid;gap:36px}
+@media(min-width:900px){.foot{grid-template-columns:1.2fr 1fr 1fr}}
+.foot h4{margin:0 0 14px;font-family:var(--f-hud);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.foot button.linkish{background:none;border:0;padding:0;color:var(--mute);font:inherit;cursor:pointer;text-align:left;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}
+.foot button.linkish:hover{color:var(--ink)}
+.foot a{color:var(--mute)}
+.legal-note{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:.8rem;color:var(--dim);display:grid;gap:8px}
+
+/* sticky mobile cta */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(11,13,18,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);transform:translateY(110%);transition:transform .3s ease}
+.mbar.show{transform:none}
+.mbar .p{font-family:var(--f-display);font-weight:900;font-size:1.6rem;line-height:1}
+.mbar .p small{display:block;font-family:var(--f-hud);font-size:.6rem;letter-spacing:.16em;color:var(--mute)}
+.mbar .btn{min-height:48px;font-size:.8rem;padding:0 1.1em}
+@media(min-width:900px){.mbar{display:none}}
+
+.wa-float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(86px + env(safe-area-inset-bottom,0px));z-index:41;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#1F8F55;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .2s}
+.wa-float:hover{transform:scale(1.07)}
+.wa-float svg{width:30px;height:30px}
+@media(min-width:900px){.wa-float{bottom:calc(24px + env(safe-area-inset-bottom,0px))}}
+
+/* dialogs */
+dialog{border:0;padding:0;background:transparent;color:var(--ink);max-width:min(1100px,94vw);max-height:92vh}
+dialog::backdrop{background:rgba(5,6,9,.88);backdrop-filter:blur(4px)}
+.lb{display:grid;gap:12px}
+.lb img{max-height:80vh;width:auto;margin:0 auto;border:1px solid var(--line)}
+.lb-cap{text-align:center;color:var(--mute);font-size:.9rem}
+.x{position:absolute;right:0;top:0;width:44px;height:44px;border:0;background:var(--red);color:#fff;font-size:1.4rem;cursor:pointer;z-index:3}
+.doc{position:relative;background:var(--panel);border:1px solid var(--line);width:min(760px,92vw);max-height:86vh;overflow:auto;padding:36px clamp(20px,4vw,40px)}
+.doc h3{font-size:2rem;margin-bottom:18px;padding-right:40px}
+.doc h4{font-family:var(--f-hud);letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;color:var(--red);margin:22px 0 8px}
+.doc p,.doc li{color:#D3D7E0;font-size:.96rem}
+.doc .x{position:sticky;float:right;top:0;margin:-20px -16px 0 0}
+
+/* reveal: visible at rest, subtle lift when JS is on */
+.js .rv{transform:translateY(18px);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{transform:none;opacity:1}
+@media(prefers-reduced-motion:reduce){.js .rv{transform:none;opacity:1}}
+[hidden]{display:none!important}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-mark" viewBox="0 0 40 40"><path d="M20 2 38 20 20 38 2 20Z" fill="none" stroke="#FF4655" stroke-width="2.5"/><path d="M20 10 30 20 20 30 10 20Z" fill="#FF4655"/><path d="M20 10 30 20 20 20Z" fill="#EBD08E"/></symbol>
+    <symbol id="i-chk" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="square"/></symbol>
+    <symbol id="i-arr" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4"/></symbol>
+    <symbol id="i-dia" viewBox="0 0 24 24"><path d="M12 2 22 12 12 22 2 12Z" fill="currentColor"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.25 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.7 15V9l5.8 3-5.8 3Z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-snd" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="currentColor"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="currentColor"/><path d="m16 9 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Bindi, Mentoria Radiante, voltar ao topo">
+      <svg class="brand-mark"><use href="#i-mark"/></svg>
+      <span><span class="brand-name">BINDI</span><span class="brand-sub">MENTORIA RADIANTE</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Seções">
+      <a href="#mentoria">Mentoria</a>
+      <a href="#30-dias">30 dias</a>
+      <a href="#mentor">Mentor</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <a class="btn" href="#oferta" data-checkout>Garantir vaga</a>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ghost" aria-hidden="true">RADIANTE</div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Mentoria Radiante · com Bindi</p>
+      <h1>Do <span class="r">Ferro</span> ao <span class="g">Radiante</span>: sua evolução começa aqui.</h1>
+      <p class="lead">Pare de jogar partidas sem entender por que você não evolui. Descubra seus erros, desenvolva sua mira, melhore suas decisões e aprenda a jogar com mais inteligência através de uma mentoria intensiva de Valorant.</p>
+      <ul class="chips">
+        <li><svg><use href="#i-chk"/></svg>Acompanhamento personalizado</li>
+        <li><svg><use href="#i-chk"/></svg>Treinamento intensivo de até 30 dias</li>
+        <li><svg><use href="#i-chk"/></svg>Foco na evolução individual</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn" href="#oferta" data-checkout>Quero evoluir no Valorant <svg class="arr" width="18" height="18"><use href="#i-arr"/></svg></a>
+        <a class="btn btn-ghost" href="#mentor" data-wa-or-anchor>Conversar com o mentor</a>
+      </div>
+      <p class="disclaimer">Mentoria independente, sem vínculo ou endosso da Riot Games. Os resultados variam conforme o desempenho e a dedicação de cada jogador.</p>
+    </div>
+
+    <figure class="clip rv" style="margin:0">
+      <div class="clip-frame">
+        <div class="clip-inner">
+          <video id="heroVideo" src="img/radiante.mp4" poster="img/radiante-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Gravação da partida em que o Bindi sobe para Radiante #252"></video>
+        </div>
+        <span class="clip-tag"><i></i>Gravação real</span>
+        <button class="sound" id="soundBtn" type="button" aria-pressed="false"><svg><use href="#i-mute"/></svg><span>Ativar som</span></button>
+      </div>
+      <figcaption class="clip-cap">
+        <span>A partida em que o Bindi chegou ao</span>
+        <strong class="num">RADIANTE #252</strong>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- PROOF TICKER -->
+<div class="proof" aria-label="Resultados enviados por alunos">
+  <div class="proof-track">
+    <div class="proof-item"><b>Diamante 1</b><span class="up">→</span><b class="up">Imortal 1</b><span>aluno Diogo</span></div>
+    <div class="proof-item"><b class="up">Imortal 1</b><span class="num">#4.908 · print do aluno</span></div>
+    <div class="proof-item"><b class="up">Imortal</b><span class="num">#4.621 · subiu ao vivo na call</span></div>
+    <div class="proof-item"><b>Platina 1</b><span>“finalmente peguei platina”</span></div>
+    <div class="proof-item"><b>Platina 1</b><span>aluno illumino, 6 vitórias seguidas</span></div>
+    <div class="proof-item"><b class="gd">Radiante</b><span class="num">#252 · o mentor</span></div>
+    <div class="proof-item" aria-hidden="true"><b>Diamante 1</b><span class="up">→</span><b class="up">Imortal 1</b><span>aluno Diogo</span></div>
+    <div class="proof-item" aria-hidden="true"><b class="up">Imortal 1</b><span class="num">#4.908 · print do aluno</span></div>
+    <div class="proof-item" aria-hidden="true"><b class="up">Imortal</b><span class="num">#4.621 · subiu ao vivo na call</span></div>
+    <div class="proof-item" aria-hidden="true"><b>Platina 1</b><span>“finalmente peguei platina”</span></div>
+    <div class="proof-item" aria-hidden="true"><b>Platina 1</b><span>aluno illumino, 6 vitórias seguidas</span></div>
+    <div class="proof-item" aria-hidden="true"><b class="gd">Radiante</b><span class="num">#252 · o mentor</span></div>
+  </div>
+</div>
+
+<!-- DORES -->
+<section class="sec" id="dores">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Diagnóstico</p>
+      <h2>Você joga, treina, se esforça... mas continua preso no mesmo elo?</h2>
+    </div>
+    <div class="pain-grid">
+      <article class="pain rv">
+        <svg class="pain-ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="13"/><path d="M20 3v8M20 29v8M3 20h8M29 20h8"/><circle cx="24" cy="17" r="2" fill="currentColor"/></svg>
+        <h3>Mira inconsistente</h3>
+        <p>Você acerta tudo em uma partida e parece não conseguir acertar nada na seguinte.</p>
+      </article>
+      <article class="pain rv">
+        <svg class="pain-ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 34V18l8-8h12l8 8v16"/><path d="M14 34V24h12v10"/><path d="m30 4 6 6M36 4l-6 6"/></svg>
+        <h3>Decisões equivocadas</h3>
+        <p>Você perde confrontos por posicionamento, timing e escolhas que poderiam ser evitadas.</p>
+      </article>
+      <article class="pain rv">
+        <svg class="pain-ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 26h8l4-8 6 12 4-8h10"/><path d="M4 34h32"/></svg>
+        <h3>Falta de evolução</h3>
+        <p>Mesmo jogando frequentemente, sente que continua cometendo os mesmos erros.</p>
+      </article>
+      <article class="pain rv">
+        <svg class="pain-ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 8h20v14H14l-6 5v-5H6z"/><path d="M30 16h4v12h-2v4l-5-4h-9v-2"/></svg>
+        <h3>Dificuldade de comunicação</h3>
+        <p>Você não consegue transmitir informações relevantes ou coordenar ações com a equipe.</p>
+      </article>
+      <article class="pain rv">
+        <svg class="pain-ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="20" cy="20" r="14"/><path d="M20 10v10l6 4"/><path d="M33 7l3-3M4 4l3 3"/></svg>
+        <h3>Treinamento sem direção</h3>
+        <p>Você passa horas jogando, mas não possui um plano estruturado para melhorar.</p>
+      </article>
+      <article class="pain rv">
+        <svg class="pain-ic" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 35c8 0 14-5 14-13 0-6-4-9-6-14-2 4-4 5-6 5 0-4-2-7-5-9 0 6-6 9-7 16-1 9 4 15 10 15Z"/><path d="M20 35c-3 0-5-2-5-5 0-4 5-6 5-10 2 3 5 5 5 10 0 3-2 5-5 5Z"/></svg>
+        <h3>Mentalidade competitiva</h3>
+        <p>Frustração, ansiedade durante partidas e decisões impulsivas prejudicam sua consistência.</p>
+      </article>
+    </div>
+    <div class="quote-band rv">
+      <p>Jogar mais não significa jogar melhor. <em>Evoluir exige identificar o que precisa mudar.</em></p>
+      <a class="btn" href="#mentoria">Quero descobrir como melhorar <svg class="arr" width="18" height="18"><use href="#i-arr"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- MENTORIA -->
+<section class="sec alt slash" id="mentoria">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">A mentoria</p>
+      <h2>Um treinamento pensado para a sua evolução.</h2>
+      <p class="lead">Primeiro o Bindi entende em que ponto você está. Depois monta um processo em cima das suas dificuldades reais, para você parar de gastar tempo com treinos genéricos e atacar exatamente o que está segurando o seu elo.</p>
+    </div>
+    <div class="pillars">
+      <article class="pillar rv"><h3>Diagnóstico inicial</h3><p>Análise das suas principais dificuldades e das maiores oportunidades de melhoria.</p></article>
+      <article class="pillar rv"><h3>Mecânica e mira</h3><p>Crosshair placement, movimentação, controle de disparos e precisão.</p></article>
+      <article class="pillar rv"><h3>Posicionamento</h3><p>Uso de cobertura, escolha de ângulos e controle de espaços.</p></article>
+      <article class="pillar rv"><h3>Game sense</h3><p>Leitura de jogo, interpretação de informações, rotação e tomada de decisão.</p></article>
+      <article class="pillar rv"><h3>Comunicação</h3><p>Calls eficientes, trabalho em equipe e coordenação com o time.</p></article>
+      <article class="pillar rv"><h3>Agentes e funções</h3><p>A responsabilidade de cada função e o uso estratégico das habilidades.</p></article>
+      <article class="pillar rv"><h3>Mentalidade</h3><p>Disciplina, consistência e controle da frustração durante as partidas.</p></article>
+      <article class="pillar rv"><h3>Revisão de desempenho</h3><p>Acompanhamento dos erros e da sua evolução ao longo da mentoria.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 30 DIAS -->
+<section class="sec" id="30-dias">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Como funcionam os 30 dias</p>
+      <h2>Quatro semanas, uma direção.</h2>
+    </div>
+    <div class="timeline">
+      <div class="week rv"><span class="week-dot"></span><span class="hud">Semana 1</span><h3>Diagnóstico e fundamentos</h3><p>Avaliação inicial, identificação das dificuldades e definição das prioridades de treino.</p></div>
+      <div class="week rv"><span class="week-dot"></span><span class="hud">Semana 2</span><h3>Desenvolvimento técnico</h3><p>Fundamentos mecânicos, posicionamento, mira e movimentação.</p></div>
+      <div class="week rv"><span class="week-dot"></span><span class="hud">Semana 3</span><h3>Inteligência de jogo</h3><p>Tomada de decisão, comunicação, leitura de partida e estratégia.</p></div>
+      <div class="week rv"><span class="week-dot"></span><span class="hud">Semana 4</span><h3>Consolidação</h3><p>Revisão do que foi aprendido, melhorias medidas e plano para continuar evoluindo sozinho.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="sec alt slash" id="para-quem">
+  <div class="wrap ladder-wrap">
+    <div class="sec-head rv" style="margin-bottom:0">
+      <p class="eyebrow">Para quem é</p>
+      <h2>Do primeiro ranqueado ao topo da tabela.</h2>
+      <p class="ladder-note">Não importa onde você está hoje. Importa descobrir o que precisa melhorar para <span>chegar mais longe.</span></p>
+    </div>
+    <div class="rv">
+      <div class="ladder-legend" aria-hidden="true">
+        <span>Ferro</span><span>Bronze</span><span>Prata</span><span>Ouro</span><span>Platina</span><span>Diam.</span><span>Ascen.</span><span>Imortal</span><span>Radiante</span>
+      </div>
+      <div class="tier-row">
+        <div class="bar" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p>Iniciantes que querem aprender os fundamentos do jeito certo.</p>
+      </div>
+      <div class="tier-row">
+        <div class="bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p>Jogadores de Ferro, Bronze e Prata que buscam consistência.</p>
+      </div>
+      <div class="tier-row">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+        <p>Jogadores de Ouro, Platina e Diamante que querem refinar decisões e mecânica.</p>
+      </div>
+      <div class="tier-row">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i class="on"></i><i class="on gd"></i></div>
+        <p>Jogadores de elos altos que precisam achar dificuldades específicas.</p>
+      </div>
+      <div class="tier-row">
+        <div class="bar" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on gd"></i></div>
+        <p>Qualquer pessoa que queira treinar de forma organizada e eficiente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENTOR -->
+<section class="sec" id="mentor">
+  <div class="wrap mentor">
+    <div class="mentor-card rv">
+      <div class="mentor-photo">
+        <img src="img/bindi.jpg" alt="Bindi, mentor da Mentoria Radiante" width="300" height="272">
+      </div>
+      <div class="mentor-badge">
+        <div class="nm">Bindi<small>Felipe de Lima Bindi</small></div>
+        <span class="rank-pill"><svg><use href="#i-dia"/></svg><span class="num">Radiante #252</span></span>
+      </div>
+      <span class="mentor-corner" aria-hidden="true"></span>
+    </div>
+    <div class="mentor-copy rv">
+      <p class="eyebrow">Conheça seu mentor</p>
+      <h2>Aprenda com quem entende o jogo.</h2>
+      <p class="lead">Bindi é jogador Radiante, o ranque mais alto do Valorant, e produz conteúdo no YouTube sobre mira, movimentação, posicionamento e subida de elo. Na mentoria, ele usa essa vivência para apontar seus erros com clareza e montar um treino que faça sentido para o seu nível, sem vocabulário complicado.</p>
+      <div class="stats">
+        <div class="stat"><b class="gd num">#252</b><span>Radiante, registrado em vídeo</span></div>
+        <div class="stat"><b>30 dias</b><span>de acompanhamento</span></div>
+        <div class="stat"><b><span class="tbd">a confirmar</span></b><span>anos de Valorant</span></div>
+        <div class="stat"><b><span class="tbd">a confirmar</span></b><span>alunos atendidos</span></div>
+      </div>
+      <a class="yt" href="https://youtube.com/@bindife" target="_blank" rel="noopener"><svg><use href="#i-yt"/></svg>Canal no YouTube · @bindife</a>
+      <div class="btn-row"><a class="btn" href="#oferta">Quero conhecer a mentoria <svg class="arr" width="18" height="18"><use href="#i-arr"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="sec alt slash" id="resultados">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Resultados e depoimentos</p>
+      <h2>Quem treinou, mostrou o print.</h2>
+      <p class="lead">Mensagens reais enviadas por alunos no Discord e no WhatsApp da mentoria. Toque em um print para ver inteiro. Números de telefone foram ocultados.</p>
+    </div>
+
+    <div class="results-grid">
+      <button class="shot rv" type="button" data-lb="img/print-diogo.jpg" data-cap="Diogo, no grupo Mentoria Radiante">
+        <div class="shot-img"><img src="img/print-diogo.jpg" alt="Print do aluno Diogo mostrando Imortal 1" loading="lazy"></div>
+        <div class="shot-body">
+          <div class="jump"><span class="from">Diamante 1</span><svg><use href="#i-arr"/></svg><span class="to">Imortal 1</span></div>
+          <p>“So agradecer meu mn, quando ele me deu coach tava dima 1.”</p>
+          <span class="who">Diogo · WhatsApp</span>
+        </div>
+      </button>
+      <button class="shot rv" type="button" data-lb="img/print-imortal-4908.jpg" data-cap="Aluno enviando o novo ranque no WhatsApp">
+        <div class="shot-img"><img src="img/print-imortal-4908.jpg" alt="Print de ranque Imortal 1 número 4.908" loading="lazy" style="object-position:50% 45%"></div>
+        <div class="shot-body">
+          <div class="jump"><span class="to">Imortal 1</span><span class="from num">#4.908</span></div>
+          <p>Aluno manda o novo ranque de madrugada. Resposta do Bindi: “brabo dms”.</p>
+          <span class="who">Aluno · WhatsApp</span>
+        </div>
+      </button>
+      <button class="shot rv" type="button" data-lb="img/print-imortal-4621.jpg" data-cap="Ranque subindo ao vivo durante a call">
+        <div class="shot-img"><img src="img/print-imortal-4621.jpg" alt="Tela de promoção para Imortal 4.621" loading="lazy" style="object-position:50% 50%"></div>
+        <div class="shot-body">
+          <div class="jump"><span class="to">Imortal</span><span class="from num">#4.621</span></div>
+          <p>Promoção registrada ao vivo, durante a call com o mentor.</p>
+          <span class="who">Aluno · Discord</span>
+        </div>
+      </button>
+      <button class="shot rv" type="button" data-lb="img/print-platina.jpg" data-cap="Aluno avisando que chegou a Platina 1">
+        <div class="shot-img"><img src="img/print-platina.jpg" alt="Print de Platina 1 com sequência de vitórias" loading="lazy" style="object-position:50% 30%"></div>
+        <div class="shot-body">
+          <div class="jump"><span class="to">Platina 1</span></div>
+          <p>“Bindi, eu consegui irmão. Eu finalmente peguei platina. Mto obrigado man.”</p>
+          <span class="who">Aluno · WhatsApp</span>
+        </div>
+      </button>
+      <button class="shot rv" type="button" data-lb="img/print-illumino.jpg" data-cap="illumino, no grupo Mentoria Radiante">
+        <div class="shot-img"><img src="img/print-illumino.jpg" alt="Print do aluno illumino em Platina 1 com sete vitórias" loading="lazy" style="object-position:50% 45%"></div>
+        <div class="shot-body">
+          <div class="jump"><span class="to">Platina 1</span><span class="from">7 vitórias seguidas</span></div>
+          <p>“To aplicando as coisas q vc ta falando e ja ta dando resultado.”</p>
+          <span class="who">illumino · WhatsApp</span>
+        </div>
+      </button>
+      <button class="shot rv" type="button" data-lb="img/print-discord.jpg" data-cap="Depoimentos no Discord da mentoria">
+        <div class="shot-img"><img src="img/print-discord.jpg" alt="Depoimentos de alunos no Discord" loading="lazy" style="object-position:0 0"></div>
+        <div class="shot-body">
+          <div class="jump"><span class="to gd">6 depoimentos</span></div>
+          <p>O canal de depoimentos no Discord, como os alunos escreveram.</p>
+          <span class="who">Discord · junho de 2026</span>
+        </div>
+      </button>
+    </div>
+
+    <div class="wall">
+      <figure class="tm rv">
+        <blockquote>No começo fiquei em dúvida de comprar um equipamento melhor ou a mentoria, escolhi a mentoria e sinceramente foi a melhor decisão que eu poderia ter tomado. O bindi é atencioso a todo momento, tira todas as dúvidas de forma simples e sem um vocabulário muito complexo como vários vídeos de tutoriais no YouTube. Bastou duas reuniões para que ele apontasse todas minhas maiores falhas e corrigisse cada uma delas. Também quero citar que ele me ajudou a montar uma rotina de treino para minha mira e treino de movimentação e estou vendo resultados impressionantes em muito pouco tempo.</blockquote>
+        <footer><span class="nick"><span class="av">C</span>cry</span><span class="src">Discord</span></footer>
+      </figure>
+      <figure class="tm rv">
+        <blockquote>Bindizão é fora da curva, estou no final do 2º mês de mentoria e estou vendo uma melhoria absurda. Quase chegando ascendente 1 com tranquilidade, o que antes eu achava que era de outro mundo. O suporte fora do game de parte emocional, as conversas e as ajudas até fora de aula... O cara é diferenciado e quer te ver evoluir.</blockquote>
+        <footer><span class="nick"><span class="av">D</span>Driz</span><span class="tag">2º mês</span></footer>
+      </figure>
+      <figure class="tm rv">
+        <blockquote>Rapaziada, tive 1 mês com mentoria e a melhoria foi absurda, tenho certeza q graças ao bindi vou pegar pela primeira vez o elo q eu queria. Podem ter certeza q vale mt a pena.</blockquote>
+        <footer><span class="nick"><span class="av">N</span>nickzin</span><span class="tag">1 mês</span></footer>
+      </figure>
+      <figure class="tm rv">
+        <blockquote>Bindi é muito 10, ele possui uma sabedoria sobre o jogo muito fora da curva, me ajudou a treinar exatamente o que eu preciso e não desperdiçar meu tempo com treinos genéricos, apontou meus erros e no que preciso melhorar em pouco tempo.</blockquote>
+        <footer><span class="nick"><span class="av">C</span>Cjota</span><span class="src">Discord</span></footer>
+      </figure>
+      <figure class="tm rv">
+        <blockquote>Rapaziada fiz 1 mês de acompanhamento com o bindi, a melhoria foi absurda, to destruindo nas partidas, melhorei noção de jogo e tudo mais, recomendo demais.</blockquote>
+        <footer><span class="nick"><span class="av">R</span>Riru37oi</span><span class="tag">1 mês</span></footer>
+      </figure>
+      <figure class="tm rv">
+        <blockquote>Bindi possui uma sabedoria desbalanceada que, unida à sua paciência, o torna um excelente coach. Para quem tem comprometimento e clareza nos objetivos, ele é a pessoa certa para orientar e impulsionar a conquista de resultados.</blockquote>
+        <footer><span class="nick"><span class="av">A</span>^Alves</span><span class="src">Discord</span></footer>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUSO -->
+<section class="sec" id="incluso">
+  <div class="wrap incl">
+    <div class="rv">
+      <div class="sec-head" style="margin-bottom:28px">
+        <p class="eyebrow">O que está incluso</p>
+        <h2>Tudo o que você leva.</h2>
+      </div>
+      <ul class="check">
+        <li><svg><use href="#i-chk"/></svg>Avaliação inicial do seu jogo</li>
+        <li><svg><use href="#i-chk"/></svg>Plano de desenvolvimento feito para você</li>
+        <li><svg><use href="#i-chk"/></svg>Sessões de mentoria com o Bindi</li>
+        <li><svg><use href="#i-chk"/></svg>Orientação técnica e estratégica</li>
+        <li><svg><use href="#i-chk"/></svg>Análise de partidas</li>
+        <li><svg><use href="#i-chk"/></svg>Rotina de treino de mira e movimentação</li>
+        <li><svg><use href="#i-chk"/></svg>Acompanhamento da sua evolução</li>
+        <li><svg><use href="#i-chk"/></svg>Recomendações para treinar sozinho depois</li>
+      </ul>
+    </div>
+    <div class="spec rv">
+      <div class="spec-head"><span class="hud">Detalhes do plano</span><span class="hud" style="color:var(--gold)">Leia antes de contratar</span></div>
+      <dl>
+        <div class="row"><dt>Duração total</dt><dd>Até 30 dias</dd></div>
+        <div class="row"><dt>Quantidade de aulas</dt><dd><span class="tbd">a confirmar</span></dd></div>
+        <div class="row"><dt>Duração de cada aula</dt><dd><span class="tbd">a confirmar</span></dd></div>
+        <div class="row"><dt>Frequência</dt><dd><span class="tbd">a confirmar</span></dd></div>
+        <div class="row"><dt>Plataforma</dt><dd><span class="tbd">a confirmar</span></dd></div>
+        <div class="row"><dt>Modalidade</dt><dd><span class="tbd">individual ou grupo</span></dd></div>
+        <div class="row"><dt>Suporte entre aulas</dt><dd><span class="tbd">a confirmar</span></dd></div>
+        <div class="row"><dt>Acesso a materiais</dt><dd><span class="tbd">a confirmar</span></dd></div>
+        <div class="row"><dt>Reagendamento</dt><dd><span class="tbd">a confirmar</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="sec offer-sec alt" id="oferta">
+  <div class="wrap">
+    <div class="offer rv">
+      <div class="offer-in">
+        <div>
+          <p class="eyebrow">Investimento</p>
+          <h3 style="margin-top:12px">Mentoria Radiante</h3>
+          <p style="color:var(--mute);margin-top:6px">Mentoria intensiva de Valorant · até 30 dias de treinamento</p>
+        </div>
+        <div class="price num" aria-label="R$ 297,00"><span class="cur">R$</span><span class="val">297</span><span class="cts">,00</span></div>
+        <ul class="check">
+          <li><svg><use href="#i-chk"/></svg>Acompanhamento individual com o Bindi</li>
+          <li><svg><use href="#i-chk"/></svg>Diagnóstico e plano de treino para o seu nível</li>
+          <li><svg><use href="#i-chk"/></svg>Até 30 dias de evolução guiada</li>
+        </ul>
+        <a class="btn" href="https://pay.kiwify.com.br/YgqP3Sl" target="_blank" rel="noopener" data-checkout-real>Garantir minha mentoria <svg class="arr" width="18" height="18"><use href="#i-arr"/></svg></a>
+        <a class="btn btn-wa" href="#" target="_blank" rel="noopener" data-wa hidden><svg width="20" height="20"><use href="#i-wa"/></svg>Falar com o mentor no WhatsApp</a>
+        <div class="secure"><svg><use href="#i-shield"/></svg><p>Pagamento processado pela Kiwify em nome de <b style="color:var(--ink)">Felipe de Lima Bindi</b>. As formas de pagamento e o parcelamento aparecem no checkout.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REEMBOLSO -->
+<section class="sec" id="reembolso">
+  <div class="wrap refund">
+    <div class="rv">
+      <p class="eyebrow">Reembolso e cancelamento</p>
+      <h2 style="margin:14px 0 22px">Compre com transparência.</h2>
+      <div class="refund-copy">
+        <p>Nas contratações realizadas pela internet, o consumidor possui, em regra, o direito de arrependimento no prazo de sete dias, conforme o artigo 49 do Código de Defesa do Consumidor.</p>
+        <p>Quando aplicável, o exercício desse direito assegura a devolução dos valores pagos, nos termos da legislação.</p>
+        <p>Esta política não reduz nenhum direito garantido por lei.</p>
+      </div>
+    </div>
+    <ol class="steps rv">
+      <li><div><b>Entre em contato</b><span>Pelo e-mail <span class="tbd" data-email>e-mail de suporte</span> ou pelo WhatsApp de atendimento, informando o e-mail usado na compra.</span></div></li>
+      <li><div><b>Confirmação do pedido</b><span>Você recebe a confirmação da solicitação pelo mesmo canal.</span></div></li>
+      <li><div><b>Estorno</b><span>O valor é devolvido pela Kiwify no mesmo meio de pagamento. Prazo operacional: <span class="tbd">a confirmar</span>.</span></div></li>
+      <li><div><b>Acompanhamento</b><span>Você pode acompanhar a solicitação pelo suporte da Kiwify ou pelo canal de atendimento do mentor.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec alt slash" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Perguntas frequentes</p>
+      <h2>Tire suas dúvidas.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Preciso ter um elo específico para participar?<span class="pm"></span></summary><div class="ans">Não. A mentoria atende jogadores de diferentes níveis, do Ferro aos elos altos. Se tiver dúvida se ela serve para o seu momento, fale com o Bindi antes de comprar.</div></details>
+      <details><summary>Vou chegar ao Radiante em 30 dias?<span class="pm"></span></summary><div class="ans">A mentoria acelera seu aprendizado e melhora seu desempenho, mas não existe garantia de atingir um elo específico em 30 dias. O resultado depende da sua dedicação, do tempo de treino e do seu ponto de partida.</div></details>
+      <details><summary>A mentoria é individual ou em grupo?<span class="pm"></span></summary><div class="ans"><span class="tbd">a confirmar</span></div></details>
+      <details><summary>Quantas aulas estão incluídas?<span class="pm"></span></summary><div class="ans"><span class="tbd">a confirmar</span></div></details>
+      <details><summary>Quanto tempo dura cada aula?<span class="pm"></span></summary><div class="ans"><span class="tbd">a confirmar</span></div></details>
+      <details><summary>Como são realizadas as aulas?<span class="pm"></span></summary><div class="ans">Online. Plataforma e requisitos técnicos: <span class="tbd">a confirmar</span></div></details>
+      <details><summary>Vou receber um plano de treinamento?<span class="pm"></span></summary><div class="ans">Sim. O Bindi monta com você uma rotina de treino de acordo com as suas dificuldades, como mira e movimentação.</div></details>
+      <details><summary>Posso participar mesmo sendo iniciante?<span class="pm"></span></summary><div class="ans">Sim. Começar com os fundamentos certos evita vícios que depois custam caro para corrigir.</div></details>
+      <details><summary>Como funciona o pagamento?<span class="pm"></span></summary><div class="ans">O investimento é de R$ 297. O pagamento é feito pela Kiwify, e as formas de pagamento disponíveis aparecem no checkout.</div></details>
+      <details><summary>Posso pedir reembolso?<span class="pm"></span></summary><div class="ans">Sim, observadas as regras legais, incluindo o direito de arrependimento de sete dias previsto no artigo 49 do CDC para compras feitas pela internet. Veja a seção <a href="#reembolso">Compre com transparência</a>.</div></details>
+      <details><summary>Como agendo minha primeira aula?<span class="pm"></span></summary><div class="ans"><span class="tbd">a confirmar</span></div></details>
+      <details><summary>E se eu não puder comparecer a uma aula?<span class="pm"></span></summary><div class="ans"><span class="tbd">a confirmar</span></div></details>
+      <details><summary>Preciso compartilhar minha senha ou conta?<span class="pm"></span></summary><div class="ans">Não. Em nenhum momento a mentoria pede sua senha ou acesso à sua conta.</div></details>
+      <details><summary>O mentor joga na minha conta para subir meu elo?<span class="pm"></span></summary><div class="ans">Não. Isto é treinamento e orientação. Não existe boosting nem compartilhamento de conta: quem sobe é você.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="final">
+  <div class="wrap rv">
+    <p class="eyebrow" style="justify-content:center">Mentoria Radiante</p>
+    <h2 style="margin-top:16px">Seu próximo elo começa com uma decisão.</h2>
+    <p class="lead">Transforme suas partidas em aprendizado. Descubra o que precisa melhorar e comece a treinar com direção.</p>
+    <p class="price-inline num">R$ 297,00<small>até 30 dias de mentoria</small></p>
+    <div class="btn-row">
+      <a class="btn" href="https://pay.kiwify.com.br/YgqP3Sl" target="_blank" rel="noopener" data-checkout-real>Começar minha evolução <svg class="arr" width="18" height="18"><use href="#i-arr"/></svg></a>
+      <a class="btn btn-ghost" href="#" target="_blank" rel="noopener" data-wa hidden>Tirar dúvidas no WhatsApp</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#topo"><svg class="brand-mark"><use href="#i-mark"/></svg><span><span class="brand-name">BINDI</span><span class="brand-sub">MENTORIA RADIANTE</span></span></a>
+        <p style="margin-top:16px;max-width:38ch">Mentoria individual de Valorant com o Bindi, jogador Radiante.</p>
+      </div>
+      <div>
+        <h4>Fornecedor</h4>
+        <ul>
+          <li>Felipe de Lima Bindi</li>
+          <li>CPF/CNPJ: <span class="tbd">a confirmar</span></li>
+          <li>E-mail: <span class="tbd" data-email>a confirmar</span></li>
+          <li><a href="https://youtube.com/@bindife" target="_blank" rel="noopener">youtube.com/@bindife</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Documentos</h4>
+        <ul>
+          <li><button class="linkish" type="button" data-doc="termos">Termos de uso</button></li>
+          <li><button class="linkish" type="button" data-doc="privacidade">Política de privacidade</button></li>
+          <li><button class="linkish" type="button" data-doc="reembolso-doc">Cancelamento e reembolso</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal-note">
+      <p>Mentoria independente, sem vínculo, patrocínio ou endosso da Riot Games. Valorant e nomes relacionados são marcas da Riot Games, Inc.</p>
+      <p>Os resultados exibidos são de alunos reais e variam conforme o desempenho e a dedicação de cada jogador.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- sticky mobile -->
+<div class="mbar" id="mbar" aria-hidden="true">
+  <span class="p num">R$ 297<small>MENTORIA RADIANTE</small></span>
+  <a class="btn" href="https://pay.kiwify.com.br/YgqP3Sl" target="_blank" rel="noopener" tabindex="-1" data-checkout-real>Garantir vaga</a>
+</div>
+<a class="wa-float" href="#" target="_blank" rel="noopener" aria-label="Falar com o mentor no WhatsApp" data-wa hidden><svg><use href="#i-wa"/></svg></a>
+
+<!-- lightbox -->
+<dialog id="lb" aria-label="Print ampliado">
+  <div class="lb" style="position:relative">
+    <button class="x" type="button" data-close aria-label="Fechar">×</button>
+    <img id="lbImg" src="" alt="">
+    <p class="lb-cap" id="lbCap"></p>
+  </div>
+</dialog>
+
+<!-- documentos -->
+<dialog id="docDlg" aria-label="Documento">
+  <div class="doc" id="docBody"></div>
+</dialog>
+
+<template id="doc-termos">
+  <button class="x" type="button" data-close aria-label="Fechar">×</button>
+  <h3>Termos de uso</h3>
+  <p><span class="tbd">rascunho para revisão jurídica</span></p>
+  <h4>1. Serviço</h4><p>A Mentoria Radiante é um serviço de treinamento e orientação em Valorant prestado por Felipe de Lima Bindi, com duração de até 30 dias a partir da primeira sessão.</p>
+  <h4>2. O que não está incluído</h4><p>O serviço não inclui boosting, compartilhamento de contas ou qualquer prática contrária aos termos da Riot Games. O mentor nunca solicitará sua senha.</p>
+  <h4>3. Resultados</h4><p>Não há garantia de alcançar um elo específico. A evolução depende da dedicação e do desempenho do aluno.</p>
+  <h4>4. Conduta</h4><p>O aluno se compromete a manter respeito nas sessões e nos canais da mentoria.</p>
+  <h4>5. Pagamento</h4><p>O pagamento é processado pela Kiwify. Valor: R$ 297,00.</p>
+</template>
+<template id="doc-privacidade">
+  <button class="x" type="button" data-close aria-label="Fechar">×</button>
+  <h3>Política de privacidade</h3>
+  <p><span class="tbd">rascunho para revisão jurídica</span></p>
+  <h4>Dados coletados</h4><p>Nome, e-mail, telefone e nickname no jogo, informados na compra ou no contato, usados apenas para prestar a mentoria e o atendimento.</p>
+  <h4>Pagamento</h4><p>Os dados de pagamento são tratados pela Kiwify e não ficam com o mentor.</p>
+  <h4>Depoimentos</h4><p>Prints e depoimentos só são publicados com autorização do aluno, com números de telefone ocultados.</p>
+  <h4>Seus direitos</h4><p>Você pode pedir acesso, correção ou exclusão dos seus dados a qualquer momento, nos termos da LGPD, pelo canal de suporte.</p>
+</template>
+<template id="doc-reembolso-doc">
+  <button class="x" type="button" data-close aria-label="Fechar">×</button>
+  <h3>Cancelamento e reembolso</h3>
+  <p>Nas contratações realizadas pela internet, o consumidor possui, em regra, o direito de arrependimento no prazo de sete dias, conforme o artigo 49 do Código de Defesa do Consumidor. Quando aplicável, o exercício desse direito assegura a devolução dos valores pagos.</p>
+  <h4>Como solicitar</h4><p>Entre em contato pelo canal de suporte informando o e-mail usado na compra. O estorno é feito pela Kiwify no mesmo meio de pagamento.</p>
+  <h4>Seus direitos</h4><p>Esta política não reduz nenhum direito assegurado por lei.</p>
+</template>
+
+<script>
+/* ===== CONFIGURAÇÃO: edite aqui ===== */
+const CONFIG = {
+  checkout: "https://pay.kiwify.com.br/YgqP3Sl",
+  whatsapp: "",          // ex.: "5511999999999" (só números, com DDI 55 e DDD). Vazio esconde os botões de WhatsApp.
+  waText: "Olá! Tenho interesse na Mentoria Radiante de Valorant.",
+  email: ""              // ex.: "contato@bindi.com.br"
+};
+/* ==================================== */
+document.documentElement.classList.add("js");
+(function(){
+  // checkout
+  document.querySelectorAll("[data-checkout-real]").forEach(a=>a.href=CONFIG.checkout);
+  // whatsapp
+  if(CONFIG.whatsapp){
+    const url="https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(CONFIG.waText);
+    document.querySelectorAll("[data-wa]").forEach(a=>{a.href=url;a.hidden=false});
+    document.querySelectorAll("[data-wa-or-anchor]").forEach(a=>{a.href=url;a.target="_blank";a.rel="noopener"});
+  }
+  if(CONFIG.email){
+    document.querySelectorAll("[data-email]").forEach(s=>{s.className="";s.textContent=CONFIG.email});
+  }
+
+  // video sound
+  const v=document.getElementById("heroVideo"),sb=document.getElementById("soundBtn");
+  if(v&&sb){
+    sb.addEventListener("click",()=>{
+      v.muted=!v.muted;
+      if(!v.muted){v.currentTime=Math.max(0,v.currentTime);v.play().catch(()=>{})}
+      sb.setAttribute("aria-pressed",String(!v.muted));
+      sb.querySelector("use").setAttribute("href",v.muted?"#i-mute":"#i-snd");
+      sb.querySelector("span").textContent=v.muted?"Ativar som":"Som ligado";
+    });
+    v.play&&v.play().catch(()=>{});
+  }
+
+  // reveal
+  const els=document.querySelectorAll(".rv");
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{rootMargin:"0px 0px -6% 0px",threshold:.05});
+    els.forEach(el=>{
+      const r=el.getBoundingClientRect();
+      if(r.top<innerHeight) el.classList.add("in"); else io.observe(el);
+    });
+  } else els.forEach(el=>el.classList.add("in"));
+  setTimeout(()=>els.forEach(el=>el.classList.add("in")),4000);
+
+  // sticky bar
+  const mbar=document.getElementById("mbar"),hero=document.querySelector(".hero"),offer=document.getElementById("oferta");
+  const upd=()=>{
+    const past=hero.getBoundingClientRect().bottom<0;
+    const r=offer.getBoundingClientRect();
+    const atOffer=r.top<innerHeight&&r.bottom>0;
+    const show=past&&!atOffer;
+    mbar.classList.toggle("show",show);
+    mbar.setAttribute("aria-hidden",String(!show));
+    mbar.querySelector("a").tabIndex=show?0:-1;
+  };
+  addEventListener("scroll",upd,{passive:true});upd();
+
+  // lightbox
+  const lb=document.getElementById("lb"),lbImg=document.getElementById("lbImg"),lbCap=document.getElementById("lbCap");
+  document.querySelectorAll("[data-lb]").forEach(b=>b.addEventListener("click",()=>{
+    lbImg.src=b.dataset.lb;lbImg.alt=b.dataset.cap||"";lbCap.textContent=b.dataset.cap||"";
+    if(lb.showModal)lb.showModal();
+  }));
+  // docs
+  const dd=document.getElementById("docDlg"),db=document.getElementById("docBody");
+  document.querySelectorAll("[data-doc]").forEach(b=>b.addEventListener("click",()=>{
+    const t=document.getElementById("doc-"+b.dataset.doc);
+    db.innerHTML="";db.appendChild(t.content.cloneNode(true));
+    if(CONFIG.email) db.querySelectorAll("[data-email]").forEach(s=>{s.className="";s.textContent=CONFIG.email});
+    if(dd.showModal)dd.showModal();db.scrollTop=0;
+  }));
+  [lb,dd].forEach(d=>{
+    d.addEventListener("click",e=>{if(e.target===d||e.target.closest("[data-close]"))d.close()});
+  });
+})();
+</script>
+
+<script src="/previas/visitas.js" defer></script>
+</body>
+</html>
