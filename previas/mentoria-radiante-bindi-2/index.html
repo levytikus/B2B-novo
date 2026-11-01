@@ -16,6 +16,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="favicon.png">
+<link rel="preload" as="image" href="img/carga-b.webp">
+<link rel="preload" as="image" href="img/carga-nome.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap">
@@ -338,6 +340,31 @@ dialog::backdrop{background:rgba(10,10,10,.86)}
 .doc p{color:var(--ink-2);font-size:.95rem}
 .doc .x{position:sticky;float:right;top:0;margin:-20px -16px 0 0}
 
+
+/* abertura (3 s): o B surge, as duas faixas sobem como patentes, o nome se revela e a linha vermelha enche */
+.carga{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#fff;animation:cargaSai .45s ease 2.6s forwards}
+.carga::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 50%,rgba(227,22,29,.07),transparent 70%)}
+.carga .caixa{--h:150px;position:relative;display:grid;justify-items:center}
+@media(max-width:600px){.carga .caixa{--h:104px}}
+.carga .lock{display:flex;align-items:center;gap:calc(var(--h)*.2)}
+.carga .marca{position:relative;height:var(--h);aspect-ratio:164/300}
+.carga .marca img{position:absolute;inset:0;width:100%;height:100%}
+.carga .b{opacity:0;transform-origin:40% 45%;animation:cargaB .65s cubic-bezier(.2,.8,.2,1) .1s forwards}
+.carga .f1,.carga .f2{opacity:0;transform:translateY(18%);animation:cargaF .45s cubic-bezier(.2,.8,.2,1) forwards}
+.carga .f1{animation-delay:.6s}
+.carga .f2{animation-delay:.82s}
+.carga .txt{display:grid;gap:calc(var(--h)*.1)}
+.carga .nome{height:calc(var(--h)*.62);width:auto;clip-path:inset(0 100% 0 0);animation:cargaNome 1s cubic-bezier(.55,.1,.35,1) .95s forwards}
+.carga .sub{width:calc(var(--h)*.62*513/207);height:auto;opacity:0;transform:translateY(6px);animation:cargaSub .45s ease 1.85s forwards}
+.carga .linha{height:2px;margin-top:calc(var(--h)*.28);width:100%;background:#ECECEA;overflow:hidden}
+.carga .linha i{display:block;height:100%;width:0;background:var(--red);animation:cargaLinha 2.35s cubic-bezier(.4,0,.2,1) .15s forwards}
+@keyframes cargaB{from{opacity:0;transform:scale(.6) rotate(-10deg)}to{opacity:1;transform:none}}
+@keyframes cargaF{to{opacity:1;transform:none}}
+@keyframes cargaNome{to{clip-path:inset(0 0 0 0)}}
+@keyframes cargaSub{to{opacity:1;transform:none}}
+@keyframes cargaLinha{to{width:100%}}
+@keyframes cargaSai{to{opacity:0;visibility:hidden}}
+@media(prefers-reduced-motion:reduce){.carga .b,.carga .f1,.carga .f2,.carga .nome,.carga .sub,.carga .linha i{animation:none!important;opacity:1;transform:none;clip-path:none;width:100%}.carga .nome{width:auto}.carga .sub{width:calc(var(--h)*.62*513/207)}.carga{animation:cargaSai .3s linear 1s forwards!important}}
 .js .rv{transform:translateY(18px);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
 .js .rv.in{transform:none}
 </style>
@@ -354,6 +381,22 @@ dialog::backdrop{background:rgba(10,10,10,.86)}
   <symbol id="mute" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="currentColor"/><path d="m16 9 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
 </defs></svg>
 
+<div class="carga" aria-hidden="true">
+  <div class="caixa">
+    <div class="lock">
+      <div class="marca">
+        <img class="f2" src="img/carga-f2.webp" alt="" width="164" height="300">
+        <img class="f1" src="img/carga-f1.webp" alt="" width="164" height="300">
+        <img class="b" src="img/carga-b.webp" alt="" width="164" height="300">
+      </div>
+      <div class="txt">
+        <img class="nome" src="img/carga-nome.webp" alt="" width="513" height="207">
+        <img class="sub" src="img/carga-sub.webp" alt="" width="720" height="32">
+      </div>
+    </div>
+    <div class="linha"><i></i></div>
+  </div>
+</div>
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="logo" href="#topo" aria-label="Bindi, voltar ao topo"><img src="img/logo-bindi.png" alt="" width="22" height="40"><span>BINDI<b>.</b></span></a>
