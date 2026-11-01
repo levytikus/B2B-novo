@@ -209,12 +209,22 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ytline{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:4px}
 
 /* trusted by → provas */
-.trusted{border-block:1px solid var(--line);padding-block:20px}
-.trusted .wrap{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
-.trusted h3{font-family:var(--f-display);font-weight:400;color:var(--red);font-size:1.5rem;text-transform:uppercase;white-space:nowrap}
-.tr-items{display:flex;flex-wrap:wrap;gap:12px 34px;align-items:center;flex:1;justify-content:space-between}
-.tr-items span{font-family:var(--f-display);font-size:1.25rem;letter-spacing:.04em;text-transform:uppercase;color:#2a2a2a;white-space:nowrap}
-.tr-items span em{font-style:normal;color:var(--red)}
+.trusted{border-block:1px solid var(--line);background:#fff;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:stretch;overflow:hidden}
+.trusted h3{display:flex;align-items:center;background:var(--red);color:#fff;font-family:var(--f-display);font-weight:400;font-size:1.25rem;line-height:1;text-transform:uppercase;padding:0 22px 0 max(16px,env(safe-area-inset-left,0px));white-space:nowrap;position:relative;z-index:2;margin:0}
+.trusted h3::after{content:"";position:absolute;right:-14px;top:0;bottom:0;width:14px;background:var(--red);clip-path:polygon(0 0,100% 50%,0 100%)}
+@media(min-width:760px){.trusted h3{font-size:1.5rem;padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:28px}}
+@media(max-width:759px){.trusted{grid-template-columns:1fr}.trusted h3{justify-self:start;font-size:1rem;padding-block:9px;padding-right:16px}.trusted h3::after{right:-12px;width:12px}.tr-item{padding-block:16px}}
+.tr-run{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.tr-track{display:flex;width:max-content;animation:trRun 32s linear infinite}
+.trusted:hover .tr-track{animation-play-state:paused}
+@keyframes trRun{to{transform:translateX(-50%)}}
+.tr-item{display:flex;align-items:center;gap:10px;padding:18px 0 18px 30px;white-space:nowrap;font-family:var(--f-display);font-size:1.2rem;line-height:1;text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.tr-item .from{color:var(--mute)}
+.tr-item .to{color:var(--ink)}
+.tr-item em{font-style:normal;color:var(--red)}
+.tr-item svg.ar2{width:16px;height:16px;color:var(--red)}
+.tr-item svg.sep{width:10px;height:10px;color:var(--red);margin-left:20px}
+@media(prefers-reduced-motion:reduce){.tr-run{overflow-x:auto}.tr-track{animation:none}}
 
 /* para quem */
 .who{display:grid;gap:36px}
@@ -587,17 +597,9 @@ dialog::backdrop{background:rgba(10,10,10,.86)}
 </section>
 
 <!-- PROVAS (trusted by) -->
-<div class="trusted">
-  <div class="wrap">
-    <h3>Alunos que subiram</h3>
-    <div class="tr-items">
-      <span>Aluno <em>→</em> Radiante <em class="num">#252</em></span>
-      <span>Diamante <em>→</em> Imortal</span>
-      <span>Ascendente 3</span>
-      <span>Imortal 1 <em class="num">#4.908</em></span>
-      <span>Platina 2 <em>→</em> Diamante</span>
-    </div>
-  </div>
+<div class="trusted" aria-label="Alunos que subiram: Radiante 252, Diamante para Imortal, Ascendente 3, Imortal 1 4.908, Platina 2 para Diamante, Imortal 4.621">
+  <h3>Alunos que subiram</h3>
+  <div class="tr-run" aria-hidden="true"><div class="tr-track"><span class="tr-item"><span class="to">Radiante</span> <em class="num">#252</em><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="from">Diamante</span><svg class="ar2"><use href="#a-r"/></svg><span class="to">Imortal</span><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="to">Ascendente 3</span><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="to">Imortal 1</span> <em class="num">#4.908</em><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="from">Platina 2</span><svg class="ar2"><use href="#a-r"/></svg><span class="to">Diamante</span><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="to">Imortal</span> <em class="num">#4.621</em><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="to">Radiante</span> <em class="num">#252</em><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="from">Diamante</span><svg class="ar2"><use href="#a-r"/></svg><span class="to">Imortal</span><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="to">Ascendente 3</span><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="to">Imortal 1</span> <em class="num">#4.908</em><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="from">Platina 2</span><svg class="ar2"><use href="#a-r"/></svg><span class="to">Diamante</span><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span><span class="tr-item"><span class="to">Imortal</span> <em class="num">#4.621</em><svg class="sep" viewBox="0 0 10 10"><path d="M5 0 10 5 5 10 0 5Z" fill="currentColor"/></svg></span></div></div>
 </div>
 
 <!-- MENTOR (about me) -->
