@@ -168,6 +168,57 @@ h1,h2,h3,p{margin:0}
 .plano .simbolo svg{width:88px;height:88px;stroke:#f2ddd2;fill:none;stroke-width:1.1}
 @media(max-width:980px){.planos{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
+/* agenda */
+.agenda{background:var(--branco);position:relative}
+.agenda .grade{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.agenda .info .sub{color:var(--texto);margin-top:16px;max-width:44ch}
+.legenda{display:grid;gap:12px;margin-top:28px;font-size:.88rem}
+.legenda span{display:flex;align-items:center;gap:12px}
+.legenda i{width:30px;height:22px;border-radius:7px;flex:none}
+.legenda .l1{background:#fff;box-shadow:inset 0 0 0 1.5px #cdd3c0}
+.legenda .l2{background:var(--verde)}
+.legenda .l3{background:repeating-linear-gradient(135deg,#f1e8de 0 5px,#e8dccf 5px 10px)}
+.agenda .info .dica{margin-top:28px;display:flex;gap:14px;align-items:flex-start;background:var(--creme);border-radius:14px;padding:16px 18px;font-size:.86rem;color:var(--texto)}
+.agenda .info .dica .ic{color:var(--rosa);margin-top:2px}
+.cal{background:#fff;border-radius:22px;box-shadow:0 22px 50px -30px rgba(44,52,36,.45),0 0 0 1px var(--fio);overflow:hidden}
+.cal-topo{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 24px;border-bottom:1px solid var(--fio)}
+.cal-topo h3{font-family:var(--serif);font-weight:500;font-size:1.6rem;line-height:1;text-transform:capitalize}
+.cal-topo small{display:block;font-size:.76rem;color:var(--texto);margin-top:4px}
+.cal-nav{display:flex;gap:8px}
+.cal-nav button{width:40px;height:40px;border-radius:50%;border:0;background:var(--creme);color:var(--verde-escuro);cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.cal-nav button:hover:not(:disabled){background:var(--rosa-claro)}
+.cal-nav button:disabled{opacity:.35;cursor:default}
+.cal-nav .ic{width:18px;height:18px}
+.tipos{display:flex;gap:8px;flex-wrap:wrap;padding:16px 24px 0}
+.tipos button{border:0;cursor:pointer;font:600 .8rem/1 var(--sans);padding:10px 14px;border-radius:99px;background:var(--creme);color:var(--verde-escuro);transition:background .2s,color .2s}
+.tipos button[aria-pressed="true"]{background:var(--rosa);color:#fff}
+.dias{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;padding:18px 24px}
+.dia{border:0;cursor:pointer;background:#fff;border-radius:14px;padding:12px 4px 10px;box-shadow:inset 0 0 0 1.5px var(--fio);font-family:var(--sans);color:var(--verde-escuro);display:flex;flex-direction:column;align-items:center;gap:3px;transition:box-shadow .2s,background .2s,transform .2s}
+.dia small{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--texto)}
+.dia b{font-family:var(--serif);font-weight:500;font-size:1.65rem;line-height:1}
+.dia em{font-style:normal;font-size:.68rem;font-weight:600;color:var(--musgo)}
+@media(hover:hover){.dia:hover:not(:disabled):not(.sel){box-shadow:inset 0 0 0 1.5px var(--rosa)}}
+.dia.sel{background:var(--verde);box-shadow:none;color:#fff;transform:translateY(-2px)}
+.dia.sel small,.dia.sel em{color:#e6d9c9}
+.dia:disabled{cursor:default;background:repeating-linear-gradient(135deg,#faf5ef 0 5px,#f3ebe2 5px 10px);box-shadow:none;color:#b3a898}
+.dia:disabled em,.dia:disabled small{color:#b9ae9f}
+.horarios{padding:6px 24px 22px}
+.horarios h4{margin:0 0 12px;font-size:.86rem;font-weight:700}
+.horarios h4 span{font-weight:500;color:var(--texto)}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+.slot{border:0;cursor:pointer;height:46px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1.5px #cdd3c0;font:600 .92rem/1 var(--sans);color:var(--verde-escuro);transition:background .2s,box-shadow .2s,color .2s}
+@media(hover:hover){.slot:hover:not(:disabled){box-shadow:inset 0 0 0 1.5px var(--verde);background:#f6f7f1}}
+.slot[aria-pressed="true"],.slot[aria-pressed="true"]:hover{background:var(--verde);color:#fff;box-shadow:none}
+.slot:disabled{cursor:default;color:#b9ae9f;background:repeating-linear-gradient(135deg,#f1e8de 0 5px,#e8dccf 5px 10px);box-shadow:none;text-decoration:line-through}
+.resumo{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--creme);padding:18px 24px;border-top:1px solid var(--fio)}
+.resumo p{font-size:.9rem;color:var(--texto)}
+.resumo p b{display:block;color:var(--verde-escuro);font-size:1rem}
+.resumo .btn{height:48px}
+.resumo .btn[aria-disabled="true"]{opacity:.45;pointer-events:none;box-shadow:none}
+.cal-obs{padding:0 24px 16px;background:var(--creme);font-size:.72rem;color:#9a8f80}
+@media(max-width:960px){.agenda .grade{grid-template-columns:1fr;gap:36px}}
+@media(max-width:600px){.cal-topo,.tipos,.horarios,.resumo,.cal-obs{padding-inline:16px}.dias{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:64px;overflow-x:auto;padding:16px;scroll-snap-type:x mandatory;scrollbar-width:none}.dias::-webkit-scrollbar{display:none}.dia{scroll-snap-align:start}.resumo .btn{width:100%}.tipos{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.tipos::-webkit-scrollbar{display:none}.tipos button{white-space:nowrap;flex:none}}
+
 /* leitura crítica */
 .leitura{background:var(--creme-2);position:relative;overflow:hidden}
 .leitura .grade{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
@@ -228,6 +279,9 @@ h1,h2,h3,p{margin:0}
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-esq" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-dir" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6h.01"/></symbol>
   <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
   <symbol id="i-tela" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="1.8"/><path d="M8.5 20h7M12 16.5V20"/></symbol>
@@ -261,6 +315,7 @@ h1,h2,h3,p{margin:0}
       <a href="#como-ajudo">Como ajudo</a>
       <a href="#sobre">Sobre a Taís</a>
       <a href="#formatos">Formatos</a>
+      <a href="#agenda">Agenda</a>
       <a href="#leitura-critica">Leitura crítica</a>
       <a href="#contato">Contato</a>
     </nav>
@@ -381,6 +436,46 @@ h1,h2,h3,p{margin:0}
     </div>
   </section>
 
+  <section class="agenda sec" id="agenda">
+    <div class="wrap grade">
+      <div class="info reveal">
+        <p class="olho">Agenda</p>
+        <h2 class="h2">Escolha um horário <em>e fale com a Taís</em></h2>
+        <p class="sub">Veja os horários livres das próximas semanas, escolha o que encaixa na sua rotina e a mensagem para o WhatsApp sai pronta, com o dia e o formato escolhidos.</p>
+        <div class="legenda" aria-hidden="true">
+          <span><i class="l1"></i>Horário disponível</span>
+          <span><i class="l2"></i>Horário escolhido</span>
+          <span><i class="l3"></i>Já reservado</span>
+        </div>
+        <p class="dica"><svg class="ic"><use href="#i-info"/></svg><span>Todos os encontros são online e duram 1 hora. Horários de Brasília. A confirmação é feita pela Taís no WhatsApp.</span></p>
+      </div>
+      <div class="cal reveal" id="cal">
+        <div class="cal-topo">
+          <div><h3 id="cal-mes">Agenda</h3><small id="cal-sem">Próximos dias</small></div>
+          <div class="cal-nav">
+            <button type="button" id="cal-ant" aria-label="Dias anteriores"><svg class="ic"><use href="#i-esq"/></svg></button>
+            <button type="button" id="cal-prox" aria-label="Próximos dias"><svg class="ic"><use href="#i-dir"/></svg></button>
+          </div>
+        </div>
+        <div class="tipos" role="group" aria-label="Formato do atendimento">
+          <button type="button" aria-pressed="true" data-tipo="uma consultoria individual de 1 hora" data-rotulo="Consultoria individual de 1 hora">Consultoria individual</button>
+          <button type="button" aria-pressed="false" data-tipo="uma conversa sobre os pacotes de acompanhamento" data-rotulo="Conversa sobre os pacotes de acompanhamento">Pacotes de acompanhamento</button>
+          <button type="button" aria-pressed="false" data-tipo="uma conversa sobre a leitura crítica do meu projeto" data-rotulo="Conversa sobre a leitura crítica do projeto">Leitura crítica</button>
+        </div>
+        <div class="dias" id="cal-dias"></div>
+        <div class="horarios">
+          <h4 id="cal-dia-titulo">Horários</h4>
+          <div class="slots" id="cal-slots"></div>
+        </div>
+        <div class="resumo">
+          <p id="cal-resumo"><b>Escolha um horário</b>e a mensagem sai pronta para o WhatsApp</p>
+          <a class="btn btn-verde" id="cal-btn" href="#" target="_blank" rel="noopener" aria-disabled="true">Reservar pelo WhatsApp <svg class="ic seta"><use href="#i-seta"/></svg></a>
+        </div>
+        <p class="cal-obs">Prévia: horários ilustrativos. No site final, a agenda mostra a disponibilidade real da Taís.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="leitura sec" id="leitura-critica">
     <div class="wrap grade">
       <div class="lado reveal">
@@ -430,7 +525,7 @@ h1,h2,h3,p{margin:0}
     </div>
     <div>
       <h4>Navegação</h4>
-      <ul><li><a href="#inicio">Início</a></li><li><a href="#como-ajudo">Como ajudo</a></li><li><a href="#sobre">Sobre a Taís</a></li><li><a href="#formatos">Formatos</a></li><li><a href="#leitura-critica">Leitura crítica</a></li></ul>
+      <ul><li><a href="#inicio">Início</a></li><li><a href="#como-ajudo">Como ajudo</a></li><li><a href="#sobre">Sobre a Taís</a></li><li><a href="#formatos">Formatos</a></li><li><a href="#agenda">Agenda</a></li><li><a href="#leitura-critica">Leitura crítica</a></li></ul>
     </div>
     <div>
       <h4>Para quem</h4>
@@ -454,6 +549,66 @@ h1,h2,h3,p{margin:0}
 </footer>
 
 <a class="zap" href="https://wa.me/5521978818274?text=Ol%C3%A1%2C%20Ta%C3%ADs%21%20Vi%20o%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20consultoria." target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp"><svg viewBox="0 0 32 32"><use href="#i-zap"/></svg></a>
+<script>
+(function(){
+  var NUM='5521978818274';
+  var SEM=['dom','seg','ter','qua','qui','sex','sáb'];
+  var SEMX=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+  var MES=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  // grade semanal: noites em dias úteis, manhãs aos sábados
+  var BASE={1:[18,19,20],2:[9,10,18,19,20],3:[18,19,20],4:[9,10,18,19,20],5:[18,19],6:[9,10,11]};
+  function hash(n){n=(n^61)^(n>>>16);n=n+(n<<3);n=n^(n>>>4);n=Math.imul(n,0x27d4eb2d);n=n^(n>>>15);return n>>>0}
+  function chave(d){return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate()}
+  function horarios(d){var h=BASE[d.getDay()]||[];return h.map(function(x){return{h:x,livre:hash(chave(d)*31+x)%100>=38}})}
+  var hoje=new Date();hoje.setHours(0,0,0,0);
+  var inicio=new Date(hoje);inicio.setDate(inicio.getDate()+1);
+  // começa na segunda da semana do primeiro dia útil
+  var seg=new Date(inicio);var dw=seg.getDay();seg.setDate(seg.getDate()-((dw+6)%7));
+  var semana=0,MAXSEM=3,diaSel=null,horaSel=null,tipo='uma consultoria individual de 1 hora',rotulo='Consultoria individual de 1 hora';
+  var $=function(id){return document.getElementById(id)};
+  var LISTA=(function(){var out=[],d=new Date(inicio);while(out.length<6*(MAXSEM+1)){if(d.getDay()!==0)out.push(new Date(d));d.setDate(d.getDate()+1)}return out})();
+  function dias(){return LISTA.slice(semana*6,semana*6+6)}
+  function livres(d){if(d<inicio)return 0;return horarios(d).filter(function(x){return x.livre}).length}
+  function fmt(d){return SEMX[d.getDay()]+', '+d.getDate()+' de '+MES[d.getMonth()]}
+  function render(){
+    var ds=dias();
+    var m1=MES[ds[0].getMonth()],m2=MES[ds[5].getMonth()];
+    $('cal-mes').textContent=m1===m2?m1+' '+ds[0].getFullYear():m1.slice(0,3)+' / '+m2.slice(0,3)+' '+ds[5].getFullYear();
+    $('cal-sem').textContent='De '+ds[0].getDate()+'/'+(ds[0].getMonth()+1)+' a '+ds[5].getDate()+'/'+(ds[5].getMonth()+1);
+    $('cal-ant').disabled=semana===0;$('cal-prox').disabled=semana>=MAXSEM;
+    if(!diaSel||ds.every(function(d){return +d!==+diaSel})){diaSel=null;for(var i=0;i<6;i++){if(livres(ds[i])){diaSel=ds[i];break}}horaSel=null}
+    var box=$('cal-dias');box.innerHTML='';
+    ds.forEach(function(d){
+      var n=livres(d),b=document.createElement('button');b.type='button';b.className='dia'+(diaSel&&+d===+diaSel?' sel':'');
+      b.disabled=!n;b.setAttribute('aria-label',fmt(d)+(n?', '+n+' horários livres':', sem horários'));
+      b.innerHTML='<small>'+SEM[d.getDay()]+'</small><b>'+d.getDate()+'</b><em>'+(n?n+(n>1?' livres':' livre'):(d<inicio?'encerrado':'lotado'))+'</em>';
+      b.onclick=function(){diaSel=d;horaSel=null;render()};box.appendChild(b)});
+    var sl=$('cal-slots');sl.innerHTML='';
+    if(!diaSel){$('cal-dia-titulo').innerHTML='Sem horários nestes dias <span>· veja os próximos</span>'}
+    else{
+      $('cal-dia-titulo').innerHTML=fmt(diaSel).replace(/^./,function(c){return c.toUpperCase()})+' <span>· escolha um horário</span>';
+      horarios(diaSel).forEach(function(x){var b=document.createElement('button');b.type='button';b.className='slot';b.textContent=x.h+'h';b.disabled=!x.livre;
+        b.setAttribute('aria-pressed',horaSel===x.h?'true':'false');if(!x.livre)b.setAttribute('aria-label',x.h+'h, já reservado');
+        b.onclick=function(){horaSel=x.h;render()};sl.appendChild(b)})}
+    resumo();
+  }
+  function resumo(){
+    var btn=$('cal-btn');
+    if(diaSel&&horaSel!=null){
+      var dd=('0'+diaSel.getDate()).slice(-2)+'/'+('0'+(diaSel.getMonth()+1)).slice(-2);
+      $('cal-resumo').innerHTML='<b>'+fmt(diaSel).replace(/^./,function(c){return c.toUpperCase()})+', às '+horaSel+'h</b>'+rotulo+' · online';
+      var msg='Olá, Taís! Vi a sua agenda no site e gostaria de agendar '+tipo+'. O horário de '+SEMX[diaSel.getDay()]+' ('+dd+') às '+horaSel+'h ainda está disponível?';
+      btn.href='https://wa.me/'+NUM+'?text='+encodeURIComponent(msg);btn.setAttribute('aria-disabled','false');
+    }else{
+      $('cal-resumo').innerHTML='<b>Escolha um horário</b>e a mensagem sai pronta para o WhatsApp';btn.href='#';btn.setAttribute('aria-disabled','true');
+    }
+  }
+  document.querySelectorAll('.tipos button').forEach(function(b){b.onclick=function(){document.querySelectorAll('.tipos button').forEach(function(o){o.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');tipo=b.dataset.tipo;rotulo=b.dataset.rotulo;resumo()}});
+  $('cal-ant').onclick=function(){if(semana>0){semana--;diaSel=null;render()}};
+  $('cal-prox').onclick=function(){if(semana<MAXSEM){semana++;diaSel=null;render()}};
+  render();
+})();
+</script>
 <script>
 (function(){var els=document.querySelectorAll('.reveal');if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('on')});return}var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});els.forEach(function(e){io.observe(e)});})();
 </script>
