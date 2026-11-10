@@ -149,7 +149,7 @@ h1,h2,h3,h4,p{margin:0}
 .sobre .foto{position:relative}
 .sobre .moldura{aspect-ratio:1000/1180;border-radius:var(--raio);overflow:hidden}
 .sobre .moldura img{width:100%;height:100%;object-fit:cover;object-position:50% 10%}
-.sobre .foto .post{position:absolute;top:28px;left:50%;transform:translateX(-50%);white-space:nowrap}
+.sobre .foto .post{position:absolute;top:-30px;left:50%;transform:translateX(-50%);white-space:nowrap;z-index:2}
 .sobre .foto .nota{position:absolute;right:-30px;bottom:-30px;background:var(--verde);color:var(--papel);padding:22px 24px;border-radius:14px;max-width:230px;font:300 1.05rem/1.4 var(--serif);box-shadow:0 30px 50px -30px rgba(31,45,42,.8)}
 .sobre .foto .nota b{display:block;font:800 .66rem/1 var(--sans);letter-spacing:.18em;color:var(--lima);margin-bottom:10px;text-transform:uppercase}
 .sobre p.txt{margin-top:22px;color:var(--texto);max-width:58ch}
@@ -161,7 +161,7 @@ h1,h2,h3,h4,p{margin:0}
 .pilar h3{font:400 1.45rem/1.1 var(--serif);font-variation-settings:"opsz" 60;margin-top:10px;letter-spacing:-.01em}
 .pilar p{margin-top:8px;font-size:.88rem;color:var(--texto);line-height:1.55}
 @media(max-width:980px){.sobre{padding:90px 0}.sobre .wrap{grid-template-columns:1fr;gap:64px}.sobre .foto{max-width:460px}.sobre .foto .nota{right:-10px}}
-@media(max-width:640px){.pilares{grid-template-columns:1fr}.sobre .foto .nota{right:10px;bottom:-40px;max-width:210px}.sobre .foto .post{transform:translateX(-50%) scale(.88)}}
+@media(max-width:640px){.pilares{grid-template-columns:1fr}.sobre .foto .nota{right:10px;bottom:-40px;max-width:210px}.sobre .foto .post{transform:translateX(-50%) scale(.86);top:-26px}}
 
 /* como trabalho */
 .como{padding:130px 0;background:var(--marfim)}
