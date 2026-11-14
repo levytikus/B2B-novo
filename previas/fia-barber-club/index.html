@@ -279,7 +279,9 @@ body.in-app #app{display:block}
 .a-pros button{text-align:center!important;padding:8px;border:1px solid var(--line)!important;border-radius:6px;background:var(--ink)!important}
 .a-pros button.on{border-color:var(--gold)!important}
 .a-pros img,.a-pros .ph{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 50%;border-radius:4px;margin-bottom:8px;filter:saturate(.8)}
-.a-pros .ph{display:grid;place-items:center;background:#1b1914;font-family:var(--display);font-style:italic;font-size:2rem;color:var(--gold-deep)}
+.a-pros .ph{display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:linear-gradient(180deg,#24211a,#141310)}
+.a-pros .ph svg{width:88%;height:auto;fill:#3b362c;margin-bottom:-2px}
+.a-pros b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .a-pros b{font-size:.92rem;font-weight:600}
 .a-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:18px}
 .a-days button{text-align:center!important;padding:8px 0;border:1px solid var(--line)!important;border-radius:6px}
@@ -343,7 +345,7 @@ body.in-app #app{display:block}
 <main id="topo">
 
   <div class="hero">
-    <img class="bg" src="assets/hero.webp" alt="Douglas Matheus, dono da Fia Barber Club, atendendo um cliente" width="1080" height="2400">
+    <img class="bg" src="assets/hero.webp" alt="Matheus, dono da Fia Barber Club, atendendo um cliente" width="1080" height="2400">
     <div class="wrap hero-grid">
       <div>
         <span class="caps">Barbearia por assinatura</span>
@@ -547,7 +549,7 @@ body.in-app #app{display:block}
 (function(){
 var R={'agendar':'Novo agendamento','meus-horarios':'Agendamentos','inicio-socio':'Início','meu-plano':'Plano','vantagens':'Clube do assinante'};
 var SV=[['Corte',35,35],['Barba',0,20],['Cavanhaque',9,10],['Pézinho',10,10],['Sobrancelha',9,10],['Terapia Facial',27,30],['Epilação nariz',13.5,15],['Epilação orelha',13.5,15],['Pigmentação',13.5,15],['Reflexo',54,60],['Nevou',72,80]];
-var PR=[['Douglas Matheus','assets/douglas.webp'],['Alysson','assets/alysson.webp'],['Sem preferência','']];
+var PR=[['Matheus','assets/douglas.webp'],['Alysson','assets/alysson.webp'],['Qualquer um','']];
 var MES=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
 var DIA=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
 var IC={unit:'M3 9l1.5-5h15L21 9v2a3 3 0 0 1-1 2.2V20H4v-6.800A3 3 0 0 1 3 11V9zm3 5v4h12v-4H6z',pro:'M12 12a4.500 4.500 0 1 0 0-9 4.500 4.500 0 0 0 0 9zm0 2c-4.400 0-8 2.200-8 5v2h16v-2c0-2.800-3.600-5-8-5z',sv:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z',time:'M7 2v2H4v18h16V4h-3V2h-2v2H9V2H7zm-1 8h12v10H6V10zm2 2v4h4v-4H8z'};
@@ -619,7 +621,7 @@ function taken(d,t){var k=d+t+(draft.pro||''),h=0;for(var i=0;i<k.length;i++)h=(
   if(h%4===0)return true;return load().some(function(b){return b.id!==draft.edit&&b.date===d&&b.time===t&&b.pro===draft.pro})}
 function sheet(k){var o='';
   if(k==='unit')o='<h4>Selecione uma das nossas unidades</h4><button class="a-opt on" data-a="close"><span><b>Campo Grande</b><small>Avenida Cesário de Melo, 7662</small></span><i></i></button>';
-  if(k==='pro')o='<h4>Selecione o profissional</h4><div class="a-pros">'+PR.map(function(p){return '<button class="'+(draft.pro===p[0]?'on':'')+'" data-a="pro" data-v="'+p[0]+'">'+(p[1]?'<img src="'+p[1]+'" alt="" width="540" height="720">':'<div class="ph">Fia</div>')+'<b>'+p[0]+'</b></button>'}).join('')+'</div>';
+  if(k==='pro')o='<h4>Selecione o profissional</h4><div class="a-pros">'+PR.map(function(p){return '<button class="'+(draft.pro===p[0]?'on':'')+'" data-a="pro" data-v="'+p[0]+'">'+(p[1]?'<img src="'+p[1]+'" alt="" width="540" height="720">':'<div class="ph"><svg viewBox="0 0 60 80" aria-hidden="true"><path d="M30 8c7.600 0 12.600 6 12.600 14.200 0 6.200-2.800 11.600-6.900 14.400v5.200c0 1.600 1 3 2.500 3.600l8.600 3.400C53 51.400 57 57.600 57 64.600V80H3V64.600c0-7 4-13.200 10.200-15.800l8.600-3.400c1.500-.6 2.500-2 2.500-3.600v-5.200c-4.100-2.800-6.900-8.200-6.900-14.400C17.400 14 22.400 8 30 8z"/></svg></div>')+'<b>'+p[0]+'</b></button>'}).join('')+'</div>';
   if(k==='sv')o='<h4>Selecione os serviços</h4>'+SV.map(function(s){var on=draft.sv.indexOf(s[0])>=0;return '<button class="a-opt'+(on?' on':'')+'" data-a="sv" data-v="'+s[0]+'" aria-pressed="'+on+'"><span><b>'+s[0]+'</b><small>'+money(s[1])+(s[2]!==s[1]?'<s>'+money(s[2])+'</s>':'')+'</small></span><i></i></button>'}).join('')+'<button class="a-cta" data-a="close" style="margin-top:10px">Confirmar</button>';
   if(k==='time'){var t0=new Date();t0.setHours(0,0,0,0);var ds=[];for(var i=0;i<7;i++){var d=new Date(t0);d.setDate(t0.getDate()+i);ds.push(d)}
     if(!draft.date){var f=ds.filter(function(d){return d.getDay()!==0})[0];draft.date=iso(f)}
