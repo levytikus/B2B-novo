@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#070706">
+<title>Fia Barber Club</title>
+<meta name="description" content="Fia Barber Club, a primeira barbearia por assinatura da região, em Campo Grande (RJ). Corte, barba e cuidados com a pele, com agendamento pelo site.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Fia Barber Club">
+<meta property="og:title" content="Fia Barber Club | Barbearia por assinatura">
+<meta property="og:description" content="Fia Barber Club, a primeira barbearia por assinatura da região, em Campo Grande (RJ). Corte, barba e cuidados com a pele, com agendamento pelo site.">
+<meta property="og:url" content="https://sites.business2brothers.com/previas/fia-barber-club/">
+<meta property="og:image" content="https://sites.business2brothers.com/previas/fia-barber-club/capa-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo da Fia Barber Club">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sites.business2brothers.com/previas/fia-barber-club/capa-og.jpg">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..700&family=Cinzel:wght@500;600;700&family=Archivo:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
+<style>
+/* Layout: a logo é a peça central. Abertura com foto escura e selo giratório em volta da logo,
+   faixa dourada em movimento, blocos alternando preto e dourado, títulos didone gigantes. */
+:root{
+  color-scheme: dark;
+  --ink:#070706;           /* preto da logo */
+  --coal:#12110e;
+  --line:#2b2720;
+  --gold:#d1b68f;          /* dourado claro tirado da logo */
+  --gold-deep:#98826a;     /* dourado médio da logo */
+  --bone:#f1eadc;
+  --ash:#a59c8b;
+  --display:"Bodoni Moda","Didot","Bodoni MT",Georgia,serif;
+  --caps:"Cinzel","Trajan Pro",Georgia,serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --gutter:clamp(20px,5vw,64px);
+  --max:1220px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-variation-settings:"opsz" 8;background:var(--ink);color:var(--bone);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+.caps{font-family:var(--caps);font-weight:600;font-size:.78rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:.98;text-wrap:balance;letter-spacing:-.015em}
+h2{font-size:clamp(2.4rem,6.4vw,4.6rem)}
+h1 em,h2 em{font-style:italic;font-weight:500;color:var(--gold)}
+p{max-width:56ch}
+.muted{color:var(--ash)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 30px;font-family:var(--caps);font-weight:700;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--gold);transition:background .2s,color .2s,transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.solid{background:linear-gradient(180deg,#e2cba6,var(--gold) 45%,#b69a72);color:var(--ink)}
+.btn.solid:hover{background:var(--bone)}
+.btn.ghost{color:var(--gold);background:rgba(7,7,6,.35)}
+.btn.ghost:hover{background:var(--gold);color:var(--ink)}
+.btn.small{min-height:42px;padding:0 18px;font-size:.72rem}
+
+/* aviso do topo */
+.strip{background:var(--gold);color:var(--ink);text-align:center;font-family:var(--caps);font-weight:700;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;padding:9px 12px;white-space:nowrap;overflow:hidden}
+
+/* topo */
+header{position:sticky;top:0;z-index:20;background:rgba(7,7,6,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:56px;height:56px;border-radius:50%;box-shadow:0 0 0 1px var(--gold-deep)}
+.brand span{font-family:var(--caps);font-weight:700;font-size:.8rem;letter-spacing:.24em;color:var(--bone);white-space:nowrap}
+nav{display:flex;gap:30px;font-family:var(--caps);font-weight:600;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+nav a:hover{color:var(--gold)}
+@media (max-width:820px){nav{display:none}}
+@media (max-width:420px){.brand span{display:none}}
+
+/* abertura */
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 56%;z-index:-2;filter:saturate(.55) contrast(1.05)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(90deg,rgba(7,7,6,.88) 0%,rgba(7,7,6,.62) 48%,rgba(7,7,6,.5) 100%),
+  linear-gradient(180deg,rgba(7,7,6,.55) 0%,rgba(7,7,6,.35) 50%,var(--ink) 100%)}
+@media (max-width:880px){.hero>img.bg{inset:0 0 auto 0;height:850px;object-position:50% 50%}
+  .hero::before{background:linear-gradient(180deg,rgba(7,7,6,.62) 0,rgba(7,7,6,.5) 330px,rgba(7,7,6,.5) 470px,rgba(7,7,6,.84) 610px,var(--ink) 845px)}
+  .hero-grid>div:first-child{margin-top:clamp(90px,26vw,150px)}}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,5vw,72px);align-items:center;padding-top:clamp(40px,7vw,96px);padding-bottom:clamp(48px,8vw,104px)}
+h1{font-size:clamp(3.1rem,9.2vw,7rem);margin:20px 0 24px}
+.hero p{font-size:1.14rem;color:#cfc7b6}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;list-style:none}
+.chips li{padding:8px 14px;border:1px solid var(--gold-deep);font-family:var(--caps);font-weight:600;font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);background:rgba(7,7,6,.5)}
+
+/* selo com a logo */
+.seal{position:relative;width:min(100%,430px);aspect-ratio:1;margin-left:auto}
+.seal .ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 48s linear infinite}
+.seal .ring text{font-family:var(--caps);font-weight:700;font-size:13.5px;letter-spacing:.3em;fill:var(--gold)}
+.seal .logo{position:absolute;inset:13.5%;border-radius:50%;overflow:hidden;background:#000;box-shadow:0 0 0 1px var(--gold-deep),0 0 0 9px #000,0 0 0 10px var(--gold),0 30px 80px rgba(0,0,0,.8),0 0 120px rgba(209,182,143,.22)}
+.seal .logo img{width:100%;height:100%;object-fit:cover}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:880px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .seal{order:-1;margin:0 auto;width:min(78vw,340px)}
+  .hero p{margin:0 auto}
+  .cta,.chips{justify-content:center}
+}
+
+/* faixa em movimento */
+.tape{background:var(--gold);color:var(--ink);overflow:hidden;border-block:1px solid #000;transform:rotate(-1.2deg) scale(1.03);margin:-6px 0 0}
+.tape div{display:flex;width:max-content;animation:slide 30s linear infinite}
+.tape span{font-family:var(--display);font-weight:700;font-style:italic;font-size:clamp(1.3rem,3.4vw,2.1rem);padding:12px 0;white-space:nowrap}
+.tape span::after{content:"✂";font-style:normal;font-size:.7em;margin:0 26px;vertical-align:.12em}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding:clamp(64px,10vw,128px) 0;scroll-margin-top:76px}
+.head{display:grid;gap:18px;margin-bottom:clamp(32px,5vw,60px)}
+
+/* clube */
+.club-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,88px);align-items:center}
+.duo{position:relative;padding:0 12% 14% 0}
+.duo img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:saturate(.8) contrast(1.04)}
+.duo img+img{position:absolute;right:0;bottom:0;width:52%;border:8px solid var(--ink);box-shadow:0 0 0 1px var(--gold-deep)}
+.duo::before{content:"";position:absolute;left:-14px;top:-14px;width:46%;height:38%;border-left:1px solid var(--gold);border-top:1px solid var(--gold)}
+.steps{list-style:none;display:grid;gap:0;margin-top:34px;border-top:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.steps b{font-family:var(--display);font-style:italic;font-weight:500;font-size:3rem;line-height:.9;color:var(--gold)}
+.steps h3{font-size:1.5rem;margin-bottom:6px}
+.steps p{color:var(--ash);font-size:.98rem}
+@media (max-width:880px){.club-grid{grid-template-columns:1fr}.duo{max-width:460px}}
+
+/* comparação */
+.versus{background:var(--gold);color:var(--ink)}
+.versus h2 em{color:var(--ink)}
+.versus .caps{color:var(--ink)}
+.vs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:2px solid var(--ink)}
+.vs>div{padding:clamp(22px,4vw,40px)}
+.vs>div+div{background:var(--ink);color:var(--bone)}
+.vs h3{font-size:clamp(1.6rem,3.6vw,2.4rem);margin-bottom:18px}
+.vs>div+div h3{color:var(--gold)}
+.vs ul{list-style:none;display:grid;gap:12px}
+.vs li{padding-left:30px;position:relative}
+.vs li::before{content:"";position:absolute;left:0;top:.72em;width:16px;height:2px;background:currentColor;opacity:.45}
+.vs>div+div li::before{content:"";width:9px;height:16px;top:.2em;left:3px;background:none;border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(40deg);opacity:1}
+@media (max-width:700px){.vs{grid-template-columns:1fr}}
+
+/* serviços */
+.svc{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.svc article{grid-column:span 2;background:var(--ink);padding:clamp(24px,3.4vw,40px);display:flex;flex-direction:column;gap:14px;min-height:240px;transition:background .25s}
+.svc article:nth-child(1),.svc article:nth-child(2){grid-column:span 3}
+.svc article:hover{background:var(--coal)}
+.svc .n{font-family:var(--caps);font-weight:700;font-size:.72rem;letter-spacing:.24em;color:var(--gold-deep)}
+.svc h3{font-size:clamp(1.9rem,3.8vw,2.9rem)}
+.svc p{color:var(--ash);font-size:.98rem;margin-top:auto}
+.svc .star{background:linear-gradient(180deg,rgba(7,7,6,.45),rgba(7,7,6,.94) 78%),url(assets/facial.webp) center 32%/cover;min-height:340px}
+.svc .star p{color:#d8d0bf}
+.svc .star h3{color:var(--gold);font-style:italic}
+.svc .tag{align-self:flex-start;padding:4px 10px;border:1px solid var(--gold);font-family:var(--caps);font-weight:700;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.note{margin-top:26px;font-size:.96rem;color:var(--ash)}
+.note a{color:var(--gold);border-bottom:1px solid var(--gold-deep)}
+@media (max-width:820px){.svc article,.svc article:nth-child(1),.svc article:nth-child(2){grid-column:span 6;min-height:0}}
+
+/* instagram */
+.insta{background:var(--coal);border-block:1px solid var(--line)}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,2vw,22px)}
+.shots img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;filter:saturate(.8) contrast(1.04);transition:filter .3s,transform .3s}
+.shots a{overflow:hidden;display:block;border:1px solid var(--line)}
+.shots a:nth-child(2){transform:translateY(clamp(14px,3vw,40px))}
+.shots a:hover img{filter:none;transform:scale(1.04)}
+.insta-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:clamp(40px,7vw,80px)}
+
+/* dúvidas */
+.faq{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,6vw,88px)}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-family:var(--display);font-weight:600;font-size:clamp(1.25rem,2.6vw,1.6rem)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--body);font-weight:400;font-size:1.6rem;color:var(--gold);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 24px;color:var(--ash)}
+@media (max-width:820px){.faq{grid-template-columns:1fr}}
+
+/* local */
+.place{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,6vw,88px);align-items:center}
+.place .sign{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--gold-deep)}
+.place .contacts{margin-top:34px}
+.addr{font-family:var(--display);font-weight:600;font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin-top:18px}
+.addr span{display:block;color:var(--gold);font-style:italic;font-weight:500}
+.contacts{border-top:1px solid var(--line)}
+.contacts a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.contacts a span:first-child{font-family:var(--caps);font-weight:600;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ash)}
+.contacts a span:last-child{font-size:1.1rem;text-align:right;overflow-wrap:anywhere}
+.contacts a:hover span:last-child{color:var(--gold)}
+@media (max-width:820px){.place{grid-template-columns:1fr}}
+
+/* fecho */
+.closing{text-align:center;background:linear-gradient(180deg,rgba(7,7,6,.78),rgba(7,7,6,.7) 50%,var(--ink)),url(assets/salao.webp) center 35%/cover;border-top:1px solid var(--line)}
+.closing img{width:150px;height:150px;border-radius:50%;margin:0 auto 28px;box-shadow:0 0 0 1px var(--gold-deep),0 0 0 7px #000,0 0 0 8px var(--gold)}
+.closing h2{font-size:clamp(2.8rem,8.4vw,6.2rem);margin:0 auto}
+.closing .cta{justify-content:center}
+footer{padding:28px 0 96px;font-size:.84rem;color:var(--ash);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* botão fixo */
+.zap{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;align-items:center;gap:10px;height:54px;padding:0 20px 0 16px;border-radius:999px;background:#1fa855;color:#fff;font-weight:700;font-size:.9rem;box-shadow:0 12px 30px rgba(0,0,0,.6)}
+.zap svg{width:26px;height:26px;fill:#fff}
+@media (max-width:700px){.zap{width:56px;height:56px;padding:0;justify-content:center}.zap span{display:none}}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.seal .ring,.tape div{animation:none}.btn,.shots img{transition:none}}
+
+/* ---------- área do sócio (agendamento) ---------- */
+body.in-app>.strip,body.in-app>header,body.in-app>main,body.in-app>footer,body.in-app>.zap{display:none}
+#app{display:none;min-height:100dvh;background:var(--ink)}
+body.in-app #app{display:block}
+#app button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+#app button:focus-visible,#app a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.a-col{max-width:560px;margin:0 auto;padding:0 20px}
+.a-top{position:sticky;top:0;z-index:5;background:rgba(7,7,6,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.a-top .a-col{display:flex;align-items:center;gap:14px;height:68px}
+.a-top b{flex:1;font-family:var(--display);font-weight:600;font-size:1.35rem}
+.a-top img{width:44px;height:44px;border-radius:50%;box-shadow:0 0 0 1px var(--gold-deep)}
+.a-burger{width:44px;height:44px;display:grid;place-items:center;margin-left:-10px}
+.a-burger i{display:block;width:22px;height:2px;background:var(--bone);box-shadow:0 7px 0 var(--bone),0 -7px 0 var(--bone)}
+.a-demo{font-size:.8rem;color:var(--ash);border-bottom:1px solid var(--line);padding:9px 0}
+.a-demo b{color:var(--gold);font-weight:600}
+.a-body{padding:26px 0 120px}
+.a-lead{color:var(--ash);margin-bottom:16px}
+.a-row{display:flex!important;align-items:center;gap:16px;width:100%;padding:20px 18px;margin-bottom:10px;background:var(--coal)!important;border:1px solid var(--line)!important;border-radius:6px;transition:border-color .2s}
+.a-row:hover{border-color:var(--gold-deep)!important}
+.a-row svg{flex:none;width:22px;height:22px;fill:var(--gold)}
+.a-row span{flex:1;color:var(--ash)}
+.a-row.on span{color:var(--bone);font-weight:600}
+.a-row small{display:block;font-weight:400;color:var(--ash);font-size:.84rem}
+.a-row::after{content:"";width:8px;height:8px;border-right:1.5px solid var(--ash);border-bottom:1.5px solid var(--ash);transform:rotate(-45deg)}
+.a-total{display:flex;justify-content:space-between;align-items:baseline;margin:26px 0 14px;color:var(--ash)}
+.a-total b{font-family:var(--display);font-size:1.7rem;color:var(--gold)}
+.a-cta{display:flex!important;justify-content:center;align-items:center;width:100%;min-height:56px;border-radius:6px;background:linear-gradient(180deg,#e2cba6,var(--gold) 45%,#b69a72)!important;color:var(--ink)!important;font-family:var(--caps)!important;font-weight:700;font-size:.84rem;letter-spacing:.16em;text-transform:uppercase;text-align:center!important}
+.a-cta:disabled{opacity:.35;cursor:not-allowed}
+.a-cta.line{background:none!important;border:1px solid var(--gold-deep)!important;color:var(--gold)!important}
+.a-card{background:var(--coal);border:1px solid var(--line);border-radius:6px;padding:20px 18px;margin-bottom:12px}
+.a-card h3{font-size:1.35rem;margin-bottom:6px}
+.a-card p{color:var(--ash);font-size:.96rem}
+.a-card .when{font-family:var(--display);font-weight:600;font-size:1.2rem;color:var(--gold);margin-bottom:8px}
+.a-card .tot{margin-top:10px;color:var(--bone);font-weight:600}
+.a-card .acts{display:flex;gap:18px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+#app .a-card .acts button{font-family:var(--caps);font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+#app .a-card .acts button.dim{color:var(--ash)}
+.a-link{display:inline-block;margin-top:12px;color:var(--gold)!important;font-weight:600}
+.a-banner{display:block;padding:22px 18px;margin-bottom:26px;border-radius:6px;background:linear-gradient(120deg,#b69a72,var(--gold));color:var(--ink)}
+.a-banner b{display:block;font-family:var(--display);font-size:1.35rem}
+.a-h{display:flex;justify-content:space-between;align-items:baseline;margin:6px 0 14px;color:var(--ash)}
+.a-h a{color:var(--bone);font-weight:600}
+.a-empty{text-align:center;color:var(--ash);padding:44px 0}
+.a-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);margin-bottom:18px}
+.a-tabs button{padding:14px 0;text-align:center!important;color:var(--ash)!important;border-bottom:2px solid transparent!important}
+.a-tabs button.on{color:var(--bone)!important;border-bottom-color:var(--gold)!important;font-weight:600}
+.a-chips{display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;padding-bottom:4px}
+.a-chips button{flex:none;padding:8px 16px;border:1px solid var(--line)!important;border-radius:999px;color:var(--ash)!important}
+.a-chips button.on{border-color:var(--gold)!important;color:var(--gold)!important}
+.a-price{font-family:var(--display);font-weight:600;font-size:2rem;color:var(--gold);margin-top:10px}
+.a-warn{color:#e0a37f;font-weight:600;margin-top:8px}
+.a-tag{font-size:.7rem;border:1px solid var(--line);border-radius:999px;padding:2px 8px;color:var(--ash);margin-left:8px;font-family:var(--body);font-weight:400}
+/* folha e menus */
+.a-veil{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.66);display:none}
+.a-veil.on{display:block}
+.a-sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;max-height:86dvh;overflow:auto;background:var(--coal);border-top:1px solid var(--gold-deep);border-radius:16px 16px 0 0;padding:22px 0 26px;display:none}
+.a-sheet.on{display:block}
+.a-sheet h4{font-family:var(--display);font-weight:600;font-size:1.3rem;text-align:center;margin-bottom:18px}
+.a-opt{display:flex!important;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:16px;margin-bottom:8px;background:var(--ink)!important;border:1px solid var(--line)!important;border-radius:6px}
+.a-opt b{display:block;font-weight:600}
+.a-opt small{color:var(--ash)}
+.a-opt s{color:var(--ash);margin-left:8px;font-size:.88rem}
+.a-opt i{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ash)}
+.a-opt.on{border-color:var(--gold)!important}
+.a-opt.on i{border-color:var(--gold);background:radial-gradient(var(--gold) 45%,transparent 50%)}
+.a-pros{display:grid;align-items:start;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.a-pros button{text-align:center!important;padding:8px;border:1px solid var(--line)!important;border-radius:6px;background:var(--ink)!important}
+.a-pros button.on{border-color:var(--gold)!important}
+.a-pros img,.a-pros .ph{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;margin-bottom:8px;filter:saturate(.8)}
+.a-pros .ph{display:grid;place-items:center;background:#1b1914;font-family:var(--display);font-style:italic;font-size:2rem;color:var(--gold-deep)}
+.a-pros b{font-size:.92rem;font-weight:600}
+.a-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:18px}
+.a-days button{text-align:center!important;padding:8px 0;border:1px solid var(--line)!important;border-radius:6px}
+.a-days small{display:block;color:var(--ash);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
+.a-days b{font-size:1.1rem;font-variant-numeric:tabular-nums}
+.a-days button.on{background:var(--gold)!important;border-color:var(--gold)!important;color:var(--ink)!important}
+.a-days button.on small{color:var(--ink)}
+.a-days button:disabled,.a-slots button:disabled{opacity:.28;cursor:not-allowed}
+.a-slots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.a-slots button{text-align:center!important;padding:12px 0;border:1px solid var(--line)!important;border-radius:6px;font-variant-numeric:tabular-nums}
+.a-slots button.on{background:var(--gold)!important;border-color:var(--gold)!important;color:var(--ink)!important;font-weight:700}
+.a-slots button:disabled{text-decoration:line-through}
+.a-drawer{position:fixed;top:0;bottom:0;left:0;z-index:41;width:min(84vw,330px);background:var(--coal);border-right:1px solid var(--gold-deep);padding:26px 24px;display:none;overflow:auto}
+.a-drawer.on{display:block}
+.a-drawer img{width:150px;height:150px;border-radius:8px;margin:0 0 26px}
+.a-drawer a{display:block;padding:15px 0;border-bottom:1px solid var(--line);font-size:1.08rem}
+.a-drawer a.on{color:var(--gold);font-weight:600}
+.a-modal{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:42;width:min(90vw,400px);background:var(--coal);border:1px solid var(--gold-deep);border-radius:10px;padding:34px 26px;text-align:center;display:none}
+.a-modal.on{display:block}
+.a-modal .ok{width:76px;height:76px;margin:0 auto 18px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center}
+.a-modal .ok::after{content:"";width:16px;height:30px;border-right:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(40deg) translate(-3px,-3px)}
+.a-modal h4{font-family:var(--display);font-size:1.8rem;margin-bottom:8px}
+.a-modal p{color:var(--ash);margin:0 auto 22px}
+.a-modal .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.a-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:43;background:var(--bone);color:var(--ink);padding:12px 18px;border-radius:6px;font-size:.92rem;display:none;max-width:90vw}
+.a-toast.on{display:block}
+
+/* surgir ao rolar: só vale quando o script liga a classe no html */
+.rv .rv-i{opacity:0;translate:0 34px;transition:opacity .7s ease,translate .7s cubic-bezier(.2,.7,.2,1)}
+.rv .rv-i.in{opacity:1;translate:0 0}
+@media (prefers-reduced-motion:reduce){.rv .rv-i{opacity:1;translate:0 0;transition:none}}
+
+/* celular: barra do topo só aparece depois que a logo grande sai da tela */
+@media (max-width:880px){
+  header{position:fixed;left:0;right:0;top:0;transform:translateY(-105%);transition:transform .35s cubic-bezier(.2,.7,.2,1);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+  body.hdr-on header{transform:none}
+}
+@media (max-width:880px) and (prefers-reduced-motion:reduce){header{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="strip">A primeira barbearia por assinatura da região</div>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#topo" aria-label="Fia Barber Club, início">
+      <img src="assets/logo.webp" alt="Logo da Fia Barber Club" width="56" height="56">
+      <span>FIA BARBER CLUB</span>
+    </a>
+    <nav aria-label="Seções">
+      <a href="#clube">O clube</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#local">Onde fica</a>
+    </nav>
+    <a class="btn solid small" href="#agendar">Agendar</a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <div class="hero">
+    <img class="bg" src="assets/hero.webp" alt="Douglas Matheus, dono da Fia Barber Club, atendendo um cliente" width="1080" height="2400">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="caps">Barbearia por assinatura</span>
+        <h1>Visual em dia <em>o mês inteiro.</em></h1>
+        <p>Você assina, marca pelo celular e mantém corte e barba sempre alinhados. Sem fila e sem pagar a cada visita.</p>
+        <div class="cta">
+          <a class="btn solid" href="#agendar">Agendar horário</a>
+          <a class="btn ghost" href="#clube">Como funciona</a>
+        </div>
+        <ul class="chips">
+          <li>Valor fixo no mês</li>
+          <li>Agendamento pelo site</li>
+          <li>Corte, barba e pele</li>
+        </ul>
+      </div>
+
+      <div class="seal">
+        <svg class="ring" viewBox="0 0 300 300" aria-hidden="true">
+          <defs><path id="circ" d="M150,150 m-138,0 a138,138 0 1,1 276,0 a138,138 0 1,1 -276,0"/></defs>
+          <text><textPath href="#circ" textLength="860">BARBEARIA POR ASSINATURA ✦ FIA BARBER CLUB ✦ CAMPO GRANDE RJ ✦ SEU CLUBE DE ESTILO ✦</textPath></text>
+        </svg>
+        <div class="logo"><img src="assets/logo.webp" alt="Fia Barber Club, barbearia por assinatura" width="480" height="480"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tape" aria-hidden="true">
+    <div>
+      <span>Corte</span><span>Barba</span><span>Terapia facial</span><span>Limpeza de pele</span><span>Epilação de nariz</span><span>Clube de assinatura</span>
+      <span>Corte</span><span>Barba</span><span>Terapia facial</span><span>Limpeza de pele</span><span>Epilação de nariz</span><span>Clube de assinatura</span>
+      <span>Corte</span><span>Barba</span><span>Terapia facial</span><span>Limpeza de pele</span><span>Epilação de nariz</span><span>Clube de assinatura</span>
+      <span>Corte</span><span>Barba</span><span>Terapia facial</span><span>Limpeza de pele</span><span>Epilação de nariz</span><span>Clube de assinatura</span>
+    </div>
+  </div>
+
+  <section id="clube">
+    <div class="wrap club-grid">
+      <div class="duo">
+        <img src="assets/g1.webp" alt="Barbeiro da Fia Barber Club atendendo um cliente" width="672" height="896">
+        <img src="assets/g2.webp" alt="Cliente com corte e barba feitos na Fia Barber Club" width="480" height="875">
+      </div>
+      <div>
+        <span class="caps">Como funciona</span>
+        <h2 style="margin-top:18px">Mais que um corte, <em>o seu clube de estilo.</em></h2>
+        <ol class="steps">
+          <li><b>1</b><div><h3>Escolha seu plano</h3><p>Abra o agendamento, crie sua conta e veja os planos disponíveis, com o que cada um inclui.</p></div></li>
+          <li><b>2</b><div><h3>Marque pelo celular</h3><p>Você escolhe o dia e o horário que cabem na sua semana. Chegou, sentou na cadeira.</p></div></li>
+          <li><b>3</b><div><h3>Volte sempre que precisar</h3><p>Com a assinatura ativa, você fica pronto para qualquer ocasião, do trabalho ao fim de semana.</p></div></li>
+        </ol>
+        <div class="cta"><a class="btn ghost" href="#meu-plano">Ver o plano</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="versus">
+    <div class="wrap">
+      <div class="head">
+        <span class="caps">Por que assinar</span>
+        <h2>Pagar por visita <em>ou ser do clube?</em></h2>
+      </div>
+      <div class="vs">
+        <div>
+          <h3>Sem assinatura</h3>
+          <ul>
+            <li>Paga toda vez que senta na cadeira</li>
+            <li>Adia o corte para economizar</li>
+            <li>Depende de achar horário na hora</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Assinante Fia</h3>
+          <ul>
+            <li>Um valor fixo por mês</li>
+            <li>Visual alinhado o mês inteiro</li>
+            <li>Horário marcado pelo celular</li>
+            <li>Benefícios exclusivos dos planos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="wrap">
+      <div class="head">
+        <span class="caps">Serviços</span>
+        <h2>Cortes que valorizam <em>o seu estilo.</em></h2>
+      </div>
+      <div class="svc">
+        <article><span class="n">01</span><h3>Corte</h3><p>Do social ao degradê, com acabamento na navalha e conversa sobre o que combina com o seu rosto.</p></article>
+        <article><span class="n">02</span><h3>Barba</h3><p>Desenho, alinhamento e contorno para a barba acompanhar o corte.</p></article>
+        <article class="star"><span class="tag">Da casa</span><h3>Terapia facial</h3><p>Um cuidado completo para o rosto, feito na cadeira, para sair com a pele descansada.</p></article>
+        <article><span class="n">04</span><h3>Limpeza de pele</h3><p>Remove impurezas e deixa a pele pronta para a semana.</p></article>
+        <article><span class="n">05</span><h3>Epilação de nariz</h3><p>Rápida, e faz diferença no acabamento.</p></article>
+      </div>
+      <p class="note">Valores e planos ficam no <a href="#agendar">agendamento online</a>.</p>
+    </div>
+  </section>
+
+  <section class="insta">
+    <div class="wrap">
+      <div class="head">
+        <span class="caps">@fiabarberclub</span>
+        <h2>Todo dia tem <em>corte novo no Instagram.</em></h2>
+      </div>
+      <div class="shots">
+        <a href="https://www.instagram.com/fiabarberclub/"><img src="assets/g3.webp" alt="Degradê feito na Fia Barber Club" width="480" height="875"></a>
+        <a href="https://www.instagram.com/fiabarberclub/"><img src="assets/g5.webp" alt="Barbeiro finalizando um corte na máquina" width="480" height="875"></a>
+        <a href="https://www.instagram.com/fiabarberclub/"><img src="assets/g4.webp" alt="Corte com degradê e risco feito na Fia Barber Club" width="672" height="896"></a>
+      </div>
+      <div class="insta-foot">
+        <p class="muted">Acompanhe os cortes da semana e as novidades do clube.</p>
+        <a class="btn ghost" href="https://www.instagram.com/fiabarberclub/">Seguir no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="wrap faq">
+      <div class="head">
+        <span class="caps">Dúvidas</span>
+        <h2>Antes de <em>assinar.</em></h2>
+      </div>
+      <div>
+        <details open>
+          <summary>Como funciona a assinatura?</summary>
+          <p>Você escolhe um plano mensal no agendamento do site e passa a cuidar do visual dentro dele, em vez de pagar a cada visita.</p>
+        </details>
+        <details>
+          <summary>Onde vejo os planos e os valores?</summary>
+          <p>No agendamento online da Fia. Crie sua conta e os planos aparecem com o que cada um inclui. Se preferir, a equipe explica tudo pelo WhatsApp.</p>
+        </details>
+        <details>
+          <summary>Preciso marcar horário?</summary>
+          <p>Sim. O horário é marcado pelo celular, em poucos toques, para você chegar e ser atendido.</p>
+        </details>
+        <details>
+          <summary>Onde fica a barbearia?</summary>
+          <p>Na Avenida Cesário de Melo, 7662, Loja B, em Campo Grande, Rio de Janeiro.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="local" style="padding-top:0">
+    <div class="wrap place">
+      <img class="sign" src="assets/sign.webp" alt="Fachada da Fia Barber Club" width="480" height="875">
+      <div>
+        <span class="caps">Onde fica</span>
+        <p class="addr">Avenida Cesário de Melo, 7662 <span>Loja B, Campo Grande, Rio de Janeiro</span></p>
+        <div class="cta">
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Fia+Barber+Club+Avenida+Ces%C3%A1rio+de+Melo+7662+Rio+de+Janeiro">Abrir no mapa</a>
+        </div>
+      <div class="contacts">
+        <a href="#agendar"><span>Agendamento</span><span>Marcar pelo site</span></a>
+        <a href="https://wa.me/5521966740456"><span>WhatsApp</span><span>(21) 96674-0456</span></a>
+        <a href="https://www.instagram.com/fiabarberclub/"><span>Instagram</span><span>@fiabarberclub</span></a>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <img src="assets/logo.webp" alt="Fia Barber Club" width="150" height="150">
+      <h2>Sua cadeira <em>está esperando.</em></h2>
+      <div class="cta">
+        <a class="btn solid" href="#agendar">Agendar horário</a>
+        <a class="btn ghost" href="https://wa.me/5521966740456">Falar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Fia Barber Club. Barbearia por assinatura. Prévia criada pela <a href="https://business2brothers.com/" target="_blank" rel="noopener" style="color:var(--gold)">Business 2 Brothers</a>.</span>
+    <span>Av. Cesário de Melo, 7662, Loja B, Campo Grande. (21) 96674-0456</span>
+  </div>
+</footer>
+
+<a class="zap" href="https://wa.me/5521966740456?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Fia%20Barber%20Club." aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.300-1.200l-.3-.2-3 .8.8-2.900-.2-.3A8.200 8.200 0 1 1 12 20.200zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.100a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.2-.4.7-1.300.1-.2 0-.3 0-.5l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.900.900-1.100 2.100-.6 3.400a9.300 9.300 0 0 0 4.800 4.700c1.700.7 2.400.6 3.200.300.5-.2 1.500-.8 1.600-1.400.1-.3.1-.6 0-.700l-.2-.1z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+
+<div id="app">
+  <div class="a-top"><div class="a-col">
+    <button class="a-burger" data-a="menu" aria-label="Abrir menu"><i></i></button>
+    <b id="aTitle">Novo agendamento</b>
+    <img src="assets/logo.webp" alt="Fia Barber Club" width="44" height="44">
+  </div></div>
+  <div class="a-col">
+    <p class="a-demo"><b>Demonstração.</b> Os agendamentos feitos aqui ainda não chegam à barbearia.</p>
+    <div class="a-body" id="aBody"></div>
+  </div>
+  <div class="a-veil" id="aVeil" data-a="close"></div>
+  <nav class="a-drawer" id="aDrawer" aria-label="Menu do assinante"></nav>
+  <div class="a-sheet" id="aSheet" role="dialog" aria-modal="true"><div class="a-col" id="aSheetIn"></div></div>
+  <div class="a-modal" id="aModal" role="dialog" aria-modal="true"></div>
+  <div class="a-toast" id="aToast" role="status"></div>
+</div>
+
+<script>
+(function(){
+var R={'agendar':'Novo agendamento','meus-horarios':'Agendamentos','inicio-socio':'Início','meu-plano':'Plano','vantagens':'Clube do assinante'};
+var SV=[['Corte',35,35],['Barba',0,20],['Cavanhaque',9,10],['Pézinho',10,10],['Sobrancelha',9,10],['Terapia Facial',27,30],['Epilação nariz',13.5,15],['Epilação orelha',13.5,15],['Pigmentação',13.5,15],['Reflexo',54,60],['Nevou',72,80]];
+var PR=[['Douglas Matheus','assets/douglas.webp'],['Alysson','assets/alysson.webp'],['Sem preferência','']];
+var MES=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+var DIA=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+var IC={unit:'M3 9l1.5-5h15L21 9v2a3 3 0 0 1-1 2.2V20H4v-6.800A3 3 0 0 1 3 11V9zm3 5v4h12v-4H6z',pro:'M12 12a4.500 4.500 0 1 0 0-9 4.500 4.500 0 0 0 0 9zm0 2c-4.400 0-8 2.200-8 5v2h16v-2c0-2.800-3.600-5-8-5z',sv:'M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z',time:'M7 2v2H4v18h16V4h-3V2h-2v2H9V2H7zm-1 8h12v10H6V10zm2 2v4h4v-4H8z'};
+var $=function(i){return document.getElementById(i)};
+var body=$('aBody'),draft,keep=false,tab='ag',chip='Tudo',pending=null;
+function money(v){return 'R$ '+v.toFixed(2).replace('.',',')}
+function load(){try{return JSON.parse(localStorage.getItem('fia-demo-ag'))||[]}catch(e){return mem}}
+function save(a){mem=a;try{localStorage.setItem('fia-demo-ag',JSON.stringify(a))}catch(e){}}
+var mem=[];
+function reset(){draft={unit:true,pro:null,sv:[],date:null,time:null,edit:null}}
+reset();
+function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function when(b){var p=b.date.split('-');return (+p[2])+' de '+MES[+p[1]-1]+', '+b.time}
+function stamp(b){var p=b.date.split('-'),t=b.time.split(':');return new Date(+p[0],+p[1]-1,+p[2],+t[0],+t[1]).getTime()}
+function total(){return draft.sv.reduce(function(s,n){return s+SV.filter(function(x){return x[0]===n})[0][1]},0)}
+function ic(k){return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+IC[k]+'"/></svg>'}
+function row(k,txt,on,sub){return '<button class="a-row'+(on?' on':'')+'" data-a="sheet" data-k="'+k+'">'+ic(k)+'<span>'+txt+(sub?'<small>'+sub+'</small>':'')+'</span></button>'}
+function card(b,acts){return '<div class="a-card"><div class="when">'+when(b)+(b.tag?'<span class="a-tag">'+b.tag+'</span>':'')+'</div><p>'+b.sv.join(', ')+'</p><p>'+b.pro+'</p><div class="tot">Total: '+money(b.total)+'</div>'+(acts?'<div class="acts"><button data-a="re" data-id="'+b.id+'">Reagendar</button><button class="dim" data-a="askdel" data-id="'+b.id+'">Cancelar</button></div>':'')+'</div>'}
+function split(){var now=Date.now(),a=load().sort(function(x,y){return stamp(x)-stamp(y)});return {up:a.filter(function(b){return stamp(b)>=now}),old:a.filter(function(b){return stamp(b)<now}).reverse()}}
+var EX=[{date:'2026-11-05',time:'18:00',sv:['Barba'],pro:'Alysson',total:0,tag:'Exemplo'},{date:'2026-10-27',time:'16:30',sv:['Barba','Terapia Facial'],pro:'Alysson',total:27,tag:'Exemplo'}];
+var V={
+'agendar':function(){
+  var ok=draft.pro&&draft.sv.length&&draft.date&&draft.time;
+  return '<p class="a-lead">Selecione os detalhes do seu agendamento</p>'+
+   row('unit','Campo Grande',true,'Avenida Cesário de Melo, 7662')+
+   row('pro',draft.pro||'Selecione um profissional',!!draft.pro)+
+   row('sv',draft.sv.length?draft.sv.join(', '):'Selecione os serviços',!!draft.sv.length)+
+   row('time',draft.time?when(draft):'Selecione um horário',!!draft.time)+
+   '<div class="a-total"><span>Total a pagar</span><b>'+money(total())+'</b></div>'+
+   '<button class="a-cta" data-a="book"'+(ok?'':' disabled')+'>'+(draft.edit?'Reagendar':'Agendar')+'</button>';
+},
+'meus-horarios':function(){
+  var s=split(),list;
+  if(tab==='ag')list=s.up.length?s.up.map(function(b){return card(b,true)}).join(''):'<p class="a-empty">Você não tem nenhum agendamento marcado.</p>';
+  else list=s.old.concat(EX).map(function(b){return card(b,false)}).join('');
+  return '<div class="a-tabs"><button class="'+(tab==='ag'?'on':'')+'" data-a="tab" data-t="ag">Agendados</button><button class="'+(tab==='an'?'on':'')+'" data-a="tab" data-t="an">Anteriores</button></div>'+
+   '<a class="a-cta" href="#agendar" style="margin-bottom:18px">Novo agendamento</a>'+list;
+},
+'inicio-socio':function(){
+  var s=split();
+  return '<div class="a-card"><h3>Seu plano</h3><p>Você está aproveitando as vantagens do Barba Ilimitado.</p><a class="a-link" href="#meu-plano">Detalhes sobre o plano</a></div>'+
+   '<a class="a-banner" href="#vantagens"><b>Conheça o Clube do assinante</b>e pegue seu cupom com vantagens</a>'+
+   '<div class="a-h"><span>Próximos agendamentos</span><a href="#meus-horarios">Ver tudo</a></div>'+
+   (s.up.length?s.up.slice(0,2).map(function(b){return card(b,false)}).join(''):'<p class="a-empty">Você não tem nenhum agendamento marcado.</p>')+
+   '<a class="a-cta" href="#agendar">Novo agendamento</a>';
+},
+'meu-plano':function(){
+  return '<div class="a-card"><h3>Barba Ilimitado</h3><p>Tempo de vigência: <b style="color:var(--bone)">indeterminado</b></p><div class="a-price">R$ 85,00</div><p>por mês</p>'+
+   '<p style="margin-top:16px;color:var(--bone);font-weight:600">Pagamento</p><p>Cartão de crédito</p><p class="a-warn">Restam 29 vagas para esse plano.</p>'+
+   '<a class="a-link" href="#vantagens">Confira as vantagens</a><br><button class="a-link" data-a="soon">Termos de uso</button></div>'+
+   '<button class="a-cta line" data-a="soon">Alterar método de pagamento</button>';
+},
+'vantagens':function(){
+  var c=['Tudo','Conveniência','Esportes','Gastronomia'];
+  return '<div class="a-chips">'+c.map(function(x){return '<button class="'+(x===chip?'on':'')+'" data-a="chip" data-c="'+x+'">'+x+'</button>'}).join('')+'</div>'+
+   '<div class="a-card"><h3>Como resgatar um cupom</h3><p>Escolha uma vantagem da lista, toque em resgatar e apresente o cupom no parceiro. Cada cupom vale para o assinante com o plano em dia.</p></div>'+
+   '<p class="a-empty">Nenhum cupom disponível em '+(chip==='Tudo'?'nenhuma categoria':chip)+' no momento.</p>';
+}};
+function render(h){$('aTitle').textContent=R[h];body.innerHTML=V[h]();
+  $('aDrawer').innerHTML='<img src="assets/logo.webp" alt="Fia Barber Club" width="150" height="150">'+[['inicio-socio','Início'],['meus-horarios','Agendamentos'],['vantagens','Clube do assinante'],['meu-plano','Plano']].map(function(x){return '<a href="#'+x[0]+'"'+(x[0]===h?' class="on"':'')+'>'+x[1]+'</a>'}).join('')+'<a href="#topo">Voltar ao site</a>';}
+function cur(){return location.hash.slice(1)}
+var pushed=false;
+function hide(){['aVeil','aDrawer','aSheet','aModal'].forEach(function(i){$(i).classList.remove('on')})}
+function close(){hide();if(pushed){pushed=false;try{history.back()}catch(e){}}}
+function open(i){$('aVeil').classList.add('on');$(i).classList.add('on');if(!pushed){try{history.pushState({ov:1},'');pushed=true}catch(e){}}}
+window.addEventListener('popstate',function(){if(pushed){pushed=false;hide();if(R[cur()])render(cur())}});
+function toast(t){var e=$('aToast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(function(){e.classList.remove('on')},2600)}
+function taken(d,t){var k=d+t+(draft.pro||''),h=0;for(var i=0;i<k.length;i++)h=(h*31+k.charCodeAt(i))>>>0;
+  if(h%4===0)return true;return load().some(function(b){return b.id!==draft.edit&&b.date===d&&b.time===t&&b.pro===draft.pro})}
+function sheet(k){var o='';
+  if(k==='unit')o='<h4>Selecione uma das nossas unidades</h4><button class="a-opt on" data-a="close"><span><b>Campo Grande</b><small>Avenida Cesário de Melo, 7662</small></span><i></i></button>';
+  if(k==='pro')o='<h4>Selecione o profissional</h4><div class="a-pros">'+PR.map(function(p){return '<button class="'+(draft.pro===p[0]?'on':'')+'" data-a="pro" data-v="'+p[0]+'">'+(p[1]?'<img src="'+p[1]+'" alt="" width="288" height="288">':'<div class="ph">Fia</div>')+'<b>'+p[0]+'</b></button>'}).join('')+'</div>';
+  if(k==='sv')o='<h4>Selecione os serviços</h4>'+SV.map(function(s){var on=draft.sv.indexOf(s[0])>=0;return '<button class="a-opt'+(on?' on':'')+'" data-a="sv" data-v="'+s[0]+'" aria-pressed="'+on+'"><span><b>'+s[0]+'</b><small>'+money(s[1])+(s[2]!==s[1]?'<s>'+money(s[2])+'</s>':'')+'</small></span><i></i></button>'}).join('')+'<button class="a-cta" data-a="close" style="margin-top:10px">Confirmar</button>';
+  if(k==='time'){var t0=new Date();t0.setHours(0,0,0,0);var ds=[];for(var i=0;i<7;i++){var d=new Date(t0);d.setDate(t0.getDate()+i);ds.push(d)}
+    if(!draft.date){var f=ds.filter(function(d){return d.getDay()!==0})[0];draft.date=iso(f)}
+    var now=new Date(),nm=now.getHours()*60+now.getMinutes()+30,today=iso(now),sl='';
+    for(var m=540;m<=1170;m+=30){var t=String(Math.floor(m/60)).padStart(2,'0')+':'+(m%60?'30':'00');var off=(draft.date===today&&m<nm)||taken(draft.date,t);
+      sl+='<button data-a="slot" data-v="'+t+'"'+(off?' disabled':'')+(draft.time===t?' class="on"':'')+'>'+t+'</button>'}
+    o='<h4>Selecione data e hora</h4><div class="a-days">'+ds.map(function(d){var v=iso(d);return '<button data-a="day" data-v="'+v+'"'+(d.getDay()===0?' disabled':'')+(v===draft.date?' class="on"':'')+'><small>'+DIA[d.getDay()]+'</small><b>'+d.getDate()+'</b></button>'}).join('')+'</div><div class="a-slots">'+sl+'</div>';}
+  $('aSheetIn').innerHTML=o;$('aSheet').dataset.k=k;open('aSheet');}
+$('app').addEventListener('click',function(e){var l=e.target.closest('#aDrawer a,#aModal a');
+  if(l&&pushed){e.preventDefault();hide();pushed=false;try{location.replace(l.getAttribute('href'))}catch(x){location.hash=l.getAttribute('href')}return}
+  var b=e.target.closest('[data-a]');if(!b)return;var a=b.dataset.a,v=b.dataset.v;
+  if(a==='menu')open('aDrawer');
+  else if(a==='close'){close();render(cur())}
+  else if(a==='sheet')sheet(b.dataset.k);
+  else if(a==='pro'){draft.pro=v;draft.time=null;close();render('agendar')}
+  else if(a==='sv'){var i=draft.sv.indexOf(v);if(i>=0)draft.sv.splice(i,1);else draft.sv.push(v);sheet('sv')}
+  else if(a==='day'){draft.date=v;draft.time=null;sheet('time')}
+  else if(a==='slot'){draft.time=v;close();render('agendar')}
+  else if(a==='book'){var all=load().filter(function(x){return x.id!==draft.edit});
+    all.push({id:draft.edit||('a'+Date.now()),date:draft.date,time:draft.time,sv:draft.sv.slice(),pro:draft.pro,total:total()});save(all);
+    var re=!!draft.edit;reset();render('agendar');
+    $('aModal').innerHTML='<div class="ok"></div><h4>Tudo certo!</h4><p>'+(re?'Seu horário foi alterado nesta demonstração.':'Seu horário foi agendado nesta demonstração.')+'</p><a class="a-cta" href="#meus-horarios">OK</a>';open('aModal')}
+  else if(a==='tab'){tab=b.dataset.t;render('meus-horarios')}
+  else if(a==='chip'){chip=b.dataset.c;render('vantagens')}
+  else if(a==='re'){var x=load().filter(function(y){return y.id===b.dataset.id})[0];if(!x)return;draft={unit:true,pro:x.pro,sv:x.sv.slice(),date:null,time:null,edit:x.id};keep=true;location.hash='agendar'}
+  else if(a==='askdel'){pending=b.dataset.id;$('aModal').innerHTML='<h4>Cancelar horário?</h4><p>O agendamento sai da sua lista.</p><div class="two"><button class="a-cta line" data-a="close">Voltar</button><button class="a-cta" data-a="del">Cancelar horário</button></div>';open('aModal')}
+  else if(a==='del'){save(load().filter(function(y){return y.id!==pending}));close();render('meus-horarios');toast('Agendamento cancelado.')}
+  else if(a==='soon')toast('Disponível quando a plataforma for ativada para a Fia.');
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.body.classList.contains('in-app')){close();render(cur())}});
+function route(){var h=cur();hide();pushed=false;
+  if(R[h]){document.body.classList.add('in-app');if(h==='agendar'){if(!keep)reset();keep=false}render(h);window.scrollTo(0,0)}
+  else document.body.classList.remove('in-app')}
+window.addEventListener('hashchange',route);route();
+})();
+</script>
+
+<script>
+(function(){
+if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var sel='.hero-grid>div>*,.seal,.head,.duo,.club-grid>div:last-child>*,.vs>div,.svc article,.note,.shots a,.insta-foot,.faq details,.place>img,.place>div>*,.closing .wrap>*';
+var els=[].slice.call(document.querySelectorAll(sel));
+els.forEach(function(e){e.classList.add('rv-i');var i=[].indexOf.call(e.parentNode.children,e);e.style.transitionDelay=Math.min(i,5)*90+'ms'});
+document.documentElement.classList.add('rv');
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+
+<script>
+(function(){var e=document.querySelector('.strip');if(!e)return;
+function fit(){e.style.fontSize='';var f=parseFloat(getComputedStyle(e).fontSize),n=0;
+  while(e.scrollWidth>e.clientWidth&&f>5&&n++<60){f-=.2;e.style.fontSize=f+'px'}}
+fit();window.addEventListener('resize',fit);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+})();
+</script>
+
+<script>
+(function(){var seal=document.querySelector('.seal');if(!seal)return;
+var mq=matchMedia('(max-width:880px)');
+function set(v){document.body.classList.toggle('hdr-on',v)}
+if('IntersectionObserver' in window){
+  new IntersectionObserver(function(en){set(mq.matches?!en[0].isIntersecting&&en[0].boundingClientRect.top<0:true)},{threshold:0}).observe(seal);
+}else{function chk(){set(!mq.matches||seal.getBoundingClientRect().bottom<0)}window.addEventListener('scroll',chk,{passive:true});chk()}
+})();
+</script>
+<script src="/previas/visitas.js" defer></script>
+</body>
+</html>
