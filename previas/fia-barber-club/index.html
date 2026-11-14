@@ -278,7 +278,7 @@ body.in-app #app{display:block}
 .a-pros{display:grid;align-items:start;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .a-pros button{text-align:center!important;padding:8px;border:1px solid var(--line)!important;border-radius:6px;background:var(--ink)!important}
 .a-pros button.on{border-color:var(--gold)!important}
-.a-pros img,.a-pros .ph{width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;margin-bottom:8px;filter:saturate(.8)}
+.a-pros img,.a-pros .ph{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 50%;border-radius:4px;margin-bottom:8px;filter:saturate(.8)}
 .a-pros .ph{display:grid;place-items:center;background:#1b1914;font-family:var(--display);font-style:italic;font-size:2rem;color:var(--gold-deep)}
 .a-pros b{font-size:.92rem;font-weight:600}
 .a-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin-bottom:18px}
@@ -619,7 +619,7 @@ function taken(d,t){var k=d+t+(draft.pro||''),h=0;for(var i=0;i<k.length;i++)h=(
   if(h%4===0)return true;return load().some(function(b){return b.id!==draft.edit&&b.date===d&&b.time===t&&b.pro===draft.pro})}
 function sheet(k){var o='';
   if(k==='unit')o='<h4>Selecione uma das nossas unidades</h4><button class="a-opt on" data-a="close"><span><b>Campo Grande</b><small>Avenida Cesário de Melo, 7662</small></span><i></i></button>';
-  if(k==='pro')o='<h4>Selecione o profissional</h4><div class="a-pros">'+PR.map(function(p){return '<button class="'+(draft.pro===p[0]?'on':'')+'" data-a="pro" data-v="'+p[0]+'">'+(p[1]?'<img src="'+p[1]+'" alt="" width="288" height="288">':'<div class="ph">Fia</div>')+'<b>'+p[0]+'</b></button>'}).join('')+'</div>';
+  if(k==='pro')o='<h4>Selecione o profissional</h4><div class="a-pros">'+PR.map(function(p){return '<button class="'+(draft.pro===p[0]?'on':'')+'" data-a="pro" data-v="'+p[0]+'">'+(p[1]?'<img src="'+p[1]+'" alt="" width="540" height="720">':'<div class="ph">Fia</div>')+'<b>'+p[0]+'</b></button>'}).join('')+'</div>';
   if(k==='sv')o='<h4>Selecione os serviços</h4>'+SV.map(function(s){var on=draft.sv.indexOf(s[0])>=0;return '<button class="a-opt'+(on?' on':'')+'" data-a="sv" data-v="'+s[0]+'" aria-pressed="'+on+'"><span><b>'+s[0]+'</b><small>'+money(s[1])+(s[2]!==s[1]?'<s>'+money(s[2])+'</s>':'')+'</small></span><i></i></button>'}).join('')+'<button class="a-cta" data-a="close" style="margin-top:10px">Confirmar</button>';
   if(k==='time'){var t0=new Date();t0.setHours(0,0,0,0);var ds=[];for(var i=0;i<7;i++){var d=new Date(t0);d.setDate(t0.getDate()+i);ds.push(d)}
     if(!draft.date){var f=ds.filter(function(d){return d.getDay()!==0})[0];draft.date=iso(f)}
