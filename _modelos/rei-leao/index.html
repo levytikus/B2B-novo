@@ -417,6 +417,10 @@ img.i3d, img.feat-ic, img.stat-ic, img.day-sol, img.sunny, img.plane3d, img.badg
 @media (max-width: 960px) { .plane3d { left: auto; right: 2%; top: 4px; width: 110px; } }
 @media (max-width: 640px) { .plane3d { display: none; } .prog { grid-template-columns: 1fr; } .stat img.stat-ic { width: 58px; height: 58px; } }
 </style>
+<style id="sem-cara-de-ia">/* rótulos acima dos títulos sem caixa alta espaçada nem bolinha */
+span.kicker:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+span.tag:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+</style>
 </head>
 <body>
 

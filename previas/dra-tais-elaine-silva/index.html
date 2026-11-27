@@ -276,6 +276,10 @@ h1,h2,h3,p{margin:0}
 .zap{position:fixed;right:18px;bottom:18px;z-index:40;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.4)}
 .zap svg{width:30px;height:30px;fill:#fff}
 </style>
+<style id="sem-cara-de-ia">/* rótulos acima dos títulos sem caixa alta espaçada nem bolinha */
+p.olho:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+span.tag:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">

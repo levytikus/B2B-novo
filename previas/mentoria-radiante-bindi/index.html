@@ -113,7 +113,7 @@ p{margin:0}
 .clip-inner{position:relative;z-index:1;background:#000;aspect-ratio:16/9;overflow:hidden;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px))}
 .clip-inner video{width:100%;height:100%;object-fit:cover}
 .clip-tag{position:absolute;left:14px;top:14px;z-index:2;display:flex;align-items:center;gap:8px;background:rgba(11,13,18,.82);padding:6px 10px;font-family:var(--f-hud);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-.clip-tag i{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(255,70,85,.7);animation:pulse 1.8s infinite}
+.clip-tag i{width:7px;height:7px;border-radius:50%;background:var(--red)}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,70,85,.7)}70%{box-shadow:0 0 0 9px rgba(255,70,85,0)}100%{box-shadow:0 0 0 0 rgba(255,70,85,0)}}
 .sound{position:absolute;right:14px;bottom:14px;z-index:2;display:flex;align-items:center;gap:8px;min-height:38px;padding:0 12px;border:0;cursor:pointer;background:rgba(11,13,18,.82);color:#fff;font-family:var(--f-hud);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .sound:hover{background:var(--red)}
@@ -359,6 +359,13 @@ dialog::backdrop{background:rgba(5,6,9,.88);backdrop-filter:blur(4px)}
 @media(prefers-reduced-motion:reduce){.js .rv{transform:none;opacity:1}}
 [hidden]{display:none!important}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+<style id="sem-cara-de-ia">/* rótulos acima dos títulos sem caixa alta espaçada nem bolinha */
+span.clip-tag{text-transform:none!important;letter-spacing:normal!important}
+span.clip-tag::before,span.clip-tag::after{content:none!important}
+span.clip-tag > i:empty,span.clip-tag > b:empty,span.clip-tag > span:empty{display:none!important}
+p.eyebrow:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+span.hud:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
 </style>
 </head>
 <body>

@@ -361,6 +361,11 @@ html{scroll-behavior:smooth}
 .credit{display:block;margin-top:22px;color:var(--mut2);font-size:12px;letter-spacing:.06em;text-decoration:underline;text-underline-offset:3px}
 .credit:hover{color:#fff}
 </style>
+<style id="sem-cara-de-ia">/* rótulos acima dos títulos sem caixa alta espaçada nem bolinha */
+span.num:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+p.eyebrow:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+p.tag:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+</style>
 </head>
 <body>
 

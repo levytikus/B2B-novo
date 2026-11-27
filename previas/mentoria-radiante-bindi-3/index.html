@@ -419,6 +419,12 @@ dialog::backdrop{background:rgba(10,10,10,.86)}
 .js .rv{transform:translateY(18px);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
 .js .rv.in{transform:none}
 </style>
+<style id="sem-cara-de-ia">/* rótulos acima dos títulos sem caixa alta espaçada nem bolinha */
+span.vid-tag{text-transform:none!important;letter-spacing:normal!important}
+span.vid-tag::before,span.vid-tag::after{content:none!important}
+span.vid-tag > i:empty,span.vid-tag > b:empty,span.vid-tag > span:empty{display:none!important}
+p.kicker:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>

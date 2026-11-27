@@ -411,6 +411,10 @@ h2 span.pk{color:var(--marca-1-forte)}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.js .reveal.pending{opacity:1;transform:none}}
 </style>
+<style id="sem-cara-de-ia">/* rótulos acima dos títulos sem caixa alta espaçada nem bolinha */
+span.form-kicker:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+span.eyebrow:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+</style>
 </head><body>
 
 <header class="site-header" id="topo">

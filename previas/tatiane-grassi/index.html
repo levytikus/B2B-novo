@@ -296,6 +296,14 @@ details p{padding:0 58px 28px 0;color:var(--texto)}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
+<style id="sem-cara-de-ia">/* rótulos acima dos títulos sem caixa alta espaçada nem bolinha */
+span.pilula{text-transform:none!important;letter-spacing:normal!important}
+span.pilula::before,span.pilula::after{content:none!important}
+span.pilula > i:empty,span.pilula > b:empty,span.pilula > span:empty{display:none!important}
+span.pilula:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+span.pilula:has(+ :is(h1,h2,h3))::before,span.pilula:has(+ :is(h1,h2,h3))::after{content:none!important}
+span.olho:has(+ :is(h1,h2,h3)){text-transform:none!important;letter-spacing:normal!important;font-variant-caps:normal!important}
+</style>
 </head>
 <body>
 
